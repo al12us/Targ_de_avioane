@@ -37,15 +37,12 @@ namespace Targ_Avion
             this.nr_de_pasageri = nr_de_pasageri;
 
         }
-        public void Afisare()
+        public string Info()
         {
-            Console.WriteLine($"Firma:{firma}");
-            Console.WriteLine($"Model:{model}");
-            Console.WriteLine($"An fabricatie:{an_fabricatie}");
-            Console.WriteLine($"Culoare:{culoare}");
-            Console.WriteLine($"Greutate:{greutate} t");
-            Console.WriteLine($"Pret:{pret}");
-            Console.WriteLine($"Numar_de_pasageri:{nr_de_pasageri}");
+            string afisare = $"Firma:{firma}\n Model:{model}\n Anul in care este fabricat {an_fabricatie} \n Culoarea:{culoare}\n" +
+                             $"Greutatea:{greutate}\n Pret:{pret}\n Numar de pasageri{nr_de_pasageri}";
+            return afisare;
+            
         }
         public void Citire()
         {

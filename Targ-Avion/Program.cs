@@ -10,8 +10,8 @@ namespace Targ_Avion
     {
         static void Main(string[] args)
         {
-            Avion a = new Avion ("TAROM","B-20",2010,"violet",105.5,1000.16,1000);
-            a.Afisare();
+            Avion obiect = new Avion ("TAROM","B-20",2010,"violet",105.5,1000.16,1000);
+            obiect.Info();
           
         } 
     }
