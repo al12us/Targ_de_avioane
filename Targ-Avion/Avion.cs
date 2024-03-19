@@ -8,17 +8,17 @@ namespace Targ_Avion
 {
     internal class Avion
     {
-        private string firma;
-        private string model;
-        private int an_fabricatie;
-        private string culoare;
-        private double greutate;
-        private double pret;
-        private int nr_de_pasageri;
+        public string firma { set; get; }
+        public string model { set; get; }
+        public int an_fabricatie { set; get; }
+        public string culoare { set; get; }
+        public double greutate { set; get; }
+        public double pret { set; get; }
+        public int nr_de_pasageri { set; get; }
         public Avion()
         {
-            firma = string.Empty;
-            model = string.Empty;
+            firma = model= string.Empty;
+        
             an_fabricatie = 0;
             culoare = string.Empty;
             greutate = 0;
@@ -39,16 +39,13 @@ namespace Targ_Avion
         }
         public string Info()
         {
-            string afisare = $"Firma:{firma}\n Model:{model}\n Anul in care este fabricat {an_fabricatie} \n Culoarea:{culoare}\n" +
+            string afisare = $"Firma:{firma ?? "Necunoscut"}\n Model:{model  ?? "necunoscut"}\n Anul in care este fabricat {an_fabricatie} \n Culoarea:{culoare ?? "necunoscut"}\n" +
                              $"Greutatea:{greutate}\n Pret:{pret}\n Numar de pasageri{nr_de_pasageri}";
             return afisare;
             
         }
-        public void Citire()
-        {
-            
-            //Citire
-        }
+
+        
         
     }
 }
