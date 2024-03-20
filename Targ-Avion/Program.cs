@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Targ_Avion.Avion;
+using static Avion;
 namespace Targ_Avion
 {
     internal class Program
