@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Avion
 {
-    public class Avion
+    public class AvionClass
     {
         public string firma { set; get; }
         public string model { set; get; }
@@ -15,7 +10,7 @@ namespace Avion
         public double greutate { set; get; }
         public double pret { set; get; }
         public int nr_de_pasageri { set; get; }
-        public Avion()
+        public AvionClass()
         {
             firma = model = string.Empty;
 
@@ -26,7 +21,7 @@ namespace Avion
             nr_de_pasageri = 0;
 
         }
-        public Avion(string firma, string model, int an_fabricatie, string culoare, double greutate, double pret, int nr_de_pasageri)
+        public AvionClass(string firma, string model, int an_fabricatie, string culoare, double greutate, double pret, int nr_de_pasageri)
         {
             this.firma = firma;
             this.model = model;
