@@ -2,7 +2,8 @@
 namespace Avion
 {
     public class AvionClass
-    {
+    {    
+        public int ID_avion{ set; get; }
         public string firma { set; get; }
         public string model { set; get; }
         public int an_fabricatie { set; get; }
@@ -21,8 +22,9 @@ namespace Avion
             nr_de_pasageri = 0;
 
         }
-        public AvionClass(string firma, string model, int an_fabricatie, string culoare, double greutate, double pret, int nr_de_pasageri)
+        public AvionClass(int idAvion,string firma, string model, int an_fabricatie, string culoare, double greutate, double pret, int nr_de_pasageri)
         {
+            this.ID_avion = idAvion;
             this.firma = firma;
             this.model = model;
             this.an_fabricatie = an_fabricatie;
@@ -34,7 +36,7 @@ namespace Avion
         }
         public string Info()
         {
-            string afisare = $"Firma:{firma ?? "Necunoscut"}\n Model:{model ?? "necunoscut"}\n Anul in care este fabricat {an_fabricatie} \n Culoarea:{culoare ?? "necunoscut"}\n" +
+            string afisare = $"ID:{ID_avion}\nFirma:{firma ?? "Necunoscut"}\n Model:{model ?? "necunoscut"}\n Anul in care este fabricat {an_fabricatie} \n Culoarea:{culoare ?? "necunoscut"}\n" +
                              $"Greutatea:{greutate}\n Pret:{pret}\n Numar de pasageri{nr_de_pasageri}";
             return afisare;
 
