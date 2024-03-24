@@ -77,7 +77,7 @@ namespace Targ_Avion
             Console.WriteLine("Introduceti greutatea");
             double greutatea = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Introduceti greutatea");
+            Console.WriteLine("Introduceti pretul");
             double pretul = Convert.ToDouble(Console.ReadLine());
 
             Console.WriteLine("Introduceti numarul de pasageri de la tastatura");
