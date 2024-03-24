@@ -18,7 +18,7 @@ namespace Niveldestocare_Date
              nr_avioane = 0;
         }
 
-        public void AddAvion(AvionClass avionul)
+        public void AddPlane(AvionClass avionul)
         {
             avioane[nr_avioane] = avionul;
             nr_avioane++;
