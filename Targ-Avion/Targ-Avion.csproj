@@ -57,6 +57,10 @@
       <Project>{1d5e85be-1828-4f45-b0e0-4f4dab962193}</Project>
       <Name>Avion</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Niveldestocare_Date\Niveldestocare_Date.csproj">
+      <Project>{717aa1e2-a5be-4545-8a77-31ec56011667}</Project>
+      <Name>Niveldestocare_Date</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
