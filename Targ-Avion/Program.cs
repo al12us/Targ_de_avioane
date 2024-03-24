@@ -64,13 +64,13 @@ namespace Targ_Avion
                         break;
                     case "F":
                         
-                        Firma = Console.ReadLine();
+                        /*Firma = Console.ReadLine();
                         Model = Console.ReadLine();
                         AvionClass[] avioane_gasite = adminPlane.GetAvion(Firma, Model,out int nr_avioane1);
                         foreach (AvionClass avion in avioane_gasite)
                         {
                             Console.WriteLine(avion);
-                        }
+                        }*/
                         break;
                     case "X":
                         return;
