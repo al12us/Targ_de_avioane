@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Avion;
@@ -25,6 +26,8 @@ namespace Targ_Avion
                 Console.WriteLine("I. Afisarea informatiilor despre ultimului avion introdus");
                 Console.WriteLine("A. Afisare avioane din fisier");
                 Console.WriteLine("S. Salvare avion in vector de obiecte");
+                Console.WriteLine("E.Cautarea dupa anumite criterii a avionului");
+                Console.WriteLine("F.Cautarea avioanele dupa anumite criterii");
                 Console.WriteLine("X. Inchidere program");
 
                 Console.WriteLine("Alegeti o optiune");
@@ -45,8 +48,29 @@ namespace Targ_Avion
                     case "S":
                         int idAvion = nr_avioane + 1;
                         avionNou.ID_avion = idAvion;
-                        //adaugare student in vectorul de obiecte
+                        //adaugare avion in vectorul de obiecte
                         adminPlane.AddPlane(avionNou);
+                        break;
+                    case "E":
+                        string Firma;
+                        string Model;
+                        int fabricatie;
+                        string Culoare;
+                        Firma = Console.ReadLine();
+                        Model = Console.ReadLine();
+                        fabricatie = Convert.ToInt32(Console.ReadLine());
+                        Culoare = Console.ReadLine();
+                        Console.WriteLine(adminPlane.GetPlane(Firma, Model,fabricatie,Culoare).Info());
+                        break;
+                    case "F":
+                        
+                        Firma = Console.ReadLine();
+                        Model = Console.ReadLine();
+                        AvionClass[] avioane_gasite = adminPlane.GetAvion(Firma, Model,out int nr_avioane1);
+                        foreach (AvionClass avion in avioane_gasite)
+                        {
+                            Console.WriteLine(avion);
+                        }
                         break;
                     case "X":
                         return;
