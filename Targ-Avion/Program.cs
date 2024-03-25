@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
@@ -15,7 +16,12 @@ namespace Targ_Avion
         {
             AvionClass obiect = new AvionClass(0,"TAROM","B-20",2010,"violet",105.5,1000.16,1000);
            Console.WriteLine(obiect.Info());
+            //Cu fisiere
+            string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
+            AdministrareAvioane_FisierText adminPLANE = new AdministrareAvioane_FisierText(numeFisier);
+            ///Citire la tastatura
             AdministrareAvioane_Memorie adminPlane = new AdministrareAvioane_Memorie();
+            // se aplica la ambele
             AvionClass avionNou=new AvionClass();
             int nr_avioane = 0;
             string optiune;
@@ -26,6 +32,8 @@ namespace Targ_Avion
                 Console.WriteLine("I. Afisarea informatiilor despre ultimului avion introdus");
                 Console.WriteLine("A. Afisare avioane din fisier");
                 Console.WriteLine("S. Salvare avion in vector de obiecte");
+                Console.WriteLine("D.Afisare in fisier avioane");
+                Console.WriteLine("B.Salvare avion in fisier");
                 Console.WriteLine("E.Cautarea dupa anumite criterii a avionului");
                 Console.WriteLine("F.Cautarea avioanele dupa anumite criterii");
                 Console.WriteLine("X. Inchidere program");
@@ -50,6 +58,18 @@ namespace Targ_Avion
                         avionNou.ID_avion = idAvion;
                         //adaugare avion in vectorul de obiecte
                         adminPlane.AddPlane(avionNou);
+                        break;
+                    case "D":
+                      
+                        AvionClass[] avioanele= adminPLANE.GetPlanes(out nr_avioane);
+                        AfisareAvioane(avioanele, nr_avioane);
+                        break;
+                    case "B":
+                         idAvion = ++nr_avioane;
+                        avionNou.ID_avion = idAvion;
+                        //adaugare student in fisier
+                        adminPLANE.AddPlane(avionNou);
+
                         break;
                     case "E":
                         string Firma;
