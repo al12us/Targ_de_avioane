@@ -6,8 +6,12 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using Avion;
 using Niveldestocare_Date;
+using System.Runtime.ConstrainedExecution;
+using Microsoft.SqlServer.Server;
+using System.Reflection;
 namespace Targ_Avion
 {
     internal class Program
@@ -25,6 +29,12 @@ namespace Targ_Avion
             AvionClass avionNou=new AvionClass();
             int nr_avioane = 0;
             string optiune;
+
+            //adaugarea tablou in scara
+            //File.ReadAllLines citeste toate liniile din fisier
+            string [] linii = File.ReadAllLines("avioane.txt");
+            AvionClass[][] planes = new AvionClass[26][];
+
             do
             {
 
@@ -36,6 +46,7 @@ namespace Targ_Avion
                 Console.WriteLine("B.Salvare avion in fisier");
                 Console.WriteLine("E.Cautarea dupa anumite criterii a avionului");
                 Console.WriteLine("F.Cautarea avioanele dupa anumite criterii");
+                Console.WriteLine("L.Tablou in scara");
                 Console.WriteLine("X. Inchidere program");
 
                 Console.WriteLine("Alegeti o optiune");
@@ -91,6 +102,9 @@ namespace Targ_Avion
                         {
                             Console.WriteLine(avion);
                         }*/
+                        break;
+                    case "L":
+                        Afisare_Vector_de_tablou_scara(planes, linii);
                         break;
                     case "X":
                         return;
@@ -158,5 +172,50 @@ namespace Targ_Avion
             }
         }
 
+        public static void Afisare_Vector_de_tablou_scara(AvionClass[][] planes ,string[]linii)
+        {
+            //split-ul este separeaza datele prin ;
+           for (int i = 0; i < 26; i++)
+            {
+                char litera = (char)('a' + i);
+                planes[i] = linii
+                .Select(line =>
+                {
+                    string[] parts = line.Split(';');
+                    return new AvionClass
+                    {
+                        ID_avion = int.Parse(parts[0]),
+                        firma = parts[1],
+                        model = parts[2],
+                        an_fabricatie = int.Parse(parts[3]),
+                        culoare = parts[4],
+                        greutate = double.Parse(parts[5]),
+                        pret = double.Parse(parts[6]),
+                        nr_de_pasageri = int.Parse(parts[7])
+                    };
+                })
+                .Where(plane => plane.firma.StartsWith(litera.ToString(), StringComparison.OrdinalIgnoreCase))
+                //Where -este functia care filtreaza datele din fisier,StringComparison.OrdinalIgnoreCase verifica
+                // daca un cuvant a inceput cu o litera
+                .ToArray();
+            }
+
+           for(int i = 0; i < 26; i++)
+            {
+                Console.WriteLine($"Avioanele care încep cu '{(char)('a' + i)}':");
+                //foreach--este o structura de control care itereaza fiecare element dintr-o colectie
+                //In acest proiect se pacurge fiecare avion din sub-tabloul specificat.
+                foreach(AvionClass plane in planes[i])
+                {
+                    string afisare = $"ID:{plane.ID_avion}\nFirma:{plane.firma ?? "Necunoscut"}\n Model:{plane.model ?? "necunoscut"}\n Anul in care este fabricat {plane.an_fabricatie} \n Culoarea:{plane.culoare ?? "necunoscut"}\n" +
+                           $"Greutatea:{plane.greutate}\n Pret:{plane.pret}\n Numar de pasageri:{plane.nr_de_pasageri}";
+                    Console.WriteLine(afisare);
+                }
+            }
+            
+
+        }
+
     }
+
 }
