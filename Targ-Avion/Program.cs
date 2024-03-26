@@ -177,7 +177,7 @@ namespace Targ_Avion
             //split-ul este separeaza datele prin ;
            for (int i = 0; i < 26; i++)
             {
-                char litera = (char)('a' + i);
+                char litera = (char)('a' + i); //gasirea cuvintelor care incep cu litera a,b  pana la z
                 planes[i] = linii
                 .Select(line =>
                 {
