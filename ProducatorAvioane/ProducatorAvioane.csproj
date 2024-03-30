@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B7FC2641-A673-42BF-AF4C-83F128A13E57}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Targ_Avion</RootNamespace>
-    <AssemblyName>Targ_Avion</AssemblyName>
+    <ProjectGuid>{06AB7DFC-53FD-4866-A830-71BA63C2E18F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProducatorAvioane</RootNamespace>
+    <AssemblyName>ProducatorAvioane</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,12 +30,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,25 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ProductAvion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Avion\Avion.csproj">
-      <Project>{1d5e85be-1828-4f45-b0e0-4f4dab962193}</Project>
-      <Name>Avion</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Niveldestocare_Date\Niveldestocare_Date.csproj">
-      <Project>{717aa1e2-a5be-4545-8a77-31ec56011667}</Project>
-      <Name>Niveldestocare_Date</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ProducatorAvioane\ProducatorAvioane.csproj">
-      <Project>{06ab7dfc-53fd-4866-a830-71ba63c2e18f}</Project>
-      <Name>ProducatorAvioane</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

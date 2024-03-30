@@ -24,13 +24,12 @@ namespace Avion
         public string model { set; get; }
         public int an_fabricatie { set; get; }
         public string culoare { set; get; }
-        public double greutate { set; get; }
-        public double pret { set; get; }
+        public decimal greutate { set; get; }
+        public decimal pret { set; get; }
         public int nr_de_pasageri { set; get; }
         public AvionClass()
         {
             firma = model = string.Empty;
-
             an_fabricatie = 0;
             culoare = string.Empty;
             greutate = 0;
@@ -38,7 +37,7 @@ namespace Avion
             nr_de_pasageri = 0;
 
         }
-        public AvionClass(int idAvion,string firma, string model, int an_fabricatie, string culoare, double greutate, double pret, int nr_de_pasageri)
+        public AvionClass(int idAvion,string firma, string model, int an_fabricatie, string culoare, decimal greutate, decimal pret, int nr_de_pasageri)
         {
             this.ID_avion = idAvion;
             this.firma = firma;
@@ -61,8 +60,8 @@ namespace Avion
             this.model = dateFisier[MODEL];
             this.an_fabricatie = Convert.ToInt32(dateFisier[AN_FABRICATIA]);
             this.culoare = dateFisier[CULOARE];
-            this.greutate = Convert.ToDouble(dateFisier[GREUTATE]);
-            this.pret = Convert.ToDouble(dateFisier[PRET]);
+            this.greutate = Convert.ToDecimal(dateFisier[GREUTATE]);
+            this.pret = Convert.ToDecimal(dateFisier[PRET]);
             this.nr_de_pasageri = Convert.ToInt32(dateFisier[NRPASAGERI]);
         }
         public string Info()

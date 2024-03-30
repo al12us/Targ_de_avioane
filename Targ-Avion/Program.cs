@@ -12,14 +12,19 @@ using Niveldestocare_Date;
 using System.Runtime.ConstrainedExecution;
 using Microsoft.SqlServer.Server;
 using System.Reflection;
+using ProducatorAvioane;
 namespace Targ_Avion
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            AvionClass obiect = new AvionClass(0,"TAROM","B-20",2010,"violet",105.5,1000.16,1000);
+            AvionClass obiect = new AvionClass(0,"TAROM","B-20",2010,"violet",105.5m,1000.16m,1000);
            Console.WriteLine(obiect.Info());
+            Console.WriteLine();
+            ProductAvion producator = new ProductAvion();
+            ProductAvion exemplu = new ProductAvion("AIRBUS","Franta",1970,100000,"civila");
+            Console.WriteLine(exemplu.InfoProduct());
             //Cu fisiere
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
             AdministrareAvioane_FisierText adminPLANE = new AdministrareAvioane_FisierText(numeFisier);
@@ -133,10 +138,10 @@ namespace Targ_Avion
             string culoarea = Console.ReadLine();
 
             Console.WriteLine("Introduceti greutatea");
-            double greutatea = Convert.ToDouble(Console.ReadLine());
+            decimal greutatea = Convert.ToDecimal(Console.ReadLine());
 
             Console.WriteLine("Introduceti pretul");
-            double pretul = Convert.ToDouble(Console.ReadLine());
+            decimal pretul = Convert.ToDecimal(Console.ReadLine());
 
             Console.WriteLine("Introduceti numarul de pasageri de la tastatura");
             int nrpassageri = Convert.ToInt32(Console.ReadLine());
@@ -148,7 +153,7 @@ namespace Targ_Avion
         }
         public static void AfisareAvion(AvionClass avion)
         {
-            string infoStudent = string.Format("Avionul cu id-ul #{0} are numele: {1} {2} {3} {4} {5} {6} {7}",
+            string infoAvion = string.Format("Avionul cu id-ul #{0} are numele: {1} {2} {3} {4} {5} {6} {7}",
                     avion.ID_avion,
                     avion.firma ?? " NECUNOSCUT ",
                     avion.model ?? " NECUNOSCUT ",
@@ -159,7 +164,7 @@ namespace Targ_Avion
                     avion.nr_de_pasageri);
                     
 
-            Console.WriteLine(infoStudent);
+            Console.WriteLine(infoAvion);
         }
 
         public static void AfisareAvioane(AvionClass[] avioane, int nr_avioane)
@@ -189,8 +194,8 @@ namespace Targ_Avion
                         model = parts[2],
                         an_fabricatie = int.Parse(parts[3]),
                         culoare = parts[4],
-                        greutate = double.Parse(parts[5]),
-                        pret = double.Parse(parts[6]),
+                        greutate = decimal.Parse(parts[5]),
+                        pret = decimal.Parse(parts[6]),
                         nr_de_pasageri = int.Parse(parts[7])
                     };
                 })
@@ -217,5 +222,8 @@ namespace Targ_Avion
         }
 
     }
+
+    ///Producatorul de avioane
+    ///
 
 }
