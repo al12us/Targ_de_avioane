@@ -43,12 +43,18 @@
   <ItemGroup>
     <Compile Include="AdministrareaAvioaneMemorie.cs" />
     <Compile Include="AdministrareAvioane_FisierText.cs" />
+    <Compile Include="AdministrareProducatorMemorie.cs" />
+    <Compile Include="AdministratorProducator_FisierText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Avion\Avion.csproj">
       <Project>{1D5E85BE-1828-4F45-B0E0-4F4DAB962193}</Project>
       <Name>Avion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProducatorAvioane\ProducatorAvioane.csproj">
+      <Project>{06ab7dfc-53fd-4866-a830-71ba63c2e18f}</Project>
+      <Name>ProducatorAvioane</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
