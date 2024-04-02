@@ -19,11 +19,11 @@ namespace Targ_Avion
     {
         static void Main(string[] args)
         {
-            AvionClass obiect = new AvionClass(0,"TAROM","B-20",2010,"violet",105.5m,1000.16m,1000);
+            AvionClass obiect = new AvionClass(0,"TAROM","B-20",2010,Culoarea.violet,105.5m,1000.16m,1000);
            Console.WriteLine(obiect.Info());
             Console.WriteLine();
             ProductAvion producator = new ProductAvion();
-            ProductAvion exemplu = new ProductAvion("AIRBUS","Franta",1970,100000,"civila");
+            ProductAvion exemplu = new ProductAvion (0,"AIRBUS","Franta",1970,4000,Specializarea.civil);
             Console.WriteLine(exemplu.InfoProduct());
             //Cu fisiere
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
@@ -91,12 +91,12 @@ namespace Targ_Avion
                         string Firma;
                         string Model;
                         int fabricatie;
-                        string Culoare;
                         Firma = Console.ReadLine();
                         Model = Console.ReadLine();
                         fabricatie = Convert.ToInt32(Console.ReadLine());
-                        Culoare = Console.ReadLine();
-                        Console.WriteLine(adminPlane.GetPlane(Firma, Model,fabricatie,Culoare).Info());
+                        string color = Console.ReadLine();
+                        Culoarea culoare = (Culoarea)Enum.Parse(typeof(Culoarea), color);
+                        Console.WriteLine(adminPlane.GetPlane(Firma, Model,fabricatie,culoare).Info());
                         break;
                     case "F":
                         
@@ -135,8 +135,8 @@ namespace Targ_Avion
             int an_fabricatia = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Introduceti Culoarea");
-            string culoarea = Console.ReadLine();
-
+            string culoare = Console.ReadLine();
+             Culoarea culoarea = (Culoarea)Enum.Parse(typeof(Culoarea), culoare);
             Console.WriteLine("Introduceti greutatea");
             decimal greutatea = Convert.ToDecimal(Console.ReadLine());
 
@@ -158,7 +158,7 @@ namespace Targ_Avion
                     avion.firma ?? " NECUNOSCUT ",
                     avion.model ?? " NECUNOSCUT ",
                     avion.an_fabricatie,
-                    avion.culoare ?? "NECUNOSCUT",
+                    avion.culoare.ToString(),
                     avion.greutate,
                     avion.pret,
                     avion.nr_de_pasageri);
@@ -193,7 +193,7 @@ namespace Targ_Avion
                         firma = parts[1],
                         model = parts[2],
                         an_fabricatie = int.Parse(parts[3]),
-                        culoare = parts[4],
+                        culoare = (Culoarea)Enum.Parse(typeof(Culoarea),parts[4]),
                         greutate = decimal.Parse(parts[5]),
                         pret = decimal.Parse(parts[6]),
                         nr_de_pasageri = int.Parse(parts[7])
@@ -212,7 +212,7 @@ namespace Targ_Avion
                 //In acest proiect se pacurge fiecare avion din sub-tabloul specificat.
                 foreach(AvionClass plane in planes[i])
                 {
-                    string afisare = $"ID:{plane.ID_avion}\nFirma:{plane.firma ?? "Necunoscut"}\n Model:{plane.model ?? "necunoscut"}\n Anul in care este fabricat {plane.an_fabricatie} \n Culoarea:{plane.culoare ?? "necunoscut"}\n" +
+                    string afisare = $"ID:{plane.ID_avion}\nFirma:{plane.firma ?? "Necunoscut"}\n Model:{plane.model ?? "necunoscut"}\n Anul in care este fabricat {plane.an_fabricatie} \n Culoarea:{plane.culoare}\n" +
                            $"Greutatea:{plane.greutate}\n Pret:{plane.pret}\n Numar de pasageri:{plane.nr_de_pasageri}";
                     Console.WriteLine(afisare);
                 }

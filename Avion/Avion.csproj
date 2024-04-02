@@ -45,11 +45,5 @@
     <Compile Include="Enumerari.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ProducatorAvioane\ProducatorAvioane.csproj">
-      <Project>{06ab7dfc-53fd-4866-a830-71ba63c2e18f}</Project>
-      <Name>ProducatorAvioane</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

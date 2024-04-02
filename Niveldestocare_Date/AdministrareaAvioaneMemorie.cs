@@ -23,7 +23,7 @@ namespace Niveldestocare_Date
             avioane[nr_avioane] = avionul;
             nr_avioane++;
         }
-        public AvionClass GetPlane(string Firma, string Model,int fabricatie,string Culoare)
+        public AvionClass GetPlane(string Firma, string Model,int fabricatie,Culoarea Culoare)
         {
             for (int i = 0; i < nr_avioane; i++)
             {

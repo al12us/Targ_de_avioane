@@ -44,5 +44,11 @@
     <Compile Include="ProductAvion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Avion\Avion.csproj">
+      <Project>{1d5e85be-1828-4f45-b0e0-4f4dab962193}</Project>
+      <Name>Avion</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

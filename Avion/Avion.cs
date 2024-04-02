@@ -23,7 +23,7 @@ namespace Avion
         public string firma { set; get; }
         public string model { set; get; }
         public int an_fabricatie { set; get; }
-        public string culoare { set; get; }
+        public Culoarea culoare { set; get; }
         public decimal greutate { set; get; }
         public decimal pret { set; get; }
         public int nr_de_pasageri { set; get; }
@@ -31,13 +31,12 @@ namespace Avion
         {
             firma = model = string.Empty;
             an_fabricatie = 0;
-            culoare = string.Empty;
             greutate = 0;
             pret = 0;
             nr_de_pasageri = 0;
 
         }
-        public AvionClass(int idAvion,string firma, string model, int an_fabricatie, string culoare, decimal greutate, decimal pret, int nr_de_pasageri)
+        public AvionClass(int idAvion,string firma, string model, int an_fabricatie, Culoarea culoare, decimal greutate, decimal pret, int nr_de_pasageri)
         {
             this.ID_avion = idAvion;
             this.firma = firma;
@@ -59,14 +58,14 @@ namespace Avion
             this.firma = dateFisier[FIRMA];
             this.model = dateFisier[MODEL];
             this.an_fabricatie = Convert.ToInt32(dateFisier[AN_FABRICATIA]);
-            this.culoare = dateFisier[CULOARE];
+            this.culoare = (Culoarea)Enum.Parse(typeof(Culoarea),dateFisier[CULOARE]);
             this.greutate = Convert.ToDecimal(dateFisier[GREUTATE]);
             this.pret = Convert.ToDecimal(dateFisier[PRET]);
             this.nr_de_pasageri = Convert.ToInt32(dateFisier[NRPASAGERI]);
         }
         public string Info()
         {
-            string afisare = $"ID:{ID_avion}\nFirma:{firma ?? "Necunoscut"}\n Model:{model ?? "necunoscut"}\n Anul in care este fabricat {an_fabricatie} \n Culoarea:{culoare ?? "necunoscut"}\n" +
+            string afisare = $"ID:{ID_avion}\nFirma:{firma ?? "Necunoscut"}\n Model:{model ?? "necunoscut"}\n Anul in care este fabricat {an_fabricatie} \n Culoarea:{culoare}\n" +
                              $"Greutatea:{greutate}\n Pret:{pret}\n Numar de pasageri:{nr_de_pasageri}";
             return afisare;
 
@@ -80,7 +79,7 @@ namespace Avion
                 (firma ?? " NECUNOSCUT "),
                 (model ?? " NECUNOSCUT "),
                 an_fabricatie.ToString(),
-                (culoare ?? "NECUNOSCUT"),
+                culoare.ToString(),
                 greutate.ToString(),
                 pret.ToString(),
                 nr_de_pasageri.ToString());

@@ -28,7 +28,7 @@ namespace Niveldestocare_Date
             // modul 'append' de deschidere al fisierului
             using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier_2, true))
             {
-                //streamWriterFisierText.WriteLine(producator.ConversieSir_PentruFisier());
+                streamWriterFisierText.WriteLine(producator.ConversieSir_PentruFisier());
             }
         }
         public ProductAvion[] GetProducts(out int nr_producatori)
