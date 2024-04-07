@@ -26,6 +26,7 @@ namespace Targ_Avion
             ProductAvion producator = new ProductAvion();
             ProductAvion exemplu = new ProductAvion(0, "AIRBUS", "Franta", 1970, 4000, Specializarea.civil);
             Console.WriteLine(exemplu.InfoProduct());
+            AdministrareProducatorMemorie adminProductPlane = new AdministrareProducatorMemorie();
             //Cu fisiere
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
             AdministrareAvioane_FisierText adminPLANE = new AdministrareAvioane_FisierText(numeFisier);
@@ -34,6 +35,7 @@ namespace Targ_Avion
             // se aplica la ambele
             AvionClass avionNou = new AvionClass();
             int nr_avioane = 0;
+            int nr_producatori = 0;
             string optiune;
 
             //adaugarea tablou in scara
@@ -89,7 +91,7 @@ namespace Targ_Avion
                     case "B":
                         idAvion = ++nr_avioane;
                         avionNou.ID_avion = idAvion;
-                        //adaugare student in fisier
+                        //adaugare avion in fisier
                         adminPLANE.AddPlane(avionNou);
 
                         break;
@@ -116,6 +118,24 @@ namespace Targ_Avion
                         break;
                     case "L":
                         Afisare_Vector_de_tablou_scara(planes, linii);
+                        break;
+                    ///Producator de avioane
+                    case "R":
+                        //Citeste producatorul de avioane
+                       producator= CitireDeLaTastatura();
+                        break;
+                    case "TB":
+                        AfisareProducator(producator);
+                        break;
+                    case "AC":
+                        ProductAvion[] producatori = adminProductPlane.GetProducator(out  nr_producatori);
+                        AfisProductAeronave(producatori, nr_producatori);
+                        break;
+                    case "SC":
+                        int idProductAvion = nr_producatori + 1;
+                        producator.ID_Producator = idProductAvion;
+                        //adaugare avion in vectorul de obiecte
+                        adminProductPlane.AddProducator(producator);
                         break;
                     case "X":
                         return;
@@ -250,8 +270,9 @@ namespace Targ_Avion
         public static void AfisareProducator(ProductAvion producator)
         {
             string InfoProductator = String.Format("Producatorul cu ID:{0} are urmatoarele date:{1} {2} {3} {4} {5}",
-                producator.companie,
-                producator.TaraOrigine,
+                producator.ID_Producator,
+                producator.companie ?? "NECUNOSCUT",
+                producator.TaraOrigine ?? "NECUNOSCUT",
                 producator.AnInfiintare,
                 producator.nrAngajati,
                 producator.specializare.ToString());
