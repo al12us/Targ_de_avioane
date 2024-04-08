@@ -10,7 +10,7 @@ namespace ProducatorAvioane
     public class ProductAvion
 
     {
-        private const char SEPARATOARE_PRINCIPALA_FISIER = ';';
+        private const char SEPARATOARE_SECUNDAR_FISIER = ';';
 
         private const int ID = 0;
         private const int COMPANIE = 1;
@@ -46,7 +46,7 @@ namespace ProducatorAvioane
         //Constructorul pentru fisierul Producatorul de avioane
         public ProductAvion(string linieFisierB)
         {
-            var dateFisier_Beta = linieFisierB.Split(SEPARATOARE_PRINCIPALA_FISIER);
+            var dateFisier_Beta = linieFisierB.Split(SEPARATOARE_SECUNDAR_FISIER);
 
             this.ID_Producator = Convert.ToInt32(dateFisier_Beta[ID]);
             this.companie = dateFisier_Beta[COMPANIE];
@@ -64,11 +64,11 @@ namespace ProducatorAvioane
         }
         public string ConversieSir_PentruFisier()
         {
-            string obiectProductAvionfisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5]{0}",
-                SEPARATOARE_PRINCIPALA_FISIER,
+            string obiectProductAvionfisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}",
+                SEPARATOARE_SECUNDAR_FISIER,
                 ID_Producator.ToString(),
-                companie ?? "NECUNOSCUT",
-                TaraOrigine ?? "NECUNOSCUT",
+                (companie ?? "NECUNOSCUT"),
+                (TaraOrigine ?? "NECUNOSCUT"),
                 AnInfiintare.ToString(),
                 nrAngajati.ToString(),
                 specializare.ToString());
