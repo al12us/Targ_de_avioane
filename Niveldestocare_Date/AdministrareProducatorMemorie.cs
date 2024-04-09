@@ -1,4 +1,5 @@
-﻿using ProducatorAvioane;
+﻿using Avion;
+using ProducatorAvioane;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,19 @@ namespace Niveldestocare_Date
         {
             nr_producatori=this.nr_producatori;
             return producatori;
+
+        }
+        //Cautarea producatorului va fi facuta pe trei criterii(companie,tara de origine si specializare)
+        public ProductAvion CautareProducator(string compania,string TaradeOrigine,Specializarea spec)
+        {
+            for(int i = 0; i < nr_producatori; i++)
+            {
+
+                if (producatori[i].companie == compania && producatori[i].TaraOrigine == TaradeOrigine && producatori[i].specializare==spec)
+
+                    return producatori[i];
+            }
+            return null;
 
         }
     }

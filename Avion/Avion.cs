@@ -63,12 +63,14 @@ namespace Avion
             this.pret = Convert.ToDecimal(dateFisier[PRET]);
             this.nr_de_pasageri = Convert.ToInt32(dateFisier[NRPASAGERI]);
         }
-        public string Info()
+        public string Info
         {
-            string afisare = $"ID:{ID_avion}\nFirma:{firma ?? "Necunoscut"}\n Model:{model ?? "necunoscut"}\n Anul in care este fabricat {an_fabricatie} \n Culoarea:{culoare}\n" +
-                             $"Greutatea:{greutate}\n Pret:{pret}\n Numar de pasageri:{nr_de_pasageri}";
-            return afisare;
-
+            get
+            {
+                string afisare = $"ID:{ID_avion}\nFirma:{firma ?? "Necunoscut"}\n Model:{model ?? "necunoscut"}\n Anul in care este fabricat {an_fabricatie} \n Culoarea:{culoare}\n" +
+                                 $"Greutatea:{greutate}\n Pret:{pret}\n Numar de pasageri:{nr_de_pasageri}";
+                return afisare;
+            }
         }
 
         public string ConversieLaSir_PentruFisier()

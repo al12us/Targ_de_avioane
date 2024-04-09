@@ -20,7 +20,7 @@ namespace Targ_Avion
         static void Main(string[] args)
         {
             AvionClass obiect = new AvionClass(0, "TAROM", "B-20", 2010, Culoarea.violet, 105.5m, 1000.16m, 1000);
-            Console.WriteLine(obiect.Info());
+            Console.WriteLine(obiect.Info);
   
           
             //Cu fisiere
@@ -41,7 +41,7 @@ namespace Targ_Avion
             ///S-a adaugat producatorul de avioane
             ProductAvion producator = new ProductAvion();
             ProductAvion exemplu = new ProductAvion(0, "AIRBUS", "Franta", 1970, 4000, Specializarea.civil);
-            Console.WriteLine(exemplu.InfoProduct());
+            Console.WriteLine(exemplu.InfoProduct);
             AdministrareProducatorMemorie adminProductPlane = new AdministrareProducatorMemorie();
             string numeFisier_2 = ConfigurationManager.AppSettings["NumeFisier_2"];
             AdministratorProducator_FisierText administratorProducatorPlane = new AdministratorProducator_FisierText(numeFisier_2);
@@ -66,6 +66,7 @@ namespace Targ_Avion
                 Console.WriteLine("TB.Afisarea informatiilor despre ultimul producator de avioane introdus");
                 Console.WriteLine("AC.Afisare producatori de aeronave din fisier");
                 Console.WriteLine("SC.Salvarea producator de avioane");
+                Console.WriteLine("ED.Cautarea dupa anumite criterii a producatorului");
                 Console.WriteLine("DT.Afisare in fisier producatori de avioane");
                 Console.WriteLine("BD.Salvare producator_de_avioane in fisier");
                 Console.WriteLine("BL.Tabloul in scara la producatorul de avioane");
@@ -108,22 +109,26 @@ namespace Targ_Avion
                         string Firma;
                         string Model;
                         int fabricatie;
+                        Console.WriteLine("Firma:");
                         Firma = Console.ReadLine();
+                        Console.WriteLine("Model");
                         Model = Console.ReadLine();
+                        Console.WriteLine("Anul in care a fost fabricat");
                         fabricatie = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Culoarea avionului:");
                         string color = Console.ReadLine();
                         Culoarea culoare = (Culoarea)Enum.Parse(typeof(Culoarea), color);
-                        Console.WriteLine(adminPlane.GetPlane(Firma, Model, fabricatie, culoare).Info());
+                        Console.WriteLine(adminPlane.GetPlane(Firma, Model, fabricatie, culoare).Info);
                         break;
                     case "F":
 
-                        /*Firma = Console.ReadLine();
+                        Firma = Console.ReadLine();
                         Model = Console.ReadLine();
                         AvionClass[] avioane_gasite = adminPlane.GetAvion(Firma, Model,out int nr_avioane1);
                         foreach (AvionClass avion in avioane_gasite)
                         {
                             Console.WriteLine(avion);
-                        }*/
+                        }
                         break;
                     case "L":
                         Afisare_Vector_de_tablou_scara(planes, linii);
@@ -136,15 +141,28 @@ namespace Targ_Avion
                     case "TB":
                         AfisareProducator(producator);
                         break;
+                    ///Afisarea in memorie a producatorilor de aeronave
                     case "AC":
                         ProductAvion[] producatori = adminProductPlane.GetProducator(out  nr_producatori);
                         AfisProductAeronave(producatori, nr_producatori);
                         break;
+                        //Salvare vector de obiecte din clasa ProductAvion
                     case "SC":
                         int idProductAvion = nr_producatori + 1;
                         producator.ID_Producator = idProductAvion;
-                        //adaugare avion in vectorul de obiecte
+                        //adaugare producator in vectorul de obiecte
                         adminProductPlane.AddProducator(producator);
+                        break;
+                    ///Cautarea producatorului de aeronave
+                    case "ED":
+                        Console.WriteLine("Compania de aeronave");
+                        string compania = Console.ReadLine();
+                        Console.WriteLine("Tara de origine:");
+                        string tara = Console.ReadLine();
+                        Console.WriteLine("Specializarea producatorului de aeronave");
+                        string _spec= Console.ReadLine();
+                        Specializarea spec = (Specializarea)Enum.Parse(typeof(Specializarea),_spec);
+                        Console.WriteLine(adminProductPlane.CautareProducator(compania,tara,spec).InfoProduct);
                         break;
                     case "DT":
                        ProductAvion[] planeproductors= administratorProducatorPlane.GetProducts(out nr_producatori);
@@ -220,7 +238,7 @@ namespace Targ_Avion
             Console.WriteLine("Avioanele sunt:");
             for (int contor = 0; contor < nr_avioane; contor++)
             {
-                string infoAvion = avioane[contor].Info();
+                string infoAvion = avioane[contor].Info;
                 Console.WriteLine(infoAvion);
             }
         }
@@ -306,7 +324,7 @@ namespace Targ_Avion
             Console.WriteLine("Producatorii de avioane sunt:");
             for(int contor_prod = 0; contor_prod < nr_producatori; contor_prod++)
             {
-                string InfoProducator=producatori[contor_prod].InfoProduct();
+                string InfoProducator=producatori[contor_prod].InfoProduct;
                 Console.WriteLine(InfoProducator);
             }
 
@@ -343,7 +361,7 @@ namespace Targ_Avion
             {
                 Console.WriteLine($"Avioanele care încep cu '{(char)('a' + i)}':");
                 //foreach--este o structura de control care itereaza fiecare element dintr-o colectie
-                //In acest proiect se pacurge fiecare avion din sub-tabloul specificat.
+                //In acest proiect se pacurge fiecare producator de avioane din sub-tabloul specificat.
                 foreach (ProductAvion product_plane in the_productsplane[i])
                 {
                     string afisare = $"ID:{product_plane.ID_Producator}\nCompania:{product_plane.companie ?? "Necunoscut"}\n Tara de origine:{product_plane.TaraOrigine ?? "necunoscut"}\n Anul in care a fost infiintat {product_plane.AnInfiintare} \n Numarul de angajati:{product_plane.nrAngajati}\n" +

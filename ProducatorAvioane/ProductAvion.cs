@@ -56,12 +56,15 @@ namespace ProducatorAvioane
             this.specializare = (Specializarea)Enum.Parse(typeof(Specializarea), dateFisier_Beta[SPECIALIZARE]);
 
         }
-        public string InfoProduct()
+        public string InfoProduct
         {
-            string afis = $"ID:{ID_Producator}\n Compania:{companie}\n Tara de origine:{TaraOrigine}\n Infiintat din  {AnInfiintare} \n " +
-                          $"Numar de angajati:{nrAngajati}\n Specilizarea:{specializare}";
-            return afis;
-        }
+            get
+            {
+                string afis = $"ID:{ID_Producator}\n Compania:{companie}\n Tara de origine:{TaraOrigine}\n Infiintat din  {AnInfiintare} \n " +
+                              $"Numar de angajati:{nrAngajati}\n Specilizarea:{specializare}";
+                return afis;
+            }
+          }
         public string ConversieSir_PentruFisier()
         {
             string obiectProductAvionfisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}",
