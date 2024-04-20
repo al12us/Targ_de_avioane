@@ -48,7 +48,7 @@ namespace Niveldestocare_Date
                     avioane[nr_avioane++] = new AvionClass(linieFisier);
                 }
             }
-
+            Array.Resize(ref avioane, nr_avioane);
             return avioane;
         }
     }
