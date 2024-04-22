@@ -312,6 +312,7 @@ namespace Targ_Avioane_Interfata
             txtIntroducereFirma.Top = 40;
             
             this.Controls.Add(txtIntroducereFirma);
+            //Introducere de date model
 
             lblIntroducereModel = new Label();
             lblIntroducereModel.Width = LUNGIME_CONTROL;
@@ -328,6 +329,70 @@ namespace Targ_Avioane_Interfata
             txtIntroducereModel.Left = DIMENSIUNEA_PAS_X * 9 - 80;
             txtIntroducereModel.Top = 70;
             this.Controls.Add(txtIntroducereModel);
+
+            ///Introducere anfabricatie
+            lblIntroducereAnFabricatie = new Label();
+            lblIntroducereAnFabricatie.Width = LUNGIME_CONTROL;
+            lblIntroducereAnFabricatie.Height = LATIME_CONTROL / 3;
+            lblIntroducereAnFabricatie.Left = DIMENSIUNEA_PAS_X * 8 + 20;
+            lblIntroducereAnFabricatie.Top = 100;
+            lblIntroducereAnFabricatie.Text = "An fabricatie:";
+            lblIntroducereAnFabricatie.BackColor = Color.Aqua;
+            this.Controls.Add(lblIntroducereAnFabricatie);
+
+            //caseta anfabricatie
+            txtIntroducereAnFabricatie = new TextBox();
+            txtIntroducereAnFabricatie.Width = LUNGIME_CONTROL * 3;
+            txtIntroducereAnFabricatie.Height = LATIME_CONTROL * 2;
+            txtIntroducereAnFabricatie.Left = DIMENSIUNEA_PAS_X * 9 - 80;
+            txtIntroducereAnFabricatie.Top = 100;
+            this.Controls.Add(txtIntroducereAnFabricatie);
+
+            //Introducere Culoare
+            lblIntroducereCuloare = new Label();
+            lblIntroducereCuloare.Width = LUNGIME_CONTROL;
+            lblIntroducereCuloare.Height = LATIME_CONTROL / 3;
+            lblIntroducereCuloare.Left = DIMENSIUNEA_PAS_X * 8 + 20;
+            lblIntroducereCuloare.Top = 130;
+            lblIntroducereCuloare.Text = "Culoare:";
+            lblIntroducereCuloare.BackColor = Color.Aqua;
+            this.Controls.Add(lblIntroducereCuloare);
+
+            txtIntroduceCuloare = new TextBox();
+            txtIntroduceCuloare.Width = LUNGIME_CONTROL * 3;
+            txtIntroduceCuloare.Height = LATIME_CONTROL * 2;
+            txtIntroduceCuloare.Left = DIMENSIUNEA_PAS_X * 9 - 80;
+            txtIntroduceCuloare.Top = 130;
+            this.Controls.Add(txtIntroduceCuloare);
+
+            lblIntroduceregreutate = new Label();
+            lblIntroduceregreutate.Width = LUNGIME_CONTROL;
+            lblIntroduceregreutate.Height = LATIME_CONTROL / 3;
+            lblIntroduceregreutate.Left = DIMENSIUNEA_PAS_X * 8 + 20;
+            lblIntroduceregreutate.Top = 160;
+            lblIntroduceregreutate.Text = "Greutatatea:";
+            lblIntroduceregreutate.BackColor = Color.Aqua;
+            this.Controls.Add(lblIntroduceregreutate);
+
+            lblIntroducerepret = new Label();
+            lblIntroducerepret.Width = LUNGIME_CONTROL;
+            lblIntroducerepret.Height = LATIME_CONTROL / 3;
+            lblIntroducerepret.Left = DIMENSIUNEA_PAS_X * 8 + 20;
+            lblIntroducerepret.Top = 190;
+            lblIntroducerepret.Text = "Pret:";
+            lblIntroducerepret.BackColor = Color.Aqua;
+            this.Controls.Add(lblIntroducerepret);
+
+           
+            lblIntroducerenrpasg = new Label();
+            lblIntroducerenrpasg.Width = LUNGIME_CONTROL;
+            lblIntroducerenrpasg.Height = LATIME_CONTROL / 3;
+            lblIntroducerenrpasg.Left = DIMENSIUNEA_PAS_X * 8 + 20;
+            lblIntroducerenrpasg.Top = 220;
+            lblIntroducerenrpasg.Text = "Numar de pasageri:";
+            lblIntroducerenrpasg.BackColor = Color.Aqua;
+            this.Controls.Add(lblIntroducerenrpasg);
+
 
 
         }
