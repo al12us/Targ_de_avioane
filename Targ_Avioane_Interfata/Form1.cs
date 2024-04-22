@@ -62,7 +62,9 @@ namespace Targ_Avioane_Interfata
          
         private Button btnAdaugaAvioane;
         private Button btnRefresh;
-
+        //label
+        private Label lblSalvarePlane;
+        private Label lblRefresh;
 
         private const int LATIME_CONTROL = 90;
         private const int LUNGIME_CONTROL = 60;
@@ -374,6 +376,13 @@ namespace Targ_Avioane_Interfata
             lblIntroduceregreutate.BackColor = Color.Aqua;
             this.Controls.Add(lblIntroduceregreutate);
 
+            txtIntroduceregreutate = new TextBox();
+            txtIntroduceregreutate.Width = LUNGIME_CONTROL * 3;
+            txtIntroduceregreutate.Height = LATIME_CONTROL * 2;
+            txtIntroduceregreutate.Left = DIMENSIUNEA_PAS_X * 9 - 80;
+            txtIntroduceregreutate.Top = 160;
+            this.Controls.Add(txtIntroduceregreutate);
+
             lblIntroducerepret = new Label();
             lblIntroducerepret.Width = LUNGIME_CONTROL;
             lblIntroducerepret.Height = LATIME_CONTROL / 3;
@@ -383,7 +392,13 @@ namespace Targ_Avioane_Interfata
             lblIntroducerepret.BackColor = Color.Aqua;
             this.Controls.Add(lblIntroducerepret);
 
-           
+            txtIntroducepret = new TextBox();
+            txtIntroducepret.Width = LUNGIME_CONTROL * 3;
+            txtIntroducepret.Height = LATIME_CONTROL * 2;
+            txtIntroducepret.Left = DIMENSIUNEA_PAS_X * 9 - 80;
+            txtIntroducepret.Top = 190;
+            this.Controls.Add(txtIntroducepret);
+
             lblIntroducerenrpasg = new Label();
             lblIntroducerenrpasg.Width = LUNGIME_CONTROL;
             lblIntroducerenrpasg.Height = LATIME_CONTROL / 3;
@@ -393,7 +408,44 @@ namespace Targ_Avioane_Interfata
             lblIntroducerenrpasg.BackColor = Color.Aqua;
             this.Controls.Add(lblIntroducerenrpasg);
 
+            txtIntroducerenrpasg = new TextBox();
+            txtIntroducerenrpasg.Width = LUNGIME_CONTROL * 3;
+            txtIntroducerenrpasg.Height = LATIME_CONTROL * 2;
+            txtIntroducerenrpasg.Left = DIMENSIUNEA_PAS_X * 9 - 80;
+            txtIntroducerenrpasg.Top = 220;
+            this.Controls.Add(txtIntroducerenrpasg);
 
+            lblSalvarePlane = new Label();
+            lblSalvarePlane.Width = LUNGIME_CONTROL*3;
+            lblSalvarePlane.Height = LATIME_CONTROL/3;
+            lblSalvarePlane.Left = DIMENSIUNEA_PAS_X * 8 + 20;
+            lblSalvarePlane.Top = 250;
+            lblSalvarePlane.Text = " ";
+            lblSalvarePlane.BackColor = Color.Aqua;
+            this.Controls.Add(lblSalvarePlane);
+
+            btnAdaugaAvioane = new Button();
+            btnAdaugaAvioane.Height = LUNGIME_CONTROL;
+            btnAdaugaAvioane.Width = LATIME_CONTROL;
+            btnAdaugaAvioane.Location = new System.Drawing.Point(DIMENSIUNEA_PAS_X *2+20,  DIMENSIUNEA_PAS_Y*3+20);
+            btnAdaugaAvioane.Text = "&Adauga";
+
+            btnAdaugaAvioane.Click += OnButtonClicked;
+            this.Controls.Add(btnAdaugaAvioane);
+
+
+            lblRefresh = new Label();
+            lblRefresh.Width = LUNGIME_CONTROL * 3;
+            lblRefresh.Height = LATIME_CONTROL / 3;
+            lblRefresh.Left = DIMENSIUNEA_PAS_X * 8 + 20;
+            lblRefresh.Top = 280;
+            lblRefresh.Text = " ";
+            lblRefresh.BackColor = Color.Aqua;
+            this.Controls.Add(lblRefresh);
+
+        }
+        private void OnButtonClicked(object sender,EventArgs e)
+        {
 
         }
         private void OnFormClosed(object sender, EventArgs e)
