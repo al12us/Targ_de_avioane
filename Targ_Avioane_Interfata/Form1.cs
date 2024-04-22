@@ -417,8 +417,8 @@ namespace Targ_Avioane_Interfata
 
             lblSalvarePlane = new Label();
             lblSalvarePlane.Width = LUNGIME_CONTROL*3;
-            lblSalvarePlane.Height = LATIME_CONTROL/3;
-            lblSalvarePlane.Left = DIMENSIUNEA_PAS_X * 8 + 20;
+            lblSalvarePlane.Height = LATIME_CONTROL;
+            lblSalvarePlane.Left = DIMENSIUNEA_PAS_X * 9+10;
             lblSalvarePlane.Top = 250;
             lblSalvarePlane.Text = " ";
             lblSalvarePlane.BackColor = Color.Aqua;
@@ -427,21 +427,33 @@ namespace Targ_Avioane_Interfata
             btnAdaugaAvioane = new Button();
             btnAdaugaAvioane.Height = LUNGIME_CONTROL;
             btnAdaugaAvioane.Width = LATIME_CONTROL;
-            btnAdaugaAvioane.Location = new System.Drawing.Point(DIMENSIUNEA_PAS_X *2+20,  DIMENSIUNEA_PAS_Y*3+20);
+            btnAdaugaAvioane.Location = new System.Drawing.Point(DIMENSIUNEA_PAS_X *8+20,  0);
+            btnAdaugaAvioane.Top = 250;
             btnAdaugaAvioane.Text = "&Adauga";
+            btnAdaugaAvioane.BackColor = Color.Orange;
 
             btnAdaugaAvioane.Click += OnButtonClicked;
             this.Controls.Add(btnAdaugaAvioane);
 
 
             lblRefresh = new Label();
-            lblRefresh.Width = LUNGIME_CONTROL * 3;
-            lblRefresh.Height = LATIME_CONTROL / 3;
-            lblRefresh.Left = DIMENSIUNEA_PAS_X * 8 + 20;
+            lblRefresh.Width = LUNGIME_CONTROL*3;
+            lblRefresh.Height = LATIME_CONTROL ;
+            lblRefresh.Left = DIMENSIUNEA_PAS_X * 9+10;
             lblRefresh.Top = 280;
             lblRefresh.Text = " ";
             lblRefresh.BackColor = Color.Aqua;
             this.Controls.Add(lblRefresh);
+
+
+            btnRefresh = new Button();
+            btnRefresh.Height = LUNGIME_CONTROL;
+            btnRefresh.Width = LATIME_CONTROL;
+            btnRefresh.Location = new System.Drawing.Point(DIMENSIUNEA_PAS_X * 8 + 20, 0);
+            btnRefresh.Top = 310;
+            btnRefresh.Text = "&Refresh";
+            btnRefresh.BackColor = Color.Orange;
+            this.Controls.Add(btnRefresh);
 
         }
         private void OnButtonClicked(object sender,EventArgs e)
