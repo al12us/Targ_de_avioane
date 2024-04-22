@@ -29,7 +29,7 @@ namespace Targ_Avioane_Interfata
         private Label lblpret;
         private Label lblnr_de_pasageri;
 
-
+        //vector
         private Label[] lblsFirme;
         private Label[] lblsModele;
         private Label[] lblsan_fabricatie;
@@ -37,14 +37,35 @@ namespace Targ_Avioane_Interfata
         private Label[] lblsgreutate;
         private Label[] lblsPret;
         private Label[] lblsnr_de_pasageri;
-        
 
+        private Label lblIntroducereFirma;
+        private TextBox txtIntroducereFirma;
+
+        private Label lblIntroducereModel;
+        private TextBox txtIntroducereModel;
+
+        private Label lblIntroducereAnFabricatie;
+        private TextBox txtIntroducereAnFabricatie;
+
+        private Label lblIntroducereCuloare;
+        private TextBox txtIntroduceCuloare;
+
+        private Label lblIntroduceregreutate;
+        private TextBox txtIntroduceregreutate;
+
+        private Label lblIntroducerepret;
+        private TextBox txtIntroducepret;
+
+        private Label lblIntroducerenrpasg;  //numarul de pasageri
+        private TextBox txtIntroducerenrpasg;
+        //butoanele
+         
         private Button btnAdaugaAvioane;
         private Button btnRefresh;
 
 
-        private const int LATIME_CONTROL = 60;
-        private const int LUNGIME_CONTROL = 80;
+        private const int LATIME_CONTROL = 90;
+        private const int LUNGIME_CONTROL = 60;
         private const int DIMENSIUNEA_PAS_X = 100;
         private const int DIMENSIUNEA_PAS_Y = 120;
       
@@ -65,7 +86,7 @@ namespace Targ_Avioane_Interfata
 
 
 
-            this.Size = new Size(900, 800);
+            this.Size = new Size(1200, 720);
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(100, 100);
             this.Font = new Font("Times New Roman", 8, FontStyle.Regular);
@@ -90,19 +111,24 @@ namespace Targ_Avioane_Interfata
             ///Clasa Avion 
             ///firma
             lblFirma = new Label();
+            lblFirma.Height = 40;
             lblFirma.Top = LUNGIME_CONTROL;
-            lblFirma.Left = 20;
+            lblFirma.Left =20;
             lblFirma.Text = "Firma";
+            lblFirma.TextAlign = ContentAlignment.MiddleCenter;
             lblFirma.Font = new Font("Times New Roman", 12, FontStyle.Italic);
             lblFirma.ForeColor = Color.Chocolate;
+            lblFirma.BackColor = Color.White;
             this.Controls.Add(lblFirma);
             //model
             lblModel = new Label();
             lblModel.Top = LUNGIME_CONTROL;
             lblModel.Left = 140;
             lblModel.Text = "Model";
+            lblModel.TextAlign = ContentAlignment.MiddleCenter;
             lblModel.Font = new Font("Times New Roman",12,FontStyle.Italic);
             lblModel.ForeColor = Color.Chocolate;
+            lblModel.BackColor = Color.White;
             this.Controls.Add(lblModel);
             //an_fabricatie
             lblan_fabricatie = new Label();
@@ -110,7 +136,9 @@ namespace Targ_Avioane_Interfata
             lblan_fabricatie.Left = 260;
             lblan_fabricatie.Text = "An_fabricatie";
             lblan_fabricatie.Font = new Font("Times New Roman", 12, FontStyle.Italic);
+            lblan_fabricatie.TextAlign = ContentAlignment.MiddleCenter;
             lblan_fabricatie.ForeColor = Color.Chocolate;
+            lblan_fabricatie.BackColor = Color.White;
             this.Controls.Add(lblan_fabricatie);
 
             //culoare
@@ -119,7 +147,9 @@ namespace Targ_Avioane_Interfata
             lblCuloare.Left = 380;
             lblCuloare.Text = "Culoarea";
             lblCuloare.Font = new Font("Times New Roman", 12, FontStyle.Italic);
+            lblCuloare.TextAlign = ContentAlignment.MiddleCenter;
             lblCuloare.ForeColor=Color.Chocolate;
+            lblCuloare.BackColor = Color.White;
             this.Controls.Add(lblCuloare);
 
             
@@ -129,7 +159,9 @@ namespace Targ_Avioane_Interfata
             lblgreutate.Left = 500;
             lblgreutate.Text = "Greutatea";
             lblgreutate.Font = new Font("Times New Roman", 12, FontStyle.Italic);
+            lblgreutate.TextAlign = ContentAlignment.MiddleCenter;
             lblgreutate.ForeColor = Color.Chocolate;
+            lblgreutate.BackColor = Color.White;
             this.Controls.Add(lblgreutate);
             //pret
             lblpret = new Label();
@@ -137,7 +169,9 @@ namespace Targ_Avioane_Interfata
             lblpret.Left = 600;
             lblpret.Text = "Pretul";
             lblpret.Font = new Font("Times New Roman", 12, FontStyle.Italic);
+            lblpret.TextAlign = ContentAlignment.MiddleCenter;
             lblpret.ForeColor = Color.Chocolate;
+            lblpret.BackColor = Color.White;
             this.Controls.Add(lblpret);
             //nr_de_pasageri
             lblnr_de_pasageri = new Label();
@@ -145,12 +179,15 @@ namespace Targ_Avioane_Interfata
             lblnr_de_pasageri.Left = 700;
             lblnr_de_pasageri.Text = "Nr pasageri";
             lblnr_de_pasageri.Font = new Font("Times New Roman", 12, FontStyle.Italic);
+            lblnr_de_pasageri.TextAlign = ContentAlignment.MiddleCenter;
             lblnr_de_pasageri.ForeColor = Color.Chocolate;
+            lblnr_de_pasageri.BackColor = Color.White;
             this.Controls.Add(lblnr_de_pasageri);
 
-           // this.FormClosed += OnFormClosed;
+            
+            this.FormClosed += OnFormClosed;
 
-
+            ButoaneAvioane();
 
         }
         
@@ -175,47 +212,57 @@ namespace Targ_Avioane_Interfata
                 //adaugare de tip control Label pentru numele firmei
                 lblsFirme[i] = new Label();
                 lblsFirme[i].Width =LATIME_CONTROL;
-                lblsFirme[i].Left = DIMENSIUNEA_PAS_X;
-                lblsFirme[i].Top = (i + 1) *DIMENSIUNEA_PAS_Y;
+                lblsFirme[i].Left = DIMENSIUNEA_PAS_X/3;
+                lblsFirme[i].Top = (i + 1) *DIMENSIUNEA_PAS_Y/2+40;
                 lblsFirme[i].Text = avion.firma;
                 lblsFirme[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
                 lblsFirme[i].ForeColor = Color.DarkCyan;
+                lblsFirme[i].BackColor= Color.White;
+                lblsFirme[i].TextAlign = ContentAlignment.MiddleCenter;
                 this.Controls.Add(lblsFirme[i]);
 
                 lblsModele[i] = new Label();
                 lblsModele[i].Width = LATIME_CONTROL;
                 lblsModele[i].Text = avion.model;
-                lblsModele[i].Left = 2*DIMENSIUNEA_PAS_X;
-                lblsModele[i].Top = (i + 1) *DIMENSIUNEA_PAS_Y;
+                lblsModele[i].Left = 2*DIMENSIUNEA_PAS_X-40;
+                lblsModele[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y / 2+40;
                 lblsModele[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
+                lblsModele[i].TextAlign = ContentAlignment.MiddleCenter;
                 lblsModele[i].ForeColor = Color.DarkCyan;
+                lblsModele[i].BackColor = Color.White;
                 this.Controls.Add(lblsModele[i]);
 
                 lblsan_fabricatie[i] = new Label();
                 lblsan_fabricatie[i].Width = LATIME_CONTROL;
                 lblsan_fabricatie[i].Text = avion.an_fabricatie.ToString();
-                lblsan_fabricatie[i].Left =3*DIMENSIUNEA_PAS_X;
-                lblsan_fabricatie[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y;
+                lblsan_fabricatie[i].Left =3*DIMENSIUNEA_PAS_X -20;
+                lblsan_fabricatie[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y / 2 + 40;
                 lblsan_fabricatie[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
+                lblsan_fabricatie[i].TextAlign = ContentAlignment.MiddleCenter;
                 lblsan_fabricatie[i].ForeColor = Color.DarkCyan;
+                lblsan_fabricatie[i].BackColor = Color.White;
                 this.Controls.Add(lblsan_fabricatie[i]);
 
                 lblsCulori[i] = new Label();
                 lblsCulori[i].Width =LATIME_CONTROL;
                 lblsCulori[i].Text = avion.culoare.ToString();
-                lblsCulori[i].Left = 4 * DIMENSIUNEA_PAS_X;
-                lblsCulori[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y;
+                lblsCulori[i].Left = 4 * DIMENSIUNEA_PAS_X-40;
+                lblsCulori[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y/2+40;
                 lblsCulori[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
+                lblsCulori[i].TextAlign = ContentAlignment.MiddleCenter;
                 lblsCulori[i].ForeColor = Color.DarkCyan;
+                lblsCulori[i].BackColor = Color.White;
                 this.Controls.Add(lblsCulori[i]);
 
                 lblsgreutate[i] = new Label();
                 lblsgreutate[i].Width = LATIME_CONTROL;
                 lblsgreutate[i].Text = avion.greutate.ToString();
                 lblsgreutate[i].Left = 5 * DIMENSIUNEA_PAS_X;
-                lblsgreutate[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y;
+                lblsgreutate[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y / 2 + 40;
                 lblsgreutate[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
+                lblsgreutate[i].TextAlign = ContentAlignment.MiddleCenter;
                 lblsgreutate[i].ForeColor = Color.DarkCyan;
+                lblsgreutate[i].BackColor = Color.White;
                 this.Controls.Add(lblsgreutate[i]);
 
 
@@ -223,9 +270,11 @@ namespace Targ_Avioane_Interfata
                 lblsPret[i].Width = LATIME_CONTROL;
                 lblsPret[i].Text = avion.pret.ToString();
                 lblsPret[i].Left = 6 * DIMENSIUNEA_PAS_X;
-                lblsPret[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y;
+                lblsPret[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y / 2+40;
                 lblsPret[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
+                lblsPret[i].TextAlign = ContentAlignment.MiddleCenter;
                 lblsPret[i].ForeColor = Color.DarkCyan;
+                lblsPret[i].BackColor = Color.White;
                 this.Controls.Add(lblsPret[i]);
 
 
@@ -233,14 +282,53 @@ namespace Targ_Avioane_Interfata
                 lblsnr_de_pasageri[i] = new Label();
                 lblsnr_de_pasageri[i].Width =LATIME_CONTROL;
                 lblsnr_de_pasageri[i].Text = avion.nr_de_pasageri.ToString();
-                lblsnr_de_pasageri[i].Left = 7 * DIMENSIUNEA_PAS_X;
-                lblsnr_de_pasageri[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y;
+                lblsnr_de_pasageri[i].Left = 7 * DIMENSIUNEA_PAS_X+10;
+                lblsnr_de_pasageri[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y / 2 + 40;
                 lblsnr_de_pasageri[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
                 lblsnr_de_pasageri[i].ForeColor = Color.DarkCyan;
+                lblsnr_de_pasageri[i].TextAlign = ContentAlignment.MiddleCenter;
+                lblsnr_de_pasageri[i].BackColor = Color.White;
                 this.Controls.Add(lblsnr_de_pasageri[i]);
 
                 i++;
             }
+
+        }
+        private void ButoaneAvioane()
+        {
+            lblIntroducereFirma = new Label();
+            lblIntroducereFirma.Width = LUNGIME_CONTROL;
+            lblIntroducereFirma.Height = LATIME_CONTROL/ 3;
+            lblIntroducereFirma.Left = DIMENSIUNEA_PAS_X * 8+20;
+            lblIntroducereFirma.Top = 40;
+            lblIntroducereFirma.Text = "Firma:";
+            lblIntroducereFirma.BackColor = Color.Aqua;
+            this.Controls.Add(lblIntroducereFirma);
+
+            txtIntroducereFirma = new TextBox();
+            txtIntroducereFirma.Width = LUNGIME_CONTROL*3;
+            txtIntroducereFirma.Height = LATIME_CONTROL*2;
+            txtIntroducereFirma.Left = DIMENSIUNEA_PAS_X * 9-80;
+            txtIntroducereFirma.Top = 40;
+            
+            this.Controls.Add(txtIntroducereFirma);
+
+            lblIntroducereModel = new Label();
+            lblIntroducereModel.Width = LUNGIME_CONTROL;
+            lblIntroducereModel.Height = LATIME_CONTROL/3;
+            lblIntroducereModel.Left = DIMENSIUNEA_PAS_X * 8 + 20;
+            lblIntroducereModel.Top = 70;
+            lblIntroducereModel.Text = "Model:";
+            lblIntroducereModel.BackColor = Color.Aqua;
+            this.Controls.Add(lblIntroducereModel);
+
+            txtIntroducereModel = new TextBox();
+            txtIntroducereModel.Width = LUNGIME_CONTROL * 3;
+            txtIntroducereModel.Height = LATIME_CONTROL * 2;
+            txtIntroducereModel.Left = DIMENSIUNEA_PAS_X * 9 - 80;
+            txtIntroducereModel.Top = 70;
+            this.Controls.Add(txtIntroducereModel);
+
 
         }
         private void OnFormClosed(object sender, EventArgs e)
