@@ -20,6 +20,7 @@ namespace Targ_Avioane_Interfata
         private AdministrareAvioane_FisierText adminPlanes;
         private Label lbltitlu;  //Titlul proiectului (Targul de avioane)
         //Constructurul  cu parametrii din clasa avion
+        private const int NR_MAX_AVIOANE = 50;
 
         private Label lblFirma;
         private Label lblModel;
@@ -30,13 +31,15 @@ namespace Targ_Avioane_Interfata
         private Label lblnr_de_pasageri;
 
         //vector
-        private Label[] lblsFirme;
-        private Label[] lblsModele;
-        private Label[] lblsan_fabricatie;
-        private Label[] lblsCulori;
-        private Label[] lblsgreutate;
-        private Label[] lblsPret;
-        private Label[] lblsnr_de_pasageri;
+         private Label[] lblsFirme;
+         private Label[] lblsModele;
+         private Label[] lblsan_fabricatie;
+         private Label[] lblsCulori;
+         private Label[] lblsgreutate;
+         private Label[] lblsPret;
+         private Label[] lblsnr_de_pasageri;
+
+        private Label[ , ] lblsAvioane; 
 
         private Label lblIntroducereFirma;
         private TextBox txtIntroducereFirma;
@@ -201,13 +204,14 @@ namespace Targ_Avioane_Interfata
         private void AfiseazaAvioane()
         {
             AvionClass[] avioane = adminPlanes.GetPlanes(out int nr_avioane);
-            lblsFirme = new Label[nr_avioane];
-            lblsModele = new Label[nr_avioane];
-            lblsan_fabricatie = new Label[nr_avioane];
-            lblsCulori = new Label[nr_avioane];
-            lblsgreutate = new Label[nr_avioane];
-            lblsPret = new Label[nr_avioane];
-            lblsnr_de_pasageri = new Label[nr_avioane];
+             lblsFirme = new Label[nr_avioane];
+             lblsModele = new Label[nr_avioane];
+             lblsan_fabricatie = new Label[nr_avioane];
+             lblsCulori = new Label[nr_avioane];
+             lblsgreutate = new Label[nr_avioane];
+             lblsPret = new Label[nr_avioane];
+             lblsnr_de_pasageri = new Label[nr_avioane];
+            lblsAvioane = new Label[NR_MAX_AVIOANE, 7];
             int i = 0;
             foreach (AvionClass avion in avioane)
             {
@@ -291,8 +295,8 @@ namespace Targ_Avioane_Interfata
                 lblsnr_de_pasageri[i].TextAlign = ContentAlignment.MiddleCenter;
                 lblsnr_de_pasageri[i].BackColor = Color.White;
                 this.Controls.Add(lblsnr_de_pasageri[i]);
-
                 i++;
+                
             }
 
         }
@@ -453,20 +457,29 @@ namespace Targ_Avioane_Interfata
             btnRefresh.Top = 310;
             btnRefresh.Text = "&Refresh";
             btnRefresh.BackColor = Color.Orange;
+            btnRefresh.Click += OnButton2Clicked;
             this.Controls.Add(btnRefresh);
 
         }
         private void OnButtonClicked(object sender, EventArgs e)
         {
             bool valid = true;
-            AvionClass avion = new AvionClass(0, 
-                                              txtIntroducereFirma.Text.ToString(),
-                                              txtIntroducereModel.Text.ToString(), 
-                                              Convert.ToInt32(txtIntroducereAnFabricatie.Text.ToString()),
-                                              (Culoarea)Enum.Parse(typeof(Culoarea), txtIntroduceCuloare.Text.ToString()),
-                                              Convert.ToDecimal(txtIntroduceregreutate.Text.ToString()), 
-                                              Convert.ToDecimal(txtIntroducepret.Text.ToString()),
-                                              Convert.ToInt32(txtIntroducerenrpasg.Text.ToString()));
+        
+            int an_fabricatie;
+            Culoarea culoare;
+            decimal greutate;
+            decimal pret;
+            int nr_pasageri;
+             txtIntroducereFirma.Text.ToString();
+             txtIntroducereModel.Text.ToString();
+            bool an_FabricatieValid = Int32.TryParse(txtIntroducereAnFabricatie.Text.ToString(), out an_fabricatie);
+            bool culoareValid = Enum.TryParse(txtIntroduceCuloare.Text.ToString(), out culoare);
+            bool greutateValid = Decimal.TryParse(txtIntroduceregreutate.Text.ToString(), out greutate);
+            bool pretValid=Decimal.TryParse(txtIntroducepret.Text.ToString(), out pret);
+             bool nr_pasgariValid= Int32.TryParse(txtIntroducerenrpasg.Text.ToString(), out nr_pasageri);
+            AvionClass avion = new AvionClass(0, txtIntroducereFirma.Text.ToString(),txtIntroducereModel.Text.ToString(),an_fabricatie,culoare,greutate,pret,nr_pasageri);
+                                             
+     
 
             if (txtIntroducereFirma.Text.ToString() == "" || txtIntroducereFirma.Text.ToString() == "Obligatoriu!")
             {
@@ -561,12 +574,16 @@ namespace Targ_Avioane_Interfata
         }
           
         
-        
+        private void OnButton2Clicked(object sender,EventArgs e)
+        {
+            AfiseazaAvioane();
+            lblRefresh.Text = "Datele despre avioane au fost actualizate";
+        }
         private void OnFormClosed(object sender, EventArgs e)
         {
-            {
+            
                 Application.Exit();
-            }
+            
         }
     }
 }
