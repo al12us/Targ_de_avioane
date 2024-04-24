@@ -459,24 +459,31 @@ namespace Targ_Avioane_Interfata
         private void OnButtonClicked(object sender, EventArgs e)
         {
             bool valid = true;
-            AvionClass avion = new AvionClass(0, txtIntroducereFirma.Text.ToString(), txtIntroducereModel.Text.ToString(), Convert.ToInt32(txtIntroducereAnFabricatie), (Culoarea)Enum.Parse(typeof(Culoarea), txtIntroduceCuloare.ToString()), Convert.ToDecimal(txtIntroduceregreutate), Convert.ToDecimal(txtIntroducepret), Convert.ToInt32(txtIntroducerenrpasg));
+            AvionClass avion = new AvionClass(0, 
+                                              txtIntroducereFirma.Text.ToString(),
+                                              txtIntroducereModel.Text.ToString(), 
+                                              Convert.ToInt32(txtIntroducereAnFabricatie.Text.ToString()),
+                                              (Culoarea)Enum.Parse(typeof(Culoarea), txtIntroduceCuloare.Text.ToString()),
+                                              Convert.ToDecimal(txtIntroduceregreutate.Text.ToString()), 
+                                              Convert.ToDecimal(txtIntroducepret.Text.ToString()),
+                                              Convert.ToInt32(txtIntroducerenrpasg.Text.ToString()));
 
-            if (txtIntroducereFirma.Text.ToString() == "" || txtIntroducereFirma.Text.ToString() == "Obligatoriu")
+            if (txtIntroducereFirma.Text.ToString() == "" || txtIntroducereFirma.Text.ToString() == "Obligatoriu!")
             {
-                txtIntroducereFirma.Text = "Obligatoriu";
+                txtIntroducereFirma.Text = "Obligatoriu!";
                 txtIntroducereFirma.ForeColor = Color.Red;
                 valid = false;
             }
-            else if (txtIntroducereFirma.Text.Length > 20)
+            else if (txtIntroducereFirma.Text.Length <2||txtIntroducereFirma.Text.Length > 20)
             {
                 txtIntroducereFirma.ForeColor = Color.Red;
                 valid = false;
             }
             else
                 txtIntroducereFirma.ForeColor = Color.Black;
-            if (txtIntroducereModel.Text.ToString() == "" || txtIntroducereModel.Text.ToString() == "Obligatoriu")
+            if (txtIntroducereModel.Text.ToString() == "" || txtIntroducereModel.Text.ToString() == "Obligatoriu!")
             {
-                txtIntroducereModel.Text = "Obligatoriu";
+                txtIntroducereModel.Text = "Obligatoriu!";
                 txtIntroducereModel.ForeColor = Color.Red;
                 valid = false;
             }
@@ -488,15 +495,57 @@ namespace Targ_Avioane_Interfata
             else
                 txtIntroducereModel.ForeColor = Color.Black;
 
-            if (txtIntroducereAnFabricatie.Text == "" || txtIntroducereAnFabricatie.Text =="Obligatoriu")
+            if (txtIntroducereAnFabricatie.Text.ToString() == "" || txtIntroducereAnFabricatie.Text.ToString() =="Obligatoriu!")
             {
-                txtIntroducereAnFabricatie.Text = "Obligatoriu";
+                txtIntroducereAnFabricatie.Text = "Obligatoriu!";
                 txtIntroducereAnFabricatie.ForeColor = Color.Red;
                 valid = false;
             }
             else
                 txtIntroducereFirma.ForeColor = Color.Black;
 
+            if (txtIntroduceCuloare.Text.ToString() == "" || txtIntroduceCuloare.Text.ToString() == "Obligatoriu!")
+            {
+                txtIntroduceCuloare.Text = "Obligatoriu!";
+                txtIntroduceCuloare.ForeColor = Color.Red;
+                valid = false;
+
+            }
+            else if (txtIntroduceCuloare.Text.Length > 30)
+            {
+
+                txtIntroduceCuloare.ForeColor = Color.Red;
+                valid = false;
+            }
+            else
+                txtIntroduceCuloare.ForeColor = Color.Black;
+
+            if (txtIntroduceregreutate.Text.ToString() == "" || txtIntroduceregreutate.Text.ToString() == "Obligatoriu!")
+            {
+                txtIntroduceCuloare.Text = "Obligatoriu";
+                txtIntroduceCuloare.ForeColor = Color.Red;
+                valid = false;
+            }
+            else
+                txtIntroduceregreutate.ForeColor = Color.Black;
+
+            if (txtIntroducepret.Text.ToString() == "" || txtIntroducepret.Text.ToString() == "Obligatoriu!")
+            {
+                txtIntroducepret.Text = "Obligatoriu";
+                txtIntroducepret.ForeColor = Color.Red;
+                valid = false;
+            }
+            else
+                txtIntroducepret.ForeColor = Color.Black;
+
+            if (txtIntroducerenrpasg.Text.ToString() == "" || txtIntroducerenrpasg.Text.ToString() == "Obligatoriu!")
+            {
+                txtIntroducerenrpasg.Text = "Obligatoriu";
+                txtIntroducerenrpasg.ForeColor = Color.Red;
+                valid = false;
+            }
+            else
+                txtIntroducerenrpasg.ForeColor = Color.Black;
 
 
             ///verificariile
