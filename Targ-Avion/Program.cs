@@ -19,7 +19,7 @@ namespace Targ_Avion
     {
         static void Main(string[] args)
         {
-            AvionClass obiect = new AvionClass(0, "TAROM", "B-20", 2010, Culoarea.violet, 105.5m, 1000.16m, 1000);
+            AvionClass obiect = new AvionClass(1, "TAROM", "B-20", 2010, Culoarea.violet, 105.5m, 1000.16m, 1000);
             Console.WriteLine(obiect.Info);
   
           
