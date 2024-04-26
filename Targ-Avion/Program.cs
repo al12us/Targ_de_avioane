@@ -29,7 +29,7 @@ namespace Targ_Avion
             ///Citire la tastatura
             AdministrareAvioane_Memorie adminPlane = new AdministrareAvioane_Memorie();
             AvionClass avionNou = new AvionClass();
-            int nr_avioane = 0;
+           
            
             string optiune;
 
@@ -88,22 +88,22 @@ namespace Targ_Avion
 
                         break;
                     case "S":
-                        int idAvion = nr_avioane + 1;
-                        avionNou.ID_avion = idAvion;
+                      //  int idAvion = nr_avioane + 1;
+                       /* avionNou.ID_avion = idAvion;
                         //adaugare avion in vectorul de obiecte
-                        adminPlane.AddPlane(avionNou);
+                        adminPlane.AddPlane(avionNou);*/
                         break;
                     case "D":
 
-                        AvionClass[] avioanele = adminPLANE.GetPlanes(out nr_avioane);
+                       // AvionClass[] avioanele = adminPLANE.GetPlanes(out nr_avioane);
                       //  AfisareAvioane(avioanele);  //comentat pentru ca codul da eroare
                         break;
                     case "B":
-                        idAvion = ++nr_avioane;
+                      /*  idAvion = ++nr_avioane;
                         avionNou.ID_avion = idAvion;
                         //adaugare avion in fisier
                         adminPLANE.AddPlane(avionNou);
-
+                      */
                         break;
                     case "E":
                         string Firma;
