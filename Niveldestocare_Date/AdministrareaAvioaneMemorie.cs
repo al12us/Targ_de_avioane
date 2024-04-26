@@ -8,51 +8,49 @@ namespace Niveldestocare_Date
 {
     public class AdministrareAvioane_Memorie
     {
-        private const int NR_MAX_AVIOANE = 50;
+        
 
-        private  AvionClass[] avioane;
-        private int nr_avioane;
+        
+        private List<AvionClass> avioane;
+
         public AdministrareAvioane_Memorie()
         {
-             avioane= new AvionClass[NR_MAX_AVIOANE];
-             nr_avioane = 0;
-        }
+            avioane = new List<AvionClass>();
 
+        }
         public void AddPlane(AvionClass avionul)
         {
-            avioane[nr_avioane] = avionul;
-            nr_avioane++;
+           avioane.Add(avionul);
         }
         public AvionClass GetPlane(string Firma, string Model,int fabricatie,Culoarea Culoare)
         {
-            for (int i = 0; i < nr_avioane; i++)
+            foreach (var avion in avioane)
             {
-                if (avioane[i].firma == Firma && avioane[i].model == Model && avioane[i].an_fabricatie==fabricatie  && avioane[i].culoare==Culoare)
-                    return avioane[i];
+                if (avion.firma == Firma && avion.model == Model && avion.an_fabricatie==fabricatie  && avion.culoare==Culoare)
+                    return avion;
             }
             return null;
 
         }
-        public AvionClass[] GetAvion(string Firma,string Model, out int nr_avioane)
+        public List<AvionClass> GetAvion(string Firma,string Model)
         {
-            nr_avioane = 0;
-            AvionClass[] temp = new AvionClass[avioane.Length];
-            for (int i = 0; i < temp.Length; i++)
+            
+            var temp = new List <AvionClass>();
+            foreach(var avion in avioane)
             {
 
-                if (avioane[i].firma == Firma && avioane[i].model==Model)
+                if (avion.firma == Firma && avion.model==Model)
                 {
-                    temp[i] = avioane[i];
-                    nr_avioane++;
+                    temp.Add(avion);
                 }
 
 
             }
             return temp;
         }
-        public AvionClass[] GetAvioane(out int nr_avioane)
+        public List<AvionClass> GetAvioane()
         {
-            nr_avioane = this.nr_avioane;
+           
             return avioane;
         }
 

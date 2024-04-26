@@ -83,8 +83,8 @@ namespace Targ_Avion
                         AfisareAvion(avionNou);
                         break;
                     case "A":
-                        AvionClass[] avioane = adminPlane.GetAvioane(out nr_avioane);
-                        AfisareAvioane(avioane, nr_avioane);
+                        List<AvionClass> avioane = adminPlane.GetAvioane();
+                        AfisareAvioane(avioane);
 
                         break;
                     case "S":
@@ -96,7 +96,7 @@ namespace Targ_Avion
                     case "D":
 
                         AvionClass[] avioanele = adminPLANE.GetPlanes(out nr_avioane);
-                        AfisareAvioane(avioanele, nr_avioane);
+                      //  AfisareAvioane(avioanele);  //comentat pentru ca codul da eroare
                         break;
                     case "B":
                         idAvion = ++nr_avioane;
@@ -124,7 +124,7 @@ namespace Targ_Avion
 
                         Firma = Console.ReadLine();
                         Model = Console.ReadLine();
-                        AvionClass[] avioane_gasite = adminPlane.GetAvion(Firma, Model,out int nr_avioane1);
+                        List<AvionClass> avioane_gasite = adminPlane.GetAvion(Firma, Model);
                         foreach (AvionClass avion in avioane_gasite)
                         {
                             Console.WriteLine(avion);
@@ -233,12 +233,12 @@ namespace Targ_Avion
             Console.WriteLine(infoAvion);
         }
 
-        public static void AfisareAvioane(AvionClass[] avioane, int nr_avioane)
-        {
+        public static void AfisareAvioane(List<AvionClass> avioane) { 
+        
             Console.WriteLine("Avioanele sunt:");
-            for (int contor = 0; contor < nr_avioane; contor++)
+            foreach(var avion in avioane)
             {
-                string infoAvion = avioane[contor].Info;
+                string infoAvion = avion.Info;
                 Console.WriteLine(infoAvion);
             }
         }
