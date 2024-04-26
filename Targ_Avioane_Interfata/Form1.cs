@@ -55,20 +55,15 @@ namespace Targ_Avioane_Interfata
         //txtIntroducereAnFabricatie
       
         //txtIntroduceCuloare
-
- 
-
-        
         //txtIntroudceregreutate se gasesete in Form1.Designer.cs
-   
-        
 
        //numarul de pasageri
         
         //butoanele
 
-        private Button btnAdaugaAvioane;
-        private Button btnRefresh;
+        
+        //btnAdaugaAvioane
+      
         //label
         private Label lblSalvarePlane;
         private Label lblRefresh;
@@ -316,16 +311,9 @@ namespace Targ_Avioane_Interfata
             lblSalvarePlane.BackColor = Color.Aqua;
             this.Controls.Add(lblSalvarePlane);
 
-            btnAdaugaAvioane = new Button();
-            btnAdaugaAvioane.Height = LUNGIME_CONTROL;
-            btnAdaugaAvioane.Width = LATIME_CONTROL;
-            btnAdaugaAvioane.Location = new System.Drawing.Point(DIMENSIUNEA_PAS_X * 8 + 20, 0);
-            btnAdaugaAvioane.Top = 260;
-            btnAdaugaAvioane.Text = "&Adauga";
-            btnAdaugaAvioane.BackColor = Color.Orange;
-
+           
             btnAdaugaAvioane.Click += OnButtonClicked;
-            this.Controls.Add(btnAdaugaAvioane);
+     
 
 
             lblRefresh = new Label();
@@ -338,15 +326,7 @@ namespace Targ_Avioane_Interfata
             this.Controls.Add(lblRefresh);
 
 
-            btnRefresh = new Button();
-            btnRefresh.Height = LUNGIME_CONTROL;
-            btnRefresh.Width = LATIME_CONTROL;
-            btnRefresh.Location = new System.Drawing.Point(DIMENSIUNEA_PAS_X * 8 + 20, 0);
-            btnRefresh.Top = 310;
-            btnRefresh.Text = "&Refresh";
-            btnRefresh.BackColor = Color.Orange;
-            btnRefresh.Click += OnButton2Clicked;
-            this.Controls.Add(btnRefresh);
+            
 
         }
         private void OnButtonClicked(object sender, EventArgs e)
@@ -510,6 +490,11 @@ namespace Targ_Avioane_Interfata
         }
 
         private void txtIntroducereAnFabricatie_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
 
         }
