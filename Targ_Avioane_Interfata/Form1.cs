@@ -18,7 +18,6 @@ namespace Targ_Avioane_Interfata
     public partial class Form1 : Form
     {
         private AdministrareAvioane_FisierText adminPlanes;
-        private Label lbltitlu;  //Titlul proiectului (Targul de avioane)
         //Constructurul  cu parametrii din clasa avion
         private const int NR_MAX_AVIOANE = 50;
 
@@ -41,26 +40,31 @@ namespace Targ_Avioane_Interfata
 
         private Label[ , ] lblsAvioane; 
 
-        private Label lblIntroducereFirma;
-        private TextBox txtIntroducereFirma;
+       
+         //txtIntroducereFirma
 
-        private Label lblIntroducereModel;
-        private TextBox txtIntroducereModel;
+       
+        //lblIntroducereModel
+        //lblIntroducereAnfabricatie
+        //lblIntroducereCuloare
+        //lblIntroducereGreutate
+        //lblIntrodcducerepret
+        //lblIntroducerenrpasg
 
-        private Label lblIntroducereAnFabricatie;
-        private TextBox txtIntroducereAnFabricatie;
+        
+        //txtIntroducereAnFabricatie
+      
+        //txtIntroduceCuloare
 
-        private Label lblIntroducereCuloare;
-        private TextBox txtIntroduceCuloare;
+ 
 
-        private Label lblIntroduceregreutate;
-        private TextBox txtIntroduceregreutate;
+        
+        //txtIntroudceregreutate se gasesete in Form1.Designer.cs
+   
+        
 
-        private Label lblIntroducerepret;
-        private TextBox txtIntroducepret;
-
-        private Label lblIntroducerenrpasg;  //numarul de pasageri
-        private TextBox txtIntroducerenrpasg;
+       //numarul de pasageri
+        
         //butoanele
 
         private Button btnAdaugaAvioane;
@@ -79,15 +83,6 @@ namespace Targ_Avioane_Interfata
             InitializeComponent();
 
 
-            lbltitlu = new Label();
-            lbltitlu.Top = 20;
-            lbltitlu.BackColor = Color.Bisque;
-            lbltitlu.Left = DIMENSIUNEA_PAS_X * 3;
-            lbltitlu.Width = DIMENSIUNEA_PAS_X * 2;
-            lbltitlu.Text = "Targul de avioane";
-            lbltitlu.Font = new Font("Arial", 16, FontStyle.Bold);
-            lbltitlu.ForeColor = Color.SkyBlue;
-            this.Controls.Add(lbltitlu);
 
 
 
@@ -97,7 +92,6 @@ namespace Targ_Avioane_Interfata
             this.Font = new Font("Times New Roman", 8, FontStyle.Regular);
             this.ForeColor = Color.LimeGreen;
             this.Text = "BussinesPlaneUP";
-            this.BackColor = Color.Azure;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -124,6 +118,7 @@ namespace Targ_Avioane_Interfata
             lblFirma.Font = new Font("Times New Roman", 12, FontStyle.Italic);
             lblFirma.ForeColor = Color.Chocolate;
             lblFirma.BackColor = Color.White;
+            lblFirma.Visible = true;
             this.Controls.Add(lblFirma);
             //model
             lblModel = new Label();
@@ -134,6 +129,7 @@ namespace Targ_Avioane_Interfata
             lblModel.Font = new Font("Times New Roman", 12, FontStyle.Italic);
             lblModel.ForeColor = Color.Chocolate;
             lblModel.BackColor = Color.White;
+            lblModel.Visible = true;
             this.Controls.Add(lblModel);
             //an_fabricatie
             lblan_fabricatie = new Label();
@@ -144,6 +140,7 @@ namespace Targ_Avioane_Interfata
             lblan_fabricatie.TextAlign = ContentAlignment.MiddleCenter;
             lblan_fabricatie.ForeColor = Color.Chocolate;
             lblan_fabricatie.BackColor = Color.White;
+            lblan_fabricatie.Visible = true;
             this.Controls.Add(lblan_fabricatie);
 
             //culoare
@@ -155,6 +152,7 @@ namespace Targ_Avioane_Interfata
             lblCuloare.TextAlign = ContentAlignment.MiddleCenter;
             lblCuloare.ForeColor = Color.Chocolate;
             lblCuloare.BackColor = Color.White;
+            lblCuloare.Visible = true;
             this.Controls.Add(lblCuloare);
 
 
@@ -167,6 +165,7 @@ namespace Targ_Avioane_Interfata
             lblgreutate.TextAlign = ContentAlignment.MiddleCenter;
             lblgreutate.ForeColor = Color.Chocolate;
             lblgreutate.BackColor = Color.White;
+            lblgreutate.Visible = true;
             this.Controls.Add(lblgreutate);
             //pret
             lblpret = new Label();
@@ -177,6 +176,7 @@ namespace Targ_Avioane_Interfata
             lblpret.TextAlign = ContentAlignment.MiddleCenter;
             lblpret.ForeColor = Color.Chocolate;
             lblpret.BackColor = Color.White;
+            lblpret.Visible = true;
             this.Controls.Add(lblpret);
             //nr_de_pasageri
             lblnr_de_pasageri = new Label();
@@ -187,6 +187,7 @@ namespace Targ_Avioane_Interfata
             lblnr_de_pasageri.TextAlign = ContentAlignment.MiddleCenter;
             lblnr_de_pasageri.ForeColor = Color.Chocolate;
             lblnr_de_pasageri.BackColor = Color.White;
+            lblnr_de_pasageri.Visible = true;
             this.Controls.Add(lblnr_de_pasageri);
 
 
@@ -302,125 +303,12 @@ namespace Targ_Avioane_Interfata
         }
         private void ButoaneAvioane()
         {
-            lblIntroducereFirma = new Label();
-            lblIntroducereFirma.Width = LUNGIME_CONTROL;
-            lblIntroducereFirma.Height = LATIME_CONTROL / 3;
-            lblIntroducereFirma.Left = DIMENSIUNEA_PAS_X * 8 + 20;
-            lblIntroducereFirma.Top = 40;
-            lblIntroducereFirma.Text = "Firma:";
-            lblIntroducereFirma.BackColor = Color.Aqua;
-            this.Controls.Add(lblIntroducereFirma);
-
-            txtIntroducereFirma = new TextBox();
-            txtIntroducereFirma.Width = LUNGIME_CONTROL * 3;
-            txtIntroducereFirma.Height = LATIME_CONTROL * 2;
-            txtIntroducereFirma.Left = DIMENSIUNEA_PAS_X * 9 - 80;
-            txtIntroducereFirma.Top = 40;
-
-            this.Controls.Add(txtIntroducereFirma);
-            //Introducere de date model
-
-            lblIntroducereModel = new Label();
-            lblIntroducereModel.Width = LUNGIME_CONTROL;
-            lblIntroducereModel.Height = LATIME_CONTROL / 3;
-            lblIntroducereModel.Left = DIMENSIUNEA_PAS_X * 8 + 20;
-            lblIntroducereModel.Top = 70;
-            lblIntroducereModel.Text = "Model:";
-            lblIntroducereModel.BackColor = Color.Aqua;
-            this.Controls.Add(lblIntroducereModel);
-
-            txtIntroducereModel = new TextBox();
-            txtIntroducereModel.Width = LUNGIME_CONTROL * 3;
-            txtIntroducereModel.Height = LATIME_CONTROL * 2;
-            txtIntroducereModel.Left = DIMENSIUNEA_PAS_X * 9 - 80;
-            txtIntroducereModel.Top = 70;
-            this.Controls.Add(txtIntroducereModel);
-
-            ///Introducere anfabricatie
-            lblIntroducereAnFabricatie = new Label();
-            lblIntroducereAnFabricatie.Width = LUNGIME_CONTROL;
-            lblIntroducereAnFabricatie.Height = LATIME_CONTROL / 3;
-            lblIntroducereAnFabricatie.Left = DIMENSIUNEA_PAS_X * 8 + 20;
-            lblIntroducereAnFabricatie.Top = 100;
-            lblIntroducereAnFabricatie.Text = "An fabricatie:";
-            lblIntroducereAnFabricatie.BackColor = Color.Aqua;
-            this.Controls.Add(lblIntroducereAnFabricatie);
-
-            //caseta anfabricatie
-            txtIntroducereAnFabricatie = new TextBox();
-            txtIntroducereAnFabricatie.Width = LUNGIME_CONTROL * 3;
-            txtIntroducereAnFabricatie.Height = LATIME_CONTROL * 2;
-            txtIntroducereAnFabricatie.Left = DIMENSIUNEA_PAS_X * 9 - 80;
-            txtIntroducereAnFabricatie.Top = 100;
-            this.Controls.Add(txtIntroducereAnFabricatie);
-
-            //Introducere Culoare
-            lblIntroducereCuloare = new Label();
-            lblIntroducereCuloare.Width = LUNGIME_CONTROL;
-            lblIntroducereCuloare.Height = LATIME_CONTROL / 3;
-            lblIntroducereCuloare.Left = DIMENSIUNEA_PAS_X * 8 + 20;
-            lblIntroducereCuloare.Top = 130;
-            lblIntroducereCuloare.Text = "Culoare:";
-            lblIntroducereCuloare.BackColor = Color.Aqua;
-            this.Controls.Add(lblIntroducereCuloare);
-
-            txtIntroduceCuloare = new TextBox();
-            txtIntroduceCuloare.Width = LUNGIME_CONTROL * 3;
-            txtIntroduceCuloare.Height = LATIME_CONTROL * 2;
-            txtIntroduceCuloare.Left = DIMENSIUNEA_PAS_X * 9 - 80;
-            txtIntroduceCuloare.Top = 130;
-            this.Controls.Add(txtIntroduceCuloare);
-
-            lblIntroduceregreutate = new Label();
-            lblIntroduceregreutate.Width = LUNGIME_CONTROL;
-            lblIntroduceregreutate.Height = LATIME_CONTROL / 3;
-            lblIntroduceregreutate.Left = DIMENSIUNEA_PAS_X * 8 + 20;
-            lblIntroduceregreutate.Top = 160;
-            lblIntroduceregreutate.Text = "Greutatatea:";
-            lblIntroduceregreutate.BackColor = Color.Aqua;
-            this.Controls.Add(lblIntroduceregreutate);
-
-            txtIntroduceregreutate = new TextBox();
-            txtIntroduceregreutate.Width = LUNGIME_CONTROL * 3;
-            txtIntroduceregreutate.Height = LATIME_CONTROL * 2;
-            txtIntroduceregreutate.Left = DIMENSIUNEA_PAS_X * 9 - 80;
-            txtIntroduceregreutate.Top = 160;
-            this.Controls.Add(txtIntroduceregreutate);
-
-            lblIntroducerepret = new Label();
-            lblIntroducerepret.Width = LUNGIME_CONTROL;
-            lblIntroducerepret.Height = LATIME_CONTROL / 3;
-            lblIntroducerepret.Left = DIMENSIUNEA_PAS_X * 8 + 20;
-            lblIntroducerepret.Top = 190;
-            lblIntroducerepret.Text = "Pret:";
-            lblIntroducerepret.BackColor = Color.Aqua;
-            this.Controls.Add(lblIntroducerepret);
-
-            txtIntroducepret = new TextBox();
-            txtIntroducepret.Width = LUNGIME_CONTROL * 3;
-            txtIntroducepret.Height = LATIME_CONTROL * 2;
-            txtIntroducepret.Left = DIMENSIUNEA_PAS_X * 9 - 80;
-            txtIntroducepret.Top = 190;
-            this.Controls.Add(txtIntroducepret);
-
-            lblIntroducerenrpasg = new Label();
-            lblIntroducerenrpasg.Width = LUNGIME_CONTROL;
-            lblIntroducerenrpasg.Height = LATIME_CONTROL / 3;
-            lblIntroducerenrpasg.Left = DIMENSIUNEA_PAS_X * 8 + 20;
-            lblIntroducerenrpasg.Top = 220;
-            lblIntroducerenrpasg.Text = "Numar de pasageri:";
-            lblIntroducerenrpasg.BackColor = Color.Aqua;
-            this.Controls.Add(lblIntroducerenrpasg);
-
-            txtIntroducerenrpasg = new TextBox();
-            txtIntroducerenrpasg.Width = LUNGIME_CONTROL * 3;
-            txtIntroducerenrpasg.Height = LATIME_CONTROL * 2;
-            txtIntroducerenrpasg.Left = DIMENSIUNEA_PAS_X * 9 - 80;
-            txtIntroducerenrpasg.Top = 220;
-            this.Controls.Add(txtIntroducerenrpasg);
+           
+           
+           
 
             lblSalvarePlane = new Label();
-            lblSalvarePlane.Width = LUNGIME_CONTROL * 3;
+            lblSalvarePlane.Width = LUNGIME_CONTROL * 3-25;
             lblSalvarePlane.Height = LATIME_CONTROL;
             lblSalvarePlane.Left = DIMENSIUNEA_PAS_X * 9 + 10;
             lblSalvarePlane.Top = 250;
@@ -432,7 +320,7 @@ namespace Targ_Avioane_Interfata
             btnAdaugaAvioane.Height = LUNGIME_CONTROL;
             btnAdaugaAvioane.Width = LATIME_CONTROL;
             btnAdaugaAvioane.Location = new System.Drawing.Point(DIMENSIUNEA_PAS_X * 8 + 20, 0);
-            btnAdaugaAvioane.Top = 250;
+            btnAdaugaAvioane.Top = 260;
             btnAdaugaAvioane.Text = "&Adauga";
             btnAdaugaAvioane.BackColor = Color.Orange;
 
@@ -441,7 +329,7 @@ namespace Targ_Avioane_Interfata
 
 
             lblRefresh = new Label();
-            lblRefresh.Width = LUNGIME_CONTROL * 3;
+            lblRefresh.Width = LUNGIME_CONTROL * 3-25;
             lblRefresh.Height = LATIME_CONTROL;
             lblRefresh.Left = DIMENSIUNEA_PAS_X * 9 + 10;
             lblRefresh.Top = 280;
@@ -584,6 +472,46 @@ namespace Targ_Avioane_Interfata
             
                 Application.Exit();
             
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIntroducerenrpasg_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIntroducepret_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIntroducereAnFabricatie_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
