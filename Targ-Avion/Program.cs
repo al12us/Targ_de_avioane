@@ -36,7 +36,7 @@ namespace Targ_Avion
             //adaugarea tablou in scara
             //File.ReadAllLines citeste toate liniile din fisier
             string[] linii = File.ReadAllLines("avioane.txt");
-            AvionClass[][] planes = new AvionClass[26][];
+            List<List<AvionClass>> planes = new List<List<AvionClass>>();
             Console.WriteLine();
             ///S-a adaugat producatorul de avioane
             ProductAvion producator = new ProductAvion();
@@ -49,7 +49,7 @@ namespace Targ_Avion
             AdministratorProducator_FisierText administratorProducatorPlane = new AdministratorProducator_FisierText(numeFisier_2);
             int nr_producatori = 0;
             string [] linii_de_banda = File.ReadAllLines("producatorideavioane.txt");
-            ProductAvion[][] the_productsplane = new ProductAvion[26][];
+            List<List<ProductAvion>> the_productsplane = new List<List<ProductAvion>>();
 
             do
             {
@@ -245,7 +245,7 @@ namespace Targ_Avion
             }
         }
 
-        public static void Afisare_Vector_de_tablou_scara(AvionClass[][] planes, string[] linii)
+        public static void Afisare_Vector_de_tablou_scara(List<List<AvionClass>>planes, string[] linii)
         {
             //split-ul este separeaza datele prin ;
             for (int i = 0; i < 26; i++)
@@ -255,22 +255,27 @@ namespace Targ_Avion
                 .Select(line =>
                 {
                     string[] parts = line.Split(';');
-                    return new AvionClass
+                    if (parts.Length >= 8)
                     {
-                        ID_avion = int.Parse(parts[0]),
-                        firma = parts[1],
-                        model = parts[2],
-                        an_fabricatie = int.Parse(parts[3]),
-                        culoare = (Culoarea)Enum.Parse(typeof(Culoarea), parts[4]),
-                        greutate = decimal.Parse(parts[5]),
-                        pret = decimal.Parse(parts[6]),
-                        nr_de_pasageri = int.Parse(parts[7])
-                    };
+                        return new AvionClass
+                        {
+                            ID_avion = int.Parse(parts[0]),
+                            firma = parts[1],
+                            model = parts[2],
+                            an_fabricatie = int.Parse(parts[3]),
+                            culoare = (Culoarea)Enum.Parse(typeof(Culoarea), parts[4]),
+                            greutate = decimal.Parse(parts[5]),
+                            pret = decimal.Parse(parts[6]),
+                            nr_de_pasageri = int.Parse(parts[7])
+                        };
+                    }
+                    else
+                    { return null; }
                 })
-                .Where(plane => plane.firma.StartsWith(litera.ToString(), StringComparison.OrdinalIgnoreCase))
+                .Where(plane => plane != null && plane.firma.StartsWith(litera.ToString(), StringComparison.OrdinalIgnoreCase))
                 //Where -este functia care filtreaza datele din fisier,StringComparison.OrdinalIgnoreCase verifica
                 // daca un cuvant a inceput cu o litera
-                .ToArray();
+                .ToList();
             }
 
             for (int i = 0; i < 26; i++)
@@ -332,7 +337,7 @@ namespace Targ_Avion
 
 
         }
-        public static void Afisare_Vector_de_tablou_scara_productPlane(ProductAvion[][] the_productsplane, string[] linii_de_banda)
+        public static void Afisare_Vector_de_tablou_scara_productPlane(List<List<ProductAvion>> the_productsplane, string[] linii_de_banda)
         {
             //split-ul este separeaza datele prin ;
             for (int i = 0; i < 26; i++)
@@ -342,6 +347,7 @@ namespace Targ_Avion
                 .Select(line =>
                 {
                     string[] parts = line.Split(';');
+
                     return new ProductAvion
                     {
                         ID_Producator = int.Parse(parts[0]),
@@ -353,10 +359,10 @@ namespace Targ_Avion
                       
                     };
                 })
-                .Where(product_plane => product_plane.companie.StartsWith(litera.ToString(), StringComparison.OrdinalIgnoreCase))
+                .Where(product_plane =>product_plane!=null && product_plane.companie.StartsWith(litera.ToString(), StringComparison.OrdinalIgnoreCase))
                 //Where -este functia care filtreaza datele din fisier,StringComparison.OrdinalIgnoreCase verifica
                 // daca un cuvant a inceput cu o litera
-                .ToArray();
+                .ToList();
             }
 
             for (int i = 0; i < 26; i++)
