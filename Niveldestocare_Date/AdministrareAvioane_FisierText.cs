@@ -10,7 +10,9 @@ namespace Niveldestocare_Date
 {
     public class AdministrareAvioane_FisierText
     {
-        private const int NR_MAX_AVIOANE = 50;
+       
+        private const int ID_PRIMUL_AVION = 1; 
+        private const int INCREMENT = 1;
         private string numeFisier;
 
         public AdministrareAvioane_FisierText(string numeFisier)
@@ -23,6 +25,7 @@ namespace Niveldestocare_Date
         }
         public void AddPlane(AvionClass avion)
         {
+            avion.ID_avion = GetID();
             // instructiunea 'using' va apela la final streamWriterFisierText.Close();
             // al doilea parametru setat la 'true' al constructorului StreamWriter indica
             // modul 'append' de deschidere al fisierului
@@ -31,25 +34,82 @@ namespace Niveldestocare_Date
                 streamWriterFisierText.WriteLine(avion.ConversieLaSir_PentruFisier());
             }
         }
-        public AvionClass[] GetPlanes(out int nr_avioane)
+        public List<AvionClass> GetPlanes()
         {
-            AvionClass[] avioane = new AvionClass[NR_MAX_AVIOANE];
+            List<AvionClass> avioane = new List<AvionClass>();
 
             // instructiunea 'using' va apela streamReader.Close()
             using (StreamReader streamReader = new StreamReader(numeFisier))
             {
                 string linieFisier;
-                nr_avioane = 0;
+                
 
-                // citeste cate o linie si creaza un obiect de tip Student
+                // citeste cate o linie si creaza un obiect de tip Avion
                 // pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
-                    avioane[nr_avioane++] = new AvionClass(linieFisier);
+                    avioane.Add( new AvionClass(linieFisier));
                 }
             }
-            Array.Resize(ref avioane, nr_avioane);
+         
             return avioane;
+        }
+        public AvionClass GetPlane(string Firma, string Model,int AN_Fabricatie,Culoarea color)
+        {
+            // instructiunea 'using' va apela streamReader.Close()
+            using (StreamReader streamReader = new StreamReader(numeFisier))
+            {
+                string linieFisier;
+
+                // citeste cate o linie si creaza un obiect de tip Avion
+                // pe baza datelor din linia citita
+                while ((linieFisier = streamReader.ReadLine()) != null)
+                {
+                    AvionClass avion = new AvionClass(linieFisier);
+                    if (avion.firma.Equals(Firma) && avion.model.Equals(Model) && avion.an_fabricatie.Equals(AN_Fabricatie) && avion.culoare.Equals(color))
+                        return avion;
+                }
+            }
+
+            return null;
+        }
+        public AvionClass GetPlane(int idAvion)
+        {
+            // instructiunea 'using' va apela streamReader.Close()
+            using (StreamReader streamReader = new StreamReader(numeFisier))
+            {
+                string linieFisier;
+
+                // citeste cate o linie si creaza un obiect de tip Avion
+                // pe baza datelor din linia citita
+                while ((linieFisier = streamReader.ReadLine()) != null)
+                {
+                    AvionClass avion = new AvionClass(linieFisier);
+                    if (avion.ID_avion == idAvion)
+                        return avion;
+                }
+            }
+
+            return null;
+        }
+        private int GetID()
+        {
+            int IDAvion = ID_PRIMUL_AVION;
+
+            // instructiunea 'using' va apela sr.Close()
+            using (StreamReader streamReader = new StreamReader(numeFisier))
+            {
+                string linieFisier;
+
+                //citeste cate o linie si creaza un obiect de tip Avion pe baza datelor din linia citita
+                while ((linieFisier = streamReader.ReadLine()) != null)
+                {
+                    AvionClass avion = new AvionClass(linieFisier);
+                    IDAvion= avion.ID_avion + INCREMENT;
+                }
+            }
+
+            return IDAvion;
         }
     }
 }

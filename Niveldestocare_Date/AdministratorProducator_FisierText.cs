@@ -11,7 +11,8 @@ namespace Niveldestocare_Date
     public class AdministratorProducator_FisierText
     {
 
-        private const int NR_MAX_PRODUCATORI = 50;
+        private const int ID_PRIMUL_PRODUCATOR_AVION = 1;
+        private const int INCREMENT = 1;
         private string numeFisier_2;
         public AdministratorProducator_FisierText(string numeFisier_2)
         {
@@ -23,6 +24,7 @@ namespace Niveldestocare_Date
         }
         public void AddProducator(ProductAvion producator)
         {
+             producator.ID_Producator =GetIDProduct();
             // instructiunea 'using' va apela la final streamWriterFisierText.Close();
             // al doilea parametru setat la 'true' al constructorului StreamWriter indica
             // modul 'append' de deschidere al fisierului
@@ -31,24 +33,43 @@ namespace Niveldestocare_Date
                 streamWriterFisierText.WriteLine(producator.ConversieSir_PentruFisier());
             }
         }
-        public ProductAvion[] GetProducts(out int nr_producatori)
+        public List<ProductAvion> GetProducts()
         {
-            ProductAvion[] producatori = new ProductAvion[NR_MAX_PRODUCATORI]; 
+            List<ProductAvion> producatori = new List<ProductAvion>(); 
             // instructiunea 'using' va apela streamReader.Close()
             using (StreamReader streamReader = new StreamReader(numeFisier_2))
             {
                 string linieFisierB;
-                nr_producatori= 0;
+          
 
-                // citeste cate o linie si creaza un obiect de tip Student
+                // citeste cate o linie si creaza un obiect de tip ProductAvion
                 // pe baza datelor din linia citita
                 while ((linieFisierB = streamReader.ReadLine()) != null)
                 {
-                    producatori[nr_producatori++] = new ProductAvion(linieFisierB);
+                    producatori.Add (new ProductAvion(linieFisierB));
                 }
             }
 
             return producatori;
+        }
+        private int GetIDProduct()
+        {
+            int IDProductPlane = ID_PRIMUL_PRODUCATOR_AVION;
+
+            // instructiunea 'using' va apela sr.Close()
+            using (StreamReader streamReader = new StreamReader(numeFisier_2))
+            {
+                string linieFisierB;
+
+                //citeste cate o linie si creaza un obiect de tip Avion pe baza datelor din linia citita
+                while ((linieFisierB = streamReader.ReadLine()) != null)
+                {
+                    ProductAvion producator = new ProductAvion(linieFisierB);
+                    IDProductPlane = producator.ID_Producator + INCREMENT;
+                }
+            }
+
+            return IDProductPlane;
         }
     }
 }

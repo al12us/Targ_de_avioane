@@ -10,35 +10,34 @@ namespace Niveldestocare_Date
 {
     public class AdministrareProducatorMemorie
     {
-        private const int NR_MAX_PRODUCATORI = 50;
-        private ProductAvion[] producatori;
-        private int nr_producatori;
+       
+        private List<ProductAvion> producatori;
+       
 
         public AdministrareProducatorMemorie()
         {
-            producatori = new ProductAvion[NR_MAX_PRODUCATORI];
-            nr_producatori = 0;
+            producatori = new List<ProductAvion>();
+           
         }
         public void AddProducator(ProductAvion producatorul)
         {
-            producatori[nr_producatori] = producatorul;
-            nr_producatori++;
+           producatori.Add(producatorul);
         }
-        public ProductAvion[] GetProducator(out int nr_producatori)
+        public List<ProductAvion> GetProducator()
         {
-            nr_producatori=this.nr_producatori;
+        
             return producatori;
 
         }
         //Cautarea producatorului va fi facuta pe trei criterii(companie,tara de origine si specializare)
         public ProductAvion CautareProducator(string compania,string TaradeOrigine,Specializarea spec)
         {
-            for(int i = 0; i < nr_producatori; i++)
+            foreach(var producator in producatori)
             {
 
-                if (producatori[i].companie == compania && producatori[i].TaraOrigine == TaradeOrigine && producatori[i].specializare==spec)
+                if (producator.companie == compania && producator.TaraOrigine == TaradeOrigine && producator.specializare==spec)
 
-                    return producatori[i];
+                    return producator;
             }
             return null;
 

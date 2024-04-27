@@ -19,7 +19,7 @@ namespace Targ_Avion
     {
         static void Main(string[] args)
         {
-            AvionClass obiect = new AvionClass(1, "TAROM", "B-20", 2010, Culoarea.violet, 105.5m, 1000.16m, 1000);
+            AvionClass obiect = new AvionClass(0, "TAROM", "B-20", 2010, Culoarea.violet, 105.5m, 1000.16m, 1000);
             Console.WriteLine(obiect.Info);
   
           
@@ -29,7 +29,7 @@ namespace Targ_Avion
             ///Citire la tastatura
             AdministrareAvioane_Memorie adminPlane = new AdministrareAvioane_Memorie();
             AvionClass avionNou = new AvionClass();
-           
+            List<AvionClass> avioane = new List<AvionClass>();
            
             string optiune;
 
@@ -42,6 +42,8 @@ namespace Targ_Avion
             ProductAvion producator = new ProductAvion();
             ProductAvion exemplu = new ProductAvion(0, "AIRBUS", "Franta", 1970, 4000, Specializarea.civil);
             Console.WriteLine(exemplu.InfoProduct);
+            //Se adauga o lista
+            List<ProductAvion> producatori = new List<ProductAvion>();
             AdministrareProducatorMemorie adminProductPlane = new AdministrareProducatorMemorie();
             string numeFisier_2 = ConfigurationManager.AppSettings["NumeFisier_2"];
             AdministratorProducator_FisierText administratorProducatorPlane = new AdministratorProducator_FisierText(numeFisier_2);
@@ -83,27 +85,27 @@ namespace Targ_Avion
                         AfisareAvion(avionNou);
                         break;
                     case "A":
-                        List<AvionClass> avioane = adminPlane.GetAvioane();
+                        avioane = adminPlane.GetAvioane();
                         AfisareAvioane(avioane);
 
                         break;
                     case "S":
-                      //  int idAvion = nr_avioane + 1;
-                       /* avionNou.ID_avion = idAvion;
+                        int idAvion = avioane.Count + 1;
+                        avionNou.ID_avion = idAvion;
                         //adaugare avion in vectorul de obiecte
-                        adminPlane.AddPlane(avionNou);*/
+                        adminPlane.AddPlane(avionNou);
                         break;
                     case "D":
 
-                       // AvionClass[] avioanele = adminPLANE.GetPlanes(out nr_avioane);
-                      //  AfisareAvioane(avioanele);  //comentat pentru ca codul da eroare
+                       avioane = adminPLANE.GetPlanes();
+                        AfisareAvioane(avioane);  //comentat pentru ca codul da eroare
                         break;
                     case "B":
-                      /*  idAvion = ++nr_avioane;
+                         idAvion = avioane.Count+1;
                         avionNou.ID_avion = idAvion;
                         //adaugare avion in fisier
                         adminPLANE.AddPlane(avionNou);
-                      */
+                      
                         break;
                     case "E":
                         string Firma;
@@ -143,8 +145,8 @@ namespace Targ_Avion
                         break;
                     ///Afisarea in memorie a producatorilor de aeronave
                     case "AC":
-                        ProductAvion[] producatori = adminProductPlane.GetProducator(out  nr_producatori);
-                        AfisProductAeronave(producatori, nr_producatori);
+                        producatori = adminProductPlane.GetProducator();
+                        AfisProductAeronave(producatori);
                         break;
                         //Salvare vector de obiecte din clasa ProductAvion
                     case "SC":
@@ -165,8 +167,8 @@ namespace Targ_Avion
                         Console.WriteLine(adminProductPlane.CautareProducator(compania,tara,spec).InfoProduct);
                         break;
                     case "DT":
-                       ProductAvion[] planeproductors= administratorProducatorPlane.GetProducts(out nr_producatori);
-                        AfisProductAeronave(planeproductors, nr_producatori);
+                         producatori= administratorProducatorPlane.GetProducts();
+                        AfisProductAeronave(producatori);
                         break;
                     case "BD":
                         idProductAvion = ++nr_producatori;
@@ -319,12 +321,12 @@ namespace Targ_Avion
             Console.WriteLine(InfoProductator);
         }
 
-        public static void AfisProductAeronave(ProductAvion [] producatori,int nr_producatori)
+        public static void AfisProductAeronave(List<ProductAvion> producatori)
         {
             Console.WriteLine("Producatorii de avioane sunt:");
-            for(int contor_prod = 0; contor_prod < nr_producatori; contor_prod++)
+            foreach(var producatorul in producatori)
             {
-                string InfoProducator=producatori[contor_prod].InfoProduct;
+                string InfoProducator=producatorul.InfoProduct;
                 Console.WriteLine(InfoProducator);
             }
 
