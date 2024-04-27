@@ -99,9 +99,7 @@ namespace Targ_Avioane_Interfata
             // astfel incat datele din fisier sa poata fi utilizate si de alte proiecte
             string caleCompletaFisier = locatieFisierSolutie + "\\" + numeFisier;
             adminPlanes = new AdministrareAvioane_FisierText(caleCompletaFisier);
-            int nr_avioane = 0;
-            AvionClass[] avioane = adminPlanes.GetPlanes(out nr_avioane);
-
+          
             ///Clasa Avion 
             ///firma
             lblFirma = new Label();
@@ -199,7 +197,8 @@ namespace Targ_Avioane_Interfata
 
         private void AfiseazaAvioane()
         {
-            AvionClass[] avioane = adminPlanes.GetPlanes(out int nr_avioane);
+            List<AvionClass> avioane = adminPlanes.GetPlanes();
+            int nr_avioane = avioane.Count;
              lblsFirme = new Label[nr_avioane];
              lblsModele = new Label[nr_avioane];
              lblsan_fabricatie = new Label[nr_avioane];

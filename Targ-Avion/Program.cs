@@ -98,7 +98,7 @@ namespace Targ_Avion
                     case "D":
 
                        avioane = adminPLANE.GetPlanes();
-                        AfisareAvioane(avioane);  //comentat pentru ca codul da eroare
+                        AfisareAvioane(avioane);  
                         break;
                     case "B":
                          idAvion = avioane.Count+1;
