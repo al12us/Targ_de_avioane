@@ -12,6 +12,7 @@ using ProducatorAvioane;
 using Avion;
 using Niveldestocare_Date;
 using System.IO;
+using System.Drawing.Printing;
 
 namespace Targ_Avioane_Interfata
 {
@@ -182,13 +183,32 @@ namespace Targ_Avioane_Interfata
             lblnr_de_pasageri.BackColor = Color.White;
             lblnr_de_pasageri.Visible = true;
             this.Controls.Add(lblnr_de_pasageri);
+            //GotFocus-Control
+            txtIntroducereFirma.GotFocus += txtIntroudcereFirmaGotFocus;
+            txtIntroducereModel.GotFocus += txtIntroduceModelGotFocus;
+            txtIntroducereAnFabricatie.GotFocus += txtIntroduceAnfabricatieGotFocus;
+            txtIntroduceCuloare.GotFocus += txtIntroducereCuloareGotFocus;
+            txtIntroduceregreutate.GotFocus += txtIntroduceGreutateGotFocus;
+            txtIntroducepret.GotFocus += txtIntroduPretulGotFocus;
+            txtIntroducerenrpasg.GotFocus += txtIntroducenrpasgGotFocus;
 
+            //LostFocus
+            txtIntroducereFirma.LostFocus += txtIntroducereFirmaLostFocus;
+            txtIntroducereModel.LostFocus += txtIntroducereModelLostFocus;
+            txtIntroducereAnFabricatie.LostFocus += txtIntroducereAnfabricatieLostFocus;
+            txtIntroduceCuloare.LostFocus += txtIntroduceCuloareLostFocus;
+            txtIntroduceregreutate.LostFocus += txtIntroduceGreutateLostFocus;
+            txtIntroducepret.LostFocus += txtIntroducePretulLostFocus;
+            txtIntroducerenrpasg.LostFocus += txtIntroducenrpasgLostFocus;
 
             this.FormClosed += OnFormClosed;
            
             ButoaneAvioane();
 
         }
+
+      
+
         private void Button_ClickProductAvion(object sender,EventArgs e)
         {
             AvionProduct.Show();
@@ -455,7 +475,75 @@ namespace Targ_Avioane_Interfata
                 Application.Exit();
             
         }
+        //Firma GotFocus si LostFocus
+        private void txtIntroudcereFirmaGotFocus(object sender, EventArgs e)
+        {
+            txtIntroducereFirma.BackColor = Color.Chocolate;
+        }
+        //Model GotFocus si LostFocus
+        private void txtIntroducereFirmaLostFocus(object sender,EventArgs e)
+        {
+            txtIntroducereFirma.BackColor = SystemColors.Window;
+        }
+       private void txtIntroduceModelGotFocus(object sender,EventArgs e)
+        {
+            txtIntroducereModel.BackColor = Color.Chocolate;
+        }
+        
+        private void txtIntroducereModelLostFocus(object sender,EventArgs e)
+        {
+            txtIntroducereModel.BackColor = SystemColors.Window;
+        }
+        //txtAnfabricatie GotFocus si LostFocus
+        private void txtIntroduceAnfabricatieGotFocus(object sender, EventArgs e)
+        {
+            txtIntroducereAnFabricatie.BackColor = Color.Chocolate;
+            
+        }
+        private void txtIntroducereAnfabricatieLostFocus(object sender, EventArgs e)
+        {
+            txtIntroducereAnFabricatie.BackColor = SystemColors.Window;
+        }
+        //txtCuloare pentru GotFocus si LostFocus
+        private void txtIntroducereCuloareGotFocus(object sender,EventArgs e)
+        {
+            txtIntroduceCuloare.BackColor = Color.Chocolate;
 
+        }
+        private void txtIntroduceCuloareLostFocus(object sender,EventArgs e)
+        {
+            txtIntroduceCuloare.BackColor = SystemColors.Window;
+        }
+        //txtIntroducegreutate pentru GotFocus si LostFocus
+        private void txtIntroduceGreutateGotFocus(object sender,EventArgs e)
+        {
+            txtIntroduceregreutate.BackColor = Color.Chocolate;
+        }
+        private void txtIntroduceGreutateLostFocus(object sender,EventArgs e)
+        {
+            txtIntroduceregreutate.BackColor = SystemColors.Window;
+        }
+        //txtIntroducepret pentru GotFocus si LostFocus -caseta text
+        private void txtIntroduPretulGotFocus(object sender,EventArgs e)
+        {
+            txtIntroducepret.BackColor = Color.Chocolate;
+        }
+        private void txtIntroducePretulLostFocus(object sender,EventArgs e)
+        {
+            txtIntroducepret.BackColor = SystemColors.Window;
+
+        }
+        //txtNrpasageri-pentru GotFocus si LostFocus- caseta text
+        private void  txtIntroducenrpasgGotFocus(object sender,EventArgs e)
+        {
+            txtIntroducerenrpasg.BackColor = Color.Chocolate;
+
+        }
+        private void txtIntroducenrpasgLostFocus(object sender,EventArgs e)
+        {
+            txtIntroducerenrpasg.BackColor = SystemColors.Window;
+        }
+            //  la intoarcere meniul principal,cand utilizatorul paraseste fereatra Avioane(contin datele din AvionClass)
         private void btnBackMainMenu_2_Click(object sender, EventArgs e)
         {
             MainMenuPlane frame_cy= new MainMenuPlane();
