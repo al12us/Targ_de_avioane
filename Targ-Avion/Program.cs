@@ -255,8 +255,7 @@ namespace Targ_Avion
                 .Select(line =>
                 {
                     string[] parts = line.Split(';');
-                    if (parts.Length >= 8)
-                    {
+                    
                         return new AvionClass
                         {
                             ID_avion = int.Parse(parts[0]),
@@ -268,13 +267,13 @@ namespace Targ_Avion
                             pret = decimal.Parse(parts[6]),
                             nr_de_pasageri = int.Parse(parts[7])
                         };
-                    }
-                    else
-                    { return null; }
+                    
+                   
                 })
                 .Where(plane => plane != null && plane.firma.StartsWith(litera.ToString(), StringComparison.OrdinalIgnoreCase))
                 //Where -este functia care filtreaza datele din fisier,StringComparison.OrdinalIgnoreCase verifica
-                // daca un cuvant a inceput cu o litera
+                // daca un cuvant a inceput cu o litera   
+                .OrderBy(plane=>plane.firma)
                 .ToList();
             }
 
@@ -362,6 +361,7 @@ namespace Targ_Avion
                 .Where(product_plane =>product_plane!=null && product_plane.companie.StartsWith(litera.ToString(), StringComparison.OrdinalIgnoreCase))
                 //Where -este functia care filtreaza datele din fisier,StringComparison.OrdinalIgnoreCase verifica
                 // daca un cuvant a inceput cu o litera
+                .OrderBy(product_plane =>product_plane.companie)
                 .ToList();
             }
 
