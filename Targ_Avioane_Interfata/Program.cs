@@ -16,7 +16,8 @@ namespace Targ_Avioane_Interfata
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainMenuPlane());
+           
         }
     }
 }

@@ -47,6 +47,7 @@
             this.lblIntroducereFirma = new System.Windows.Forms.Label();
             this.btnAdaugaAvioane = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnBackMainMenu_2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnllblAvion.SuspendLayout();
             this.SuspendLayout();
@@ -59,11 +60,10 @@
             this.lbltitlu.ForeColor = System.Drawing.Color.Crimson;
             this.lbltitlu.Location = new System.Drawing.Point(445, 34);
             this.lbltitlu.Name = "lbltitlu";
-            this.lbltitlu.Size = new System.Drawing.Size(256, 33);
+            this.lbltitlu.Size = new System.Drawing.Size(122, 33);
             this.lbltitlu.TabIndex = 0;
-            this.lbltitlu.Text = "Târgul de avioane";
+            this.lbltitlu.Text = "Avioane";
             this.lbltitlu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbltitlu.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtIntroducereFirma
             // 
@@ -80,7 +80,6 @@
             this.txtIntroducereModel.Name = "txtIntroducereModel";
             this.txtIntroducereModel.Size = new System.Drawing.Size(177, 22);
             this.txtIntroducereModel.TabIndex = 5;
-            this.txtIntroducereModel.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtIntroducereAnFabricatie
             // 
@@ -89,7 +88,6 @@
             this.txtIntroducereAnFabricatie.Name = "txtIntroducereAnFabricatie";
             this.txtIntroducereAnFabricatie.Size = new System.Drawing.Size(177, 22);
             this.txtIntroducereAnFabricatie.TabIndex = 6;
-            this.txtIntroducereAnFabricatie.TextChanged += new System.EventHandler(this.txtIntroducereAnFabricatie_TextChanged);
             // 
             // txtIntroduceCuloare
             // 
@@ -114,7 +112,6 @@
             this.txtIntroducepret.Name = "txtIntroducepret";
             this.txtIntroducepret.Size = new System.Drawing.Size(177, 22);
             this.txtIntroducepret.TabIndex = 9;
-            this.txtIntroducepret.TextChanged += new System.EventHandler(this.txtIntroducepret_TextChanged);
             // 
             // txtIntroducerenrpasg
             // 
@@ -123,7 +120,6 @@
             this.txtIntroducerenrpasg.Name = "txtIntroducerenrpasg";
             this.txtIntroducerenrpasg.Size = new System.Drawing.Size(177, 22);
             this.txtIntroducerenrpasg.TabIndex = 10;
-            this.txtIntroducerenrpasg.TextChanged += new System.EventHandler(this.txtIntroducerenrpasg_TextChanged);
             // 
             // panel1
             // 
@@ -209,7 +205,6 @@
             this.lblIntroducereCuloare.Size = new System.Drawing.Size(84, 23);
             this.lblIntroducereCuloare.TabIndex = 3;
             this.lblIntroducereCuloare.Text = "Culoare:";
-            this.lblIntroducereCuloare.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblIntroducereAnfabricatie
             // 
@@ -275,7 +270,19 @@
             this.btnRefresh.TabIndex = 14;
             this.btnRefresh.Text = "&Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnBackMainMenu_2
+            // 
+            this.btnBackMainMenu_2.BackColor = System.Drawing.Color.Olive;
+            this.btnBackMainMenu_2.Font = new System.Drawing.Font("Segoe Print", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnBackMainMenu_2.ForeColor = System.Drawing.Color.Coral;
+            this.btnBackMainMenu_2.Location = new System.Drawing.Point(1235, 552);
+            this.btnBackMainMenu_2.Name = "btnBackMainMenu_2";
+            this.btnBackMainMenu_2.Size = new System.Drawing.Size(188, 75);
+            this.btnBackMainMenu_2.TabIndex = 15;
+            this.btnBackMainMenu_2.Text = "Înapoi în meniul principal";
+            this.btnBackMainMenu_2.UseVisualStyleBackColor = false;
+            this.btnBackMainMenu_2.Click += new System.EventHandler(this.btnBackMainMenu_2_Click);
             // 
             // Form1
             // 
@@ -283,6 +290,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1452, 673);
+            this.Controls.Add(this.btnBackMainMenu_2);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAdaugaAvioane);
             this.Controls.Add(this.pnllblAvion);
@@ -322,6 +330,7 @@
         private System.Windows.Forms.Label lblIntroducerenrpasg;
         private System.Windows.Forms.Button btnAdaugaAvioane;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnBackMainMenu_2;
     }
 }
 

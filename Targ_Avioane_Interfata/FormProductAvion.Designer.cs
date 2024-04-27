@@ -34,6 +34,17 @@
             this.lblAnInfiintare = new System.Windows.Forms.Label();
             this.lblnrAngajati = new System.Windows.Forms.Label();
             this.lblSpecializare = new System.Windows.Forms.Label();
+            this.lstProductPlane = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRefreshProductPlane = new System.Windows.Forms.Button();
+            this.btnAdaugaProductPlane = new System.Windows.Forms.Button();
+            this.txtSpecializare = new System.Windows.Forms.TextBox();
+            this.txtNrAngajati = new System.Windows.Forms.TextBox();
+            this.txtAnInfiintare = new System.Windows.Forms.TextBox();
+            this.txtTaraOrigine = new System.Windows.Forms.TextBox();
+            this.txtCompanie = new System.Windows.Forms.TextBox();
+            this.btnBackMainMenu_1 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitluProductAvion
@@ -48,14 +59,16 @@
             this.lblTitluProductAvion.TabIndex = 0;
             this.lblTitluProductAvion.Text = "Producător de avioane";
             this.lblTitluProductAvion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTitluProductAvion.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblCompanie
             // 
             this.lblCompanie.AutoSize = true;
-            this.lblCompanie.Location = new System.Drawing.Point(33, 126);
+            this.lblCompanie.BackColor = System.Drawing.Color.Yellow;
+            this.lblCompanie.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanie.ForeColor = System.Drawing.Color.LightSalmon;
+            this.lblCompanie.Location = new System.Drawing.Point(49, 21);
             this.lblCompanie.Name = "lblCompanie";
-            this.lblCompanie.Size = new System.Drawing.Size(69, 16);
+            this.lblCompanie.Size = new System.Drawing.Size(78, 20);
             this.lblCompanie.TabIndex = 1;
             this.lblCompanie.Text = "Companie";
             this.lblCompanie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,29 +76,37 @@
             // lblTaraOrigine
             // 
             this.lblTaraOrigine.AutoSize = true;
-            this.lblTaraOrigine.Location = new System.Drawing.Point(132, 126);
+            this.lblTaraOrigine.BackColor = System.Drawing.Color.Yellow;
+            this.lblTaraOrigine.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaraOrigine.ForeColor = System.Drawing.Color.LightSalmon;
+            this.lblTaraOrigine.Location = new System.Drawing.Point(14, 50);
             this.lblTaraOrigine.Name = "lblTaraOrigine";
-            this.lblTaraOrigine.Size = new System.Drawing.Size(101, 16);
+            this.lblTaraOrigine.Size = new System.Drawing.Size(116, 21);
             this.lblTaraOrigine.TabIndex = 2;
             this.lblTaraOrigine.Text = "Țara de Origine";
             // 
             // lblAnInfiintare
             // 
             this.lblAnInfiintare.AutoSize = true;
-            this.lblAnInfiintare.Location = new System.Drawing.Point(270, 126);
+            this.lblAnInfiintare.BackColor = System.Drawing.Color.Yellow;
+            this.lblAnInfiintare.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnInfiintare.ForeColor = System.Drawing.Color.LightSalmon;
+            this.lblAnInfiintare.Location = new System.Drawing.Point(83, 79);
             this.lblAnInfiintare.Name = "lblAnInfiintare";
-            this.lblAnInfiintare.Size = new System.Drawing.Size(33, 16);
+            this.lblAnInfiintare.Size = new System.Drawing.Size(44, 21);
             this.lblAnInfiintare.TabIndex = 3;
             this.lblAnInfiintare.Text = "Anul";
             this.lblAnInfiintare.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAnInfiintare.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblnrAngajati
             // 
             this.lblnrAngajati.AutoSize = true;
-            this.lblnrAngajati.Location = new System.Drawing.Point(326, 126);
+            this.lblnrAngajati.BackColor = System.Drawing.Color.Yellow;
+            this.lblnrAngajati.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnrAngajati.ForeColor = System.Drawing.Color.LightSalmon;
+            this.lblnrAngajati.Location = new System.Drawing.Point(42, 106);
             this.lblnrAngajati.Name = "lblnrAngajati";
-            this.lblnrAngajati.Size = new System.Drawing.Size(69, 32);
+            this.lblnrAngajati.Size = new System.Drawing.Size(85, 42);
             this.lblnrAngajati.TabIndex = 4;
             this.lblnrAngajati.Text = "Număr de \r\nangajați";
             this.lblnrAngajati.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,26 +114,131 @@
             // lblSpecializare
             // 
             this.lblSpecializare.AutoSize = true;
-            this.lblSpecializare.Location = new System.Drawing.Point(419, 126);
+            this.lblSpecializare.BackColor = System.Drawing.Color.Yellow;
+            this.lblSpecializare.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpecializare.ForeColor = System.Drawing.Color.LightSalmon;
+            this.lblSpecializare.Location = new System.Drawing.Point(37, 155);
             this.lblSpecializare.Name = "lblSpecializare";
-            this.lblSpecializare.Size = new System.Drawing.Size(82, 16);
+            this.lblSpecializare.Size = new System.Drawing.Size(90, 21);
             this.lblSpecializare.TabIndex = 5;
             this.lblSpecializare.Text = "Specializare";
+            // 
+            // lstProductPlane
+            // 
+            this.lstProductPlane.FormattingEnabled = true;
+            this.lstProductPlane.ItemHeight = 16;
+            this.lstProductPlane.Location = new System.Drawing.Point(39, 119);
+            this.lstProductPlane.Name = "lstProductPlane";
+            this.lstProductPlane.Size = new System.Drawing.Size(716, 260);
+            this.lstProductPlane.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Yellow;
+            this.panel1.Controls.Add(this.btnRefreshProductPlane);
+            this.panel1.Controls.Add(this.btnAdaugaProductPlane);
+            this.panel1.Controls.Add(this.txtSpecializare);
+            this.panel1.Controls.Add(this.txtNrAngajati);
+            this.panel1.Controls.Add(this.txtAnInfiintare);
+            this.panel1.Controls.Add(this.txtTaraOrigine);
+            this.panel1.Controls.Add(this.txtCompanie);
+            this.panel1.Controls.Add(this.lblSpecializare);
+            this.panel1.Controls.Add(this.lblnrAngajati);
+            this.panel1.Controls.Add(this.lblAnInfiintare);
+            this.panel1.Controls.Add(this.lblTaraOrigine);
+            this.panel1.Controls.Add(this.lblCompanie);
+            this.panel1.Location = new System.Drawing.Point(761, 107);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(274, 272);
+            this.panel1.TabIndex = 7;
+            // 
+            // btnRefreshProductPlane
+            // 
+            this.btnRefreshProductPlane.BackColor = System.Drawing.Color.Lime;
+            this.btnRefreshProductPlane.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.btnRefreshProductPlane.Location = new System.Drawing.Point(18, 226);
+            this.btnRefreshProductPlane.Name = "btnRefreshProductPlane";
+            this.btnRefreshProductPlane.Size = new System.Drawing.Size(75, 23);
+            this.btnRefreshProductPlane.TabIndex = 12;
+            this.btnRefreshProductPlane.Text = "&Refresh";
+            this.btnRefreshProductPlane.UseVisualStyleBackColor = false;
+            // 
+            // btnAdaugaProductPlane
+            // 
+            this.btnAdaugaProductPlane.BackColor = System.Drawing.Color.Lime;
+            this.btnAdaugaProductPlane.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.btnAdaugaProductPlane.Location = new System.Drawing.Point(18, 197);
+            this.btnAdaugaProductPlane.Name = "btnAdaugaProductPlane";
+            this.btnAdaugaProductPlane.Size = new System.Drawing.Size(75, 23);
+            this.btnAdaugaProductPlane.TabIndex = 11;
+            this.btnAdaugaProductPlane.Text = "&Adaugă";
+            this.btnAdaugaProductPlane.UseVisualStyleBackColor = false;
+            // 
+            // txtSpecializare
+            // 
+            this.txtSpecializare.Location = new System.Drawing.Point(136, 154);
+            this.txtSpecializare.Name = "txtSpecializare";
+            this.txtSpecializare.Size = new System.Drawing.Size(125, 22);
+            this.txtSpecializare.TabIndex = 10;
+            // 
+            // txtNrAngajati
+            // 
+            this.txtNrAngajati.Location = new System.Drawing.Point(136, 117);
+            this.txtNrAngajati.Name = "txtNrAngajati";
+            this.txtNrAngajati.Size = new System.Drawing.Size(125, 22);
+            this.txtNrAngajati.TabIndex = 9;
+            // 
+            // txtAnInfiintare
+            // 
+            this.txtAnInfiintare.Location = new System.Drawing.Point(136, 79);
+            this.txtAnInfiintare.Name = "txtAnInfiintare";
+            this.txtAnInfiintare.Size = new System.Drawing.Size(125, 22);
+            this.txtAnInfiintare.TabIndex = 8;
+            // 
+            // txtTaraOrigine
+            // 
+            this.txtTaraOrigine.Location = new System.Drawing.Point(136, 49);
+            this.txtTaraOrigine.Name = "txtTaraOrigine";
+            this.txtTaraOrigine.Size = new System.Drawing.Size(125, 22);
+            this.txtTaraOrigine.TabIndex = 7;
+            // 
+            // txtCompanie
+            // 
+            this.txtCompanie.Location = new System.Drawing.Point(136, 21);
+            this.txtCompanie.Name = "txtCompanie";
+            this.txtCompanie.Size = new System.Drawing.Size(125, 22);
+            this.txtCompanie.TabIndex = 6;
+            // 
+            // btnBackMainMenu_1
+            // 
+            this.btnBackMainMenu_1.BackColor = System.Drawing.Color.Yellow;
+            this.btnBackMainMenu_1.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.btnBackMainMenu_1.FlatAppearance.BorderSize = 3;
+            this.btnBackMainMenu_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackMainMenu_1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnBackMainMenu_1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnBackMainMenu_1.Location = new System.Drawing.Point(838, 385);
+            this.btnBackMainMenu_1.Name = "btnBackMainMenu_1";
+            this.btnBackMainMenu_1.Size = new System.Drawing.Size(197, 44);
+            this.btnBackMainMenu_1.TabIndex = 8;
+            this.btnBackMainMenu_1.Text = "Înapoi în meniu principal";
+            this.btnBackMainMenu_1.UseVisualStyleBackColor = false;
+            this.btnBackMainMenu_1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormProductAvion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblSpecializare);
-            this.Controls.Add(this.lblnrAngajati);
-            this.Controls.Add(this.lblAnInfiintare);
-            this.Controls.Add(this.lblTaraOrigine);
-            this.Controls.Add(this.lblCompanie);
+            this.ClientSize = new System.Drawing.Size(1109, 450);
+            this.Controls.Add(this.btnBackMainMenu_1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lstProductPlane);
             this.Controls.Add(this.lblTitluProductAvion);
             this.Name = "FormProductAvion";
             this.Text = "FormProductAvion";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,5 +252,15 @@
         private System.Windows.Forms.Label lblAnInfiintare;
         private System.Windows.Forms.Label lblnrAngajati;
         private System.Windows.Forms.Label lblSpecializare;
+        private System.Windows.Forms.ListBox lstProductPlane;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtCompanie;
+        private System.Windows.Forms.TextBox txtSpecializare;
+        private System.Windows.Forms.TextBox txtNrAngajati;
+        private System.Windows.Forms.TextBox txtAnInfiintare;
+        private System.Windows.Forms.TextBox txtTaraOrigine;
+        private System.Windows.Forms.Button btnRefreshProductPlane;
+        private System.Windows.Forms.Button btnAdaugaProductPlane;
+        private System.Windows.Forms.Button btnBackMainMenu_1;
     }
 }

@@ -19,8 +19,8 @@ namespace Targ_Avioane_Interfata
     {
         private AdministrareAvioane_FisierText adminPlanes;
         //Constructurul  cu parametrii din clasa avion
-        private const int NR_MAX_AVIOANE = 50;
-
+        private FormProductAvion AvionProduct;
+       
         private Label lblFirma;
         private Label lblModel;
         private Label lblan_fabricatie;
@@ -185,16 +185,19 @@ namespace Targ_Avioane_Interfata
 
 
             this.FormClosed += OnFormClosed;
-
+           
             ButoaneAvioane();
 
         }
-
+        private void Button_ClickProductAvion(object sender,EventArgs e)
+        {
+            AvionProduct.Show();
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             AfiseazaAvioane();
         }
-
+       
         private void AfiseazaAvioane()
         {
             List<AvionClass> avioane = adminPlanes.GetPlanes();
@@ -206,7 +209,7 @@ namespace Targ_Avioane_Interfata
              lblsgreutate = new Label[nr_avioane];
              lblsPret = new Label[nr_avioane];
              lblsnr_de_pasageri = new Label[nr_avioane];
-            lblsAvioane = new Label[NR_MAX_AVIOANE, 7];
+        
             int i = 0;
             foreach (AvionClass avion in avioane)
             {
@@ -312,7 +315,7 @@ namespace Targ_Avioane_Interfata
 
            
             btnAdaugaAvioane.Click += OnButtonClicked;
-     
+            btnRefresh.Click += OnButton2Clicked;
 
 
             lblRefresh = new Label();
@@ -453,49 +456,11 @@ namespace Targ_Avioane_Interfata
             
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnBackMainMenu_2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtIntroducerenrpasg_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtIntroducepret_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtIntroducereAnFabricatie_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-
+            MainMenuPlane frame_cy= new MainMenuPlane();
+            frame_cy.Show();
+            this.Hide();
         }
     }
 }
