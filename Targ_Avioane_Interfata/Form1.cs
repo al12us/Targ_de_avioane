@@ -370,7 +370,7 @@ namespace Targ_Avioane_Interfata
             AvionClass avion = new AvionClass(0, txtIntroducereFirma.Text.ToString(),txtIntroducereModel.Text.ToString(),an_fabricatie,culoare,greutate,pret,nr_pasageri);
                                              
      
-
+            
             if (txtIntroducereFirma.Text.ToString() == "" || txtIntroducereFirma.Text.ToString() == "Obligatoriu!")
             {
                 txtIntroducereFirma.Text = "Obligatoriu!";

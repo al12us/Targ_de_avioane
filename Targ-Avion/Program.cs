@@ -49,7 +49,7 @@ namespace Targ_Avion
             AdministratorProducator_FisierText administratorProducatorPlane = new AdministratorProducator_FisierText(numeFisier_2);
             int nr_producatori = 0;
             string [] linii_de_banda = File.ReadAllLines("producatorideavioane.txt");
-            List<List<ProductAvion>> the_productsplane = new List<List<ProductAvion>>();
+            List<ProductAvion>[] the_productsplane = new List<ProductAvion>[26];
 
             do
             {
@@ -279,7 +279,7 @@ namespace Targ_Avion
            
             for (int i = 0; i < 26; i++)
             {
-                Console.WriteLine($"Avioanele care încep cu '{(char)('a' + i)}':");
+                Console.WriteLine($"Avioanele care încep cu litera '{(char)('a' + i)}':");
                 //foreach--este o structura de control care itereaza fiecare element dintr-o colectie
                 //In acest proiect se pacurge fiecare avion din sub-tabloul specificat.
                 foreach (AvionClass plane in planes[i])
@@ -336,7 +336,7 @@ namespace Targ_Avion
 
 
         }
-        public static void Afisare_Vector_de_tablou_scara_productPlane(List<List<ProductAvion>> the_productsplane, string[] linii_de_banda)
+        public static void Afisare_Vector_de_tablou_scara_productPlane(List<ProductAvion>[] the_productsplane, string[] linii_de_banda)
         {
             //split-ul este separeaza datele prin ;
             for (int i = 0; i < 26; i++)
@@ -367,7 +367,7 @@ namespace Targ_Avion
 
             for (int i = 0; i < 26; i++)
             {
-                Console.WriteLine($"Avioanele care încep cu '{(char)('a' + i)}':");
+                Console.WriteLine($"Producatori de avioane care încep cu litera '{(char)('a' + i)}':");
                 //foreach--este o structura de control care itereaza fiecare element dintr-o colectie
                 //In acest proiect se pacurge fiecare producator de avioane din sub-tabloul specificat.
                 foreach (ProductAvion product_plane in the_productsplane[i])

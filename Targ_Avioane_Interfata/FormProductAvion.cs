@@ -29,7 +29,21 @@ namespace Targ_Avioane_Interfata
             administratorProducatorPlane = new AdministratorProducator_FisierText(caleCompletaFisier);
 
             this.Load += FormProductAvionLoad;
+            
 
+            txtCompanie.GotFocus += txtCompanieGotFocus;
+            txtTaraOrigine.GotFocus += txtTaraOrigineGotFocus;
+            txtAnInfiintare.GotFocus += txtAnInfiintareGotFocus;
+            txtNrAngajati.GotFocus += txtNrAngajatiGotFocus;
+            txtSpecializare.GotFocus += txtSpecGotFocus;
+
+            //Lost focus
+
+            txtCompanie.LostFocus += txtCompanieLostFocus;
+            txtTaraOrigine.LostFocus += txtTaraOrigineLostFocus;
+            txtAnInfiintare.LostFocus += txtAnInfiintareLostFocus;
+            txtNrAngajati.LostFocus += txtNrAngajatiLostFocus;
+            txtSpecializare.LostFocus += txtSpecLostFocus;
         }
 
         private void Afiseaza_Producatori_Aeronave()
@@ -46,15 +60,83 @@ namespace Targ_Avioane_Interfata
         {
             Afiseaza_Producatori_Aeronave();
         }
-      
 
- 
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             MainMenuPlane frame = new MainMenuPlane();
             frame.Show();
             this.Hide();
 
+
+        }
+        private void txtCompanieGotFocus(object sender,EventArgs e)
+        {
+            txtCompanie.BackColor = Color.Aquamarine;
+
+
+        }
+        private void txtTaraOrigineGotFocus(object sender,EventArgs e)
+        {
+            txtTaraOrigine.BackColor = Color.Aquamarine;
+        }
+        private void txtAnInfiintareGotFocus(object sender,EventArgs e)
+        {
+            txtAnInfiintare.BackColor = Color.Aquamarine;
+        }
+
+        private void txtNrAngajatiGotFocus(object sender,EventArgs e)
+        {
+            txtNrAngajati.BackColor = Color.Aquamarine;
+        }
+        private void txtSpecGotFocus(object sender,EventArgs e)
+        {
+            txtSpecializare.BackColor = Color.Aquamarine;
+        }
+        private void txtCompanieLostFocus(object sender, EventArgs e)
+        {
+            txtCompanie.BackColor = SystemColors.Window;
+
+
+        }
+        private void txtTaraOrigineLostFocus(object sender, EventArgs e)
+        {
+            txtTaraOrigine.BackColor = SystemColors.Window;
+        }
+        private void txtAnInfiintareLostFocus(object sender, EventArgs e)
+        {
+            txtAnInfiintare.BackColor = SystemColors.Window;
+        }
+
+        private void txtNrAngajatiLostFocus(object sender, EventArgs e)
+        {
+            txtNrAngajati.BackColor = SystemColors.Window;
+        }
+        private void txtSpecLostFocus(object sender, EventArgs e)
+        {
+            txtSpecializare.BackColor = SystemColors.Window;
+        }
+
+        private void btnAdaugaProductPlane_Click(object sender, EventArgs e)
+        {
+            int AnInfiintare;
+            int nrAngajati;
+            Specializarea spec;
+            txtCompanie.Text.ToString();
+            txtTaraOrigine.ToString();
+            Int32.TryParse(txtAnInfiintare.Text.ToString(), out AnInfiintare);
+            Int32.TryParse(txtNrAngajati.Text.ToString(), out nrAngajati);
+            Enum.TryParse(txtSpecializare.Text.ToString(),out spec);
+
+            ProductAvion producator = new ProductAvion(0, txtCompanie.Text.ToString(), txtTaraOrigine.Text.ToString(),AnInfiintare,nrAngajati,spec);
+            administratorProducatorPlane.AddProducator(producator);
+
+        }
+
+        private void btnRefreshProductPlane_Click(object sender, EventArgs e)
+        {
+            Afiseaza_Producatori_Aeronave();
 
         }
     }

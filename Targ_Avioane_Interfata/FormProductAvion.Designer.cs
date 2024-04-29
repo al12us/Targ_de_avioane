@@ -129,7 +129,7 @@
             this.lstProductPlane.ItemHeight = 16;
             this.lstProductPlane.Location = new System.Drawing.Point(39, 119);
             this.lstProductPlane.Name = "lstProductPlane";
-            this.lstProductPlane.Size = new System.Drawing.Size(716, 260);
+            this.lstProductPlane.Size = new System.Drawing.Size(792, 260);
             this.lstProductPlane.TabIndex = 6;
             // 
             // panel1
@@ -147,7 +147,7 @@
             this.panel1.Controls.Add(this.lblAnInfiintare);
             this.panel1.Controls.Add(this.lblTaraOrigine);
             this.panel1.Controls.Add(this.lblCompanie);
-            this.panel1.Location = new System.Drawing.Point(761, 107);
+            this.panel1.Location = new System.Drawing.Point(854, 107);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(274, 272);
             this.panel1.TabIndex = 7;
@@ -162,6 +162,7 @@
             this.btnRefreshProductPlane.TabIndex = 12;
             this.btnRefreshProductPlane.Text = "&Refresh";
             this.btnRefreshProductPlane.UseVisualStyleBackColor = false;
+            this.btnRefreshProductPlane.Click += new System.EventHandler(this.btnRefreshProductPlane_Click);
             // 
             // btnAdaugaProductPlane
             // 
@@ -173,6 +174,7 @@
             this.btnAdaugaProductPlane.TabIndex = 11;
             this.btnAdaugaProductPlane.Text = "&Adaugă";
             this.btnAdaugaProductPlane.UseVisualStyleBackColor = false;
+            this.btnAdaugaProductPlane.Click += new System.EventHandler(this.btnAdaugaProductPlane_Click);
             // 
             // txtSpecializare
             // 
@@ -217,7 +219,7 @@
             this.btnBackMainMenu_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackMainMenu_1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnBackMainMenu_1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnBackMainMenu_1.Location = new System.Drawing.Point(838, 385);
+            this.btnBackMainMenu_1.Location = new System.Drawing.Point(931, 385);
             this.btnBackMainMenu_1.Name = "btnBackMainMenu_1";
             this.btnBackMainMenu_1.Size = new System.Drawing.Size(197, 44);
             this.btnBackMainMenu_1.TabIndex = 8;
@@ -230,7 +232,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1109, 450);
+            this.ClientSize = new System.Drawing.Size(1452, 673);
             this.Controls.Add(this.btnBackMainMenu_1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lstProductPlane);
