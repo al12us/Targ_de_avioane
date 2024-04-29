@@ -36,7 +36,7 @@ namespace Targ_Avion
             //adaugarea tablou in scara
             //File.ReadAllLines citeste toate liniile din fisier
             string[] linii = File.ReadAllLines("avioane.txt");
-            List<List<AvionClass>> planes = new List<List<AvionClass>>();
+            List<AvionClass>[] planes = new List<AvionClass>[26];
             Console.WriteLine();
             ///S-a adaugat producatorul de avioane
             ProductAvion producator = new ProductAvion();
@@ -129,7 +129,7 @@ namespace Targ_Avion
                         List<AvionClass> avioane_gasite = adminPlane.GetAvion(Firma, Model);
                         foreach (AvionClass avion in avioane_gasite)
                         {
-                            Console.WriteLine(avion);
+                            Console.WriteLine(avion.Info);
                         }
                         break;
                     case "L":
@@ -245,7 +245,7 @@ namespace Targ_Avion
             }
         }
 
-        public static void Afisare_Vector_de_tablou_scara(List<List<AvionClass>>planes, string[] linii)
+        public static void Afisare_Vector_de_tablou_scara(List<AvionClass>[] planes, string[] linii)
         {
             //split-ul este separeaza datele prin ;
             for (int i = 0; i < 26; i++)
@@ -276,7 +276,7 @@ namespace Targ_Avion
                 .OrderBy(plane=>plane.firma)
                 .ToList();
             }
-
+           
             for (int i = 0; i < 26; i++)
             {
                 Console.WriteLine($"Avioanele care încep cu '{(char)('a' + i)}':");

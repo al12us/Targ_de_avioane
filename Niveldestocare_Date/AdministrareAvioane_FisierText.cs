@@ -73,25 +73,7 @@ namespace Niveldestocare_Date
 
             return null;
         }
-        public AvionClass GetPlane(int idAvion)
-        {
-            // instructiunea 'using' va apela streamReader.Close()
-            using (StreamReader streamReader = new StreamReader(numeFisier))
-            {
-                string linieFisier;
-
-                // citeste cate o linie si creaza un obiect de tip Avion
-                // pe baza datelor din linia citita
-                while ((linieFisier = streamReader.ReadLine()) != null)
-                {
-                    AvionClass avion = new AvionClass(linieFisier);
-                    if (avion.ID_avion == idAvion)
-                        return avion;
-                }
-            }
-
-            return null;
-        }
+       
         private int GetID()
         {
             int IDAvion = ID_PRIMUL_AVION;
