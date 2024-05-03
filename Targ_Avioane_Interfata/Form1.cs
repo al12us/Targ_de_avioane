@@ -404,6 +404,11 @@ namespace Targ_Avioane_Interfata
                 txtIntroducereAnFabricatie.ForeColor = Color.Red;
                 valid = false;
             }
+            else if (txtIntroducereAnFabricatie.Text.Length > 4)
+            {
+                txtIntroducereAnFabricatie.ForeColor = Color.Red;
+                valid = false;
+            }
             else
                 txtIntroducereFirma.ForeColor = Color.Black;
 
