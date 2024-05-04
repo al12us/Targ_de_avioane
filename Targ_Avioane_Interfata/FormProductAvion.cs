@@ -44,6 +44,7 @@ namespace Targ_Avioane_Interfata
             txtAnInfiintare.LostFocus += txtAnInfiintareLostFocus;
             txtNrAngajati.LostFocus += txtNrAngajatiLostFocus;
             txtSpecializare.LostFocus += txtSpecLostFocus;
+
         }
 
         private void Afiseaza_Producatori_Aeronave()
@@ -113,11 +114,10 @@ namespace Targ_Avioane_Interfata
         {
             txtNrAngajati.BackColor = SystemColors.Window;
         }
-        private void txtSpecLostFocus(object sender, EventArgs e)
+        private void txtSpecLostFocus(object sender,EventArgs e)
         {
             txtSpecializare.BackColor = SystemColors.Window;
         }
-
         private void btnAdaugaProductPlane_Click(object sender, EventArgs e)
         {
             int AnInfiintare;

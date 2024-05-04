@@ -37,7 +37,12 @@
             this.txtIntroducepret = new System.Windows.Forms.TextBox();
             this.txtIntroducerenrpasg = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rdbComercial = new System.Windows.Forms.RadioButton();
+            this.rdbExperimental = new System.Windows.Forms.RadioButton();
+            this.rdbCivil = new System.Windows.Forms.RadioButton();
+            this.rdbMilitar = new System.Windows.Forms.RadioButton();
             this.pnllblAvion = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblIntroducerenrpasg = new System.Windows.Forms.Label();
             this.lblIntrodcducerepret = new System.Windows.Forms.Label();
             this.lblIntroducereGreutate = new System.Windows.Forms.Label();
@@ -48,8 +53,10 @@
             this.btnAdaugaAvioane = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnBackMainMenu_2 = new System.Windows.Forms.Button();
+            this.gpbTipAvion = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.pnllblAvion.SuspendLayout();
+            this.gpbTipAvion.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbltitlu
@@ -124,6 +131,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Cyan;
+            this.panel1.Controls.Add(this.gpbTipAvion);
             this.panel1.Controls.Add(this.txtIntroducerenrpasg);
             this.panel1.Controls.Add(this.txtIntroducepret);
             this.panel1.Controls.Add(this.txtIntroduceregreutate);
@@ -134,12 +142,66 @@
             this.panel1.Location = new System.Drawing.Point(1224, 28);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(196, 260);
+            this.panel1.Size = new System.Drawing.Size(302, 355);
             this.panel1.TabIndex = 11;
+            // 
+            // rdbComercial
+            // 
+            this.rdbComercial.AutoSize = true;
+            this.rdbComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rdbComercial.ForeColor = System.Drawing.Color.DarkOrange;
+            this.rdbComercial.Location = new System.Drawing.Point(6, 21);
+            this.rdbComercial.Name = "rdbComercial";
+            this.rdbComercial.Size = new System.Drawing.Size(106, 24);
+            this.rdbComercial.TabIndex = 2;
+            this.rdbComercial.TabStop = true;
+            this.rdbComercial.Text = "Comercial";
+            this.rdbComercial.UseVisualStyleBackColor = true;
+            this.rdbComercial.CheckedChanged += new System.EventHandler(this.rdbComercial_CheckedChanged);
+            // 
+            // rdbExperimental
+            // 
+            this.rdbExperimental.AutoSize = true;
+            this.rdbExperimental.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rdbExperimental.ForeColor = System.Drawing.Color.DarkOrange;
+            this.rdbExperimental.Location = new System.Drawing.Point(121, 18);
+            this.rdbExperimental.Name = "rdbExperimental";
+            this.rdbExperimental.Size = new System.Drawing.Size(127, 24);
+            this.rdbExperimental.TabIndex = 3;
+            this.rdbExperimental.TabStop = true;
+            this.rdbExperimental.Text = "Experimental";
+            this.rdbExperimental.UseVisualStyleBackColor = true;
+            // 
+            // rdbCivil
+            // 
+            this.rdbCivil.AutoSize = true;
+            this.rdbCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rdbCivil.ForeColor = System.Drawing.Color.DarkOrange;
+            this.rdbCivil.Location = new System.Drawing.Point(6, 54);
+            this.rdbCivil.Name = "rdbCivil";
+            this.rdbCivil.Size = new System.Drawing.Size(62, 24);
+            this.rdbCivil.TabIndex = 1;
+            this.rdbCivil.TabStop = true;
+            this.rdbCivil.Text = "Civil";
+            this.rdbCivil.UseVisualStyleBackColor = true;
+            // 
+            // rdbMilitar
+            // 
+            this.rdbMilitar.AutoSize = true;
+            this.rdbMilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rdbMilitar.ForeColor = System.Drawing.Color.DarkOrange;
+            this.rdbMilitar.Location = new System.Drawing.Point(121, 54);
+            this.rdbMilitar.Name = "rdbMilitar";
+            this.rdbMilitar.Size = new System.Drawing.Size(76, 24);
+            this.rdbMilitar.TabIndex = 0;
+            this.rdbMilitar.TabStop = true;
+            this.rdbMilitar.Text = "Militar";
+            this.rdbMilitar.UseVisualStyleBackColor = true;
             // 
             // pnllblAvion
             // 
             this.pnllblAvion.BackColor = System.Drawing.Color.Cyan;
+            this.pnllblAvion.Controls.Add(this.label1);
             this.pnllblAvion.Controls.Add(this.lblIntroducerenrpasg);
             this.pnllblAvion.Controls.Add(this.lblIntrodcducerepret);
             this.pnllblAvion.Controls.Add(this.lblIntroducereGreutate);
@@ -150,8 +212,22 @@
             this.pnllblAvion.Location = new System.Drawing.Point(1101, 28);
             this.pnllblAvion.Margin = new System.Windows.Forms.Padding(4);
             this.pnllblAvion.Name = "pnllblAvion";
-            this.pnllblAvion.Size = new System.Drawing.Size(127, 260);
+            this.pnllblAvion.Size = new System.Drawing.Size(127, 355);
             this.pnllblAvion.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Cyan;
+            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label1.Location = new System.Drawing.Point(31, 273);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 46);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Tipul de \r\n  avion";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblIntroducerenrpasg
             // 
@@ -251,7 +327,7 @@
             this.btnAdaugaAvioane.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAdaugaAvioane.Font = new System.Drawing.Font("Courier New", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdaugaAvioane.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnAdaugaAvioane.Location = new System.Drawing.Point(1101, 295);
+            this.btnAdaugaAvioane.Location = new System.Drawing.Point(1093, 387);
             this.btnAdaugaAvioane.Name = "btnAdaugaAvioane";
             this.btnAdaugaAvioane.Size = new System.Drawing.Size(110, 36);
             this.btnAdaugaAvioane.TabIndex = 13;
@@ -264,7 +340,7 @@
             this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnRefresh.Font = new System.Drawing.Font("Courier New", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRefresh.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnRefresh.Location = new System.Drawing.Point(1101, 337);
+            this.btnRefresh.Location = new System.Drawing.Point(1095, 440);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(110, 36);
             this.btnRefresh.TabIndex = 14;
@@ -284,12 +360,24 @@
             this.btnBackMainMenu_2.UseVisualStyleBackColor = false;
             this.btnBackMainMenu_2.Click += new System.EventHandler(this.btnBackMainMenu_2_Click);
             // 
+            // gpbTipAvion
+            // 
+            this.gpbTipAvion.Controls.Add(this.rdbComercial);
+            this.gpbTipAvion.Controls.Add(this.rdbExperimental);
+            this.gpbTipAvion.Controls.Add(this.rdbMilitar);
+            this.gpbTipAvion.Controls.Add(this.rdbCivil);
+            this.gpbTipAvion.Location = new System.Drawing.Point(20, 255);
+            this.gpbTipAvion.Name = "gpbTipAvion";
+            this.gpbTipAvion.Size = new System.Drawing.Size(254, 97);
+            this.gpbTipAvion.TabIndex = 11;
+            this.gpbTipAvion.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1452, 673);
+            this.ClientSize = new System.Drawing.Size(1582, 673);
             this.Controls.Add(this.btnBackMainMenu_2);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAdaugaAvioane);
@@ -304,6 +392,8 @@
             this.panel1.PerformLayout();
             this.pnllblAvion.ResumeLayout(false);
             this.pnllblAvion.PerformLayout();
+            this.gpbTipAvion.ResumeLayout(false);
+            this.gpbTipAvion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,6 +421,12 @@
         private System.Windows.Forms.Button btnAdaugaAvioane;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnBackMainMenu_2;
+        private System.Windows.Forms.RadioButton rdbMilitar;
+        private System.Windows.Forms.RadioButton rdbComercial;
+        private System.Windows.Forms.RadioButton rdbCivil;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rdbExperimental;
+        private System.Windows.Forms.GroupBox gpbTipAvion;
     }
 }
 

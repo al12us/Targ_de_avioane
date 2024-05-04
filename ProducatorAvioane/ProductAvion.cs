@@ -26,6 +26,7 @@ namespace ProducatorAvioane
         public int AnInfiintare { get; set;}
         public int nrAngajati { get; set;}
         public Specializarea specializare { get; set;}
+     
        public ProductAvion()
         {
             companie=TaraOrigine = string.Empty;

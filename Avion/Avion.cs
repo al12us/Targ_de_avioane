@@ -1,6 +1,6 @@
 ﻿
 using System;
-
+using System.Collections;
 namespace Avion
 {
     public class AvionClass
@@ -27,6 +27,8 @@ namespace Avion
         public decimal greutate { set; get; }
         public decimal pret { set; get; }
         public int nr_de_pasageri { set; get; }
+        public TipAvion AirplaneType { get; set; }
+        public ArrayList Componente { get; set; }
         public AvionClass()
         {
             firma = model = string.Empty;

@@ -39,12 +39,12 @@ namespace Targ_Avioane_Interfata
          private Label[] lblsPret;
          private Label[] lblsnr_de_pasageri;
 
-        private Label[ , ] lblsAvioane; 
-
+       /* private Label[ , ] lblsAvioane;
+        private const int NUMAR_PROPRIETATI = 7;*/
+     
        
          //txtIntroducereFirma
 
-       
         //lblIntroducereModel
         //lblIntroducereAnfabricatie
         //lblIntroducereCuloare
@@ -59,12 +59,8 @@ namespace Targ_Avioane_Interfata
         //txtIntroudceregreutate se gasesete in Form1.Designer.cs
 
        //numarul de pasageri
-        
         //butoanele
-
-        
         //btnAdaugaAvioane
-      
         //label
         private Label lblSalvarePlane;
         private Label lblRefresh;
@@ -229,6 +225,7 @@ namespace Targ_Avioane_Interfata
              lblsgreutate = new Label[nr_avioane];
              lblsPret = new Label[nr_avioane];
              lblsnr_de_pasageri = new Label[nr_avioane];
+           // lblsAvioane = new Label[nr_avioane, NUMAR_PROPRIETATI];
         
             int i = 0;
             foreach (AvionClass avion in avioane)
@@ -325,10 +322,10 @@ namespace Targ_Avioane_Interfata
            
 
             lblSalvarePlane = new Label();
-            lblSalvarePlane.Width = LUNGIME_CONTROL * 3-25;
+            lblSalvarePlane.Width = LUNGIME_CONTROL * 3;
             lblSalvarePlane.Height = LATIME_CONTROL;
             lblSalvarePlane.Left = DIMENSIUNEA_PAS_X * 9 + 10;
-            lblSalvarePlane.Top = 250;
+            lblSalvarePlane.Top = 330;
             lblSalvarePlane.Text = " ";
             lblSalvarePlane.BackColor = Color.Aqua;
             this.Controls.Add(lblSalvarePlane);
@@ -339,10 +336,10 @@ namespace Targ_Avioane_Interfata
 
 
             lblRefresh = new Label();
-            lblRefresh.Width = LUNGIME_CONTROL * 3-25;
+            lblRefresh.Width = LUNGIME_CONTROL * 3;
             lblRefresh.Height = LATIME_CONTROL;
             lblRefresh.Left = DIMENSIUNEA_PAS_X * 9 + 10;
-            lblRefresh.Top = 280;
+            lblRefresh.Top = 360;
             lblRefresh.Text = " ";
             lblRefresh.BackColor = Color.Aqua;
             this.Controls.Add(lblRefresh);
@@ -554,6 +551,23 @@ namespace Targ_Avioane_Interfata
             MainMenuPlane frame_cy= new MainMenuPlane();
             frame_cy.Show();
             this.Hide();
+        }
+          private TipAvion GetTipAvionSelectat()
+          {  
+            if(rdbCivil.Checked)
+                return TipAvion.Civil;
+            if (rdbComercial.Checked)
+                return TipAvion.Comercial;
+            if (rdbExperimental.Checked)
+                return TipAvion.Experimental;
+            if (rdbMilitar.Checked)
+                return TipAvion.Militar;
+            return TipAvion.Nedefinit;
+
+          } 
+        private void rdbComercial_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

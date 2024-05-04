@@ -38,12 +38,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRefreshProductPlane = new System.Windows.Forms.Button();
             this.btnAdaugaProductPlane = new System.Windows.Forms.Button();
-            this.txtSpecializare = new System.Windows.Forms.TextBox();
             this.txtNrAngajati = new System.Windows.Forms.TextBox();
             this.txtAnInfiintare = new System.Windows.Forms.TextBox();
             this.txtTaraOrigine = new System.Windows.Forms.TextBox();
             this.txtCompanie = new System.Windows.Forms.TextBox();
             this.btnBackMainMenu_1 = new System.Windows.Forms.Button();
+            this.txtSpecializare = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -176,13 +176,6 @@
             this.btnAdaugaProductPlane.UseVisualStyleBackColor = false;
             this.btnAdaugaProductPlane.Click += new System.EventHandler(this.btnAdaugaProductPlane_Click);
             // 
-            // txtSpecializare
-            // 
-            this.txtSpecializare.Location = new System.Drawing.Point(136, 154);
-            this.txtSpecializare.Name = "txtSpecializare";
-            this.txtSpecializare.Size = new System.Drawing.Size(125, 22);
-            this.txtSpecializare.TabIndex = 10;
-            // 
             // txtNrAngajati
             // 
             this.txtNrAngajati.Location = new System.Drawing.Point(136, 117);
@@ -227,6 +220,13 @@
             this.btnBackMainMenu_1.UseVisualStyleBackColor = false;
             this.btnBackMainMenu_1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtSpecializare
+            // 
+            this.txtSpecializare.Location = new System.Drawing.Point(136, 154);
+            this.txtSpecializare.Name = "txtSpecializare";
+            this.txtSpecializare.Size = new System.Drawing.Size(125, 22);
+            this.txtSpecializare.TabIndex = 10;
+            // 
             // FormProductAvion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -257,12 +257,13 @@
         private System.Windows.Forms.ListBox lstProductPlane;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtCompanie;
-        private System.Windows.Forms.TextBox txtSpecializare;
         private System.Windows.Forms.TextBox txtNrAngajati;
         private System.Windows.Forms.TextBox txtAnInfiintare;
         private System.Windows.Forms.TextBox txtTaraOrigine;
         private System.Windows.Forms.Button btnRefreshProductPlane;
         private System.Windows.Forms.Button btnAdaugaProductPlane;
         private System.Windows.Forms.Button btnBackMainMenu_1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox txtSpecializare;
     }
 }

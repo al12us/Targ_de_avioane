@@ -28,6 +28,14 @@ namespace Avion
         AlbastruVerde=17
 
     }
+    public enum TipAvion
+    {
+        Nedefinit=0,
+        Civil=1,
+        Comercial=2,
+        Experimental=3,
+        Militar=4
+    }
     [Flags]
     public enum Specializarea
     {
