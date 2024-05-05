@@ -193,7 +193,8 @@ namespace Targ_Avion
         }
 
         public static AvionClass CitireAvionulTastatura()
-        {
+        {  
+
             Console.WriteLine("Introduceti Firma");
             string Firma = Console.ReadLine();
 
@@ -213,9 +214,16 @@ namespace Targ_Avion
 
             Console.WriteLine("Introduceti numarul de pasageri de la tastatura");
             int nrpassageri = Convert.ToInt32(Console.ReadLine());
-
-
             AvionClass avion = new AvionClass(0, Firma, modelul, an_fabricatia, culoarea, greutatea, pretul, nrpassageri);
+            Console.WriteLine("Alegeti tipuul de avion: ");
+            Console.WriteLine("1 - Civil \n" +
+            "2 - Comercial \n" +
+            "3 - Experimental \n" +
+            "4 - Militar \n" );
+            int optiune = Convert.ToInt32(Console.ReadLine());
+            avion.AirplaneType = (TipAvion)optiune;
+
+           
 
             return avion;
         }
@@ -229,7 +237,8 @@ namespace Targ_Avion
                     avion.culoare.ToString(),
                     avion.greutate,
                     avion.pret,
-                    avion.nr_de_pasageri);
+                    avion.nr_de_pasageri,
+                    avion.AirplaneType.ToString());
 
 
             Console.WriteLine(infoAvion);
@@ -265,7 +274,8 @@ namespace Targ_Avion
                             culoare = (Culoarea)Enum.Parse(typeof(Culoarea), parts[4]),
                             greutate = decimal.Parse(parts[5]),
                             pret = decimal.Parse(parts[6]),
-                            nr_de_pasageri = int.Parse(parts[7])
+                            nr_de_pasageri = int.Parse(parts[7]),
+                            AirplaneType = (TipAvion)Enum.Parse(typeof(TipAvion), parts[8])
                         };
                     
                    
@@ -285,7 +295,7 @@ namespace Targ_Avion
                 foreach (AvionClass plane in planes[i])
                 {
                     string afisare = $"ID:{plane.ID_avion}\nFirma:{plane.firma ?? "Necunoscut"}\n Model:{plane.model ?? "necunoscut"}\n Anul in care este fabricat {plane.an_fabricatie} \n Culoarea:{plane.culoare}\n" +
-                           $"Greutatea:{plane.greutate}\n Pret:{plane.pret}\n Numar de pasageri:{plane.nr_de_pasageri}";
+                           $"Greutatea:{plane.greutate}\n Pret:{plane.pret}\n Numar de pasageri:{plane.nr_de_pasageri}\n Tipul de avion {plane.AirplaneType}\n";
                     Console.WriteLine(afisare);
                 }
             }

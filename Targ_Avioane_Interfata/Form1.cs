@@ -69,7 +69,7 @@ namespace Targ_Avioane_Interfata
         private const int LUNGIME_CONTROL = 60;
         private const int DIMENSIUNEA_PAS_X = 100;
         private const int DIMENSIUNEA_PAS_Y = 120;
-
+        private const int CARACTER_AN_FABRICATIE = 4;
         public Form1()
         {
             InitializeComponent();
@@ -357,16 +357,17 @@ namespace Targ_Avioane_Interfata
             decimal greutate;
             decimal pret;
             int nr_pasageri;
-             txtIntroducereFirma.Text.ToString();
-             txtIntroducereModel.Text.ToString();
+             string firma=txtIntroducereFirma.Text.ToString();
+             string model=txtIntroducereModel.Text.ToString();
             bool an_FabricatieValid = Int32.TryParse(txtIntroducereAnFabricatie.Text.ToString(), out an_fabricatie);
             bool culoareValid = Enum.TryParse(txtIntroduceCuloare.Text.ToString(), out culoare);
             bool greutateValid = Decimal.TryParse(txtIntroduceregreutate.Text.ToString(), out greutate);
             bool pretValid=Decimal.TryParse(txtIntroducepret.Text.ToString(), out pret);
              bool nr_pasgariValid= Int32.TryParse(txtIntroducerenrpasg.Text.ToString(), out nr_pasageri);
-            AvionClass avion = new AvionClass(0, txtIntroducereFirma.Text.ToString(),txtIntroducereModel.Text.ToString(),an_fabricatie,culoare,greutate,pret,nr_pasageri);
-                                             
-     
+            AvionClass avion = new AvionClass(0, firma,model,an_fabricatie,culoare,greutate,pret,nr_pasageri);
+
+            TipAvion PlaneSelected = GetTipAvionSelectat();
+            avion.AirplaneType = PlaneSelected;
             
             if (txtIntroducereFirma.Text.ToString() == "" || txtIntroducereFirma.Text.ToString() == "Obligatoriu!")
             {
@@ -401,7 +402,7 @@ namespace Targ_Avioane_Interfata
                 txtIntroducereAnFabricatie.ForeColor = Color.Red;
                 valid = false;
             }
-            else if (txtIntroducereAnFabricatie.Text.Length > 4)
+            else if (txtIntroducereAnFabricatie.Text.Length > CARACTER_AN_FABRICATIE)
             {
                 txtIntroducereAnFabricatie.ForeColor = Color.Red;
                 valid = false;
@@ -463,8 +464,19 @@ namespace Targ_Avioane_Interfata
             {
                 lblSalvarePlane.Text = "Informatiile sunt introduse incorect";
             }
+            ResetControls();
         }
-          
+         private void ResetControls()
+        {
+            txtIntroducereFirma.Text = txtIntroducereModel.Text = txtIntroducereAnFabricatie.Text = txtIntroduceCuloare.Text = string.Empty;
+            txtIntroduceregreutate.Text = txtIntroducepret.Text = txtIntroducerenrpasg.Text = string.Empty;
+            rdbCivil.Checked = false;
+            rdbComercial.Checked = false;
+            rdbExperimental.Checked = false;
+            rdbMilitar.Checked = false;
+
+
+        }
         
         private void OnButton2Clicked(object sender,EventArgs e)
         {

@@ -17,7 +17,7 @@ namespace Avion
         private const int GREUTATE = 5;
         private const int PRET = 6;
         private const int NRPASAGERI = 7;
-
+        private const int TIPUL_AVION=8;
         //auto-implementari
         public int ID_avion{ set; get; }
         public string firma { set; get; }
@@ -64,20 +64,21 @@ namespace Avion
             this.greutate = Convert.ToDecimal(dateFisier[GREUTATE]);
             this.pret = Convert.ToDecimal(dateFisier[PRET]);
             this.nr_de_pasageri = Convert.ToInt32(dateFisier[NRPASAGERI]);
+            this.AirplaneType = (TipAvion)Enum.Parse(typeof(TipAvion), dateFisier[TIPUL_AVION]);
         }
         public string Info
         {
             get
             {
                 string afisare = $"ID:{ID_avion}\nFirma:{firma ?? "Necunoscut"}\n Model:{model ?? "necunoscut"}\n Anul in care este fabricat {an_fabricatie} \n Culoarea:{culoare}\n" +
-                                 $"Greutatea:{greutate}\n Pret:{pret}\n Numar de pasageri:{nr_de_pasageri}";
+                                 $"Greutatea:{greutate}\n Pret:{pret}\n Numar de pasageri:{nr_de_pasageri}\nTipul avionului {AirplaneType}";
                 return afisare;
             }
         }
 
         public string ConversieLaSir_PentruFisier()
         {
-            string obiectAvionPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}{0}",
+            string obiectAvionPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}{0}{9}{0}",
                 SEPARATOR_PRINCIPAL_FISIER,
                 ID_avion.ToString(),
                 (firma ?? " NECUNOSCUT "),
@@ -86,7 +87,8 @@ namespace Avion
                 culoare.ToString(),
                 greutate.ToString(),
                 pret.ToString(),
-                nr_de_pasageri.ToString());
+                nr_de_pasageri.ToString(),
+                AirplaneType.ToString());
 
             return obiectAvionPentruFisier;
         }
