@@ -18,6 +18,11 @@ namespace Targ_Avioane_Interfata
     public partial class FormProductAvion : Form
     {
         private AdministratorProducator_FisierText administratorProducatorPlane;
+        private const string MESAJ= "Obligatoriu!";
+        private const int STRLEN_MIN_COMPANIE = 5;
+        private const int STRLEN_MAX_COMPANIE = 30;
+        private const int STRLEN_MAX_TARA_ORIGINE = 60;
+        private const int PRODUCATOR_AVION_NESELECTAT = -1;
         public FormProductAvion()
         {
             InitializeComponent();
@@ -123,21 +128,106 @@ namespace Targ_Avioane_Interfata
             int AnInfiintare;
             int nrAngajati;
             Specializarea spec;
-            txtCompanie.Text.ToString();
-            txtTaraOrigine.ToString();
+           string companie= txtCompanie.Text.ToString();
+            string taradeorigine=txtTaraOrigine.ToString();
             Int32.TryParse(txtAnInfiintare.Text.ToString(), out AnInfiintare);
             Int32.TryParse(txtNrAngajati.Text.ToString(), out nrAngajati);
             Enum.TryParse(txtSpecializare.Text.ToString(),out spec);
 
             ProductAvion producator = new ProductAvion(0, txtCompanie.Text.ToString(), txtTaraOrigine.Text.ToString(),AnInfiintare,nrAngajati,spec);
-            administratorProducatorPlane.AddProducator(producator);
+         
+            bool validProductPlane = true;
+            if (txtCompanie.Text.ToString() == "" || txtCompanie.Text.ToString() == MESAJ)
+            {
+                txtCompanie.Text = MESAJ;
+                txtCompanie.ForeColor = Color.Red;
+                validProductPlane = false;
+            }
+            else if (txtCompanie.Text.Length < STRLEN_MIN_COMPANIE || txtCompanie.TextLength > STRLEN_MAX_COMPANIE)
+            {
+                txtCompanie.ForeColor = Color.Red;
+                validProductPlane = false;
+            }
+            else
+                txtCompanie.ForeColor = Color.Black;
+            if (txtTaraOrigine.Text.ToString() == "" || txtTaraOrigine.Text.ToString() == MESAJ)
+            {
+                txtTaraOrigine.Text = MESAJ;
+                txtTaraOrigine.ForeColor = Color.Red;
+                validProductPlane = false;
+            }
+            else if (txtTaraOrigine.Text.Length < STRLEN_MIN_COMPANIE || txtTaraOrigine.TextLength > STRLEN_MAX_TARA_ORIGINE)
+            {
+                txtTaraOrigine.ForeColor = Color.Red;
+                validProductPlane = false;
+            }
+            else
+                txtTaraOrigine.ForeColor = Color.Black;
+            if (txtAnInfiintare.Text.ToString() == "" || txtAnInfiintare.Text.ToString() == MESAJ)
+            {
+                txtAnInfiintare.Text = MESAJ;
+                txtAnInfiintare.ForeColor = Color.Red;
+                validProductPlane = false;
+            }
+            else
+                txtAnInfiintare.ForeColor = Color.Black;
+            if (txtNrAngajati.Text.ToString() == "" || txtNrAngajati.Text.ToString() == MESAJ)
+            {
+                txtNrAngajati.Text = MESAJ;
+                txtNrAngajati.ForeColor = Color.Red;
+                validProductPlane = false;
+            }
+            else
+                txtNrAngajati.ForeColor = Color.Black;
+            if (txtSpecializare.Text.ToString() == "" || txtSpecializare.Text.ToString() == MESAJ)
+            {
+                txtSpecializare.Text = MESAJ;
+                txtSpecializare.ForeColor = Color.Red;
+                validProductPlane = false;
+            }
+            else if(txtSpecializare.Text.Length<4 || txtSpecializare.Text.Length > STRLEN_MAX_COMPANIE)
+            {
+                txtSpecializare.ForeColor = Color.Red;
+                validProductPlane = false;
+            }
+            else
+                txtSpecializare.ForeColor = Color.Black;
+            if (validProductPlane)
+            {
+                administratorProducatorPlane.AddProducator(producator);
+                lblSalvareProductPlane.Text = "Producatorul de avioane a fost adaugat";
+            }
+            else
+            {
+                lblSalvareProductPlane.Text = "Informatiile sunt introduse incorect";
+            }
+
+            ResetControls();
 
         }
-
+        private void ResetControls()
+        {
+            txtCompanie.Text = txtTaraOrigine.Text = txtAnInfiintare.Text = txtNrAngajati.Text = txtSpecializare.Text = string.Empty;
+ 
+        }
         private void btnRefreshProductPlane_Click(object sender, EventArgs e)
         {
             Afiseaza_Producatori_Aeronave();
+            lblRefreshProductPlane.Text = "Lista de producatori de avioane reincarcati ";
 
+        }
+
+        private void btnStergeProductPlane_Click(object sender, EventArgs e)
+        {
+            if (lstProductPlane.SelectedIndex == PRODUCATOR_AVION_NESELECTAT)
+            {
+                MessageBox.Show("Selectati producatorul pentru stergere");
+            }
+            else
+            {
+                //se sterge un element din lista
+                lstProductPlane.Items.RemoveAt(lstProductPlane.SelectedIndex);
+            }
         }
     }
 }

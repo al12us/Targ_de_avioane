@@ -36,14 +36,17 @@
             this.lblSpecializare = new System.Windows.Forms.Label();
             this.lstProductPlane = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnStergeProductPlane = new System.Windows.Forms.Button();
+            this.lblRefreshProductPlane = new System.Windows.Forms.Label();
+            this.lblSalvareProductPlane = new System.Windows.Forms.Label();
             this.btnRefreshProductPlane = new System.Windows.Forms.Button();
             this.btnAdaugaProductPlane = new System.Windows.Forms.Button();
+            this.txtSpecializare = new System.Windows.Forms.TextBox();
             this.txtNrAngajati = new System.Windows.Forms.TextBox();
             this.txtAnInfiintare = new System.Windows.Forms.TextBox();
             this.txtTaraOrigine = new System.Windows.Forms.TextBox();
             this.txtCompanie = new System.Windows.Forms.TextBox();
             this.btnBackMainMenu_1 = new System.Windows.Forms.Button();
-            this.txtSpecializare = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,12 +132,15 @@
             this.lstProductPlane.ItemHeight = 16;
             this.lstProductPlane.Location = new System.Drawing.Point(39, 119);
             this.lstProductPlane.Name = "lstProductPlane";
-            this.lstProductPlane.Size = new System.Drawing.Size(792, 260);
+            this.lstProductPlane.Size = new System.Drawing.Size(792, 276);
             this.lstProductPlane.TabIndex = 6;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Yellow;
+            this.panel1.Controls.Add(this.btnStergeProductPlane);
+            this.panel1.Controls.Add(this.lblRefreshProductPlane);
+            this.panel1.Controls.Add(this.lblSalvareProductPlane);
             this.panel1.Controls.Add(this.btnRefreshProductPlane);
             this.panel1.Controls.Add(this.btnAdaugaProductPlane);
             this.panel1.Controls.Add(this.txtSpecializare);
@@ -149,8 +155,38 @@
             this.panel1.Controls.Add(this.lblCompanie);
             this.panel1.Location = new System.Drawing.Point(854, 107);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 272);
+            this.panel1.Size = new System.Drawing.Size(337, 284);
             this.panel1.TabIndex = 7;
+            // 
+            // btnStergeProductPlane
+            // 
+            this.btnStergeProductPlane.BackColor = System.Drawing.Color.Lime;
+            this.btnStergeProductPlane.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.btnStergeProductPlane.Location = new System.Drawing.Point(18, 255);
+            this.btnStergeProductPlane.Name = "btnStergeProductPlane";
+            this.btnStergeProductPlane.Size = new System.Drawing.Size(75, 23);
+            this.btnStergeProductPlane.TabIndex = 15;
+            this.btnStergeProductPlane.Text = "&Șterge";
+            this.btnStergeProductPlane.UseVisualStyleBackColor = false;
+            this.btnStergeProductPlane.Click += new System.EventHandler(this.btnStergeProductPlane_Click);
+            // 
+            // lblRefreshProductPlane
+            // 
+            this.lblRefreshProductPlane.AutoSize = true;
+            this.lblRefreshProductPlane.Location = new System.Drawing.Point(125, 244);
+            this.lblRefreshProductPlane.Name = "lblRefreshProductPlane";
+            this.lblRefreshProductPlane.Size = new System.Drawing.Size(0, 16);
+            this.lblRefreshProductPlane.TabIndex = 14;
+            // 
+            // lblSalvareProductPlane
+            // 
+            this.lblSalvareProductPlane.AutoSize = true;
+            this.lblSalvareProductPlane.BackColor = System.Drawing.Color.LemonChiffon;
+            this.lblSalvareProductPlane.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblSalvareProductPlane.Location = new System.Drawing.Point(125, 213);
+            this.lblSalvareProductPlane.Name = "lblSalvareProductPlane";
+            this.lblSalvareProductPlane.Size = new System.Drawing.Size(0, 16);
+            this.lblSalvareProductPlane.TabIndex = 13;
             // 
             // btnRefreshProductPlane
             // 
@@ -176,30 +212,37 @@
             this.btnAdaugaProductPlane.UseVisualStyleBackColor = false;
             this.btnAdaugaProductPlane.Click += new System.EventHandler(this.btnAdaugaProductPlane_Click);
             // 
+            // txtSpecializare
+            // 
+            this.txtSpecializare.Location = new System.Drawing.Point(148, 154);
+            this.txtSpecializare.Name = "txtSpecializare";
+            this.txtSpecializare.Size = new System.Drawing.Size(125, 22);
+            this.txtSpecializare.TabIndex = 10;
+            // 
             // txtNrAngajati
             // 
-            this.txtNrAngajati.Location = new System.Drawing.Point(136, 117);
+            this.txtNrAngajati.Location = new System.Drawing.Point(148, 117);
             this.txtNrAngajati.Name = "txtNrAngajati";
             this.txtNrAngajati.Size = new System.Drawing.Size(125, 22);
             this.txtNrAngajati.TabIndex = 9;
             // 
             // txtAnInfiintare
             // 
-            this.txtAnInfiintare.Location = new System.Drawing.Point(136, 79);
+            this.txtAnInfiintare.Location = new System.Drawing.Point(148, 78);
             this.txtAnInfiintare.Name = "txtAnInfiintare";
             this.txtAnInfiintare.Size = new System.Drawing.Size(125, 22);
             this.txtAnInfiintare.TabIndex = 8;
             // 
             // txtTaraOrigine
             // 
-            this.txtTaraOrigine.Location = new System.Drawing.Point(136, 49);
+            this.txtTaraOrigine.Location = new System.Drawing.Point(148, 49);
             this.txtTaraOrigine.Name = "txtTaraOrigine";
             this.txtTaraOrigine.Size = new System.Drawing.Size(125, 22);
             this.txtTaraOrigine.TabIndex = 7;
             // 
             // txtCompanie
             // 
-            this.txtCompanie.Location = new System.Drawing.Point(136, 21);
+            this.txtCompanie.Location = new System.Drawing.Point(148, 21);
             this.txtCompanie.Name = "txtCompanie";
             this.txtCompanie.Size = new System.Drawing.Size(125, 22);
             this.txtCompanie.TabIndex = 6;
@@ -212,20 +255,13 @@
             this.btnBackMainMenu_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackMainMenu_1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnBackMainMenu_1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnBackMainMenu_1.Location = new System.Drawing.Point(931, 385);
+            this.btnBackMainMenu_1.Location = new System.Drawing.Point(907, 422);
             this.btnBackMainMenu_1.Name = "btnBackMainMenu_1";
             this.btnBackMainMenu_1.Size = new System.Drawing.Size(197, 44);
             this.btnBackMainMenu_1.TabIndex = 8;
             this.btnBackMainMenu_1.Text = "Înapoi în meniu principal";
             this.btnBackMainMenu_1.UseVisualStyleBackColor = false;
             this.btnBackMainMenu_1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtSpecializare
-            // 
-            this.txtSpecializare.Location = new System.Drawing.Point(136, 154);
-            this.txtSpecializare.Name = "txtSpecializare";
-            this.txtSpecializare.Size = new System.Drawing.Size(125, 22);
-            this.txtSpecializare.TabIndex = 10;
             // 
             // FormProductAvion
             // 
@@ -265,5 +301,8 @@
         private System.Windows.Forms.Button btnBackMainMenu_1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox txtSpecializare;
+        private System.Windows.Forms.Label lblSalvareProductPlane;
+        private System.Windows.Forms.Label lblRefreshProductPlane;
+        private System.Windows.Forms.Button btnStergeProductPlane;
     }
 }

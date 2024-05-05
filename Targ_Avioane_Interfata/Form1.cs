@@ -450,6 +450,11 @@ namespace Targ_Avioane_Interfata
                 txtIntroducerenrpasg.ForeColor = Color.Red;
                 valid = false;
             }
+            else if (nr_pasageri > 0)
+            {
+                txtIntroducerenrpasg.ForeColor = Color.Red;
+                valid = false;
+            }
             else
                 txtIntroducerenrpasg.ForeColor = Color.Black;
 

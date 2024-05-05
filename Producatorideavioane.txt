@@ -1,2 +1,8 @@
 2;Antonov;Ucraina;1952;1356754;civil;3;AIRBUS;Franta;1952;100000;civil;
 3;AIRBUS;Franta;1952;100000;civil;
+4;;;0;0;nedefinit;
+5;;;0;0;nedefinit;
+6;Boeing;SUA;1950;49521;civil;
+7;Airbus;Franta;1952;124325;militar;
+8;Airbus;Franta;1952;124325;militar;
+9;Antonov;Ucraina;1952;80000;civil;

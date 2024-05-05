@@ -215,7 +215,7 @@ namespace Targ_Avion
             Console.WriteLine("Introduceti numarul de pasageri de la tastatura");
             int nrpassageri = Convert.ToInt32(Console.ReadLine());
             AvionClass avion = new AvionClass(0, Firma, modelul, an_fabricatia, culoarea, greutatea, pretul, nrpassageri);
-            Console.WriteLine("Alegeti tipuul de avion: ");
+            Console.WriteLine("Alegeti tipul de avion: ");
             Console.WriteLine("1 - Civil \n" +
             "2 - Comercial \n" +
             "3 - Experimental \n" +
@@ -229,7 +229,7 @@ namespace Targ_Avion
         }
         public static void AfisareAvion(AvionClass avion)
         {
-            string infoAvion = string.Format("Avionul cu id-ul #{0} are numele: {1} {2} {3} {4} {5} {6} {7}",
+            string infoAvion = string.Format("Avionul cu id-ul #{0} are numele: {1} {2} {3} {4} {5} {6} {7} {8}",
                     avion.ID_avion,
                     avion.firma ?? " NECUNOSCUT ",
                     avion.model ?? " NECUNOSCUT ",
