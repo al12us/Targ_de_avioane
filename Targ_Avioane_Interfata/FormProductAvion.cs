@@ -229,5 +229,6 @@ namespace Targ_Avioane_Interfata
                 lstProductPlane.Items.RemoveAt(lstProductPlane.SelectedIndex);
             }
         }
+ }
     }
 }

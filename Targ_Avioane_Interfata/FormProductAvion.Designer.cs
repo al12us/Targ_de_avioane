@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button btnBackMainMenu_1;
             this.lblTitluProductAvion = new System.Windows.Forms.Label();
             this.lblCompanie = new System.Windows.Forms.Label();
             this.lblTaraOrigine = new System.Windows.Forms.Label();
@@ -46,7 +47,7 @@
             this.txtAnInfiintare = new System.Windows.Forms.TextBox();
             this.txtTaraOrigine = new System.Windows.Forms.TextBox();
             this.txtCompanie = new System.Windows.Forms.TextBox();
-            this.btnBackMainMenu_1 = new System.Windows.Forms.Button();
+            btnBackMainMenu_1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,20 +56,21 @@
             this.lblTitluProductAvion.AutoSize = true;
             this.lblTitluProductAvion.BackColor = System.Drawing.Color.Yellow;
             this.lblTitluProductAvion.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTitluProductAvion.ForeColor = System.Drawing.Color.LightSalmon;
-            this.lblTitluProductAvion.Location = new System.Drawing.Point(158, 60);
+            this.lblTitluProductAvion.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lblTitluProductAvion.Location = new System.Drawing.Point(319, 70);
             this.lblTitluProductAvion.Name = "lblTitluProductAvion";
             this.lblTitluProductAvion.Size = new System.Drawing.Size(263, 27);
             this.lblTitluProductAvion.TabIndex = 0;
             this.lblTitluProductAvion.Text = "Producător de avioane";
             this.lblTitluProductAvion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+           
             // 
             // lblCompanie
             // 
             this.lblCompanie.AutoSize = true;
             this.lblCompanie.BackColor = System.Drawing.Color.Yellow;
             this.lblCompanie.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanie.ForeColor = System.Drawing.Color.LightSalmon;
+            this.lblCompanie.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblCompanie.Location = new System.Drawing.Point(49, 21);
             this.lblCompanie.Name = "lblCompanie";
             this.lblCompanie.Size = new System.Drawing.Size(78, 20);
@@ -81,7 +83,7 @@
             this.lblTaraOrigine.AutoSize = true;
             this.lblTaraOrigine.BackColor = System.Drawing.Color.Yellow;
             this.lblTaraOrigine.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTaraOrigine.ForeColor = System.Drawing.Color.LightSalmon;
+            this.lblTaraOrigine.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblTaraOrigine.Location = new System.Drawing.Point(14, 50);
             this.lblTaraOrigine.Name = "lblTaraOrigine";
             this.lblTaraOrigine.Size = new System.Drawing.Size(116, 21);
@@ -93,7 +95,7 @@
             this.lblAnInfiintare.AutoSize = true;
             this.lblAnInfiintare.BackColor = System.Drawing.Color.Yellow;
             this.lblAnInfiintare.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnInfiintare.ForeColor = System.Drawing.Color.LightSalmon;
+            this.lblAnInfiintare.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblAnInfiintare.Location = new System.Drawing.Point(83, 79);
             this.lblAnInfiintare.Name = "lblAnInfiintare";
             this.lblAnInfiintare.Size = new System.Drawing.Size(44, 21);
@@ -106,7 +108,7 @@
             this.lblnrAngajati.AutoSize = true;
             this.lblnrAngajati.BackColor = System.Drawing.Color.Yellow;
             this.lblnrAngajati.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnrAngajati.ForeColor = System.Drawing.Color.LightSalmon;
+            this.lblnrAngajati.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblnrAngajati.Location = new System.Drawing.Point(42, 106);
             this.lblnrAngajati.Name = "lblnrAngajati";
             this.lblnrAngajati.Size = new System.Drawing.Size(85, 42);
@@ -119,7 +121,7 @@
             this.lblSpecializare.AutoSize = true;
             this.lblSpecializare.BackColor = System.Drawing.Color.Yellow;
             this.lblSpecializare.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpecializare.ForeColor = System.Drawing.Color.LightSalmon;
+            this.lblSpecializare.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblSpecializare.Location = new System.Drawing.Point(37, 155);
             this.lblSpecializare.Name = "lblSpecializare";
             this.lblSpecializare.Size = new System.Drawing.Size(90, 21);
@@ -161,6 +163,8 @@
             // btnStergeProductPlane
             // 
             this.btnStergeProductPlane.BackColor = System.Drawing.Color.Lime;
+            this.btnStergeProductPlane.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.btnStergeProductPlane.FlatAppearance.BorderSize = 3;
             this.btnStergeProductPlane.ForeColor = System.Drawing.Color.SaddleBrown;
             this.btnStergeProductPlane.Location = new System.Drawing.Point(18, 255);
             this.btnStergeProductPlane.Name = "btnStergeProductPlane";
@@ -249,19 +253,18 @@
             // 
             // btnBackMainMenu_1
             // 
-            this.btnBackMainMenu_1.BackColor = System.Drawing.Color.Yellow;
-            this.btnBackMainMenu_1.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
-            this.btnBackMainMenu_1.FlatAppearance.BorderSize = 3;
-            this.btnBackMainMenu_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackMainMenu_1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnBackMainMenu_1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnBackMainMenu_1.Location = new System.Drawing.Point(907, 422);
-            this.btnBackMainMenu_1.Name = "btnBackMainMenu_1";
-            this.btnBackMainMenu_1.Size = new System.Drawing.Size(197, 44);
-            this.btnBackMainMenu_1.TabIndex = 8;
-            this.btnBackMainMenu_1.Text = "Înapoi în meniu principal";
-            this.btnBackMainMenu_1.UseVisualStyleBackColor = false;
-            this.btnBackMainMenu_1.Click += new System.EventHandler(this.button1_Click);
+            btnBackMainMenu_1.BackColor = System.Drawing.Color.Lime;
+            btnBackMainMenu_1.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            btnBackMainMenu_1.FlatAppearance.BorderSize = 3;
+            btnBackMainMenu_1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            btnBackMainMenu_1.ForeColor = System.Drawing.Color.SaddleBrown;
+            btnBackMainMenu_1.Location = new System.Drawing.Point(964, 406);
+            btnBackMainMenu_1.Name = "btnBackMainMenu_1";
+            btnBackMainMenu_1.Size = new System.Drawing.Size(197, 44);
+            btnBackMainMenu_1.TabIndex = 8;
+            btnBackMainMenu_1.Text = "Înapoi în meniu principal";
+            btnBackMainMenu_1.UseVisualStyleBackColor = false;
+            btnBackMainMenu_1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormProductAvion
             // 
@@ -269,7 +272,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1452, 673);
-            this.Controls.Add(this.btnBackMainMenu_1);
+            this.Controls.Add(btnBackMainMenu_1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lstProductPlane);
             this.Controls.Add(this.lblTitluProductAvion);
@@ -298,7 +301,6 @@
         private System.Windows.Forms.TextBox txtTaraOrigine;
         private System.Windows.Forms.Button btnRefreshProductPlane;
         private System.Windows.Forms.Button btnAdaugaProductPlane;
-        private System.Windows.Forms.Button btnBackMainMenu_1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox txtSpecializare;
         private System.Windows.Forms.Label lblSalvareProductPlane;
