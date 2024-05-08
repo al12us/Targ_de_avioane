@@ -74,7 +74,7 @@
             // 
             // txtIntroducereFirma
             // 
-            this.txtIntroducereFirma.Location = new System.Drawing.Point(11, 14);
+            this.txtIntroducereFirma.Location = new System.Drawing.Point(8, 15);
             this.txtIntroducereFirma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIntroducereFirma.Name = "txtIntroducereFirma";
             this.txtIntroducereFirma.Size = new System.Drawing.Size(177, 22);
@@ -82,7 +82,7 @@
             // 
             // txtIntroducereModel
             // 
-            this.txtIntroducereModel.Location = new System.Drawing.Point(11, 46);
+            this.txtIntroducereModel.Location = new System.Drawing.Point(8, 58);
             this.txtIntroducereModel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIntroducereModel.Name = "txtIntroducereModel";
             this.txtIntroducereModel.Size = new System.Drawing.Size(177, 22);
@@ -90,7 +90,7 @@
             // 
             // txtIntroducereAnFabricatie
             // 
-            this.txtIntroducereAnFabricatie.Location = new System.Drawing.Point(11, 80);
+            this.txtIntroducereAnFabricatie.Location = new System.Drawing.Point(8, 86);
             this.txtIntroducereAnFabricatie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIntroducereAnFabricatie.Name = "txtIntroducereAnFabricatie";
             this.txtIntroducereAnFabricatie.Size = new System.Drawing.Size(177, 22);
@@ -98,7 +98,7 @@
             // 
             // txtIntroduceCuloare
             // 
-            this.txtIntroduceCuloare.Location = new System.Drawing.Point(11, 118);
+            this.txtIntroduceCuloare.Location = new System.Drawing.Point(8, 123);
             this.txtIntroduceCuloare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIntroduceCuloare.Name = "txtIntroduceCuloare";
             this.txtIntroduceCuloare.Size = new System.Drawing.Size(177, 22);
@@ -106,7 +106,7 @@
             // 
             // txtIntroduceregreutate
             // 
-            this.txtIntroduceregreutate.Location = new System.Drawing.Point(11, 151);
+            this.txtIntroduceregreutate.Location = new System.Drawing.Point(8, 153);
             this.txtIntroduceregreutate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIntroduceregreutate.Name = "txtIntroduceregreutate";
             this.txtIntroduceregreutate.Size = new System.Drawing.Size(177, 22);
@@ -114,7 +114,7 @@
             // 
             // txtIntroducepret
             // 
-            this.txtIntroducepret.Location = new System.Drawing.Point(11, 188);
+            this.txtIntroducepret.Location = new System.Drawing.Point(8, 188);
             this.txtIntroducepret.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIntroducepret.Name = "txtIntroducepret";
             this.txtIntroducepret.Size = new System.Drawing.Size(177, 22);
@@ -122,7 +122,7 @@
             // 
             // txtIntroducerenrpasg
             // 
-            this.txtIntroducerenrpasg.Location = new System.Drawing.Point(11, 228);
+            this.txtIntroducerenrpasg.Location = new System.Drawing.Point(8, 228);
             this.txtIntroducerenrpasg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIntroducerenrpasg.Name = "txtIntroducerenrpasg";
             this.txtIntroducerenrpasg.Size = new System.Drawing.Size(177, 22);
@@ -139,10 +139,10 @@
             this.panel1.Controls.Add(this.txtIntroducereAnFabricatie);
             this.panel1.Controls.Add(this.txtIntroducereModel);
             this.panel1.Controls.Add(this.txtIntroducereFirma);
-            this.panel1.Location = new System.Drawing.Point(1224, 28);
+            this.panel1.Location = new System.Drawing.Point(1275, 28);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(302, 355);
+            this.panel1.Size = new System.Drawing.Size(270, 355);
             this.panel1.TabIndex = 11;
             // 
             // gpbTipAvion
@@ -151,7 +151,7 @@
             this.gpbTipAvion.Controls.Add(this.rdbExperimental);
             this.gpbTipAvion.Controls.Add(this.rdbMilitar);
             this.gpbTipAvion.Controls.Add(this.rdbCivil);
-            this.gpbTipAvion.Location = new System.Drawing.Point(20, 255);
+            this.gpbTipAvion.Location = new System.Drawing.Point(8, 255);
             this.gpbTipAvion.Name = "gpbTipAvion";
             this.gpbTipAvion.Size = new System.Drawing.Size(254, 97);
             this.gpbTipAvion.TabIndex = 11;
@@ -221,10 +221,10 @@
             this.pnllblAvion.Controls.Add(this.lblIntroducereAnfabricatie);
             this.pnllblAvion.Controls.Add(this.lblIntroducereModel);
             this.pnllblAvion.Controls.Add(this.lblIntroducereFirma);
-            this.pnllblAvion.Location = new System.Drawing.Point(1101, 28);
+            this.pnllblAvion.Location = new System.Drawing.Point(1144, 28);
             this.pnllblAvion.Margin = new System.Windows.Forms.Padding(4);
             this.pnllblAvion.Name = "pnllblAvion";
-            this.pnllblAvion.Size = new System.Drawing.Size(127, 355);
+            this.pnllblAvion.Size = new System.Drawing.Size(132, 355);
             this.pnllblAvion.TabIndex = 12;
             // 
             // label1

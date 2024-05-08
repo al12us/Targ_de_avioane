@@ -51,6 +51,21 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // btnBackMainMenu_1
+            // 
+            btnBackMainMenu_1.BackColor = System.Drawing.Color.Lime;
+            btnBackMainMenu_1.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            btnBackMainMenu_1.FlatAppearance.BorderSize = 3;
+            btnBackMainMenu_1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            btnBackMainMenu_1.ForeColor = System.Drawing.Color.SaddleBrown;
+            btnBackMainMenu_1.Location = new System.Drawing.Point(964, 406);
+            btnBackMainMenu_1.Name = "btnBackMainMenu_1";
+            btnBackMainMenu_1.Size = new System.Drawing.Size(197, 44);
+            btnBackMainMenu_1.TabIndex = 8;
+            btnBackMainMenu_1.Text = "Înapoi în meniu principal";
+            btnBackMainMenu_1.UseVisualStyleBackColor = false;
+            btnBackMainMenu_1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // lblTitluProductAvion
             // 
             this.lblTitluProductAvion.AutoSize = true;
@@ -63,7 +78,6 @@
             this.lblTitluProductAvion.TabIndex = 0;
             this.lblTitluProductAvion.Text = "Producător de avioane";
             this.lblTitluProductAvion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-           
             // 
             // lblCompanie
             // 
@@ -157,7 +171,7 @@
             this.panel1.Controls.Add(this.lblCompanie);
             this.panel1.Location = new System.Drawing.Point(854, 107);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(337, 284);
+            this.panel1.Size = new System.Drawing.Size(425, 284);
             this.panel1.TabIndex = 7;
             // 
             // btnStergeProductPlane
@@ -218,53 +232,38 @@
             // 
             // txtSpecializare
             // 
-            this.txtSpecializare.Location = new System.Drawing.Point(148, 154);
+            this.txtSpecializare.Location = new System.Drawing.Point(170, 155);
             this.txtSpecializare.Name = "txtSpecializare";
-            this.txtSpecializare.Size = new System.Drawing.Size(125, 22);
+            this.txtSpecializare.Size = new System.Drawing.Size(159, 22);
             this.txtSpecializare.TabIndex = 10;
             // 
             // txtNrAngajati
             // 
-            this.txtNrAngajati.Location = new System.Drawing.Point(148, 117);
+            this.txtNrAngajati.Location = new System.Drawing.Point(170, 117);
             this.txtNrAngajati.Name = "txtNrAngajati";
-            this.txtNrAngajati.Size = new System.Drawing.Size(125, 22);
+            this.txtNrAngajati.Size = new System.Drawing.Size(159, 22);
             this.txtNrAngajati.TabIndex = 9;
             // 
             // txtAnInfiintare
             // 
-            this.txtAnInfiintare.Location = new System.Drawing.Point(148, 78);
+            this.txtAnInfiintare.Location = new System.Drawing.Point(170, 78);
             this.txtAnInfiintare.Name = "txtAnInfiintare";
-            this.txtAnInfiintare.Size = new System.Drawing.Size(125, 22);
+            this.txtAnInfiintare.Size = new System.Drawing.Size(159, 22);
             this.txtAnInfiintare.TabIndex = 8;
             // 
             // txtTaraOrigine
             // 
-            this.txtTaraOrigine.Location = new System.Drawing.Point(148, 49);
+            this.txtTaraOrigine.Location = new System.Drawing.Point(170, 50);
             this.txtTaraOrigine.Name = "txtTaraOrigine";
-            this.txtTaraOrigine.Size = new System.Drawing.Size(125, 22);
+            this.txtTaraOrigine.Size = new System.Drawing.Size(159, 22);
             this.txtTaraOrigine.TabIndex = 7;
             // 
             // txtCompanie
             // 
-            this.txtCompanie.Location = new System.Drawing.Point(148, 21);
+            this.txtCompanie.Location = new System.Drawing.Point(170, 21);
             this.txtCompanie.Name = "txtCompanie";
-            this.txtCompanie.Size = new System.Drawing.Size(125, 22);
+            this.txtCompanie.Size = new System.Drawing.Size(159, 22);
             this.txtCompanie.TabIndex = 6;
-            // 
-            // btnBackMainMenu_1
-            // 
-            btnBackMainMenu_1.BackColor = System.Drawing.Color.Lime;
-            btnBackMainMenu_1.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
-            btnBackMainMenu_1.FlatAppearance.BorderSize = 3;
-            btnBackMainMenu_1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            btnBackMainMenu_1.ForeColor = System.Drawing.Color.SaddleBrown;
-            btnBackMainMenu_1.Location = new System.Drawing.Point(964, 406);
-            btnBackMainMenu_1.Name = "btnBackMainMenu_1";
-            btnBackMainMenu_1.Size = new System.Drawing.Size(197, 44);
-            btnBackMainMenu_1.TabIndex = 8;
-            btnBackMainMenu_1.Text = "Înapoi în meniu principal";
-            btnBackMainMenu_1.UseVisualStyleBackColor = false;
-            btnBackMainMenu_1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormProductAvion
             // 
