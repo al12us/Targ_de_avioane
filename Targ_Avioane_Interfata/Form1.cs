@@ -106,8 +106,8 @@ namespace Targ_Avioane_Interfata
             lblFirma.Text = "Firma";
             lblFirma.TextAlign = ContentAlignment.MiddleCenter;
             lblFirma.Font = new Font("Times New Roman", 12, FontStyle.Italic);
-            lblFirma.ForeColor = Color.Chocolate;
-            lblFirma.BackColor = Color.White;
+            lblFirma.ForeColor = Color.MediumBlue;
+            lblFirma.BackColor = Color.Cyan;
             lblFirma.Visible = true;
             this.Controls.Add(lblFirma);
             //model
@@ -117,8 +117,8 @@ namespace Targ_Avioane_Interfata
             lblModel.Text = "Model";
             lblModel.TextAlign = ContentAlignment.MiddleCenter;
             lblModel.Font = new Font("Times New Roman", 12, FontStyle.Italic);
-            lblModel.ForeColor = Color.Chocolate;
-            lblModel.BackColor = Color.White;
+            lblModel.ForeColor = Color.MediumBlue;
+            lblModel.BackColor = Color.Cyan;
             lblModel.Visible = true;
             this.Controls.Add(lblModel);
             //an_fabricatie
@@ -128,8 +128,8 @@ namespace Targ_Avioane_Interfata
             lblan_fabricatie.Text = "An_fabricatie";
             lblan_fabricatie.Font = new Font("Times New Roman", 12, FontStyle.Italic);
             lblan_fabricatie.TextAlign = ContentAlignment.MiddleCenter;
-            lblan_fabricatie.ForeColor = Color.Chocolate;
-            lblan_fabricatie.BackColor = Color.White;
+            lblan_fabricatie.ForeColor = Color.MediumBlue;
+            lblan_fabricatie.BackColor = Color.Cyan;
             lblan_fabricatie.Visible = true;
             this.Controls.Add(lblan_fabricatie);
 
@@ -140,8 +140,8 @@ namespace Targ_Avioane_Interfata
             lblCuloare.Text = "Culoarea";
             lblCuloare.Font = new Font("Times New Roman", 12, FontStyle.Italic);
             lblCuloare.TextAlign = ContentAlignment.MiddleCenter;
-            lblCuloare.ForeColor = Color.Chocolate;
-            lblCuloare.BackColor = Color.White;
+            lblCuloare.ForeColor = Color.MediumBlue;
+            lblCuloare.BackColor = Color.Cyan;
             lblCuloare.Visible = true;
             this.Controls.Add(lblCuloare);
 
@@ -153,8 +153,8 @@ namespace Targ_Avioane_Interfata
             lblgreutate.Text = "Greutatea";
             lblgreutate.Font = new Font("Times New Roman", 12, FontStyle.Italic);
             lblgreutate.TextAlign = ContentAlignment.MiddleCenter;
-            lblgreutate.ForeColor = Color.Chocolate;
-            lblgreutate.BackColor = Color.White;
+            lblgreutate.ForeColor = Color.MediumBlue;
+            lblgreutate.BackColor = Color.Cyan;
             lblgreutate.Visible = true;
             this.Controls.Add(lblgreutate);
             //pret
@@ -164,8 +164,8 @@ namespace Targ_Avioane_Interfata
             lblpret.Text = "Pretul";
             lblpret.Font = new Font("Times New Roman", 12, FontStyle.Italic);
             lblpret.TextAlign = ContentAlignment.MiddleCenter;
-            lblpret.ForeColor = Color.Chocolate;
-            lblpret.BackColor = Color.White;
+            lblpret.ForeColor = Color.MediumBlue;
+            lblpret.BackColor = Color.Cyan;
             lblpret.Visible = true;
             this.Controls.Add(lblpret);
             //nr_de_pasageri
@@ -175,8 +175,8 @@ namespace Targ_Avioane_Interfata
             lblnr_de_pasageri.Text = "Nr pasageri";
             lblnr_de_pasageri.Font = new Font("Times New Roman", 12, FontStyle.Italic);
             lblnr_de_pasageri.TextAlign = ContentAlignment.MiddleCenter;
-            lblnr_de_pasageri.ForeColor = Color.Chocolate;
-            lblnr_de_pasageri.BackColor = Color.White;
+            lblnr_de_pasageri.ForeColor = Color.MediumBlue;
+            lblnr_de_pasageri.BackColor = Color.Cyan;
             lblnr_de_pasageri.Visible = true;
             this.Controls.Add(lblnr_de_pasageri);
             //GotFocus-Control
@@ -237,8 +237,8 @@ namespace Targ_Avioane_Interfata
                 lblsFirme[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y / 2 + 40;
                 lblsFirme[i].Text = avion.firma;
                 lblsFirme[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
-                lblsFirme[i].ForeColor = Color.DarkCyan;
-                lblsFirme[i].BackColor = Color.White;
+                lblsFirme[i].ForeColor = Color.MediumBlue;
+                lblsFirme[i].BackColor = Color.Cyan;
                 lblsFirme[i].TextAlign = ContentAlignment.MiddleCenter;
                 this.Controls.Add(lblsFirme[i]);
 
@@ -249,8 +249,8 @@ namespace Targ_Avioane_Interfata
                 lblsModele[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y / 2 + 40;
                 lblsModele[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
                 lblsModele[i].TextAlign = ContentAlignment.MiddleCenter;
-                lblsModele[i].ForeColor = Color.DarkCyan;
-                lblsModele[i].BackColor = Color.White;
+                lblsModele[i].ForeColor = Color.MediumBlue;
+                lblsModele[i].BackColor = Color.Cyan;
                 this.Controls.Add(lblsModele[i]);
 
                 lblsan_fabricatie[i] = new Label();
@@ -260,8 +260,8 @@ namespace Targ_Avioane_Interfata
                 lblsan_fabricatie[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y / 2 + 40;
                 lblsan_fabricatie[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
                 lblsan_fabricatie[i].TextAlign = ContentAlignment.MiddleCenter;
-                lblsan_fabricatie[i].ForeColor = Color.DarkCyan;
-                lblsan_fabricatie[i].BackColor = Color.White;
+                lblsan_fabricatie[i].ForeColor = Color.MediumBlue;
+                lblsan_fabricatie[i].BackColor = Color.Cyan;
                 this.Controls.Add(lblsan_fabricatie[i]);
 
                 lblsCulori[i] = new Label();
@@ -271,8 +271,8 @@ namespace Targ_Avioane_Interfata
                 lblsCulori[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y / 2 + 40;
                 lblsCulori[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
                 lblsCulori[i].TextAlign = ContentAlignment.MiddleCenter;
-                lblsCulori[i].ForeColor = Color.DarkCyan;
-                lblsCulori[i].BackColor = Color.White;
+                lblsCulori[i].ForeColor = Color.MediumBlue;
+                lblsCulori[i].BackColor = Color.Cyan;
                 this.Controls.Add(lblsCulori[i]);
 
                 lblsgreutate[i] = new Label();
@@ -282,8 +282,8 @@ namespace Targ_Avioane_Interfata
                 lblsgreutate[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y / 2 + 40;
                 lblsgreutate[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
                 lblsgreutate[i].TextAlign = ContentAlignment.MiddleCenter;
-                lblsgreutate[i].ForeColor = Color.DarkCyan;
-                lblsgreutate[i].BackColor = Color.White;
+                lblsgreutate[i].ForeColor = Color.MediumBlue;
+                lblsgreutate[i].BackColor = Color.Cyan;
                 this.Controls.Add(lblsgreutate[i]);
 
 
@@ -294,8 +294,8 @@ namespace Targ_Avioane_Interfata
                 lblsPret[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y / 2 + 40;
                 lblsPret[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
                 lblsPret[i].TextAlign = ContentAlignment.MiddleCenter;
-                lblsPret[i].ForeColor = Color.DarkCyan;
-                lblsPret[i].BackColor = Color.White;
+                lblsPret[i].ForeColor = Color.MediumBlue;
+                lblsPret[i].BackColor = Color.Cyan;
                 this.Controls.Add(lblsPret[i]);
 
 
@@ -306,9 +306,9 @@ namespace Targ_Avioane_Interfata
                 lblsnr_de_pasageri[i].Left = 7 * DIMENSIUNEA_PAS_X + 10;
                 lblsnr_de_pasageri[i].Top = (i + 1) * DIMENSIUNEA_PAS_Y / 2 + 40;
                 lblsnr_de_pasageri[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
-                lblsnr_de_pasageri[i].ForeColor = Color.DarkCyan;
+                lblsnr_de_pasageri[i].ForeColor = Color.MediumBlue;
                 lblsnr_de_pasageri[i].TextAlign = ContentAlignment.MiddleCenter;
-                lblsnr_de_pasageri[i].BackColor = Color.White;
+                lblsnr_de_pasageri[i].BackColor = Color.Cyan;
                 this.Controls.Add(lblsnr_de_pasageri[i]);
                 i++;
                 

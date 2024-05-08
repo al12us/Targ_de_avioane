@@ -6,3 +6,4 @@
 7;Airbus;Franta;1952;124325;militar;
 8;Airbus;Franta;1952;124325;militar;
 9;Antonov;Ucraina;1952;80000;civil;
+10;Antonov;Ucraina;1952;100000;nedefinit;
