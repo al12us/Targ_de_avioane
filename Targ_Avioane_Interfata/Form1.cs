@@ -428,8 +428,8 @@ namespace Targ_Avioane_Interfata
 
             if (txtIntroduceregreutate.Text.ToString() == "" || txtIntroduceregreutate.Text.ToString() == "Obligatoriu!")
             {
-                txtIntroduceCuloare.Text = "Obligatoriu";
-                txtIntroduceCuloare.ForeColor = Color.Red;
+                txtIntroduceregreutate.Text = "Obligatoriu";
+                txtIntroduceregreutate.ForeColor = Color.Red;
                 valid = false;
             }
             else
@@ -463,13 +463,14 @@ namespace Targ_Avioane_Interfata
             if (valid)
             {
                 adminPlanes.AddPlane(avion);
+                ResetControls();
                 lblSalvarePlane.Text = "Avion adaugat";
             }
             else
             {
                 lblSalvarePlane.Text = "Informatiile sunt introduse incorect";
             }
-            ResetControls();
+            
         }
          private void ResetControls()
         {
@@ -487,6 +488,7 @@ namespace Targ_Avioane_Interfata
         {
             AfiseazaAvioane();
             lblRefresh.Text = "Datele despre avioane au fost actualizate";
+            ResetControls();
         }
         private void OnFormClosed(object sender, EventArgs e)
         {
