@@ -372,12 +372,12 @@ namespace Targ_Avioane_Interfata
             if (txtIntroducereFirma.Text.ToString() == "" || txtIntroducereFirma.Text.ToString() == "Obligatoriu!")
             {
                 txtIntroducereFirma.Text = "Obligatoriu!";
-                txtIntroducereFirma.ForeColor = Color.Red;
+                lblIntroducereFirma.ForeColor = Color.Red;
                 valid = false;
             }
             else if (txtIntroducereFirma.Text.Length <2||txtIntroducereFirma.Text.Length > 20)
             {
-                txtIntroducereFirma.ForeColor = Color.Red;
+                lblIntroducereFirma.ForeColor = Color.Red;
                 valid = false;
             }
             else
@@ -385,12 +385,12 @@ namespace Targ_Avioane_Interfata
             if (txtIntroducereModel.Text.ToString() == "" || txtIntroducereModel.Text.ToString() == "Obligatoriu!")
             {
                 txtIntroducereModel.Text = "Obligatoriu!";
-                txtIntroducereModel.ForeColor = Color.Red;
+                lblIntroducereModel.ForeColor = Color.Red;
                 valid = false;
             }
             else if (txtIntroducereFirma.Text.Length > 20)
             {
-                txtIntroducereModel.ForeColor = Color.Red;
+                lblIntroducereModel.ForeColor = Color.Red;
                 valid = false;
             }
             else
@@ -399,12 +399,12 @@ namespace Targ_Avioane_Interfata
             if (txtIntroducereAnFabricatie.Text.ToString() == "" || txtIntroducereAnFabricatie.Text.ToString() =="Obligatoriu!")
             {
                 txtIntroducereAnFabricatie.Text = "Obligatoriu!";
-                txtIntroducereAnFabricatie.ForeColor = Color.Red;
+                lblIntroducereAnfabricatie.ForeColor = Color.Red;
                 valid = false;
             }
             else if (txtIntroducereAnFabricatie.Text.Length > CARACTER_AN_FABRICATIE)
             {
-                txtIntroducereAnFabricatie.ForeColor = Color.Red;
+                lblIntroducereAnfabricatie.ForeColor = Color.Red;
                 valid = false;
             }
             else
@@ -412,37 +412,37 @@ namespace Targ_Avioane_Interfata
 
             if (txtIntroduceCuloare.Text.ToString() == "" || txtIntroduceCuloare.Text.ToString() == "Obligatoriu!")
             {
-                txtIntroduceCuloare.Text = "Obligatoriu!";
-                txtIntroduceCuloare.ForeColor = Color.Red;
+           
+                lblIntroducereCuloare.ForeColor = Color.Red;
                 valid = false;
 
             }
             else if (txtIntroduceCuloare.Text.Length > 30)
             {
 
-                txtIntroduceCuloare.ForeColor = Color.Red;
+                lblIntroducereCuloare.ForeColor = Color.Red;
                 valid = false;
             }
             else
-                txtIntroduceCuloare.ForeColor = Color.Black;
+                lblIntroducereCuloare.ForeColor = Color.Black;
 
             if (txtIntroduceregreutate.Text.ToString() == "" || txtIntroduceregreutate.Text.ToString() == "Obligatoriu!")
             {
                 txtIntroduceregreutate.Text = "Obligatoriu";
-                txtIntroduceregreutate.ForeColor = Color.Red;
+                lblIntroducereGreutate.ForeColor = Color.Red;
                 valid = false;
             }
             else
-                txtIntroduceregreutate.ForeColor = Color.Black;
+                lblIntroducereGreutate.ForeColor = Color.Black;
 
             if (txtIntroducepret.Text.ToString() == "" || txtIntroducepret.Text.ToString() == "Obligatoriu!")
             {
                 txtIntroducepret.Text = "Obligatoriu";
-                txtIntroducepret.ForeColor = Color.Red;
+                lblIntrodcducerepret.ForeColor = Color.Red;
                 valid = false;
             }
             else
-                txtIntroducepret.ForeColor = Color.Black;
+                lblIntrodcducerepret.ForeColor = Color.Black;
 
             if (txtIntroducerenrpasg.Text.ToString() == "" || txtIntroducerenrpasg.Text.ToString() == "Obligatoriu!")
             {
@@ -585,6 +585,11 @@ namespace Targ_Avioane_Interfata
 
           } 
         private void rdbComercial_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIntroducerenrpasg_Click(object sender, EventArgs e)
         {
 
         }

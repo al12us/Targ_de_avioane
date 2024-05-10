@@ -69,7 +69,7 @@
             // lblTitluProductAvion
             // 
             this.lblTitluProductAvion.AutoSize = true;
-            this.lblTitluProductAvion.BackColor = System.Drawing.Color.Yellow;
+            this.lblTitluProductAvion.BackColor = System.Drawing.Color.Lime;
             this.lblTitluProductAvion.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTitluProductAvion.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblTitluProductAvion.Location = new System.Drawing.Point(319, 70);
@@ -82,7 +82,7 @@
             // lblCompanie
             // 
             this.lblCompanie.AutoSize = true;
-            this.lblCompanie.BackColor = System.Drawing.Color.Yellow;
+            this.lblCompanie.BackColor = System.Drawing.Color.Azure;
             this.lblCompanie.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompanie.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblCompanie.Location = new System.Drawing.Point(49, 21);
@@ -95,7 +95,7 @@
             // lblTaraOrigine
             // 
             this.lblTaraOrigine.AutoSize = true;
-            this.lblTaraOrigine.BackColor = System.Drawing.Color.Yellow;
+            this.lblTaraOrigine.BackColor = System.Drawing.Color.Azure;
             this.lblTaraOrigine.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTaraOrigine.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblTaraOrigine.Location = new System.Drawing.Point(14, 50);
@@ -107,7 +107,7 @@
             // lblAnInfiintare
             // 
             this.lblAnInfiintare.AutoSize = true;
-            this.lblAnInfiintare.BackColor = System.Drawing.Color.Yellow;
+            this.lblAnInfiintare.BackColor = System.Drawing.Color.Azure;
             this.lblAnInfiintare.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnInfiintare.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblAnInfiintare.Location = new System.Drawing.Point(83, 79);
@@ -120,7 +120,7 @@
             // lblnrAngajati
             // 
             this.lblnrAngajati.AutoSize = true;
-            this.lblnrAngajati.BackColor = System.Drawing.Color.Yellow;
+            this.lblnrAngajati.BackColor = System.Drawing.Color.Azure;
             this.lblnrAngajati.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnrAngajati.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblnrAngajati.Location = new System.Drawing.Point(42, 106);
@@ -133,7 +133,7 @@
             // lblSpecializare
             // 
             this.lblSpecializare.AutoSize = true;
-            this.lblSpecializare.BackColor = System.Drawing.Color.Yellow;
+            this.lblSpecializare.BackColor = System.Drawing.Color.Azure;
             this.lblSpecializare.Font = new System.Drawing.Font("Bodoni MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSpecializare.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblSpecializare.Location = new System.Drawing.Point(37, 155);
@@ -153,7 +153,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Yellow;
+            this.panel1.BackColor = System.Drawing.Color.Azure;
             this.panel1.Controls.Add(this.btnStergeProductPlane);
             this.panel1.Controls.Add(this.lblRefreshProductPlane);
             this.panel1.Controls.Add(this.lblSalvareProductPlane);

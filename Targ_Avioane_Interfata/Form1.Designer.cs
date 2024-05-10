@@ -43,7 +43,6 @@
             this.rdbMilitar = new System.Windows.Forms.RadioButton();
             this.rdbCivil = new System.Windows.Forms.RadioButton();
             this.pnllblAvion = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblIntroducerenrpasg = new System.Windows.Forms.Label();
             this.lblIntrodcducerepret = new System.Windows.Forms.Label();
             this.lblIntroducereGreutate = new System.Windows.Forms.Label();
@@ -130,7 +129,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Cyan;
+            this.panel1.BackColor = System.Drawing.Color.Azure;
             this.panel1.Controls.Add(this.gpbTipAvion);
             this.panel1.Controls.Add(this.txtIntroducerenrpasg);
             this.panel1.Controls.Add(this.txtIntroducepret);
@@ -212,8 +211,7 @@
             // 
             // pnllblAvion
             // 
-            this.pnllblAvion.BackColor = System.Drawing.Color.Cyan;
-            this.pnllblAvion.Controls.Add(this.label1);
+            this.pnllblAvion.BackColor = System.Drawing.Color.Azure;
             this.pnllblAvion.Controls.Add(this.lblIntroducerenrpasg);
             this.pnllblAvion.Controls.Add(this.lblIntrodcducerepret);
             this.pnllblAvion.Controls.Add(this.lblIntroducereGreutate);
@@ -227,24 +225,10 @@
             this.pnllblAvion.Size = new System.Drawing.Size(132, 355);
             this.pnllblAvion.TabIndex = 12;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Cyan;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label1.Location = new System.Drawing.Point(31, 273);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 46);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Tipul de \r\n  avion";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblIntroducerenrpasg
             // 
             this.lblIntroducerenrpasg.AutoSize = true;
-            this.lblIntroducerenrpasg.BackColor = System.Drawing.Color.Cyan;
+            this.lblIntroducerenrpasg.BackColor = System.Drawing.Color.Azure;
             this.lblIntroducerenrpasg.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIntroducerenrpasg.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblIntroducerenrpasg.Location = new System.Drawing.Point(16, 217);
@@ -254,11 +238,12 @@
             this.lblIntroducerenrpasg.TabIndex = 6;
             this.lblIntroducerenrpasg.Text = "Număr de \r\npasgeri:";
             this.lblIntroducerenrpasg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblIntroducerenrpasg.Click += new System.EventHandler(this.lblIntroducerenrpasg_Click);
             // 
             // lblIntrodcducerepret
             // 
             this.lblIntrodcducerepret.AutoSize = true;
-            this.lblIntrodcducerepret.BackColor = System.Drawing.Color.Cyan;
+            this.lblIntrodcducerepret.BackColor = System.Drawing.Color.Azure;
             this.lblIntrodcducerepret.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIntrodcducerepret.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblIntrodcducerepret.Location = new System.Drawing.Point(52, 188);
@@ -271,7 +256,7 @@
             // lblIntroducereGreutate
             // 
             this.lblIntroducereGreutate.AutoSize = true;
-            this.lblIntroducereGreutate.BackColor = System.Drawing.Color.Cyan;
+            this.lblIntroducereGreutate.BackColor = System.Drawing.Color.Azure;
             this.lblIntroducereGreutate.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIntroducereGreutate.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblIntroducereGreutate.Location = new System.Drawing.Point(27, 151);
@@ -284,7 +269,7 @@
             // lblIntroducereCuloare
             // 
             this.lblIntroducereCuloare.AutoSize = true;
-            this.lblIntroducereCuloare.BackColor = System.Drawing.Color.Cyan;
+            this.lblIntroducereCuloare.BackColor = System.Drawing.Color.Azure;
             this.lblIntroducereCuloare.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIntroducereCuloare.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblIntroducereCuloare.Location = new System.Drawing.Point(37, 122);
@@ -297,7 +282,7 @@
             // lblIntroducereAnfabricatie
             // 
             this.lblIntroducereAnfabricatie.AutoSize = true;
-            this.lblIntroducereAnfabricatie.BackColor = System.Drawing.Color.Cyan;
+            this.lblIntroducereAnfabricatie.BackColor = System.Drawing.Color.Azure;
             this.lblIntroducereAnfabricatie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIntroducereAnfabricatie.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblIntroducereAnfabricatie.Location = new System.Drawing.Point(4, 84);
@@ -310,7 +295,7 @@
             // lblIntroducereModel
             // 
             this.lblIntroducereModel.AutoSize = true;
-            this.lblIntroducereModel.BackColor = System.Drawing.Color.Cyan;
+            this.lblIntroducereModel.BackColor = System.Drawing.Color.Azure;
             this.lblIntroducereModel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIntroducereModel.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblIntroducereModel.Location = new System.Drawing.Point(35, 46);
@@ -323,7 +308,7 @@
             // lblIntroducereFirma
             // 
             this.lblIntroducereFirma.AutoSize = true;
-            this.lblIntroducereFirma.BackColor = System.Drawing.Color.Cyan;
+            this.lblIntroducereFirma.BackColor = System.Drawing.Color.Azure;
             this.lblIntroducereFirma.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIntroducereFirma.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblIntroducereFirma.Location = new System.Drawing.Point(37, 15);
@@ -424,7 +409,6 @@
         private System.Windows.Forms.RadioButton rdbMilitar;
         private System.Windows.Forms.RadioButton rdbComercial;
         private System.Windows.Forms.RadioButton rdbCivil;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rdbExperimental;
         private System.Windows.Forms.GroupBox gpbTipAvion;
     }
