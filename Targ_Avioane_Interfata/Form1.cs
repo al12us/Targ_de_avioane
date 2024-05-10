@@ -239,6 +239,7 @@ namespace Targ_Avioane_Interfata
                 lblsFirme[i].Font = new Font("Times New Roman", 9, FontStyle.Regular);
                 lblsFirme[i].ForeColor = Color.MediumBlue;
                 lblsFirme[i].BackColor = Color.Cyan;
+                lblsFirme[i].Height = DIMENSIUNEA_PAS_X/2;
                 lblsFirme[i].TextAlign = ContentAlignment.MiddleCenter;
                 this.Controls.Add(lblsFirme[i]);
 
@@ -325,9 +326,10 @@ namespace Targ_Avioane_Interfata
             lblSalvarePlane.Width = LUNGIME_CONTROL * 3;
             lblSalvarePlane.Height = LATIME_CONTROL;
             lblSalvarePlane.Left = DIMENSIUNEA_PAS_X * 9 + 10;
-            lblSalvarePlane.Top = 330;
+            lblSalvarePlane.Top = 360;
             lblSalvarePlane.Text = " ";
-            lblSalvarePlane.BackColor = Color.Aqua;
+            lblSalvarePlane.BackColor = Color.Azure;
+            lblSalvarePlane.ForeColor = Color.MediumBlue;
             this.Controls.Add(lblSalvarePlane);
 
            
@@ -339,9 +341,11 @@ namespace Targ_Avioane_Interfata
             lblRefresh.Width = LUNGIME_CONTROL * 3;
             lblRefresh.Height = LATIME_CONTROL;
             lblRefresh.Left = DIMENSIUNEA_PAS_X * 9 + 10;
-            lblRefresh.Top = 360;
+            lblRefresh.Top = 390;
             lblRefresh.Text = " ";
-            lblRefresh.BackColor = Color.Aqua;
+            lblRefresh.BackColor = Color.Azure;
+            lblRefresh.ForeColor = Color.MediumBlue;
+            lblRefresh.Font = new Font("Arial", 9, FontStyle.Italic);
             this.Controls.Add(lblRefresh);
 
 
@@ -368,10 +372,10 @@ namespace Targ_Avioane_Interfata
 
             TipAvion PlaneSelected = GetTipAvionSelectat();
             avion.AirplaneType = PlaneSelected;
-            
-            if (txtIntroducereFirma.Text.ToString() == "" || txtIntroducereFirma.Text.ToString() == "Obligatoriu!")
+            ///validare firma
+            if (txtIntroducereFirma.Text.ToString() == "" )
             {
-                txtIntroducereFirma.Text = "Obligatoriu!";
+               
                 lblIntroducereFirma.ForeColor = Color.Red;
                 valid = false;
             }
@@ -381,10 +385,10 @@ namespace Targ_Avioane_Interfata
                 valid = false;
             }
             else
-                txtIntroducereFirma.ForeColor = Color.Black;
-            if (txtIntroducereModel.Text.ToString() == "" || txtIntroducereModel.Text.ToString() == "Obligatoriu!")
+                lblIntroducereFirma.ForeColor = Color.MediumBlue;
+            if (txtIntroducereModel.Text.ToString() == "" )
             {
-                txtIntroducereModel.Text = "Obligatoriu!";
+               
                 lblIntroducereModel.ForeColor = Color.Red;
                 valid = false;
             }
@@ -394,11 +398,12 @@ namespace Targ_Avioane_Interfata
                 valid = false;
             }
             else
-                txtIntroducereModel.ForeColor = Color.Black;
+                lblIntroducereModel.ForeColor = Color.MediumBlue;
 
-            if (txtIntroducereAnFabricatie.Text.ToString() == "" || txtIntroducereAnFabricatie.Text.ToString() =="Obligatoriu!")
+            //an fabricatie validare
+            if (txtIntroducereAnFabricatie.Text.ToString() == "")
             {
-                txtIntroducereAnFabricatie.Text = "Obligatoriu!";
+                
                 lblIntroducereAnfabricatie.ForeColor = Color.Red;
                 valid = false;
             }
@@ -408,9 +413,9 @@ namespace Targ_Avioane_Interfata
                 valid = false;
             }
             else
-                txtIntroducereFirma.ForeColor = Color.Black;
+                lblIntroducereAnfabricatie.ForeColor = Color.MediumBlue;
 
-            if (txtIntroduceCuloare.Text.ToString() == "" || txtIntroduceCuloare.Text.ToString() == "Obligatoriu!")
+            if (txtIntroduceCuloare.Text.ToString() == "")
             {
            
                 lblIntroducereCuloare.ForeColor = Color.Red;
@@ -424,39 +429,38 @@ namespace Targ_Avioane_Interfata
                 valid = false;
             }
             else
-                lblIntroducereCuloare.ForeColor = Color.Black;
+                lblIntroducereCuloare.ForeColor = Color.MediumBlue;
 
-            if (txtIntroduceregreutate.Text.ToString() == "" || txtIntroduceregreutate.Text.ToString() == "Obligatoriu!")
+            if (txtIntroduceregreutate.Text.ToString() == "")
             {
-                txtIntroduceregreutate.Text = "Obligatoriu";
+                
                 lblIntroducereGreutate.ForeColor = Color.Red;
                 valid = false;
             }
             else
-                lblIntroducereGreutate.ForeColor = Color.Black;
+                lblIntroducereGreutate.ForeColor = Color.MediumBlue;
 
-            if (txtIntroducepret.Text.ToString() == "" || txtIntroducepret.Text.ToString() == "Obligatoriu!")
+            if (txtIntroducepret.Text.ToString() == "")
             {
-                txtIntroducepret.Text = "Obligatoriu";
+                
                 lblIntrodcducerepret.ForeColor = Color.Red;
                 valid = false;
             }
             else
-                lblIntrodcducerepret.ForeColor = Color.Black;
+                lblIntrodcducerepret.ForeColor = Color.MediumBlue;
 
-            if (txtIntroducerenrpasg.Text.ToString() == "" || txtIntroducerenrpasg.Text.ToString() == "Obligatoriu!")
+            if (txtIntroducerenrpasg.Text.ToString() == "")
             {
-                txtIntroducerenrpasg.Text = "Obligatoriu";
-                txtIntroducerenrpasg.ForeColor = Color.Red;
+                lblIntroducerenrpasg.ForeColor = Color.Red;
                 valid = false;
             }
             else if (nr_pasageri < 0)
             {
-                txtIntroducerenrpasg.ForeColor = Color.Red;
+                lblIntroducerenrpasg.ForeColor = Color.Red;
                 valid = false;
             }
             else
-                txtIntroducerenrpasg.ForeColor = Color.Black;
+                lblIntroducerenrpasg.ForeColor = Color.MediumBlue;
 
 
             ///verificariile
@@ -590,6 +594,16 @@ namespace Targ_Avioane_Interfata
         }
 
         private void lblIntroducerenrpasg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnllblAvion_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void rdbExperimental_CheckedChanged(object sender, EventArgs e)
         {
 
         }

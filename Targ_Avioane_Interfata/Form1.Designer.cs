@@ -53,6 +53,7 @@
             this.btnAdaugaAvioane = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnBackMainMenu_2 = new System.Windows.Forms.Button();
+            this.lblPlaneType = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gpbTipAvion.SuspendLayout();
             this.pnllblAvion.SuspendLayout();
@@ -81,7 +82,7 @@
             // 
             // txtIntroducereModel
             // 
-            this.txtIntroducereModel.Location = new System.Drawing.Point(8, 58);
+            this.txtIntroducereModel.Location = new System.Drawing.Point(8, 48);
             this.txtIntroducereModel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIntroducereModel.Name = "txtIntroducereModel";
             this.txtIntroducereModel.Size = new System.Drawing.Size(177, 22);
@@ -141,7 +142,7 @@
             this.panel1.Location = new System.Drawing.Point(1275, 28);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(270, 355);
+            this.panel1.Size = new System.Drawing.Size(294, 355);
             this.panel1.TabIndex = 11;
             // 
             // gpbTipAvion
@@ -150,9 +151,9 @@
             this.gpbTipAvion.Controls.Add(this.rdbExperimental);
             this.gpbTipAvion.Controls.Add(this.rdbMilitar);
             this.gpbTipAvion.Controls.Add(this.rdbCivil);
-            this.gpbTipAvion.Location = new System.Drawing.Point(8, 255);
+            this.gpbTipAvion.Location = new System.Drawing.Point(10, 255);
             this.gpbTipAvion.Name = "gpbTipAvion";
-            this.gpbTipAvion.Size = new System.Drawing.Size(254, 97);
+            this.gpbTipAvion.Size = new System.Drawing.Size(275, 97);
             this.gpbTipAvion.TabIndex = 11;
             this.gpbTipAvion.TabStop = false;
             // 
@@ -175,20 +176,21 @@
             this.rdbExperimental.AutoSize = true;
             this.rdbExperimental.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rdbExperimental.ForeColor = System.Drawing.Color.MediumBlue;
-            this.rdbExperimental.Location = new System.Drawing.Point(121, 18);
+            this.rdbExperimental.Location = new System.Drawing.Point(125, 21);
             this.rdbExperimental.Name = "rdbExperimental";
             this.rdbExperimental.Size = new System.Drawing.Size(127, 24);
             this.rdbExperimental.TabIndex = 3;
             this.rdbExperimental.TabStop = true;
             this.rdbExperimental.Text = "Experimental";
             this.rdbExperimental.UseVisualStyleBackColor = true;
+            this.rdbExperimental.CheckedChanged += new System.EventHandler(this.rdbExperimental_CheckedChanged);
             // 
             // rdbMilitar
             // 
             this.rdbMilitar.AutoSize = true;
             this.rdbMilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rdbMilitar.ForeColor = System.Drawing.Color.MediumBlue;
-            this.rdbMilitar.Location = new System.Drawing.Point(121, 54);
+            this.rdbMilitar.Location = new System.Drawing.Point(125, 54);
             this.rdbMilitar.Name = "rdbMilitar";
             this.rdbMilitar.Size = new System.Drawing.Size(76, 24);
             this.rdbMilitar.TabIndex = 0;
@@ -212,6 +214,7 @@
             // pnllblAvion
             // 
             this.pnllblAvion.BackColor = System.Drawing.Color.Azure;
+            this.pnllblAvion.Controls.Add(this.lblPlaneType);
             this.pnllblAvion.Controls.Add(this.lblIntroducerenrpasg);
             this.pnllblAvion.Controls.Add(this.lblIntrodcducerepret);
             this.pnllblAvion.Controls.Add(this.lblIntroducereGreutate);
@@ -224,6 +227,7 @@
             this.pnllblAvion.Name = "pnllblAvion";
             this.pnllblAvion.Size = new System.Drawing.Size(132, 355);
             this.pnllblAvion.TabIndex = 12;
+            this.pnllblAvion.Paint += new System.Windows.Forms.PaintEventHandler(this.pnllblAvion_Paint);
             // 
             // lblIntroducerenrpasg
             // 
@@ -357,6 +361,18 @@
             this.btnBackMainMenu_2.UseVisualStyleBackColor = false;
             this.btnBackMainMenu_2.Click += new System.EventHandler(this.btnBackMainMenu_2_Click);
             // 
+            // lblPlaneType
+            // 
+            this.lblPlaneType.AutoSize = true;
+            this.lblPlaneType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPlaneType.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblPlaneType.Location = new System.Drawing.Point(20, 276);
+            this.lblPlaneType.Name = "lblPlaneType";
+            this.lblPlaneType.Size = new System.Drawing.Size(88, 48);
+            this.lblPlaneType.TabIndex = 7;
+            this.lblPlaneType.Text = "Tipul de \r\navion:";
+            this.lblPlaneType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -411,6 +427,7 @@
         private System.Windows.Forms.RadioButton rdbCivil;
         private System.Windows.Forms.RadioButton rdbExperimental;
         private System.Windows.Forms.GroupBox gpbTipAvion;
+        private System.Windows.Forms.Label lblPlaneType;
     }
 }
 

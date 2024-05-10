@@ -37,7 +37,7 @@
             // 
             // btnAvioaneClass
             // 
-            this.btnAvioaneClass.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnAvioaneClass.BackColor = System.Drawing.Color.LightCyan;
             this.btnAvioaneClass.FlatAppearance.BorderColor = System.Drawing.Color.DarkMagenta;
             this.btnAvioaneClass.FlatAppearance.BorderSize = 5;
             this.btnAvioaneClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -48,18 +48,18 @@
             this.btnAvioaneClass.Padding = new System.Windows.Forms.Padding(4);
             this.btnAvioaneClass.Size = new System.Drawing.Size(200, 200);
             this.btnAvioaneClass.TabIndex = 0;
-            this.btnAvioaneClass.Text = "Avioane";
+            this.btnAvioaneClass.Text = "&Avioane";
             this.btnAvioaneClass.UseVisualStyleBackColor = false;
             this.btnAvioaneClass.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnProducatorAvioane
             // 
-            this.btnProducatorAvioane.BackColor = System.Drawing.Color.Yellow;
-            this.btnProducatorAvioane.FlatAppearance.BorderColor = System.Drawing.Color.Chartreuse;
+            this.btnProducatorAvioane.BackColor = System.Drawing.Color.LightCyan;
+            this.btnProducatorAvioane.FlatAppearance.BorderColor = System.Drawing.Color.DarkMagenta;
             this.btnProducatorAvioane.FlatAppearance.BorderSize = 4;
             this.btnProducatorAvioane.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducatorAvioane.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnProducatorAvioane.ForeColor = System.Drawing.Color.Aqua;
+            this.btnProducatorAvioane.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnProducatorAvioane.ForeColor = System.Drawing.Color.Chocolate;
             this.btnProducatorAvioane.Location = new System.Drawing.Point(334, 29);
             this.btnProducatorAvioane.Name = "btnProducatorAvioane";
             this.btnProducatorAvioane.Size = new System.Drawing.Size(200, 200);
@@ -71,16 +71,17 @@
             // lblMenuMaintitle
             // 
             this.lblMenuMaintitle.AutoSize = true;
-            this.lblMenuMaintitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblMenuMaintitle.Location = new System.Drawing.Point(167, 47);
+            this.lblMenuMaintitle.Font = new System.Drawing.Font("Courier New", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblMenuMaintitle.ForeColor = System.Drawing.Color.Chocolate;
+            this.lblMenuMaintitle.Location = new System.Drawing.Point(91, 47);
             this.lblMenuMaintitle.Name = "lblMenuMaintitle";
-            this.lblMenuMaintitle.Size = new System.Drawing.Size(471, 46);
+            this.lblMenuMaintitle.Size = new System.Drawing.Size(618, 42);
             this.lblMenuMaintitle.TabIndex = 2;
             this.lblMenuMaintitle.Text = "Târg de Avioane-aplicație";
             // 
             // pnlMaiMenu
             // 
-            this.pnlMaiMenu.BackColor = System.Drawing.Color.GreenYellow;
+            this.pnlMaiMenu.BackColor = System.Drawing.Color.MediumTurquoise;
             this.pnlMaiMenu.Controls.Add(this.btnProducatorAvioane);
             this.pnlMaiMenu.Controls.Add(this.btnAvioaneClass);
             this.pnlMaiMenu.Location = new System.Drawing.Point(83, 112);
@@ -92,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LawnGreen;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnlMaiMenu);
             this.Controls.Add(this.lblMenuMaintitle);
