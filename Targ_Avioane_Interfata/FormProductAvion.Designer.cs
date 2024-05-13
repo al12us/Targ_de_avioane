@@ -300,7 +300,6 @@
         private System.Windows.Forms.TextBox txtTaraOrigine;
         private System.Windows.Forms.Button btnRefreshProductPlane;
         private System.Windows.Forms.Button btnAdaugaProductPlane;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox txtSpecializare;
         private System.Windows.Forms.Label lblSalvareProductPlane;
         private System.Windows.Forms.Label lblRefreshProductPlane;

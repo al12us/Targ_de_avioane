@@ -139,8 +139,8 @@ namespace Targ_Avioane_Interfata
             bool validProductPlane = true;
             if (txtCompanie.Text.ToString() == "" || txtCompanie.Text.ToString() == MESAJ)
             {
-                txtCompanie.Text = MESAJ;
-                txtCompanie.ForeColor = Color.Red;
+                
+                lblCompanie.ForeColor = Color.Red;
                 validProductPlane = false;
             }
             else if (txtCompanie.Text.Length < STRLEN_MIN_COMPANIE || txtCompanie.TextLength > STRLEN_MAX_COMPANIE)
@@ -149,60 +149,61 @@ namespace Targ_Avioane_Interfata
                 validProductPlane = false;
             }
             else
-                txtCompanie.ForeColor = Color.Black;
-            if (txtTaraOrigine.Text.ToString() == "" || txtTaraOrigine.Text.ToString() == MESAJ)
+                txtCompanie.ForeColor = Color.SaddleBrown;
+            if (txtTaraOrigine.Text.ToString() == "" )
             {
-                txtTaraOrigine.Text = MESAJ;
-                txtTaraOrigine.ForeColor = Color.Red;
+                lblTaraOrigine.ForeColor = Color.Red;
                 validProductPlane = false;
             }
             else if (txtTaraOrigine.Text.Length < STRLEN_MIN_COMPANIE || txtTaraOrigine.TextLength > STRLEN_MAX_TARA_ORIGINE)
             {
-                txtTaraOrigine.ForeColor = Color.Red;
+                lblTaraOrigine.ForeColor = Color.Red;
                 validProductPlane = false;
             }
             else
-                txtTaraOrigine.ForeColor = Color.Black;
+                txtTaraOrigine.ForeColor = Color.SaddleBrown;
             if (txtAnInfiintare.Text.ToString() == "" || txtAnInfiintare.Text.ToString() == MESAJ)
             {
-                txtAnInfiintare.Text = MESAJ;
-                txtAnInfiintare.ForeColor = Color.Red;
+                
+                lblAnInfiintare.ForeColor = Color.Red;
                 validProductPlane = false;
             }
             else
-                txtAnInfiintare.ForeColor = Color.Black;
+                lblAnInfiintare.ForeColor = Color.SaddleBrown;
             if (txtNrAngajati.Text.ToString() == "" || txtNrAngajati.Text.ToString() == MESAJ)
             {
-                txtNrAngajati.Text = MESAJ;
-                txtNrAngajati.ForeColor = Color.Red;
+               
+                lblnrAngajati.ForeColor = Color.Red;
                 validProductPlane = false;
             }
             else
-                txtNrAngajati.ForeColor = Color.Black;
-            if (txtSpecializare.Text.ToString() == "" || txtSpecializare.Text.ToString() == MESAJ)
+                lblnrAngajati.ForeColor = Color.SaddleBrown;
+            if (txtSpecializare.Text.ToString() == "" )
             {
-                txtSpecializare.Text = MESAJ;
-                txtSpecializare.ForeColor = Color.Red;
+               
+                lblSpecializare.ForeColor = Color.Red;
                 validProductPlane = false;
             }
             else if(txtSpecializare.Text.Length<4 || txtSpecializare.Text.Length > STRLEN_MAX_COMPANIE)
             {
-                txtSpecializare.ForeColor = Color.Red;
+                lblSpecializare.ForeColor = Color.Red;
                 validProductPlane = false;
             }
             else
-                txtSpecializare.ForeColor = Color.Black;
+                lblSpecializare.ForeColor = Color.SaddleBrown;
             if (validProductPlane)
             {
                 administratorProducatorPlane.AddProducator(producator);
                 lblSalvareProductPlane.Text = "Producatorul de avioane a fost adaugat";
+                ResetControls();
             }
             else
             {
                 lblSalvareProductPlane.Text = "Informatiile sunt introduse incorect";
+                ResetControls();
             }
 
-            ResetControls();
+          
 
         }
         private void ResetControls()

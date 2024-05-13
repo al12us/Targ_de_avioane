@@ -473,6 +473,7 @@ namespace Targ_Avioane_Interfata
             else
             {
                 lblSalvarePlane.Text = "Informatiile sunt introduse incorect";
+                
             }
             
         }
@@ -480,6 +481,13 @@ namespace Targ_Avioane_Interfata
         {
             txtIntroducereFirma.Text = txtIntroducereModel.Text = txtIntroducereAnFabricatie.Text = txtIntroduceCuloare.Text = string.Empty;
             txtIntroduceregreutate.Text = txtIntroducepret.Text = txtIntroducerenrpasg.Text = string.Empty;
+            lblIntroducereFirma.ForeColor = Color.MediumBlue;
+            lblIntroducereModel.ForeColor = Color.MediumBlue;
+            lblIntroducereAnfabricatie.ForeColor = Color.MediumBlue;
+            lblIntroducereCuloare.ForeColor = Color.MediumBlue;
+            lblIntroducereGreutate.ForeColor = Color.MediumBlue;
+            lblIntrodcducerepret.ForeColor = Color.MediumBlue;
+            lblIntroducerenrpasg.ForeColor = Color.MediumBlue;
             rdbCivil.Checked = false;
             rdbComercial.Checked = false;
             rdbExperimental.Checked = false;
