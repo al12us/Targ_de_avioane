@@ -615,5 +615,10 @@ namespace Targ_Avioane_Interfata
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
