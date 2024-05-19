@@ -43,6 +43,7 @@
             this.rdbMilitar = new System.Windows.Forms.RadioButton();
             this.rdbCivil = new System.Windows.Forms.RadioButton();
             this.pnllblAvion = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblPlaneType = new System.Windows.Forms.Label();
             this.lblIntroducerenrpasg = new System.Windows.Forms.Label();
             this.lblIntrodcducerepret = new System.Windows.Forms.Label();
@@ -54,10 +55,14 @@
             this.btnAdaugaAvioane = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnBackMainMenu_2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnCauta = new System.Windows.Forms.Button();
+            this.btnModifica = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.gpbTipAvion.SuspendLayout();
             this.pnllblAvion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbltitlu
@@ -184,7 +189,6 @@
             this.rdbExperimental.TabStop = true;
             this.rdbExperimental.Text = "Experimental";
             this.rdbExperimental.UseVisualStyleBackColor = true;
-            this.rdbExperimental.CheckedChanged += new System.EventHandler(this.rdbExperimental_CheckedChanged);
             // 
             // rdbMilitar
             // 
@@ -229,7 +233,18 @@
             this.pnllblAvion.Name = "pnllblAvion";
             this.pnllblAvion.Size = new System.Drawing.Size(145, 406);
             this.pnllblAvion.TabIndex = 12;
-            this.pnllblAvion.Paint += new System.Windows.Forms.PaintEventHandler(this.pnllblAvion_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label1.Location = new System.Drawing.Point(4, 344);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 48);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Componenete \r\nAvion:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPlaneType
             // 
@@ -256,7 +271,6 @@
             this.lblIntroducerenrpasg.TabIndex = 6;
             this.lblIntroducerenrpasg.Text = "Număr de \r\npasgeri:";
             this.lblIntroducerenrpasg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblIntroducerenrpasg.Click += new System.EventHandler(this.lblIntroducerenrpasg_Click);
             // 
             // lblIntrodcducerepret
             // 
@@ -375,18 +389,54 @@
             this.btnBackMainMenu_2.UseVisualStyleBackColor = false;
             this.btnBackMainMenu_2.Click += new System.EventHandler(this.btnBackMainMenu_2_Click);
             // 
-            // label1
+            // btnCauta
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label1.Location = new System.Drawing.Point(4, 344);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 48);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Componenete \r\nAvion:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.btnCauta.BackColor = System.Drawing.Color.Moccasin;
+            this.btnCauta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCauta.Font = new System.Drawing.Font("Segoe Print", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCauta.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnCauta.Location = new System.Drawing.Point(1235, 441);
+            this.btnCauta.Name = "btnCauta";
+            this.btnCauta.Size = new System.Drawing.Size(110, 36);
+            this.btnCauta.TabIndex = 16;
+            this.btnCauta.Text = "&Caută";
+            this.btnCauta.UseVisualStyleBackColor = false;
+            // 
+            // btnModifica
+            // 
+            this.btnModifica.BackColor = System.Drawing.Color.Moccasin;
+            this.btnModifica.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnModifica.Font = new System.Drawing.Font("Segoe Print", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifica.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnModifica.Location = new System.Drawing.Point(1235, 507);
+            this.btnModifica.Name = "btnModifica";
+            this.btnModifica.Size = new System.Drawing.Size(110, 36);
+            this.btnModifica.TabIndex = 17;
+            this.btnModifica.Text = "&Modifică";
+            this.btnModifica.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Moccasin;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Font = new System.Drawing.Font("Segoe Print", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Chocolate;
+            this.button1.Location = new System.Drawing.Point(1387, 473);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 36);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "&Șterge";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(718, 489);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 19;
             // 
             // Form1
             // 
@@ -394,6 +444,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1582, 673);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnModifica);
+            this.Controls.Add(this.btnCauta);
             this.Controls.Add(this.btnBackMainMenu_2);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAdaugaAvioane);
@@ -410,6 +464,7 @@
             this.gpbTipAvion.PerformLayout();
             this.pnllblAvion.ResumeLayout(false);
             this.pnllblAvion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,6 +499,10 @@
         private System.Windows.Forms.GroupBox gpbTipAvion;
         private System.Windows.Forms.Label lblPlaneType;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCauta;
+        private System.Windows.Forms.Button btnModifica;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

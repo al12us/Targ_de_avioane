@@ -601,24 +601,6 @@ namespace Targ_Avioane_Interfata
 
         }
 
-        private void lblIntroducerenrpasg_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnllblAvion_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void rdbExperimental_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
