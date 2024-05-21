@@ -401,6 +401,7 @@
             this.btnCauta.TabIndex = 16;
             this.btnCauta.Text = "&Caută";
             this.btnCauta.UseVisualStyleBackColor = false;
+            this.btnCauta.Click += new System.EventHandler(this.btnCauta_Click);
             // 
             // btnModifica
             // 

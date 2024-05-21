@@ -601,6 +601,15 @@ namespace Targ_Avioane_Interfata
 
         }
 
-        
+        private void btnCauta_Click(object sender, EventArgs e)
+        {
+              AvionClass axa = adminPlanes.GetPlane(txtIntroducereFirma.Text, txtIntroducereModel.Text,Int32.Parse(txtIntroducereAnFabricatie.Text),(Culoarea)Enum.Parse(typeof(Culoarea),txtIntroduceCuloare.Text));
+            if (axa == null)
+                lblSalvarePlane.Text = "Avionul nu a fost gasit!";
+
+            else
+                lblSalvarePlane.Text = "Avionul a fost gasit";
+
+        }
     }
 }
