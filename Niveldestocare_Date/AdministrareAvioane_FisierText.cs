@@ -73,7 +73,30 @@ namespace Niveldestocare_Date
 
             return null;
         }
-       
+        public bool UpdateStudent(AvionClass avionActualizat)
+        {
+            List<AvionClass> avioane = GetPlanes();
+            bool actualizareCuSucces = false;
+
+            //instructiunea 'using' va apela la final swFisierText.Close();
+            //al doilea parametru setat la 'false' al constructorului StreamWriter indica modul 'overwrite' de deschidere al fisierului
+            using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier, false))
+            {
+                foreach (AvionClass avion in avioane)
+                {
+                    AvionClass avionPentruScrisInFisier = avion;
+                    //informatiile despre studentul actualizat vor fi preluate din parametrul "studentActualizat"
+                    if (avion.ID_avion == avionActualizat.ID_avion)
+                    {
+                        avionPentruScrisInFisier = avionActualizat;
+                    }
+                    streamWriterFisierText.WriteLine(avionPentruScrisInFisier.ConversieLaSir_PentruFisier());
+                }
+                actualizareCuSucces = true;
+            }
+
+            return actualizareCuSucces;
+        }
         private int GetID()
         {
             int IDAvion = ID_PRIMUL_AVION;

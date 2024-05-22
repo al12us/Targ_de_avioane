@@ -1,4 +1,6 @@
-﻿namespace Targ_Avioane_Interfata
+﻿using System.Drawing;
+
+namespace Targ_Avioane_Interfata
 {
     partial class Form1
     {
@@ -43,7 +45,7 @@
             this.rdbMilitar = new System.Windows.Forms.RadioButton();
             this.rdbCivil = new System.Windows.Forms.RadioButton();
             this.pnllblAvion = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblComponenteAvioane = new System.Windows.Forms.Label();
             this.lblPlaneType = new System.Windows.Forms.Label();
             this.lblIntroducerenrpasg = new System.Windows.Forms.Label();
             this.lblIntrodcducerepret = new System.Windows.Forms.Label();
@@ -58,11 +60,13 @@
             this.btnCauta = new System.Windows.Forms.Button();
             this.btnModifica = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPlane = new System.Windows.Forms.DataGridView();
+            this.lblSalvarePlane = new System.Windows.Forms.Label();
+            this.lblRefreshDate = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gpbTipAvion.SuspendLayout();
             this.pnllblAvion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlane)).BeginInit();
             this.SuspendLayout();
             // 
             // lbltitlu
@@ -219,7 +223,7 @@
             // pnllblAvion
             // 
             this.pnllblAvion.BackColor = System.Drawing.Color.Azure;
-            this.pnllblAvion.Controls.Add(this.label1);
+            this.pnllblAvion.Controls.Add(this.lblComponenteAvioane);
             this.pnllblAvion.Controls.Add(this.lblPlaneType);
             this.pnllblAvion.Controls.Add(this.lblIntroducerenrpasg);
             this.pnllblAvion.Controls.Add(this.lblIntrodcducerepret);
@@ -234,17 +238,17 @@
             this.pnllblAvion.Size = new System.Drawing.Size(145, 406);
             this.pnllblAvion.TabIndex = 12;
             // 
-            // label1
+            // lblComponenteAvioane
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label1.Location = new System.Drawing.Point(4, 344);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 48);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Componenete \r\nAvion:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblComponenteAvioane.AutoSize = true;
+            this.lblComponenteAvioane.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblComponenteAvioane.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblComponenteAvioane.Location = new System.Drawing.Point(4, 344);
+            this.lblComponenteAvioane.Name = "lblComponenteAvioane";
+            this.lblComponenteAvioane.Size = new System.Drawing.Size(140, 48);
+            this.lblComponenteAvioane.TabIndex = 16;
+            this.lblComponenteAvioane.Text = "Componenete \r\nAvion:";
+            this.lblComponenteAvioane.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPlaneType
             // 
@@ -429,23 +433,47 @@
             this.button1.Text = "&Șterge";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dgvPlane
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(718, 489);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 19;
+            this.dgvPlane.BackgroundColor = System.Drawing.Color.Aqua;
+            this.dgvPlane.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPlane.Location = new System.Drawing.Point(23, 123);
+            this.dgvPlane.Name = "dgvPlane";
+            this.dgvPlane.RowHeadersWidth = 51;
+            this.dgvPlane.RowTemplate.Height = 24;
+            this.dgvPlane.Size = new System.Drawing.Size(1064, 483);
+            this.dgvPlane.TabIndex = 19;
+            // 
+            // lblSalvarePlane
+            // 
+            this.lblSalvarePlane.AutoSize = true;
+            this.lblSalvarePlane.BackColor = System.Drawing.Color.Azure;
+            this.lblSalvarePlane.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSalvarePlane.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblSalvarePlane.Location = new System.Drawing.Point(1115, 669);
+            this.lblSalvarePlane.Name = "lblSalvarePlane";
+            this.lblSalvarePlane.Size = new System.Drawing.Size(0, 24);
+            this.lblSalvarePlane.TabIndex = 20;
+            // 
+            // lblRefreshDate
+            // 
+            this.lblRefreshDate.AutoSize = true;
+            this.lblRefreshDate.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblRefreshDate.Location = new System.Drawing.Point(1148, 687);
+            this.lblRefreshDate.Name = "lblRefreshDate";
+            this.lblRefreshDate.Size = new System.Drawing.Size(0, 16);
+            this.lblRefreshDate.TabIndex = 21;
+            this.lblRefreshDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1582, 673);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1782, 673);
+            this.Controls.Add(this.lblRefreshDate);
+            this.Controls.Add(this.lblSalvarePlane);
+            this.Controls.Add(this.dgvPlane);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnModifica);
             this.Controls.Add(this.btnCauta);
@@ -465,7 +493,7 @@
             this.gpbTipAvion.PerformLayout();
             this.pnllblAvion.ResumeLayout(false);
             this.pnllblAvion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlane)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -499,11 +527,13 @@
         private System.Windows.Forms.RadioButton rdbExperimental;
         private System.Windows.Forms.GroupBox gpbTipAvion;
         private System.Windows.Forms.Label lblPlaneType;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblComponenteAvioane;
         private System.Windows.Forms.Button btnCauta;
         private System.Windows.Forms.Button btnModifica;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPlane;
+        private System.Windows.Forms.Label lblSalvarePlane;
+        private System.Windows.Forms.Label lblRefreshDate;
     }
 }
 
