@@ -30,27 +30,27 @@ namespace Targ_Avioane_Interfata
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbltitlu = new System.Windows.Forms.Label();
-            this.txtIntroducereFirma = new System.Windows.Forms.TextBox();
-            this.txtIntroducereModel = new System.Windows.Forms.TextBox();
-            this.txtIntroducereAnFabricatie = new System.Windows.Forms.TextBox();
-            this.txtIntroduceCuloare = new System.Windows.Forms.TextBox();
-            this.txtIntroduceregreutate = new System.Windows.Forms.TextBox();
-            this.txtIntroducepret = new System.Windows.Forms.TextBox();
-            this.txtIntroducerenrpasg = new System.Windows.Forms.TextBox();
+            this.txtFirma = new System.Windows.Forms.TextBox();
+            this.txtModel = new System.Windows.Forms.TextBox();
+            this.txtAnFabricatie = new System.Windows.Forms.TextBox();
+            this.txtCuloare = new System.Windows.Forms.TextBox();
+            this.txtGreutate = new System.Windows.Forms.TextBox();
+            this.txtPret = new System.Windows.Forms.TextBox();
+            this.txtNrPasg = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.gpbComponente = new System.Windows.Forms.GroupBox();
+            this.ckbSigurantaSupraveghere = new System.Windows.Forms.CheckBox();
+            this.ckbSistemDeContramasuri = new System.Windows.Forms.CheckBox();
+            this.ckbSistemedeArmament = new System.Windows.Forms.CheckBox();
+            this.ckbControlAutomatizare = new System.Windows.Forms.CheckBox();
+            this.ckbComunicare = new System.Windows.Forms.CheckBox();
+            this.ckbNavigare = new System.Windows.Forms.CheckBox();
+            this.ckbPropulsie = new System.Windows.Forms.CheckBox();
+            this.ckbAeroframe = new System.Windows.Forms.CheckBox();
             this.gpbTipAvion = new System.Windows.Forms.GroupBox();
             this.rdbComercial = new System.Windows.Forms.RadioButton();
             this.rdbExperimental = new System.Windows.Forms.RadioButton();
@@ -71,14 +71,16 @@ namespace Targ_Avioane_Interfata
             this.btnBackMainMenu_2 = new System.Windows.Forms.Button();
             this.btnCauta = new System.Windows.Forms.Button();
             this.btnModifica = new System.Windows.Forms.Button();
-            this.btnSterge = new System.Windows.Forms.Button();
             this.dgvPlane = new System.Windows.Forms.DataGridView();
             this.lblSalvarePlane = new System.Windows.Forms.Label();
             this.lblRefreshDate = new System.Windows.Forms.Label();
             this.lblValidare = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
+            this.btnSterge = new System.Windows.Forms.Button();
+            this.ckbAprovizionare = new System.Windows.Forms.CheckBox();
+            this.ckbAdaptare = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gpbComponente.SuspendLayout();
             this.gpbTipAvion.SuspendLayout();
             this.pnllblAvion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlane)).BeginInit();
@@ -97,176 +99,201 @@ namespace Targ_Avioane_Interfata
             this.lbltitlu.Text = "Avioane";
             this.lbltitlu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtIntroducereFirma
+            // txtFirma
             // 
-            this.txtIntroducereFirma.Location = new System.Drawing.Point(8, 15);
-            this.txtIntroducereFirma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIntroducereFirma.Name = "txtIntroducereFirma";
-            this.txtIntroducereFirma.Size = new System.Drawing.Size(177, 22);
-            this.txtIntroducereFirma.TabIndex = 3;
+            this.txtFirma.Location = new System.Drawing.Point(8, 15);
+            this.txtFirma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFirma.Name = "txtFirma";
+            this.txtFirma.Size = new System.Drawing.Size(177, 22);
+            this.txtFirma.TabIndex = 3;
             // 
-            // txtIntroducereModel
+            // txtModel
             // 
-            this.txtIntroducereModel.Location = new System.Drawing.Point(8, 48);
-            this.txtIntroducereModel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIntroducereModel.Name = "txtIntroducereModel";
-            this.txtIntroducereModel.Size = new System.Drawing.Size(177, 22);
-            this.txtIntroducereModel.TabIndex = 5;
+            this.txtModel.Location = new System.Drawing.Point(8, 48);
+            this.txtModel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(177, 22);
+            this.txtModel.TabIndex = 5;
             // 
-            // txtIntroducereAnFabricatie
+            // txtAnFabricatie
             // 
-            this.txtIntroducereAnFabricatie.Location = new System.Drawing.Point(8, 86);
-            this.txtIntroducereAnFabricatie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIntroducereAnFabricatie.Name = "txtIntroducereAnFabricatie";
-            this.txtIntroducereAnFabricatie.Size = new System.Drawing.Size(177, 22);
-            this.txtIntroducereAnFabricatie.TabIndex = 6;
+            this.txtAnFabricatie.Location = new System.Drawing.Point(8, 86);
+            this.txtAnFabricatie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAnFabricatie.Name = "txtAnFabricatie";
+            this.txtAnFabricatie.Size = new System.Drawing.Size(177, 22);
+            this.txtAnFabricatie.TabIndex = 6;
             // 
-            // txtIntroduceCuloare
+            // txtCuloare
             // 
-            this.txtIntroduceCuloare.Location = new System.Drawing.Point(8, 123);
-            this.txtIntroduceCuloare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIntroduceCuloare.Name = "txtIntroduceCuloare";
-            this.txtIntroduceCuloare.Size = new System.Drawing.Size(177, 22);
-            this.txtIntroduceCuloare.TabIndex = 7;
+            this.txtCuloare.Location = new System.Drawing.Point(8, 123);
+            this.txtCuloare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCuloare.Name = "txtCuloare";
+            this.txtCuloare.Size = new System.Drawing.Size(177, 22);
+            this.txtCuloare.TabIndex = 7;
             // 
-            // txtIntroduceregreutate
+            // txtGreutate
             // 
-            this.txtIntroduceregreutate.Location = new System.Drawing.Point(8, 153);
-            this.txtIntroduceregreutate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIntroduceregreutate.Name = "txtIntroduceregreutate";
-            this.txtIntroduceregreutate.Size = new System.Drawing.Size(177, 22);
-            this.txtIntroduceregreutate.TabIndex = 8;
+            this.txtGreutate.Location = new System.Drawing.Point(8, 153);
+            this.txtGreutate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGreutate.Name = "txtGreutate";
+            this.txtGreutate.Size = new System.Drawing.Size(177, 22);
+            this.txtGreutate.TabIndex = 8;
             // 
-            // txtIntroducepret
+            // txtPret
             // 
-            this.txtIntroducepret.Location = new System.Drawing.Point(8, 188);
-            this.txtIntroducepret.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIntroducepret.Name = "txtIntroducepret";
-            this.txtIntroducepret.Size = new System.Drawing.Size(177, 22);
-            this.txtIntroducepret.TabIndex = 9;
+            this.txtPret.Location = new System.Drawing.Point(8, 188);
+            this.txtPret.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPret.Name = "txtPret";
+            this.txtPret.Size = new System.Drawing.Size(177, 22);
+            this.txtPret.TabIndex = 9;
             // 
-            // txtIntroducerenrpasg
+            // txtNrPasg
             // 
-            this.txtIntroducerenrpasg.Location = new System.Drawing.Point(8, 228);
-            this.txtIntroducerenrpasg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIntroducerenrpasg.Name = "txtIntroducerenrpasg";
-            this.txtIntroducerenrpasg.Size = new System.Drawing.Size(177, 22);
-            this.txtIntroducerenrpasg.TabIndex = 10;
+            this.txtNrPasg.Location = new System.Drawing.Point(8, 228);
+            this.txtNrPasg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNrPasg.Name = "txtNrPasg";
+            this.txtNrPasg.Size = new System.Drawing.Size(177, 22);
+            this.txtNrPasg.TabIndex = 10;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Azure;
-            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.gpbComponente);
             this.panel1.Controls.Add(this.gpbTipAvion);
-            this.panel1.Controls.Add(this.txtIntroducerenrpasg);
-            this.panel1.Controls.Add(this.txtIntroducepret);
-            this.panel1.Controls.Add(this.txtIntroduceregreutate);
-            this.panel1.Controls.Add(this.txtIntroduceCuloare);
-            this.panel1.Controls.Add(this.txtIntroducereAnFabricatie);
-            this.panel1.Controls.Add(this.txtIntroducereModel);
-            this.panel1.Controls.Add(this.txtIntroducereFirma);
+            this.panel1.Controls.Add(this.txtNrPasg);
+            this.panel1.Controls.Add(this.txtPret);
+            this.panel1.Controls.Add(this.txtGreutate);
+            this.panel1.Controls.Add(this.txtCuloare);
+            this.panel1.Controls.Add(this.txtAnFabricatie);
+            this.panel1.Controls.Add(this.txtModel);
+            this.panel1.Controls.Add(this.txtFirma);
             this.panel1.Location = new System.Drawing.Point(1268, 28);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(478, 568);
             this.panel1.TabIndex = 11;
             // 
-            // groupBox1
+            // gpbComponente
             // 
-            this.groupBox1.Controls.Add(this.checkBox8);
-            this.groupBox1.Controls.Add(this.checkBox7);
-            this.groupBox1.Controls.Add(this.checkBox6);
-            this.groupBox1.Controls.Add(this.checkBox5);
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(17, 370);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(421, 195);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.gpbComponente.Controls.Add(this.ckbAdaptare);
+            this.gpbComponente.Controls.Add(this.ckbAprovizionare);
+            this.gpbComponente.Controls.Add(this.ckbSigurantaSupraveghere);
+            this.gpbComponente.Controls.Add(this.ckbSistemDeContramasuri);
+            this.gpbComponente.Controls.Add(this.ckbSistemedeArmament);
+            this.gpbComponente.Controls.Add(this.ckbControlAutomatizare);
+            this.gpbComponente.Controls.Add(this.ckbComunicare);
+            this.gpbComponente.Controls.Add(this.ckbNavigare);
+            this.gpbComponente.Controls.Add(this.ckbPropulsie);
+            this.gpbComponente.Controls.Add(this.ckbAeroframe);
+            this.gpbComponente.Location = new System.Drawing.Point(17, 358);
+            this.gpbComponente.Name = "gpbComponente";
+            this.gpbComponente.Size = new System.Drawing.Size(458, 207);
+            this.gpbComponente.TabIndex = 13;
+            this.gpbComponente.TabStop = false;
             // 
-            // checkBox8
+            // ckbSigurantaSupraveghere
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(192, 73);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(182, 36);
-            this.checkBox8.TabIndex = 19;
-            this.checkBox8.Text = "Sisteme de recunoastere \r\nsi supraveghere";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.ckbSigurantaSupraveghere.AutoSize = true;
+            this.ckbSigurantaSupraveghere.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ckbSigurantaSupraveghere.ForeColor = System.Drawing.Color.MediumBlue;
+            this.ckbSigurantaSupraveghere.Location = new System.Drawing.Point(233, 81);
+            this.ckbSigurantaSupraveghere.Name = "ckbSigurantaSupraveghere";
+            this.ckbSigurantaSupraveghere.Size = new System.Drawing.Size(188, 44);
+            this.ckbSigurantaSupraveghere.TabIndex = 19;
+            this.ckbSigurantaSupraveghere.Text = "Sisteme de siguranță\r\n și supraveghere";
+            this.ckbSigurantaSupraveghere.UseVisualStyleBackColor = true;
+            this.ckbSigurantaSupraveghere.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
             // 
-            // checkBox7
+            // ckbSistemDeContramasuri
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(192, 47);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(177, 20);
-            this.checkBox7.TabIndex = 18;
-            this.checkBox7.Text = "Sisteme de contramasuri";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.ckbSistemDeContramasuri.AutoSize = true;
+            this.ckbSistemDeContramasuri.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ckbSistemDeContramasuri.ForeColor = System.Drawing.Color.MediumBlue;
+            this.ckbSistemDeContramasuri.Location = new System.Drawing.Point(233, 51);
+            this.ckbSistemDeContramasuri.Name = "ckbSistemDeContramasuri";
+            this.ckbSistemDeContramasuri.Size = new System.Drawing.Size(218, 24);
+            this.ckbSistemDeContramasuri.TabIndex = 18;
+            this.ckbSistemDeContramasuri.Text = "Sisteme de contramasuri";
+            this.ckbSistemDeContramasuri.UseVisualStyleBackColor = true;
+            this.ckbSistemDeContramasuri.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
             // 
-            // checkBox6
+            // ckbSistemedeArmament
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(192, 21);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(160, 20);
-            this.checkBox6.TabIndex = 17;
-            this.checkBox6.Text = "Sisteme de armament";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.ckbSistemedeArmament.AutoSize = true;
+            this.ckbSistemedeArmament.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ckbSistemedeArmament.ForeColor = System.Drawing.Color.MediumBlue;
+            this.ckbSistemedeArmament.Location = new System.Drawing.Point(233, 21);
+            this.ckbSistemedeArmament.Name = "ckbSistemedeArmament";
+            this.ckbSistemedeArmament.Size = new System.Drawing.Size(195, 24);
+            this.ckbSistemedeArmament.TabIndex = 17;
+            this.ckbSistemedeArmament.Text = "Sisteme de armament";
+            this.ckbSistemedeArmament.UseVisualStyleBackColor = true;
+            this.ckbSistemedeArmament.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
             // 
-            // checkBox5
+            // ckbControlAutomatizare
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(10, 134);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(142, 36);
-            this.checkBox5.TabIndex = 16;
-            this.checkBox5.Text = "Sisteme de contol  \r\nsi automatizare";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.ckbControlAutomatizare.AutoSize = true;
+            this.ckbControlAutomatizare.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ckbControlAutomatizare.ForeColor = System.Drawing.Color.MediumBlue;
+            this.ckbControlAutomatizare.Location = new System.Drawing.Point(10, 134);
+            this.ckbControlAutomatizare.Name = "ckbControlAutomatizare";
+            this.ckbControlAutomatizare.Size = new System.Drawing.Size(175, 44);
+            this.ckbControlAutomatizare.TabIndex = 16;
+            this.ckbControlAutomatizare.Text = "Sisteme de contol  \r\nsi automatizare";
+            this.ckbControlAutomatizare.UseVisualStyleBackColor = true;
+            this.ckbControlAutomatizare.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
             // 
-            // checkBox4
+            // ckbComunicare
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(10, 108);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(164, 20);
-            this.checkBox4.TabIndex = 15;
-            this.checkBox4.Text = "Sistem de Comunicare";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.ckbComunicare.AutoSize = true;
+            this.ckbComunicare.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ckbComunicare.ForeColor = System.Drawing.Color.MediumBlue;
+            this.ckbComunicare.Location = new System.Drawing.Point(10, 108);
+            this.ckbComunicare.Name = "ckbComunicare";
+            this.ckbComunicare.Size = new System.Drawing.Size(201, 24);
+            this.ckbComunicare.TabIndex = 15;
+            this.ckbComunicare.Text = "Sistem de Comunicare";
+            this.ckbComunicare.UseVisualStyleBackColor = true;
+            this.ckbComunicare.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
             // 
-            // checkBox3
+            // ckbNavigare
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(10, 82);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(153, 20);
-            this.checkBox3.TabIndex = 14;
-            this.checkBox3.Text = "Sisteme de navigare";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.ckbNavigare.AutoSize = true;
+            this.ckbNavigare.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ckbNavigare.ForeColor = System.Drawing.Color.MediumBlue;
+            this.ckbNavigare.Location = new System.Drawing.Point(10, 82);
+            this.ckbNavigare.Name = "ckbNavigare";
+            this.ckbNavigare.Size = new System.Drawing.Size(182, 24);
+            this.ckbNavigare.TabIndex = 14;
+            this.ckbNavigare.Text = "Sisteme de navigare";
+            this.ckbNavigare.UseVisualStyleBackColor = true;
+            this.ckbNavigare.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
             // 
-            // checkBox2
+            // ckbPropulsie
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(10, 56);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(156, 20);
-            this.checkBox2.TabIndex = 13;
-            this.checkBox2.Text = "Sisteme de propulsie";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.ckbPropulsie.AutoSize = true;
+            this.ckbPropulsie.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ckbPropulsie.ForeColor = System.Drawing.Color.MediumBlue;
+            this.ckbPropulsie.Location = new System.Drawing.Point(10, 56);
+            this.ckbPropulsie.Name = "ckbPropulsie";
+            this.ckbPropulsie.Size = new System.Drawing.Size(188, 24);
+            this.ckbPropulsie.TabIndex = 13;
+            this.ckbPropulsie.Text = "Sisteme de propulsie";
+            this.ckbPropulsie.UseVisualStyleBackColor = true;
+            this.ckbPropulsie.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
             // 
-            // checkBox1
+            // ckbAeroframe
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(10, 30);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(92, 20);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Aeroframe";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbAeroframe.AutoSize = true;
+            this.ckbAeroframe.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ckbAeroframe.ForeColor = System.Drawing.Color.MediumBlue;
+            this.ckbAeroframe.Location = new System.Drawing.Point(10, 30);
+            this.ckbAeroframe.Name = "ckbAeroframe";
+            this.ckbAeroframe.Size = new System.Drawing.Size(109, 24);
+            this.ckbAeroframe.TabIndex = 12;
+            this.ckbAeroframe.Text = "Aeroframe";
+            this.ckbAeroframe.UseVisualStyleBackColor = true;
+            this.ckbAeroframe.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
             // 
             // gpbTipAvion
             // 
@@ -356,7 +383,7 @@ namespace Targ_Avioane_Interfata
             this.lblComponenteAvioane.AutoSize = true;
             this.lblComponenteAvioane.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblComponenteAvioane.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblComponenteAvioane.Location = new System.Drawing.Point(4, 344);
+            this.lblComponenteAvioane.Location = new System.Drawing.Point(2, 386);
             this.lblComponenteAvioane.Name = "lblComponenteAvioane";
             this.lblComponenteAvioane.Size = new System.Drawing.Size(140, 48);
             this.lblComponenteAvioane.TabIndex = 16;
@@ -532,56 +559,44 @@ namespace Targ_Avioane_Interfata
             this.btnModifica.TabIndex = 17;
             this.btnModifica.Text = "&Modifică";
             this.btnModifica.UseVisualStyleBackColor = false;
-            // 
-            // btnSterge
-            // 
-            this.btnSterge.BackColor = System.Drawing.Color.Moccasin;
-            this.btnSterge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSterge.Font = new System.Drawing.Font("Segoe Print", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSterge.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnSterge.Location = new System.Drawing.Point(1432, 612);
-            this.btnSterge.Name = "btnSterge";
-            this.btnSterge.Size = new System.Drawing.Size(110, 36);
-            this.btnSterge.TabIndex = 18;
-            this.btnSterge.Text = "&Șterge";
-            this.btnSterge.UseVisualStyleBackColor = false;
-            this.btnSterge.Click += new System.EventHandler(this.btnSterge_Click);
+            this.btnModifica.Click += new System.EventHandler(this.btnModifica_Click);
             // 
             // dgvPlane
             // 
             this.dgvPlane.BackgroundColor = System.Drawing.Color.Aqua;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.MediumBlue;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlane.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.MediumBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlane.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPlane.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.MediumBlue;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPlane.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.MediumBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPlane.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPlane.GridColor = System.Drawing.Color.Azure;
             this.dgvPlane.Location = new System.Drawing.Point(23, 123);
             this.dgvPlane.Name = "dgvPlane";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.MediumBlue;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlane.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.MediumBlue;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlane.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPlane.RowHeadersWidth = 51;
             this.dgvPlane.RowTemplate.Height = 24;
             this.dgvPlane.Size = new System.Drawing.Size(1064, 483);
             this.dgvPlane.TabIndex = 19;
+            this.dgvPlane.SelectionChanged += new System.EventHandler(this.dgvPlane_SelectionChanged);
             // 
             // lblSalvarePlane
             // 
@@ -621,7 +636,7 @@ namespace Targ_Avioane_Interfata
             this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnReset.Font = new System.Drawing.Font("Segoe Print", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnReset.Location = new System.Drawing.Point(1432, 669);
+            this.btnReset.Location = new System.Drawing.Point(1431, 612);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(110, 36);
             this.btnReset.TabIndex = 23;
@@ -629,18 +644,58 @@ namespace Targ_Avioane_Interfata
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // btnSterge
+            // 
+            this.btnSterge.BackColor = System.Drawing.Color.Moccasin;
+            this.btnSterge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSterge.Font = new System.Drawing.Font("Segoe Print", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSterge.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnSterge.Location = new System.Drawing.Point(1431, 669);
+            this.btnSterge.Name = "btnSterge";
+            this.btnSterge.Size = new System.Drawing.Size(110, 36);
+            this.btnSterge.TabIndex = 24;
+            this.btnSterge.Text = "&Șterge";
+            this.btnSterge.UseVisualStyleBackColor = false;
+            this.btnSterge.Click += new System.EventHandler(this.btnSterge_Click);
+            // 
+            // ckbAprovizionare
+            // 
+            this.ckbAprovizionare.AutoSize = true;
+            this.ckbAprovizionare.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic);
+            this.ckbAprovizionare.ForeColor = System.Drawing.Color.MediumBlue;
+            this.ckbAprovizionare.Location = new System.Drawing.Point(233, 122);
+            this.ckbAprovizionare.Name = "ckbAprovizionare";
+            this.ckbAprovizionare.Size = new System.Drawing.Size(184, 44);
+            this.ckbAprovizionare.TabIndex = 20;
+            this.ckbAprovizionare.Text = "Sisteme de catering \r\nsi aprovizionare";
+            this.ckbAprovizionare.UseVisualStyleBackColor = true;
+            this.ckbAprovizionare.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
+            // 
+            // ckbAdaptare
+            // 
+            this.ckbAdaptare.AutoSize = true;
+            this.ckbAdaptare.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic);
+            this.ckbAdaptare.ForeColor = System.Drawing.Color.MediumBlue;
+            this.ckbAdaptare.Location = new System.Drawing.Point(233, 166);
+            this.ckbAdaptare.Name = "ckbAdaptare";
+            this.ckbAdaptare.Size = new System.Drawing.Size(185, 44);
+            this.ckbAdaptare.TabIndex = 21;
+            this.ckbAdaptare.Text = "Sisteme de adaptare\r\n și modificare";
+            this.ckbAdaptare.UseVisualStyleBackColor = true;
+            this.ckbAdaptare.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1782, 953);
+            this.Controls.Add(this.btnSterge);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.lblValidare);
             this.Controls.Add(this.lblRefreshDate);
             this.Controls.Add(this.lblSalvarePlane);
             this.Controls.Add(this.dgvPlane);
-            this.Controls.Add(this.btnSterge);
             this.Controls.Add(this.btnModifica);
             this.Controls.Add(this.btnCauta);
             this.Controls.Add(this.btnBackMainMenu_2);
@@ -655,8 +710,8 @@ namespace Targ_Avioane_Interfata
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gpbComponente.ResumeLayout(false);
+            this.gpbComponente.PerformLayout();
             this.gpbTipAvion.ResumeLayout(false);
             this.gpbTipAvion.PerformLayout();
             this.pnllblAvion.ResumeLayout(false);
@@ -670,13 +725,13 @@ namespace Targ_Avioane_Interfata
         #endregion
 
         private System.Windows.Forms.Label lbltitlu;
-        private System.Windows.Forms.TextBox txtIntroducereFirma;
-        private System.Windows.Forms.TextBox txtIntroducereModel;
-        private System.Windows.Forms.TextBox txtIntroducereAnFabricatie;
-        private System.Windows.Forms.TextBox txtIntroduceCuloare;
-        private System.Windows.Forms.TextBox txtIntroduceregreutate;
-        private System.Windows.Forms.TextBox txtIntroducepret;
-        private System.Windows.Forms.TextBox txtIntroducerenrpasg;
+        private System.Windows.Forms.TextBox txtFirma;
+        private System.Windows.Forms.TextBox txtModel;
+        private System.Windows.Forms.TextBox txtAnFabricatie;
+        private System.Windows.Forms.TextBox txtCuloare;
+        private System.Windows.Forms.TextBox txtGreutate;
+        private System.Windows.Forms.TextBox txtPret;
+        private System.Windows.Forms.TextBox txtNrPasg;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnllblAvion;
         private System.Windows.Forms.Label lblIntroducereModel;
@@ -698,21 +753,23 @@ namespace Targ_Avioane_Interfata
         private System.Windows.Forms.Label lblComponenteAvioane;
         private System.Windows.Forms.Button btnCauta;
         private System.Windows.Forms.Button btnModifica;
-        private System.Windows.Forms.Button btnSterge;
         private System.Windows.Forms.DataGridView dgvPlane;
         private System.Windows.Forms.Label lblSalvarePlane;
         private System.Windows.Forms.Label lblRefreshDate;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.GroupBox gpbComponente;
+        private System.Windows.Forms.CheckBox ckbNavigare;
+        private System.Windows.Forms.CheckBox ckbPropulsie;
+        private System.Windows.Forms.CheckBox ckbAeroframe;
+        private System.Windows.Forms.CheckBox ckbComunicare;
+        private System.Windows.Forms.CheckBox ckbSistemDeContramasuri;
+        private System.Windows.Forms.CheckBox ckbSistemedeArmament;
+        private System.Windows.Forms.CheckBox ckbControlAutomatizare;
+        private System.Windows.Forms.CheckBox ckbSigurantaSupraveghere;
         private System.Windows.Forms.Label lblValidare;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnSterge;
+        private System.Windows.Forms.CheckBox ckbAdaptare;
+        private System.Windows.Forms.CheckBox ckbAprovizionare;
     }
 }
 

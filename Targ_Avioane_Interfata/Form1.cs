@@ -13,6 +13,7 @@ using Avion;
 using Niveldestocare_Date;
 using System.IO;
 using System.Drawing.Printing;
+using System.Collections;
 
 namespace Targ_Avioane_Interfata
 {
@@ -20,43 +21,19 @@ namespace Targ_Avioane_Interfata
     {
         private AdministrareAvioane_FisierText adminPlanes;
         //Constructurul  cu parametrii din clasa avion
-        //private FormProductAvion AvionProduct;
+      
         private const int AVION_NESELECTAT = -1;
         private BindingList<AvionClass> avioanele;
-        private AvionClass avionActualizat;
-
-        //vector
-
-        /* private Label[ , ] lblsAvioane;
-         private const int NUMAR_PROPRIETATI = 7;*/
 
 
-        //txtIntroducereFirma
 
-        //lblIntroducereModel
-        //lblIntroducereAnfabricatie
-        //lblIntroducereCuloare
-        //lblIntroducereGreutate
-        //lblIntrodcducerepret
-        //lblIntroducerenrpasg
+      //  ArrayList ComponenteSelectate = new ArrayList();
 
-
-        //txtIntroducereAnFabricatie
-
-        //txtIntroduceCuloare
-        //txtIntroudceregreutate se gasesete in Form1.Designer.cs
-
-        //numarul de pasageri
-        //butoanele
-        //btnAdaugaAvioane
-        //label
-
-
-        private const int LATIME_CONTROL = 90;
-        private const int LUNGIME_CONTROL = 60;
-        private const int DIMENSIUNEA_PAS_X = 100;
-        private const int DIMENSIUNEA_PAS_Y = 120;
+        private const int CARACTER_MAX = 20;
+        private const int CARACTER_MIN = 2;
         private const int CARACTER_AN_FABRICATIE = 4;
+        private const int CARACTER_MAX_CULOARE = 30;
+        private const int NR_NEGATIV= 0;
         public Form1()
         {
             InitializeComponent();
@@ -84,25 +61,25 @@ namespace Targ_Avioane_Interfata
             // astfel incat datele din fisier sa poata fi utilizate si de alte proiecte
             string caleCompletaFisier = locatieFisierSolutie + "\\" + numeFisier;
             adminPlanes = new AdministrareAvioane_FisierText(caleCompletaFisier);
-          
+            dgvPlane.ForeColor = Color.MediumBlue;
             
             //GotFocus-Control
-            txtIntroducereFirma.GotFocus += txtIntroudcereFirmaGotFocus;
-            txtIntroducereModel.GotFocus += txtIntroduceModelGotFocus;
-            txtIntroducereAnFabricatie.GotFocus += txtIntroduceAnfabricatieGotFocus;
-            txtIntroduceCuloare.GotFocus += txtIntroducereCuloareGotFocus;
-            txtIntroduceregreutate.GotFocus += txtIntroduceGreutateGotFocus;
-            txtIntroducepret.GotFocus += txtIntroduPretulGotFocus;
-            txtIntroducerenrpasg.GotFocus += txtIntroducenrpasgGotFocus;
+            txtFirma.GotFocus += txtIntroudcereFirmaGotFocus;
+            txtModel.GotFocus += txtIntroduceModelGotFocus;
+            txtAnFabricatie.GotFocus += txtIntroduceAnfabricatieGotFocus;
+            txtCuloare.GotFocus += txtIntroducereCuloareGotFocus;
+            txtGreutate.GotFocus += txtIntroduceGreutateGotFocus;
+            txtPret.GotFocus += txtIntroduPretulGotFocus;
+            txtNrPasg.GotFocus += txtIntroducenrpasgGotFocus;
 
             //LostFocus
-            txtIntroducereFirma.LostFocus += txtIntroducereFirmaLostFocus;
-            txtIntroducereModel.LostFocus += txtIntroducereModelLostFocus;
-            txtIntroducereAnFabricatie.LostFocus += txtIntroducereAnfabricatieLostFocus;
-            txtIntroduceCuloare.LostFocus += txtIntroduceCuloareLostFocus;
-            txtIntroduceregreutate.LostFocus += txtIntroduceGreutateLostFocus;
-            txtIntroducepret.LostFocus += txtIntroducePretulLostFocus;
-            txtIntroducerenrpasg.LostFocus += txtIntroducenrpasgLostFocus;
+            txtFirma.LostFocus += txtIntroducereFirmaLostFocus;
+            txtModel.LostFocus += txtIntroducereModelLostFocus;
+            txtAnFabricatie.LostFocus += txtIntroducereAnfabricatieLostFocus;
+            txtCuloare.LostFocus += txtIntroduceCuloareLostFocus;
+            txtGreutate.LostFocus += txtIntroduceGreutateLostFocus;
+            txtPret.LostFocus += txtIntroducePretulLostFocus;
+            txtNrPasg.LostFocus += txtIntroducenrpasgLostFocus;
 
             this.FormClosed += OnFormClosed;
            
@@ -115,9 +92,9 @@ namespace Targ_Avioane_Interfata
         {
             List<AvionClass> avioane = adminPlanes.GetPlanes();
             AfiseazaDateGridAvion(avioane);
-            avioanele = new BindingList<AvionClass>(adminPlanes.GetPlanes());
+        
             dgvPlane.AutoGenerateColumns = true;
-            dgvPlane.DataSource = avioane;
+           
         }
        
       
@@ -130,6 +107,7 @@ namespace Targ_Avioane_Interfata
             btnRefresh.Click += OnButton2Clicked;
 
         }
+
         private void OnButtonClicked(object sender, EventArgs e)
         {
             bool valid = true;
@@ -139,45 +117,49 @@ namespace Targ_Avioane_Interfata
             decimal greutate;
             decimal pret;
             int nr_pasageri;
-             string firma=txtIntroducereFirma.Text.ToString();
-             string model=txtIntroducereModel.Text.ToString();
+             string firma=txtFirma.Text.ToString();
+             string model=txtModel.Text.ToString();
             bool firmaValid=true;
             bool modelValid=true;
-            bool an_FabricatieValid = Int32.TryParse(txtIntroducereAnFabricatie.Text.ToString(), out an_fabricatie);
-            bool culoareValid = Enum.TryParse(txtIntroduceCuloare.Text.ToString(), out culoare);
-            bool greutateValid = Decimal.TryParse(txtIntroduceregreutate.Text.ToString(), out greutate);
-            bool pretValid=Decimal.TryParse(txtIntroducepret.Text.ToString(), out pret);
-             bool nr_pasgariValid= Int32.TryParse(txtIntroducerenrpasg.Text.ToString(), out nr_pasageri);
+            bool an_FabricatieValid = Int32.TryParse(txtAnFabricatie.Text.ToString(), out an_fabricatie);
+            bool culoareValid = Enum.TryParse(txtCuloare.Text.ToString(), out culoare);
+            bool greutateValid = Decimal.TryParse(txtGreutate.Text.ToString(), out greutate);
+            bool pretValid=Decimal.TryParse(txtPret.Text.ToString(), out pret);
+             bool nr_pasgariValid= Int32.TryParse(txtNrPasg.Text.ToString(), out nr_pasageri);
             AvionClass avion = new AvionClass(0, firma,model,an_fabricatie,culoare,greutate,pret,nr_pasageri);
 
             TipAvion PlaneSelected = GetTipAvionSelectat();
             avion.AirplaneType = PlaneSelected;
+            //set componente Avion
+            //avion.Componente = new ArrayList();
+           // avion.Componente.AddRange(ComponenteSelectate);
+
             if (firmaValid && modelValid && an_FabricatieValid && culoareValid && greutateValid && pretValid && nr_pasgariValid)
                 lblValidare.Text = "Toate date sunt valide";
             else
                 lblValidare.Text = "Cel putin o variabila este valida";
             ///validare firma
             ///
-            if (txtIntroducereFirma.Text.ToString() == "" )
+            if (txtFirma.Text.ToString() == "" )
             {
                
                 lblIntroducereFirma.ForeColor = Color.Red;
                 valid = false;
             }
-            else if (txtIntroducereFirma.Text.Length <2||txtIntroducereFirma.Text.Length > 20)
+            else if (txtFirma.Text.Length <CARACTER_MIN||txtFirma.Text.Length > CARACTER_MAX)
             {
                 lblIntroducereFirma.ForeColor = Color.Red;
                 valid = false;
             }
             else
                 lblIntroducereFirma.ForeColor = Color.MediumBlue;
-            if (txtIntroducereModel.Text.ToString() == "" )
+            if (txtModel.Text.ToString() == "" )
             {
                
                 lblIntroducereModel.ForeColor = Color.Red;
                 valid = false;
             }
-            else if (txtIntroducereFirma.Text.Length > 20)
+            else if (txtFirma.Text.Length > CARACTER_MAX)
             {
                 lblIntroducereModel.ForeColor = Color.Red;
                 valid = false;
@@ -186,13 +168,13 @@ namespace Targ_Avioane_Interfata
                 lblIntroducereModel.ForeColor = Color.MediumBlue;
 
             //an fabricatie validare
-            if (txtIntroducereAnFabricatie.Text.ToString() == "")
+            if (txtAnFabricatie.Text.ToString() == "")
             {
                 
                 lblIntroducereAnfabricatie.ForeColor = Color.Red;
                 valid = false;
             }
-            else if (txtIntroducereAnFabricatie.Text.Length > CARACTER_AN_FABRICATIE)
+            else if (txtAnFabricatie.Text.Length > CARACTER_AN_FABRICATIE)
             {
                 lblIntroducereAnfabricatie.ForeColor = Color.Red;
                 valid = false;
@@ -200,14 +182,14 @@ namespace Targ_Avioane_Interfata
             else
                 lblIntroducereAnfabricatie.ForeColor = Color.MediumBlue;
 
-            if (txtIntroduceCuloare.Text.ToString() == "")
+            if (txtCuloare.Text.ToString() == "")
             {
            
                 lblIntroducereCuloare.ForeColor = Color.Red;
                 valid = false;
 
             }
-            else if (txtIntroduceCuloare.Text.Length > 30)
+            else if (txtCuloare.Text.Length > CARACTER_MAX_CULOARE)
             {
 
                 lblIntroducereCuloare.ForeColor = Color.Red;
@@ -216,7 +198,7 @@ namespace Targ_Avioane_Interfata
             else
                 lblIntroducereCuloare.ForeColor = Color.MediumBlue;
 
-            if (txtIntroduceregreutate.Text.ToString() == "")
+            if (txtGreutate.Text.ToString() == "")
             {
                 
                 lblIntroducereGreutate.ForeColor = Color.Red;
@@ -225,7 +207,7 @@ namespace Targ_Avioane_Interfata
             else
                 lblIntroducereGreutate.ForeColor = Color.MediumBlue;
 
-            if (txtIntroducepret.Text.ToString() == "")
+            if (txtPret.Text.ToString() == "")
             {
                 
                 lblIntrodcducerepret.ForeColor = Color.Red;
@@ -234,12 +216,12 @@ namespace Targ_Avioane_Interfata
             else
                 lblIntrodcducerepret.ForeColor = Color.MediumBlue;
 
-            if (txtIntroducerenrpasg.Text.ToString() == "")
+            if (txtNrPasg.Text.ToString() == "")
             {
                 lblIntroducerenrpasg.ForeColor = Color.Red;
                 valid = false;
             }
-            else if (nr_pasageri < 0)
+            else if (nr_pasageri < NR_NEGATIV)
             {
                 lblIntroducerenrpasg.ForeColor = Color.Red;
                 valid = false;
@@ -264,8 +246,8 @@ namespace Targ_Avioane_Interfata
         }
          private void ResetControls()
         {
-            txtIntroducereFirma.Text = txtIntroducereModel.Text = txtIntroducereAnFabricatie.Text = txtIntroduceCuloare.Text = string.Empty;
-            txtIntroduceregreutate.Text = txtIntroducepret.Text = txtIntroducerenrpasg.Text = string.Empty;
+            txtFirma.Text = txtModel.Text = txtAnFabricatie.Text = txtCuloare.Text = string.Empty;
+            txtGreutate.Text = txtPret.Text = txtNrPasg.Text = string.Empty;
             lblIntroducereFirma.ForeColor = Color.MediumBlue;
             lblIntroducereModel.ForeColor = Color.MediumBlue;
             lblIntroducereAnfabricatie.ForeColor = Color.MediumBlue;
@@ -291,12 +273,11 @@ namespace Targ_Avioane_Interfata
             lblRefreshDate.Text = "Datele despre avioane au fost actualizate";
             ResetControls();
             lblValidare.Text = "";
-
+            btnModifica.Hide();
            
-            dgvPlane.DataSource = null;
-            dgvPlane.DataSource = avioanele;
-             dgvPlane.Refresh();
-          // adminPlanes.UpdateAvion(avionActualizat);
+           
+             
+           
 
         }
         private void OnFormClosed(object sender, EventArgs e)
@@ -308,70 +289,70 @@ namespace Targ_Avioane_Interfata
         //Firma GotFocus si LostFocus
         private void txtIntroudcereFirmaGotFocus(object sender, EventArgs e)
         {
-            txtIntroducereFirma.BackColor = Color.Chocolate;
+            txtFirma.BackColor = Color.Chocolate;
         }
         //Model GotFocus si LostFocus
         private void txtIntroducereFirmaLostFocus(object sender,EventArgs e)
         {
-            txtIntroducereFirma.BackColor = SystemColors.Window;
+            txtFirma.BackColor = SystemColors.Window;
         }
        private void txtIntroduceModelGotFocus(object sender,EventArgs e)
         {
-            txtIntroducereModel.BackColor = Color.Chocolate;
+            txtModel.BackColor = Color.Chocolate;
         }
         
         private void txtIntroducereModelLostFocus(object sender,EventArgs e)
         {
-            txtIntroducereModel.BackColor = SystemColors.Window;
+            txtModel.BackColor = SystemColors.Window;
         }
         //txtAnfabricatie GotFocus si LostFocus
         private void txtIntroduceAnfabricatieGotFocus(object sender, EventArgs e)
         {
-            txtIntroducereAnFabricatie.BackColor = Color.Chocolate;
+            txtAnFabricatie.BackColor = Color.Chocolate;
             
         }
         private void txtIntroducereAnfabricatieLostFocus(object sender, EventArgs e)
         {
-            txtIntroducereAnFabricatie.BackColor = SystemColors.Window;
+            txtAnFabricatie.BackColor = SystemColors.Window;
         }
         //txtCuloare pentru GotFocus si LostFocus
         private void txtIntroducereCuloareGotFocus(object sender,EventArgs e)
         {
-            txtIntroduceCuloare.BackColor = Color.Chocolate;
+            txtCuloare.BackColor = Color.Chocolate;
 
         }
         private void txtIntroduceCuloareLostFocus(object sender,EventArgs e)
         {
-            txtIntroduceCuloare.BackColor = SystemColors.Window;
+            txtCuloare.BackColor = SystemColors.Window;
         }
         //txtIntroducegreutate pentru GotFocus si LostFocus
         private void txtIntroduceGreutateGotFocus(object sender,EventArgs e)
         {
-            txtIntroduceregreutate.BackColor = Color.Chocolate;
+            txtGreutate.BackColor = Color.Chocolate;
         }
         private void txtIntroduceGreutateLostFocus(object sender,EventArgs e)
         {
-            txtIntroduceregreutate.BackColor = SystemColors.Window;
+            txtGreutate.BackColor = SystemColors.Window;
         }
         //txtIntroducepret pentru GotFocus si LostFocus -caseta text
         private void txtIntroduPretulGotFocus(object sender,EventArgs e)
         {
-            txtIntroducepret.BackColor = Color.Chocolate;
+            txtPret.BackColor = Color.Chocolate;
         }
         private void txtIntroducePretulLostFocus(object sender,EventArgs e)
         {
-            txtIntroducepret.BackColor = SystemColors.Window;
+            txtPret.BackColor = SystemColors.Window;
 
         }
         //txtNrpasageri-pentru GotFocus si LostFocus- caseta text
         private void  txtIntroducenrpasgGotFocus(object sender,EventArgs e)
         {
-            txtIntroducerenrpasg.BackColor = Color.Chocolate;
+            txtNrPasg.BackColor = Color.Chocolate;
 
         }
         private void txtIntroducenrpasgLostFocus(object sender,EventArgs e)
         {
-            txtIntroducerenrpasg.BackColor = SystemColors.Window;
+            txtNrPasg.BackColor = SystemColors.Window;
         }
             //  la intoarcere meniul principal,cand utilizatorul paraseste fereatra Avioane(contin datele din AvionClass)
         private void btnBackMainMenu_2_Click(object sender, EventArgs e)
@@ -400,7 +381,7 @@ namespace Targ_Avioane_Interfata
 
         private void btnCauta_Click(object sender, EventArgs e)
         {
-              AvionClass axa = adminPlanes.GetPlane(txtIntroducereFirma.Text, txtIntroducereModel.Text,Int32.Parse(txtIntroducereAnFabricatie.Text),(Culoarea)Enum.Parse(typeof(Culoarea),txtIntroduceCuloare.Text));
+              AvionClass axa = adminPlanes.GetPlane(txtFirma.Text, txtModel.Text,Int32.Parse(txtAnFabricatie.Text),(Culoarea)Enum.Parse(typeof(Culoarea),txtCuloare.Text));
             if (axa == null)
                lblSalvarePlane.Text = "Avionul nu a fost gasit!";
 
@@ -425,18 +406,18 @@ namespace Targ_Avioane_Interfata
                 s.greutate,
                 s.pret,
                 s.nr_de_pasageri,
-                s.AirplaneType,
-                //s.Componente
+                s.AirplaneType
+               
 
-                
-                
+
+
             }).ToList();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtIntroducereFirma.Text = txtIntroducereModel.Text = txtIntroducereAnFabricatie.Text = txtIntroduceCuloare.Text = string.Empty;
-            txtIntroduceregreutate.Text = txtIntroducepret.Text = txtIntroducerenrpasg.Text = string.Empty;
+            txtFirma.Text = txtModel.Text = txtAnFabricatie.Text = txtCuloare.Text = string.Empty;
+            txtGreutate.Text = txtPret.Text = txtNrPasg.Text = string.Empty;
             lblIntroducereFirma.ForeColor = Color.MediumBlue;
             lblIntroducereModel.ForeColor = Color.MediumBlue;
             lblIntroducereAnfabricatie.ForeColor = Color.MediumBlue;
@@ -449,15 +430,86 @@ namespace Targ_Avioane_Interfata
             rdbExperimental.Checked = false;
             rdbMilitar.Checked = false;
 
+            ckbAdaptare.Checked = false;
+            ckbAprovizionare.Checked = false;
+            ckbAeroframe.Checked = false;
+            ckbComunicare.Checked = false; 
+            ckbControlAutomatizare.Checked = false;
+            ckbSistemedeArmament.Checked = false;
+            ckbSistemDeContramasuri.Checked = false;
+            ckbSigurantaSupraveghere.Checked = false;
+            ckbNavigare.Checked = false;
+            ckbPropulsie.Checked = false;
+
+
             lblSalvarePlane.Text = "";
             lblValidare.Text = "";
             lblRefreshDate.Text = "";
 
         }
 
+        private void btnModifica_Click(object sender, EventArgs e)
+        {
+            if (dgvPlane.SelectedRows.Count > 0)
+            {
+                // Se va prelua indexul elementului selectat din DataGridView
+                int selectedIndex = dgvPlane.SelectedRows[0].Index;
+                // Se va prelua avionul corespunzător indexului selectat
+                AvionClass avion = adminPlanes.GetPlane(selectedIndex);
+                if (avion != null)
+                {
+                    // Casetele txt
+                    txtFirma.Text = avion.firma;
+                    txtModel.Text = avion.model;
+                    txtAnFabricatie.Text = avion.an_fabricatie.ToString();
+                    txtCuloare.Text = avion.culoare.ToString();
+                    txtGreutate.Text = avion.greutate.ToString();
+                    txtPret.Text = avion.pret.ToString();
+                    txtNrPasg.Text = avion.nr_de_pasageri.ToString();
+                    if (adminPlanes.UpdateAvion(avion))
+                    {
+                        MessageBox.Show("Avionul a fost actualizat cu succes.");
+                        // incarcarea datelor
+                        List<AvionClass> avioane = adminPlanes.GetPlanes();
+                        // Afișează avioanele în DataGridView folosind BindingList pentru a edita avionul selectat
+                        dgvPlane.DataSource = new BindingList<AvionClass>(avioane);
+                        dgvPlane.ReadOnly = false;
+                    }
+                    else
+                        MessageBox.Show("Actualizarea a esuat! ");
+
+
+                }
+                else
+                    MessageBox.Show("De selectat avionul pentru a modifica datele");
+            }
+        }
+
+        private void dgvPlane_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvPlane.SelectedRows.Count > 0)
+            {
+                // Se va prelua indexul elementului selectat din DataGridView
+                int selectedIndex = dgvPlane.SelectedRows[0].Index;
+                // Se va prelua avionul corespunzător indexului selectat
+                AvionClass avion = adminPlanes.GetPlane(selectedIndex);
+                if (avion != null)
+                {
+                    // Incarcare date in caseta Txt
+                    txtFirma.Text = avion.firma;
+                    txtModel.Text = avion.model;
+                    txtAnFabricatie.Text = avion.an_fabricatie.ToString();
+                    txtCuloare.Text = avion.culoare.ToString();
+                    txtGreutate.Text = avion.greutate.ToString();
+                    txtPret.Text = avion.pret.ToString();
+                    txtNrPasg.Text = avion.nr_de_pasageri.ToString();
+                }
+
+            }
+        }
+
         private void btnSterge_Click(object sender, EventArgs e)
         {
-           
             if (dgvPlane.SelectedRows.Count == AVION_NESELECTAT)
             {
                 MessageBox.Show("Selectare");
@@ -471,14 +523,29 @@ namespace Targ_Avioane_Interfata
 
                     // Șterge elementul din BindingList
                     avioanele.RemoveAt(selectedIndex);
-                   
+
                 }
                 dgvPlane.DataSource = null;
                 dgvPlane.DataSource = avioanele;
             }
-                //avioane.RemoveAt(dgvPlane.SelectedRows.Count);
+            //avioane.RemoveAt(dgvPlane.SelectedRows.Count);
         }
 
-     
+        private void CkbComponente_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkBoxControl = sender as CheckBox; //operator 'as'
+            //sau
+            //CheckBox checkBoxControl = (CheckBox)sender;  //operator cast
+
+            string componentaSelectata = checkBoxControl.Text;
+
+            //verificare daca checkbox-ul asupra caruia s-a actionat este selectat
+           /* if (checkBoxControl.Checked == true)
+                ComponenteSelectate.Add(componentaSelectata);
+            else
+                ComponenteSelectate.Remove(componentaSelectata);*/
+        }
     }
-}
+    }
+        
+  

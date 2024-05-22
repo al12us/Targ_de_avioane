@@ -8,7 +8,7 @@ namespace Avion
 
         //constante
         private const char SEPARATOR_PRINCIPAL_FISIER = ';';
-
+        //private const char SEPARATOR_SECUNDAR_FISIER = ',';
         private const int ID = 0;
         private const int FIRMA = 1;
         private const int MODEL = 2;
@@ -18,6 +18,7 @@ namespace Avion
         private const int PRET = 6;
         private const int NRPASAGERI = 7;
         private const int TIPUL_AVION=8;
+        //private const int COMPONENTELE = 9;
         //auto-implementari
         public int ID_avion{ set; get; }
         public string firma { set; get; }
@@ -29,6 +30,25 @@ namespace Avion
         public int nr_de_pasageri { set; get; }
         public TipAvion AirplaneType { get; set; }
         public ArrayList Componente { get; set; }
+
+       /* public string ComponenteAsString
+        {
+            get
+            {
+                string sComponente = string.Empty;
+
+                foreach (string componenta in Componente)
+                {
+                    if (sComponente != string.Empty)
+                    {
+                        sComponente += SEPARATOR_SECUNDAR_FISIER;
+                    }
+                    sComponente +=componenta;
+                }
+
+                return sComponente;
+            }
+        }*/
         public AvionClass()
         {
             firma = model = string.Empty;
@@ -65,6 +85,8 @@ namespace Avion
             this.pret = Convert.ToDecimal(dateFisier[PRET]);
             this.nr_de_pasageri = Convert.ToInt32(dateFisier[NRPASAGERI]);
             this.AirplaneType = (TipAvion)Enum.Parse(typeof(TipAvion), dateFisier[TIPUL_AVION]);
+            //Componente = new ArrayList();
+            //Componente.AddRange(dateFisier[COMPONENTELE].Split(SEPARATOR_SECUNDAR_FISIER));
         }
         public string Info
         {
@@ -88,7 +110,8 @@ namespace Avion
                 greutate.ToString(),
                 pret.ToString(),
                 nr_de_pasageri.ToString(),
-                AirplaneType.ToString());
+                AirplaneType.ToString()
+                );
 
             return obiectAvionPentruFisier;
         }

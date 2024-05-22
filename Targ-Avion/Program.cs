@@ -229,7 +229,7 @@ namespace Targ_Avion
         }
         public static void AfisareAvion(AvionClass avion)
         {
-            string infoAvion = string.Format("Avionul cu id-ul #{0} are numele: {1} {2} {3} {4} {5} {6} {7} {8}",
+            string infoAvion = string.Format("Avionul cu id-ul #{0} are numele: {1} {2} {3} {4} {5} {6} {7} {8} ",
                     avion.ID_avion,
                     avion.firma ?? " NECUNOSCUT ",
                     avion.model ?? " NECUNOSCUT ",
@@ -238,7 +238,8 @@ namespace Targ_Avion
                     avion.greutate,
                     avion.pret,
                     avion.nr_de_pasageri,
-                    avion.AirplaneType.ToString());
+                    avion.AirplaneType.ToString()
+                    );
 
 
             Console.WriteLine(infoAvion);
