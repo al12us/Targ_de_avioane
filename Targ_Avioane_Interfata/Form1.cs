@@ -20,30 +20,18 @@ namespace Targ_Avioane_Interfata
     {
         private AdministrareAvioane_FisierText adminPlanes;
         //Constructurul  cu parametrii din clasa avion
-        private FormProductAvion AvionProduct;
-       
-        private Label lblFirma;
-        private Label lblModel;
-        private Label lblan_fabricatie;
-        private Label lblCuloare;
-        private Label lblgreutate;
-        private Label lblpret;
-        private Label lblnr_de_pasageri;
+        //private FormProductAvion AvionProduct;
+        private const int AVION_NESELECTAT = -1;
+        private BindingList<AvionClass> avioanele;
+        private AvionClass avionActualizat;
 
         //vector
-         private Label[] lblsFirme;
-         private Label[] lblsModele;
-         private Label[] lblsan_fabricatie;
-         private Label[] lblsCulori;
-         private Label[] lblsgreutate;
-         private Label[] lblsPret;
-         private Label[] lblsnr_de_pasageri;
 
-       /* private Label[ , ] lblsAvioane;
-        private const int NUMAR_PROPRIETATI = 7;*/
-     
-       
-         //txtIntroducereFirma
+        /* private Label[ , ] lblsAvioane;
+         private const int NUMAR_PROPRIETATI = 7;*/
+
+
+        //txtIntroducereFirma
 
         //lblIntroducereModel
         //lblIntroducereAnfabricatie
@@ -52,17 +40,17 @@ namespace Targ_Avioane_Interfata
         //lblIntrodcducerepret
         //lblIntroducerenrpasg
 
-        
+
         //txtIntroducereAnFabricatie
-      
+
         //txtIntroduceCuloare
         //txtIntroudceregreutate se gasesete in Form1.Designer.cs
 
-       //numarul de pasageri
+        //numarul de pasageri
         //butoanele
         //btnAdaugaAvioane
         //label
-      
+
 
         private const int LATIME_CONTROL = 90;
         private const int LUNGIME_CONTROL = 60;
@@ -77,7 +65,7 @@ namespace Targ_Avioane_Interfata
 
 
 
-            this.Size = new Size(1800, 720);
+            this.Size = new Size(1800, 1000);
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(100, 100);
             this.Font = new Font("Times New Roman", 8, FontStyle.Regular);
@@ -87,7 +75,8 @@ namespace Targ_Avioane_Interfata
             this.MinimizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-
+          
+            
 
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
             string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
@@ -126,6 +115,9 @@ namespace Targ_Avioane_Interfata
         {
             List<AvionClass> avioane = adminPlanes.GetPlanes();
             AfiseazaDateGridAvion(avioane);
+            avioanele = new BindingList<AvionClass>(adminPlanes.GetPlanes());
+            dgvPlane.AutoGenerateColumns = true;
+            dgvPlane.DataSource = avioane;
         }
        
       
@@ -161,9 +153,9 @@ namespace Targ_Avioane_Interfata
             TipAvion PlaneSelected = GetTipAvionSelectat();
             avion.AirplaneType = PlaneSelected;
             if (firmaValid && modelValid && an_FabricatieValid && culoareValid && greutateValid && pretValid && nr_pasgariValid)
-                lblSalvarePlane.Text = "Toate date sunt valide";
+                lblValidare.Text = "Toate date sunt valide";
             else
-                lblSalvarePlane.Text = "Cel putin o variabila este valida";
+                lblValidare.Text = "Cel putin o variabila este valida";
             ///validare firma
             ///
             if (txtIntroducereFirma.Text.ToString() == "" )
@@ -286,16 +278,26 @@ namespace Targ_Avioane_Interfata
             rdbExperimental.Checked = false;
             rdbMilitar.Checked = false;
 
+            lblSalvarePlane.Text = "";
+          
 
         }
         
-        private void OnButton2Clicked(object sender,EventArgs e)
+        private void OnButton2Clicked(object sender,EventArgs e)  //Butonul Refresh este butonul de actualizare
         {
             List<AvionClass> avioane = adminPlanes.GetPlanes();
-            
+
             AfiseazaDateGridAvion(avioane);
             lblRefreshDate.Text = "Datele despre avioane au fost actualizate";
             ResetControls();
+            lblValidare.Text = "";
+
+           
+            dgvPlane.DataSource = null;
+            dgvPlane.DataSource = avioanele;
+             dgvPlane.Refresh();
+          // adminPlanes.UpdateAvion(avionActualizat);
+
         }
         private void OnFormClosed(object sender, EventArgs e)
         {
@@ -430,5 +432,53 @@ namespace Targ_Avioane_Interfata
                 
             }).ToList();
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtIntroducereFirma.Text = txtIntroducereModel.Text = txtIntroducereAnFabricatie.Text = txtIntroduceCuloare.Text = string.Empty;
+            txtIntroduceregreutate.Text = txtIntroducepret.Text = txtIntroducerenrpasg.Text = string.Empty;
+            lblIntroducereFirma.ForeColor = Color.MediumBlue;
+            lblIntroducereModel.ForeColor = Color.MediumBlue;
+            lblIntroducereAnfabricatie.ForeColor = Color.MediumBlue;
+            lblIntroducereCuloare.ForeColor = Color.MediumBlue;
+            lblIntroducereGreutate.ForeColor = Color.MediumBlue;
+            lblIntrodcducerepret.ForeColor = Color.MediumBlue;
+            lblIntroducerenrpasg.ForeColor = Color.MediumBlue;
+            rdbCivil.Checked = false;
+            rdbComercial.Checked = false;
+            rdbExperimental.Checked = false;
+            rdbMilitar.Checked = false;
+
+            lblSalvarePlane.Text = "";
+            lblValidare.Text = "";
+            lblRefreshDate.Text = "";
+
+        }
+
+        private void btnSterge_Click(object sender, EventArgs e)
+        {
+           
+            if (dgvPlane.SelectedRows.Count == AVION_NESELECTAT)
+            {
+                MessageBox.Show("Selectare");
+            }
+            else
+            {
+                dgvPlane.DataSource = avioanele;
+                for (int i = dgvPlane.SelectedRows.Count - 1; i >= 0; i--)
+                {
+                    int selectedIndex = dgvPlane.SelectedRows[i].Index;
+
+                    // Șterge elementul din BindingList
+                    avioanele.RemoveAt(selectedIndex);
+                   
+                }
+                dgvPlane.DataSource = null;
+                dgvPlane.DataSource = avioanele;
+            }
+                //avioane.RemoveAt(dgvPlane.SelectedRows.Count);
+        }
+
+     
     }
 }

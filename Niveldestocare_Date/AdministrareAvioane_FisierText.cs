@@ -73,7 +73,7 @@ namespace Niveldestocare_Date
 
             return null;
         }
-        public bool UpdateStudent(AvionClass avionActualizat)
+        public bool UpdateAvion(AvionClass avionActualizat)
         {
             List<AvionClass> avioane = GetPlanes();
             bool actualizareCuSucces = false;
