@@ -40,7 +40,13 @@ namespace Targ_Avion
             Console.WriteLine();
             ///S-a adaugat producatorul de avioane
             ProductAvion producator = new ProductAvion();
-            ProductAvion exemplu = new ProductAvion(0, "AIRBUS", "Franta", 1970, 4000, Specializarea.civil);
+            List<Specializarea> specializari = new List<Specializarea>
+            {
+                Specializarea.civil,
+                Specializarea.comercial
+              
+            };
+            ProductAvion exemplu = new ProductAvion(0, "AIRBUS", "Franta", 1970, 4000, specializari);
             Console.WriteLine(exemplu.InfoProduct);
             //Se adauga o lista
             List<ProductAvion> producatori = new List<ProductAvion>();
@@ -315,15 +321,37 @@ namespace Targ_Avion
             Console.WriteLine("Introduce de la tastatura nr de angajati ");
             int numar_de_angajati = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Specializarea cu care se ocupa compani de aeronave");
-            string spec = Console.ReadLine();
-            Specializarea specializ = (Specializarea)Enum.Parse(typeof(Specializarea), spec);
+            List<Specializarea> specializari = CitesteSpecializariDeLaTastatura();
 
-            ProductAvion producator = new ProductAvion(0, compania, tara_de_origine, an_infiintare, numar_de_angajati, specializ);
+
+            ProductAvion producator = new ProductAvion(0, compania, tara_de_origine, an_infiintare, numar_de_angajati, specializari);
 
             return producator;
 
         }
-        public static void AfisareProducator(ProductAvion producator)
+        static List<Specializarea> CitesteSpecializariDeLaTastatura()
+        {
+            List<Specializarea> specializari = new List<Specializarea>();
+            Console.WriteLine("Introdu specializari separate prin virgula (ex: Design,Engineering): ");
+            string input = Console.ReadLine();
+            string[] specializariInput = input.Split(',');
+
+            foreach (var item in specializariInput)
+            {
+                if (Enum.TryParse(item.Trim(), out Specializarea specializare))
+                {
+                    specializari.Add(specializare);
+                }
+                else
+                {
+                    Console.WriteLine($"Specializarea '{item.Trim()}' nu este valida.");
+                }
+            }
+
+            return specializari;
+        }
+    
+    public static void AfisareProducator(ProductAvion producator)
         {
             string InfoProductator = String.Format("Producatorul cu ID:{0} are urmatoarele date:{1} {2} {3} {4} {5}",
                 producator.ID_Producator,
@@ -331,7 +359,7 @@ namespace Targ_Avion
                 producator.TaraOrigine ?? "NECUNOSCUT",
                 producator.AnInfiintare,
                 producator.nrAngajati,
-                producator.specializare.ToString());
+                producator.Specializari.ToString());
             Console.WriteLine(InfoProductator);
         }
 
@@ -356,7 +384,21 @@ namespace Targ_Avion
                 .Select(line =>
                 {
                     string[] parts = line.Split(';');
-
+                    List<Specializarea> specializari = parts[5].Split(',')
+                            .Select(specializare =>
+                            {
+                                if (Enum.TryParse(specializare.Trim(), out Specializarea specializareParsed))
+                                {
+                                    return specializareParsed;
+                                }
+                                else
+                                {
+                                    return (Specializarea?)null;
+                                }
+                            })
+                            .Where(specializare => specializare.HasValue)
+                            .Select(specializare => specializare.Value)
+                            .ToList();
                     return new ProductAvion
                     {
                         ID_Producator = int.Parse(parts[0]),
@@ -364,8 +406,8 @@ namespace Targ_Avion
                         TaraOrigine = parts[2],
                         AnInfiintare = int.Parse(parts[3]),
                         nrAngajati = int.Parse(parts[4]),
-                        specializare = (Specializarea)Enum.Parse(typeof(Specializarea), parts[5])
-                      
+                        Specializari = specializari
+
                     };
                 })
                 .Where(product_plane =>product_plane!=null && product_plane.companie.StartsWith(litera.ToString(), StringComparison.OrdinalIgnoreCase))
@@ -383,7 +425,7 @@ namespace Targ_Avion
                 foreach (ProductAvion product_plane in the_productsplane[i])
                 {
                     string afisare = $"ID:{product_plane.ID_Producator}\nCompania:{product_plane.companie ?? "Necunoscut"}\n Tara de origine:{product_plane.TaraOrigine ?? "necunoscut"}\n Anul in care a fost infiintat {product_plane.AnInfiintare} \n Numarul de angajati:{product_plane.nrAngajati}\n" +
-                           $"Specializarea:{product_plane.specializare}";
+                           $"Specializarea:{product_plane.Specializari}";
                     Console.WriteLine(afisare);
                 }
             }

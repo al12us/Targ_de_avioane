@@ -1,6 +1,7 @@
 ﻿using Avion;
 using Niveldestocare_Date;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -22,7 +23,7 @@ namespace Targ_Avioane_Interfata
 
 
 
-      //  ArrayList ComponenteSelectate = new ArrayList();
+      ArrayList ComponenteSelectate = new ArrayList();
 
         private const int CARACTER_MAX = 20;
         private const int CARACTER_MIN = 2;
@@ -32,9 +33,6 @@ namespace Targ_Avioane_Interfata
         public Form1()
         {
             InitializeComponent();
-
-
-
 
 
             this.Size = new Size(1800, 1000);
@@ -91,9 +89,6 @@ namespace Targ_Avioane_Interfata
 
         }
        
-      
-
-        
         private void ButoaneAvioane()
         {
            
@@ -125,8 +120,7 @@ namespace Targ_Avioane_Interfata
             TipAvion PlaneSelected = GetTipAvionSelectat();
             avion.AirplaneType = PlaneSelected;
             //set componente Avion
-            //avion.Componente = new ArrayList();
-           // avion.Componente.AddRange(ComponenteSelectate);
+            avion.Componente.AddRange(ComponenteSelectate);
 
             if (firmaValid && modelValid && an_FabricatieValid && culoareValid && greutateValid && pretValid && nr_pasgariValid)
                 lblValidare.Text = "Toate date sunt valide";
@@ -386,9 +380,7 @@ namespace Targ_Avioane_Interfata
 
        private void AfiseazaDateGridAvion(List<AvionClass> avioane)
         {
-          
-            
-            //
+        
             //!!!! Controlul de tip DataGridView are ca sursa de date lista de obiecte de tip AvionClass !!!
             dgvPlane.DataSource = new BindingList<AvionClass>(avioane);
             dgvPlane.ClearSelection(); ;
@@ -401,11 +393,8 @@ namespace Targ_Avioane_Interfata
                 s.greutate,
                 s.pret,
                 s.nr_de_pasageri,
-                s.AirplaneType
-               
-
-
-
+                s.AirplaneType,
+                Componente = string.Join(",", s.Componente)   
             }).ToList();
         }
 
@@ -539,10 +528,10 @@ namespace Targ_Avioane_Interfata
             string componentaSelectata = checkBoxControl.Text;
 
             //verificare daca checkbox-ul asupra caruia s-a actionat este selectat
-           /* if (checkBoxControl.Checked == true)
+           if (checkBoxControl.Checked == true)
                 ComponenteSelectate.Add(componentaSelectata);
             else
-                ComponenteSelectate.Remove(componentaSelectata);*/
+                ComponenteSelectate.Remove(componentaSelectata);
         }
 
         private void btnActualizare_Click(object sender, EventArgs e)

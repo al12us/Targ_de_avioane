@@ -8,7 +8,7 @@ namespace Avion
 
         //constante
         private const char SEPARATOR_PRINCIPAL_FISIER = ';';
-        //private const char SEPARATOR_SECUNDAR_FISIER = ',';
+        private const char SEPARATOR_SECUNDAR_FISIER = ' ';
         private const int ID = 0;
         private const int FIRMA = 1;
         private const int MODEL = 2;
@@ -18,7 +18,7 @@ namespace Avion
         private const int PRET = 6;
         private const int NRPASAGERI = 7;
         private const int TIPUL_AVION=8;
-        //private const int COMPONENTELE = 9;
+        private const int COMPONENTELE = 9;
         //auto-implementari
         public int ID_avion{ set; get; }
         public string firma { set; get; }
@@ -31,24 +31,13 @@ namespace Avion
         public TipAvion AirplaneType { get; set; }
         public ArrayList Componente { get; set; }
 
-       /* public string ComponenteAsString
+        public string ComponenteAsString
         {
             get
             {
-                string sComponente = string.Empty;
-
-                foreach (string componenta in Componente)
-                {
-                    if (sComponente != string.Empty)
-                    {
-                        sComponente += SEPARATOR_SECUNDAR_FISIER;
-                    }
-                    sComponente +=componenta;
-                }
-
-                return sComponente;
+                return string.Join(SEPARATOR_SECUNDAR_FISIER.ToString(), Componente.ToArray());
             }
-        }*/
+        }
         public AvionClass()
         {
             firma = model = string.Empty;
@@ -85,22 +74,22 @@ namespace Avion
             this.pret = Convert.ToDecimal(dateFisier[PRET]);
             this.nr_de_pasageri = Convert.ToInt32(dateFisier[NRPASAGERI]);
             this.AirplaneType = (TipAvion)Enum.Parse(typeof(TipAvion), dateFisier[TIPUL_AVION]);
-            //Componente = new ArrayList();
-            //Componente.AddRange(dateFisier[COMPONENTELE].Split(SEPARATOR_SECUNDAR_FISIER));
+            Componente = new ArrayList();
+            Componente.AddRange(dateFisier[COMPONENTELE].Split(SEPARATOR_SECUNDAR_FISIER));
         }
         public string Info
         {
             get
             {
                 string afisare = $"ID:{ID_avion}\nFirma:{firma ?? "Necunoscut"}\n Model:{model ?? "necunoscut"}\n Anul in care este fabricat {an_fabricatie} \n Culoarea:{culoare}\n" +
-                                 $"Greutatea:{greutate}\n Pret:{pret}\n Numar de pasageri:{nr_de_pasageri}\nTipul avionului {AirplaneType}";
+                                 $"Greutatea:{greutate}\n Pret:{pret}\n Numar de pasageri:{nr_de_pasageri}\nTipul avionului {AirplaneType}\nComponente:{ComponenteAsString}";
                 return afisare;
             }
         }
 
         public string ConversieLaSir_PentruFisier()
         {
-            string obiectAvionPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}{0}{9}{0}",
+            string obiectAvionPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}{0}{9}{0}{10}{0}",
                 SEPARATOR_PRINCIPAL_FISIER,
                 ID_avion.ToString(),
                 (firma ?? " NECUNOSCUT "),
@@ -110,8 +99,9 @@ namespace Avion
                 greutate.ToString(),
                 pret.ToString(),
                 nr_de_pasageri.ToString(),
-                AirplaneType.ToString());
-
+                AirplaneType.ToString(),
+                ComponenteAsString);
+               
             return obiectAvionPentruFisier;
         }
 

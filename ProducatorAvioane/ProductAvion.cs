@@ -11,7 +11,7 @@ namespace ProducatorAvioane
 
     {
         private const char SEPARATOARE_SECUNDAR_FISIER = ';';
-
+        private const char SEPARATOARE_PRIMAR_FISIER = ' ';
         private const int ID = 0;
         private const int COMPANIE = 1;
         private const int TARA = 2;
@@ -25,24 +25,24 @@ namespace ProducatorAvioane
         public string TaraOrigine { get; set; }
         public int AnInfiintare { get; set;}
         public int nrAngajati { get; set;}
-        public Specializarea specializare { get; set;}
-     
-       public ProductAvion()
+        public List<Specializarea> Specializari { get; set; }
+   
+        public ProductAvion()
         {
             companie=TaraOrigine = string.Empty;
             AnInfiintare = 0;
             nrAngajati = 0;
-            
+            Specializari = new List<Specializarea>();
 
         }
-        public ProductAvion(int ID_Producator,string companie,string TaraOrigine,int AnInfiintare,int nrAngajati, Specializarea specializare)
+        public ProductAvion(int ID_Producator,string companie,string TaraOrigine,int AnInfiintare,int nrAngajati, List<Specializarea> Specializari)
         {
             this.ID_Producator = ID_Producator;
             this.companie = companie;
             this.TaraOrigine = TaraOrigine;
             this.AnInfiintare = AnInfiintare;
             this.nrAngajati = nrAngajati;
-            this.specializare = specializare;
+            this.Specializari= Specializari;
         }
         //Constructorul pentru fisierul Producatorul de avioane
         public ProductAvion(string linieFisierB)
@@ -54,15 +54,22 @@ namespace ProducatorAvioane
             this.TaraOrigine = dateFisier_Beta[TARA];
             this.AnInfiintare = Convert.ToInt32(dateFisier_Beta[AN_INFIINTARE]);
             this.nrAngajati = Convert.ToInt32(dateFisier_Beta[NRANGAJATI]);
-            this.specializare = (Specializarea)Enum.Parse(typeof(Specializarea), dateFisier_Beta[SPECIALIZARE]);
-
+        
+            var specializariString = dateFisier_Beta[SPECIALIZARE].Split(SEPARATOARE_PRIMAR_FISIER);
+            foreach (var specializare in specializariString)
+            {
+                if (Enum.TryParse(specializare.Trim(), out Specializarea specializareParsed))
+                {
+                    Specializari.Add(specializareParsed);
+                }
+            }
         }
         public string InfoProduct
         {
             get
             {
                 string afis = $"ID:{ID_Producator}\n Compania:{companie}\n Tara de origine:{TaraOrigine}\n Infiintat din  {AnInfiintare} \n " +
-                              $"Numar de angajati:{nrAngajati}\n Specilizarea:{specializare}";
+                              $"Numar de angajati:{nrAngajati}\n Specilizarea:{Specializari}";
                 return afis;
             }
           }
@@ -75,7 +82,7 @@ namespace ProducatorAvioane
                 (TaraOrigine ?? "NECUNOSCUT"),
                 AnInfiintare.ToString(),
                 nrAngajati.ToString(),
-                specializare.ToString());
+                Specializari.ToString());
             
             return obiectProductAvionfisier;
         }

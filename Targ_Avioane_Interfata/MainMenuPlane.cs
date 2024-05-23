@@ -15,9 +15,15 @@ namespace Targ_Avioane_Interfata
         public MainMenuPlane()
         {
             InitializeComponent();
+            this.FormClosed +=OnFormClosedMainMenu ;
         }
 
+        private void OnFormClosedMainMenu(object sender, EventArgs e)
+        {
 
+            Application.Exit();
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
