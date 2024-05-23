@@ -37,6 +37,8 @@
             this.lblSpecializare = new System.Windows.Forms.Label();
             this.lstProductPlane = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.btnStergeProductPlane = new System.Windows.Forms.Button();
             this.lblRefreshProductPlane = new System.Windows.Forms.Label();
             this.lblSalvareProductPlane = new System.Windows.Forms.Label();
@@ -47,7 +49,6 @@
             this.txtAnInfiintare = new System.Windows.Forms.TextBox();
             this.txtTaraOrigine = new System.Windows.Forms.TextBox();
             this.txtCompanie = new System.Windows.Forms.TextBox();
-            this.btnCauta = new System.Windows.Forms.Button();
             btnBackMainMenu_1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -155,7 +156,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Azure;
-            this.panel1.Controls.Add(this.btnCauta);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.btnStergeProductPlane);
             this.panel1.Controls.Add(this.lblRefreshProductPlane);
             this.panel1.Controls.Add(this.lblSalvareProductPlane);
@@ -175,6 +177,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(425, 284);
             this.panel1.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Lime;
+            this.button1.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button1.Location = new System.Drawing.Point(119, 197);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "&Caută";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnCauta_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Lime;
+            this.btnReset.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.btnReset.Location = new System.Drawing.Point(119, 226);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 16;
+            this.btnReset.Text = "&Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnStergeProductPlane
             // 
@@ -267,18 +293,6 @@
             this.txtCompanie.Size = new System.Drawing.Size(159, 22);
             this.txtCompanie.TabIndex = 6;
             // 
-            // btnCauta
-            // 
-            this.btnCauta.BackColor = System.Drawing.Color.Lime;
-            this.btnCauta.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btnCauta.Location = new System.Drawing.Point(119, 226);
-            this.btnCauta.Name = "btnCauta";
-            this.btnCauta.Size = new System.Drawing.Size(75, 23);
-            this.btnCauta.TabIndex = 16;
-            this.btnCauta.Text = "&Caută";
-            this.btnCauta.UseVisualStyleBackColor = false;
-            this.btnCauta.Click += new System.EventHandler(this.btnCauta_Click);
-            // 
             // FormProductAvion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -318,6 +332,7 @@
         private System.Windows.Forms.Label lblSalvareProductPlane;
         private System.Windows.Forms.Label lblRefreshProductPlane;
         private System.Windows.Forms.Button btnStergeProductPlane;
-        private System.Windows.Forms.Button btnCauta;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button button1;
     }
 }

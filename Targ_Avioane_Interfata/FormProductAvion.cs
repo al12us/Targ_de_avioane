@@ -209,6 +209,7 @@ namespace Targ_Avioane_Interfata
         private void ResetControls()
         {
             txtCompanie.Text = txtTaraOrigine.Text = txtAnInfiintare.Text = txtNrAngajati.Text = txtSpecializare.Text = string.Empty;
+            
  
         }
         private void btnRefreshProductPlane_Click(object sender, EventArgs e)
@@ -239,6 +240,13 @@ namespace Targ_Avioane_Interfata
                 lblSalvareProductPlane.Text = "Producatorul de avioane nu a fost gasit";
             else
                 lblSalvareProductPlane.Text = "Producatorul de avioane a fost gasit";
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtCompanie.Text = txtTaraOrigine.Text = txtAnInfiintare.Text = txtNrAngajati.Text = txtSpecializare.Text = string.Empty;
+            lblSalvareProductPlane.Text = "";
+            lblRefreshProductPlane.Text = "";
         }
     }
     }
