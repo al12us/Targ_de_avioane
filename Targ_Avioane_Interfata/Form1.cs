@@ -1,19 +1,14 @@
-﻿using System;
+﻿using Avion;
+using Niveldestocare_Date;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Configuration;
-using System.Windows.Forms;
-using ProducatorAvioane;
-using Avion;
-using Niveldestocare_Date;
 using System.IO;
-using System.Drawing.Printing;
-using System.Collections;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace Targ_Avioane_Interfata
 {
@@ -92,8 +87,8 @@ namespace Targ_Avioane_Interfata
         {
             List<AvionClass> avioane = adminPlanes.GetPlanes();
             AfiseazaDateGridAvion(avioane);
-        
-           
+          
+
         }
        
       
@@ -272,7 +267,7 @@ namespace Targ_Avioane_Interfata
             lblRefreshDate.Text = "Datele despre avioane au fost actualizate";
             ResetControls();
             lblValidare.Text = "";
-            dgvPlane.Refresh();
+            //dgvPlane.Refresh();
            
            
              
@@ -391,11 +386,12 @@ namespace Targ_Avioane_Interfata
 
        private void AfiseazaDateGridAvion(List<AvionClass> avioane)
         {
-            dgvPlane.DataSource = null;
+          
+            
             //
             //!!!! Controlul de tip DataGridView are ca sursa de date lista de obiecte de tip AvionClass !!!
-            dgvPlane.DataSource = avioane;
-
+            dgvPlane.DataSource = new BindingList<AvionClass>(avioane);
+            dgvPlane.ClearSelection(); ;
             dgvPlane.DataSource = avioane.Select(s => new {
                 s.ID_avion,
                 s.firma,
@@ -449,30 +445,31 @@ namespace Targ_Avioane_Interfata
 
         private void btnModifica_Click(object sender, EventArgs e)
         {
+            dgvPlane.DataSource = avioanele;
             if (dgvPlane.SelectedRows.Count > 0)
             {
                 // Se va prelua indexul elementului selectat din DataGridView
                 int selectedIndex = dgvPlane.SelectedRows[0].Index;
                 // Se va prelua avionul corespunzător indexului selectat
-                AvionClass avion = adminPlanes.GetPlane(selectedIndex);
-                if (avion != null)
+                AvionClass avion_modificat = avioanele[selectedIndex];
+                if (avion_modificat != null )
                 {
                     // Casetele txt
-                    txtFirma.Text = avion.firma;
-                    txtModel.Text = avion.model;
-                    txtAnFabricatie.Text = avion.an_fabricatie.ToString();
-                    txtCuloare.Text = avion.culoare.ToString();
-                    txtGreutate.Text = avion.greutate.ToString();
-                    txtPret.Text = avion.pret.ToString();
-                    txtNrPasg.Text = avion.nr_de_pasageri.ToString();
-                    if (adminPlanes.UpdateAvion(avion))
+                    avion_modificat.firma = txtFirma.Text;
+                    avion_modificat.model = txtModel.Text;
+                    avion_modificat.an_fabricatie = Int32.Parse(txtAnFabricatie.Text);
+                    avion_modificat.culoare = (Culoarea)Enum.Parse(typeof(Culoarea), txtCuloare.Text);
+                    avion_modificat.greutate = Int32.Parse(txtGreutate.Text);
+                    avion_modificat.pret = Int32.Parse(txtPret.Text);
+                    avion_modificat.nr_de_pasageri = Int32.Parse(txtNrPasg.Text);
+                    if (adminPlanes.UpdateAvion(avion_modificat))
                     {
                         MessageBox.Show("Avionul a fost actualizat cu succes.");
                         // incarcarea datelor
-                        List<AvionClass> avioane = adminPlanes.GetPlanes();
+
                         // Afișează avioanele în DataGridView folosind BindingList pentru a edita avionul selectat
-                        dgvPlane.DataSource = new BindingList<AvionClass>(avioane);
-                        dgvPlane.ReadOnly = false;
+                       
+                        dgvPlane.ClearSelection();
                     }
                     else
                         MessageBox.Show("Actualizarea a esuat! ");
@@ -521,7 +518,7 @@ namespace Targ_Avioane_Interfata
                     int selectedIndex = dgvPlane.SelectedRows[0].Index;
                     AvionClass avionulSelectat = avioanele[selectedIndex];
                     // Șterge elementul din BindingList
-                    avioanele.RemoveAt(selectedIndex);
+                    dgvPlane.Rows.RemoveAt(selectedIndex);
                     adminPlanes.DeletePlane(avionulSelectat);
 
                     AfiseazaDateGridAvion(avioanele.ToList());
@@ -546,6 +543,15 @@ namespace Targ_Avioane_Interfata
                 ComponenteSelectate.Add(componentaSelectata);
             else
                 ComponenteSelectate.Remove(componentaSelectata);*/
+        }
+
+        private void btnActualizare_Click(object sender, EventArgs e)
+        {
+           //Incarcare surse de date
+            List<AvionClass> avioane = adminPlanes.GetPlanes();
+
+            // Actualizare DataGridView
+            AfiseazaDateGridAvion(avioane);
         }
     }
     }

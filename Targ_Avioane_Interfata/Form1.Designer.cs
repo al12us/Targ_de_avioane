@@ -30,9 +30,9 @@ namespace Targ_Avioane_Interfata
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbltitlu = new System.Windows.Forms.Label();
             this.txtFirma = new System.Windows.Forms.TextBox();
             this.txtModel = new System.Windows.Forms.TextBox();
@@ -43,6 +43,8 @@ namespace Targ_Avioane_Interfata
             this.txtNrPasg = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gpbComponente = new System.Windows.Forms.GroupBox();
+            this.ckbAdaptare = new System.Windows.Forms.CheckBox();
+            this.ckbAprovizionare = new System.Windows.Forms.CheckBox();
             this.ckbSigurantaSupraveghere = new System.Windows.Forms.CheckBox();
             this.ckbSistemDeContramasuri = new System.Windows.Forms.CheckBox();
             this.ckbSistemedeArmament = new System.Windows.Forms.CheckBox();
@@ -77,8 +79,7 @@ namespace Targ_Avioane_Interfata
             this.lblValidare = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSterge = new System.Windows.Forms.Button();
-            this.ckbAprovizionare = new System.Windows.Forms.CheckBox();
-            this.ckbAdaptare = new System.Windows.Forms.CheckBox();
+            this.btnActualizare = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gpbComponente.SuspendLayout();
             this.gpbTipAvion.SuspendLayout();
@@ -190,6 +191,32 @@ namespace Targ_Avioane_Interfata
             this.gpbComponente.Size = new System.Drawing.Size(458, 207);
             this.gpbComponente.TabIndex = 13;
             this.gpbComponente.TabStop = false;
+            // 
+            // ckbAdaptare
+            // 
+            this.ckbAdaptare.AutoSize = true;
+            this.ckbAdaptare.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic);
+            this.ckbAdaptare.ForeColor = System.Drawing.Color.MediumBlue;
+            this.ckbAdaptare.Location = new System.Drawing.Point(233, 166);
+            this.ckbAdaptare.Name = "ckbAdaptare";
+            this.ckbAdaptare.Size = new System.Drawing.Size(185, 44);
+            this.ckbAdaptare.TabIndex = 21;
+            this.ckbAdaptare.Text = "Sisteme de adaptare\r\n și modificare";
+            this.ckbAdaptare.UseVisualStyleBackColor = true;
+            this.ckbAdaptare.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
+            // 
+            // ckbAprovizionare
+            // 
+            this.ckbAprovizionare.AutoSize = true;
+            this.ckbAprovizionare.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic);
+            this.ckbAprovizionare.ForeColor = System.Drawing.Color.MediumBlue;
+            this.ckbAprovizionare.Location = new System.Drawing.Point(233, 122);
+            this.ckbAprovizionare.Name = "ckbAprovizionare";
+            this.ckbAprovizionare.Size = new System.Drawing.Size(184, 44);
+            this.ckbAprovizionare.TabIndex = 20;
+            this.ckbAprovizionare.Text = "Sisteme de catering \r\nsi aprovizionare";
+            this.ckbAprovizionare.UseVisualStyleBackColor = true;
+            this.ckbAprovizionare.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
             // 
             // ckbSigurantaSupraveghere
             // 
@@ -564,34 +591,34 @@ namespace Targ_Avioane_Interfata
             // dgvPlane
             // 
             this.dgvPlane.BackgroundColor = System.Drawing.Color.Aqua;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.MediumBlue;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlane.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.MediumBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlane.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPlane.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.MediumBlue;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPlane.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.MediumBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPlane.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPlane.GridColor = System.Drawing.Color.Azure;
             this.dgvPlane.Location = new System.Drawing.Point(23, 123);
             this.dgvPlane.Name = "dgvPlane";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.MediumBlue;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlane.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MediumBlue;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlane.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPlane.RowHeadersWidth = 51;
             this.dgvPlane.RowTemplate.Height = 24;
             this.dgvPlane.Size = new System.Drawing.Size(1064, 483);
@@ -658,31 +685,19 @@ namespace Targ_Avioane_Interfata
             this.btnSterge.UseVisualStyleBackColor = false;
             this.btnSterge.Click += new System.EventHandler(this.btnSterge_Click);
             // 
-            // ckbAprovizionare
+            // btnActualizare
             // 
-            this.ckbAprovizionare.AutoSize = true;
-            this.ckbAprovizionare.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic);
-            this.ckbAprovizionare.ForeColor = System.Drawing.Color.MediumBlue;
-            this.ckbAprovizionare.Location = new System.Drawing.Point(233, 122);
-            this.ckbAprovizionare.Name = "ckbAprovizionare";
-            this.ckbAprovizionare.Size = new System.Drawing.Size(184, 44);
-            this.ckbAprovizionare.TabIndex = 20;
-            this.ckbAprovizionare.Text = "Sisteme de catering \r\nsi aprovizionare";
-            this.ckbAprovizionare.UseVisualStyleBackColor = true;
-            this.ckbAprovizionare.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
-            // 
-            // ckbAdaptare
-            // 
-            this.ckbAdaptare.AutoSize = true;
-            this.ckbAdaptare.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Italic);
-            this.ckbAdaptare.ForeColor = System.Drawing.Color.MediumBlue;
-            this.ckbAdaptare.Location = new System.Drawing.Point(233, 166);
-            this.ckbAdaptare.Name = "ckbAdaptare";
-            this.ckbAdaptare.Size = new System.Drawing.Size(185, 44);
-            this.ckbAdaptare.TabIndex = 21;
-            this.ckbAdaptare.Text = "Sisteme de adaptare\r\n și modificare";
-            this.ckbAdaptare.UseVisualStyleBackColor = true;
-            this.ckbAdaptare.CheckedChanged += new System.EventHandler(this.CkbComponente_CheckedChanged);
+            this.btnActualizare.BackColor = System.Drawing.Color.Moccasin;
+            this.btnActualizare.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnActualizare.Font = new System.Drawing.Font("Segoe Print", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizare.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnActualizare.Location = new System.Drawing.Point(1576, 635);
+            this.btnActualizare.Name = "btnActualizare";
+            this.btnActualizare.Size = new System.Drawing.Size(130, 43);
+            this.btnActualizare.TabIndex = 25;
+            this.btnActualizare.Text = "&Actualizare";
+            this.btnActualizare.UseVisualStyleBackColor = false;
+            this.btnActualizare.Click += new System.EventHandler(this.btnActualizare_Click);
             // 
             // Form1
             // 
@@ -690,6 +705,7 @@ namespace Targ_Avioane_Interfata
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1782, 953);
+            this.Controls.Add(this.btnActualizare);
             this.Controls.Add(this.btnSterge);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.lblValidare);
@@ -770,6 +786,7 @@ namespace Targ_Avioane_Interfata
         private System.Windows.Forms.Button btnSterge;
         private System.Windows.Forms.CheckBox ckbAdaptare;
         private System.Windows.Forms.CheckBox ckbAprovizionare;
+        private System.Windows.Forms.Button btnActualizare;
     }
 }
 
