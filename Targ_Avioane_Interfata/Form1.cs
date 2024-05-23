@@ -82,7 +82,7 @@ namespace Targ_Avioane_Interfata
             txtNrPasg.LostFocus += txtIntroducenrpasgLostFocus;
 
             this.FormClosed += OnFormClosed;
-           
+          
             ButoaneAvioane();
 
         }
@@ -93,7 +93,6 @@ namespace Targ_Avioane_Interfata
             List<AvionClass> avioane = adminPlanes.GetPlanes();
             AfiseazaDateGridAvion(avioane);
         
-            dgvPlane.AutoGenerateColumns = true;
            
         }
        
@@ -273,7 +272,7 @@ namespace Targ_Avioane_Interfata
             lblRefreshDate.Text = "Datele despre avioane au fost actualizate";
             ResetControls();
             lblValidare.Text = "";
-         
+            dgvPlane.Refresh();
            
            
              
@@ -512,23 +511,26 @@ namespace Targ_Avioane_Interfata
         {
             if (dgvPlane.SelectedRows.Count == AVION_NESELECTAT)
             {
-                MessageBox.Show("Selectare");
+                MessageBox.Show("Selectare avionul");
             }
             else
             {
                 dgvPlane.DataSource = avioanele;
-                for (int i = dgvPlane.SelectedRows.Count - 1; i >= 0; i--)
+                if (dgvPlane.SelectedRows.Count == 1)
                 {
-                    int selectedIndex = dgvPlane.SelectedRows[i].Index;
-
+                    int selectedIndex = dgvPlane.SelectedRows[0].Index;
+                    AvionClass avionulSelectat = avioanele[selectedIndex];
                     // Șterge elementul din BindingList
                     avioanele.RemoveAt(selectedIndex);
+                    adminPlanes.DeletePlane(avionulSelectat);
 
+                    AfiseazaDateGridAvion(avioanele.ToList());
                 }
-                dgvPlane.DataSource = null;
-                dgvPlane.DataSource = avioanele;
+                else
+                    MessageBox.Show("Selecteaza avionul pentru a sterge");
+
             }
-            //avioane.RemoveAt(dgvPlane.SelectedRows.Count);
+            
         }
 
         private void CkbComponente_CheckedChanged(object sender, EventArgs e)

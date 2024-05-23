@@ -34,6 +34,27 @@ namespace Niveldestocare_Date
                 streamWriterFisierText.WriteLine(avion.ConversieLaSir_PentruFisier());
             }
         }
+        public void DeletePlane(AvionClass avionToDelete)
+        {
+            List<AvionClass> avioane = GetPlanes();
+          
+
+            var planeToRemove = avioane.SingleOrDefault(avion => avion.ID_avion == avionToDelete.ID_avion);
+            if (planeToRemove != null)
+            {
+                avioane.Remove(planeToRemove);
+                using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier, false))
+                {
+                    foreach (AvionClass avion in avioane)
+                    {
+                        streamWriterFisierText.WriteLine(avion.ConversieLaSir_PentruFisier());
+                    }
+                }
+
+            }
+
+           
+        }
         public List<AvionClass> GetPlanes()
         {
             List<AvionClass> avioane = new List<AvionClass>();
