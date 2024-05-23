@@ -110,8 +110,7 @@ namespace Avion
                 greutate.ToString(),
                 pret.ToString(),
                 nr_de_pasageri.ToString(),
-                AirplaneType.ToString()
-                );
+                AirplaneType.ToString());
 
             return obiectAvionPentruFisier;
         }

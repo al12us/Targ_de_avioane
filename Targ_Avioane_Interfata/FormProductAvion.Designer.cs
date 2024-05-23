@@ -47,6 +47,7 @@
             this.txtAnInfiintare = new System.Windows.Forms.TextBox();
             this.txtTaraOrigine = new System.Windows.Forms.TextBox();
             this.txtCompanie = new System.Windows.Forms.TextBox();
+            this.btnCauta = new System.Windows.Forms.Button();
             btnBackMainMenu_1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -154,6 +155,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Azure;
+            this.panel1.Controls.Add(this.btnCauta);
             this.panel1.Controls.Add(this.btnStergeProductPlane);
             this.panel1.Controls.Add(this.lblRefreshProductPlane);
             this.panel1.Controls.Add(this.lblSalvareProductPlane);
@@ -265,6 +267,18 @@
             this.txtCompanie.Size = new System.Drawing.Size(159, 22);
             this.txtCompanie.TabIndex = 6;
             // 
+            // btnCauta
+            // 
+            this.btnCauta.BackColor = System.Drawing.Color.Lime;
+            this.btnCauta.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.btnCauta.Location = new System.Drawing.Point(119, 226);
+            this.btnCauta.Name = "btnCauta";
+            this.btnCauta.Size = new System.Drawing.Size(75, 23);
+            this.btnCauta.TabIndex = 16;
+            this.btnCauta.Text = "&Caută";
+            this.btnCauta.UseVisualStyleBackColor = false;
+            this.btnCauta.Click += new System.EventHandler(this.btnCauta_Click);
+            // 
             // FormProductAvion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,5 +318,6 @@
         private System.Windows.Forms.Label lblSalvareProductPlane;
         private System.Windows.Forms.Label lblRefreshProductPlane;
         private System.Windows.Forms.Button btnStergeProductPlane;
+        private System.Windows.Forms.Button btnCauta;
     }
 }

@@ -228,9 +228,19 @@ namespace Targ_Avioane_Interfata
             {
                 //se sterge un element din lista
                 lstProductPlane.Items.RemoveAt(lstProductPlane.SelectedIndex);
+                lstProductPlane.Refresh();
             }
         }
- }
+
+        private void btnCauta_Click(object sender, EventArgs e)
+        {
+            ProductAvion productAvion = administratorProducatorPlane.GetProductPlane(txtCompanie.Text, txtTaraOrigine.Text);
+            if (productAvion == null)
+                lblSalvareProductPlane.Text = "Producatorul de avioane nu a fost gasit";
+            else
+                lblSalvareProductPlane.Text = "Producatorul de avioane a fost gasit";
+        }
+    }
     }
 
 

@@ -273,7 +273,7 @@ namespace Targ_Avioane_Interfata
             lblRefreshDate.Text = "Datele despre avioane au fost actualizate";
             ResetControls();
             lblValidare.Text = "";
-            btnModifica.Hide();
+         
            
            
              

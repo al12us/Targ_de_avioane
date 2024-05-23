@@ -52,6 +52,25 @@ namespace Niveldestocare_Date
 
             return producatori;
         }
+        public ProductAvion GetProductPlane(string Companie, string TaradeOrgine)
+        {
+            // instructiunea 'using' va apela streamReader.Close()
+            using (StreamReader streamReader = new StreamReader(numeFisier_2))
+            {
+                string linieFisier;
+
+                // citeste cate o linie si creaza un obiect de tip Avion
+                // pe baza datelor din linia citita
+                while ((linieFisier = streamReader.ReadLine()) != null)
+                {
+                    ProductAvion producator= new ProductAvion(linieFisier);
+                    if (producator.Equals(Companie) && producator.Equals(TaradeOrgine))
+                        return producator;
+                }
+            }
+
+            return null;
+        }
         private int GetIDProduct()
         {
             int IDProductPlane = ID_PRIMUL_PRODUCATOR_AVION;
