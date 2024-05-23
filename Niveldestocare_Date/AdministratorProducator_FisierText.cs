@@ -57,13 +57,13 @@ namespace Niveldestocare_Date
             // instructiunea 'using' va apela streamReader.Close()
             using (StreamReader streamReader = new StreamReader(numeFisier_2))
             {
-                string linieFisierB;
+                string linieFisier;
 
                 // citeste cate o linie si creaza un obiect de tip Avion
                 // pe baza datelor din linia citita
-                while ((linieFisierB = streamReader.ReadLine()) != null)
+                while ((linieFisier = streamReader.ReadLine()) != null)
                 {
-                    ProductAvion producator= new ProductAvion(linieFisierB);
+                    ProductAvion producator= new ProductAvion(linieFisier);
                     if (producator.Equals(Companie) && producator.Equals(TaradeOrgine))
                         return producator;
                 }

@@ -159,8 +159,6 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.btnStergeProductPlane);
-            this.panel1.Controls.Add(this.lblRefreshProductPlane);
-            this.panel1.Controls.Add(this.lblSalvareProductPlane);
             this.panel1.Controls.Add(this.btnRefreshProductPlane);
             this.panel1.Controls.Add(this.btnAdaugaProductPlane);
             this.panel1.Controls.Add(this.txtSpecializare);
@@ -219,7 +217,7 @@
             // lblRefreshProductPlane
             // 
             this.lblRefreshProductPlane.AutoSize = true;
-            this.lblRefreshProductPlane.Location = new System.Drawing.Point(125, 244);
+            this.lblRefreshProductPlane.Location = new System.Drawing.Point(961, 503);
             this.lblRefreshProductPlane.Name = "lblRefreshProductPlane";
             this.lblRefreshProductPlane.Size = new System.Drawing.Size(0, 16);
             this.lblRefreshProductPlane.TabIndex = 14;
@@ -229,7 +227,7 @@
             this.lblSalvareProductPlane.AutoSize = true;
             this.lblSalvareProductPlane.BackColor = System.Drawing.Color.LemonChiffon;
             this.lblSalvareProductPlane.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblSalvareProductPlane.Location = new System.Drawing.Point(125, 213);
+            this.lblSalvareProductPlane.Location = new System.Drawing.Point(947, 471);
             this.lblSalvareProductPlane.Name = "lblSalvareProductPlane";
             this.lblSalvareProductPlane.Size = new System.Drawing.Size(0, 16);
             this.lblSalvareProductPlane.TabIndex = 13;
@@ -302,7 +300,9 @@
             this.Controls.Add(btnBackMainMenu_1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lstProductPlane);
+            this.Controls.Add(this.lblRefreshProductPlane);
             this.Controls.Add(this.lblTitluProductAvion);
+            this.Controls.Add(this.lblSalvareProductPlane);
             this.Name = "FormProductAvion";
             this.Text = "FormProductAvion";
             this.panel1.ResumeLayout(false);
