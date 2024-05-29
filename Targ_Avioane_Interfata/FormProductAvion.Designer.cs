@@ -40,17 +40,22 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnStergeProductPlane = new System.Windows.Forms.Button();
-            this.lblRefreshProductPlane = new System.Windows.Forms.Label();
-            this.lblSalvareProductPlane = new System.Windows.Forms.Label();
             this.btnRefreshProductPlane = new System.Windows.Forms.Button();
             this.btnAdaugaProductPlane = new System.Windows.Forms.Button();
-            this.txtSpecializare = new System.Windows.Forms.TextBox();
             this.txtNrAngajati = new System.Windows.Forms.TextBox();
             this.txtAnInfiintare = new System.Windows.Forms.TextBox();
             this.txtTaraOrigine = new System.Windows.Forms.TextBox();
             this.txtCompanie = new System.Windows.Forms.TextBox();
+            this.lblRefreshProductPlane = new System.Windows.Forms.Label();
+            this.lblSalvareProductPlane = new System.Windows.Forms.Label();
+            this.ckbCivil = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ckbComercial = new System.Windows.Forms.CheckBox();
+            this.ckbMilitar = new System.Windows.Forms.CheckBox();
+            this.cbkExperimental = new System.Windows.Forms.CheckBox();
             btnBackMainMenu_1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBackMainMenu_1
@@ -60,7 +65,7 @@
             btnBackMainMenu_1.FlatAppearance.BorderSize = 3;
             btnBackMainMenu_1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             btnBackMainMenu_1.ForeColor = System.Drawing.Color.SaddleBrown;
-            btnBackMainMenu_1.Location = new System.Drawing.Point(964, 406);
+            btnBackMainMenu_1.Location = new System.Drawing.Point(973, 543);
             btnBackMainMenu_1.Name = "btnBackMainMenu_1";
             btnBackMainMenu_1.Size = new System.Drawing.Size(197, 44);
             btnBackMainMenu_1.TabIndex = 8;
@@ -156,12 +161,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Azure;
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.btnStergeProductPlane);
             this.panel1.Controls.Add(this.btnRefreshProductPlane);
             this.panel1.Controls.Add(this.btnAdaugaProductPlane);
-            this.panel1.Controls.Add(this.txtSpecializare);
             this.panel1.Controls.Add(this.txtNrAngajati);
             this.panel1.Controls.Add(this.txtAnInfiintare);
             this.panel1.Controls.Add(this.txtTaraOrigine);
@@ -173,14 +178,14 @@
             this.panel1.Controls.Add(this.lblCompanie);
             this.panel1.Location = new System.Drawing.Point(854, 107);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(425, 284);
+            this.panel1.Size = new System.Drawing.Size(425, 380);
             this.panel1.TabIndex = 7;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Lime;
             this.button1.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.button1.Location = new System.Drawing.Point(119, 197);
+            this.button1.Location = new System.Drawing.Point(119, 283);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 17;
@@ -192,7 +197,7 @@
             // 
             this.btnReset.BackColor = System.Drawing.Color.Lime;
             this.btnReset.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btnReset.Location = new System.Drawing.Point(119, 226);
+            this.btnReset.Location = new System.Drawing.Point(119, 312);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 16;
@@ -206,7 +211,7 @@
             this.btnStergeProductPlane.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
             this.btnStergeProductPlane.FlatAppearance.BorderSize = 3;
             this.btnStergeProductPlane.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btnStergeProductPlane.Location = new System.Drawing.Point(18, 255);
+            this.btnStergeProductPlane.Location = new System.Drawing.Point(18, 341);
             this.btnStergeProductPlane.Name = "btnStergeProductPlane";
             this.btnStergeProductPlane.Size = new System.Drawing.Size(75, 23);
             this.btnStergeProductPlane.TabIndex = 15;
@@ -214,29 +219,11 @@
             this.btnStergeProductPlane.UseVisualStyleBackColor = false;
             this.btnStergeProductPlane.Click += new System.EventHandler(this.btnStergeProductPlane_Click);
             // 
-            // lblRefreshProductPlane
-            // 
-            this.lblRefreshProductPlane.AutoSize = true;
-            this.lblRefreshProductPlane.Location = new System.Drawing.Point(961, 503);
-            this.lblRefreshProductPlane.Name = "lblRefreshProductPlane";
-            this.lblRefreshProductPlane.Size = new System.Drawing.Size(0, 16);
-            this.lblRefreshProductPlane.TabIndex = 14;
-            // 
-            // lblSalvareProductPlane
-            // 
-            this.lblSalvareProductPlane.AutoSize = true;
-            this.lblSalvareProductPlane.BackColor = System.Drawing.Color.LemonChiffon;
-            this.lblSalvareProductPlane.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblSalvareProductPlane.Location = new System.Drawing.Point(947, 471);
-            this.lblSalvareProductPlane.Name = "lblSalvareProductPlane";
-            this.lblSalvareProductPlane.Size = new System.Drawing.Size(0, 16);
-            this.lblSalvareProductPlane.TabIndex = 13;
-            // 
             // btnRefreshProductPlane
             // 
             this.btnRefreshProductPlane.BackColor = System.Drawing.Color.Lime;
             this.btnRefreshProductPlane.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btnRefreshProductPlane.Location = new System.Drawing.Point(18, 226);
+            this.btnRefreshProductPlane.Location = new System.Drawing.Point(18, 312);
             this.btnRefreshProductPlane.Name = "btnRefreshProductPlane";
             this.btnRefreshProductPlane.Size = new System.Drawing.Size(75, 23);
             this.btnRefreshProductPlane.TabIndex = 12;
@@ -248,20 +235,13 @@
             // 
             this.btnAdaugaProductPlane.BackColor = System.Drawing.Color.Lime;
             this.btnAdaugaProductPlane.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btnAdaugaProductPlane.Location = new System.Drawing.Point(18, 197);
+            this.btnAdaugaProductPlane.Location = new System.Drawing.Point(18, 283);
             this.btnAdaugaProductPlane.Name = "btnAdaugaProductPlane";
             this.btnAdaugaProductPlane.Size = new System.Drawing.Size(75, 23);
             this.btnAdaugaProductPlane.TabIndex = 11;
             this.btnAdaugaProductPlane.Text = "&Adaugă";
             this.btnAdaugaProductPlane.UseVisualStyleBackColor = false;
             this.btnAdaugaProductPlane.Click += new System.EventHandler(this.btnAdaugaProductPlane_Click);
-            // 
-            // txtSpecializare
-            // 
-            this.txtSpecializare.Location = new System.Drawing.Point(170, 155);
-            this.txtSpecializare.Name = "txtSpecializare";
-            this.txtSpecializare.Size = new System.Drawing.Size(159, 22);
-            this.txtSpecializare.TabIndex = 10;
             // 
             // txtNrAngajati
             // 
@@ -291,6 +271,77 @@
             this.txtCompanie.Size = new System.Drawing.Size(159, 22);
             this.txtCompanie.TabIndex = 6;
             // 
+            // lblRefreshProductPlane
+            // 
+            this.lblRefreshProductPlane.AutoSize = true;
+            this.lblRefreshProductPlane.Location = new System.Drawing.Point(961, 503);
+            this.lblRefreshProductPlane.Name = "lblRefreshProductPlane";
+            this.lblRefreshProductPlane.Size = new System.Drawing.Size(0, 16);
+            this.lblRefreshProductPlane.TabIndex = 14;
+            // 
+            // lblSalvareProductPlane
+            // 
+            this.lblSalvareProductPlane.AutoSize = true;
+            this.lblSalvareProductPlane.BackColor = System.Drawing.Color.LemonChiffon;
+            this.lblSalvareProductPlane.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblSalvareProductPlane.Location = new System.Drawing.Point(947, 471);
+            this.lblSalvareProductPlane.Name = "lblSalvareProductPlane";
+            this.lblSalvareProductPlane.Size = new System.Drawing.Size(0, 16);
+            this.lblSalvareProductPlane.TabIndex = 13;
+            // 
+            // ckbCivil
+            // 
+            this.ckbCivil.AutoSize = true;
+            this.ckbCivil.Location = new System.Drawing.Point(6, 21);
+            this.ckbCivil.Name = "ckbCivil";
+            this.ckbCivil.Size = new System.Drawing.Size(54, 20);
+            this.ckbCivil.TabIndex = 15;
+            this.ckbCivil.Text = "Civil";
+            this.ckbCivil.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cbkExperimental);
+            this.groupBox1.Controls.Add(this.ckbMilitar);
+            this.groupBox1.Controls.Add(this.ckbComercial);
+            this.groupBox1.Controls.Add(this.ckbCivil);
+            this.groupBox1.Location = new System.Drawing.Point(133, 155);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(169, 122);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // ckbComercial
+            // 
+            this.ckbComercial.AutoSize = true;
+            this.ckbComercial.Location = new System.Drawing.Point(7, 47);
+            this.ckbComercial.Name = "ckbComercial";
+            this.ckbComercial.Size = new System.Drawing.Size(90, 20);
+            this.ckbComercial.TabIndex = 16;
+            this.ckbComercial.Text = "Comercial";
+            this.ckbComercial.UseVisualStyleBackColor = true;
+            // 
+            // ckbMilitar
+            // 
+            this.ckbMilitar.AutoSize = true;
+            this.ckbMilitar.Location = new System.Drawing.Point(6, 73);
+            this.ckbMilitar.Name = "ckbMilitar";
+            this.ckbMilitar.Size = new System.Drawing.Size(64, 20);
+            this.ckbMilitar.TabIndex = 17;
+            this.ckbMilitar.Text = "Militar";
+            this.ckbMilitar.UseVisualStyleBackColor = true;
+            // 
+            // cbkExperimental
+            // 
+            this.cbkExperimental.AutoSize = true;
+            this.cbkExperimental.Location = new System.Drawing.Point(7, 99);
+            this.cbkExperimental.Name = "cbkExperimental";
+            this.cbkExperimental.Size = new System.Drawing.Size(107, 20);
+            this.cbkExperimental.TabIndex = 18;
+            this.cbkExperimental.Text = "Experimental";
+            this.cbkExperimental.UseVisualStyleBackColor = true;
+            // 
             // FormProductAvion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -307,6 +358,8 @@
             this.Text = "FormProductAvion";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,11 +381,15 @@
         private System.Windows.Forms.TextBox txtTaraOrigine;
         private System.Windows.Forms.Button btnRefreshProductPlane;
         private System.Windows.Forms.Button btnAdaugaProductPlane;
-        private System.Windows.Forms.TextBox txtSpecializare;
         private System.Windows.Forms.Label lblSalvareProductPlane;
         private System.Windows.Forms.Label lblRefreshProductPlane;
         private System.Windows.Forms.Button btnStergeProductPlane;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox ckbCivil;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox ckbMilitar;
+        private System.Windows.Forms.CheckBox ckbComercial;
+        private System.Windows.Forms.CheckBox cbkExperimental;
     }
 }
