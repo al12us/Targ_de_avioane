@@ -36,7 +36,18 @@
             this.lblnrAngajati = new System.Windows.Forms.Label();
             this.lblSpecializare = new System.Windows.Forms.Label();
             this.lstProductPlane = new System.Windows.Forms.ListBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlControlProuctAvion = new System.Windows.Forms.Panel();
+            this.gpbSpecializari = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ckbDePatrulareMarina = new System.Windows.Forms.CheckBox();
+            this.ckbdeAntrenament = new System.Windows.Forms.CheckBox();
+            this.ckbDeAfacere = new System.Windows.Forms.CheckBox();
+            this.ckbCargo = new System.Windows.Forms.CheckBox();
+            this.cbkExperimental = new System.Windows.Forms.CheckBox();
+            this.ckbMilitar = new System.Windows.Forms.CheckBox();
+            this.ckbComercial = new System.Windows.Forms.CheckBox();
+            this.ckbCivil = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnStergeProductPlane = new System.Windows.Forms.Button();
@@ -48,14 +59,9 @@
             this.txtCompanie = new System.Windows.Forms.TextBox();
             this.lblRefreshProductPlane = new System.Windows.Forms.Label();
             this.lblSalvareProductPlane = new System.Windows.Forms.Label();
-            this.ckbCivil = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ckbComercial = new System.Windows.Forms.CheckBox();
-            this.ckbMilitar = new System.Windows.Forms.CheckBox();
-            this.cbkExperimental = new System.Windows.Forms.CheckBox();
             btnBackMainMenu_1 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.pnlControlProuctAvion.SuspendLayout();
+            this.gpbSpecializari.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBackMainMenu_1
@@ -158,34 +164,152 @@
             this.lstProductPlane.Size = new System.Drawing.Size(792, 276);
             this.lstProductPlane.TabIndex = 6;
             // 
-            // panel1
+            // pnlControlProuctAvion
             // 
-            this.panel1.BackColor = System.Drawing.Color.Azure;
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnReset);
-            this.panel1.Controls.Add(this.btnStergeProductPlane);
-            this.panel1.Controls.Add(this.btnRefreshProductPlane);
-            this.panel1.Controls.Add(this.btnAdaugaProductPlane);
-            this.panel1.Controls.Add(this.txtNrAngajati);
-            this.panel1.Controls.Add(this.txtAnInfiintare);
-            this.panel1.Controls.Add(this.txtTaraOrigine);
-            this.panel1.Controls.Add(this.txtCompanie);
-            this.panel1.Controls.Add(this.lblSpecializare);
-            this.panel1.Controls.Add(this.lblnrAngajati);
-            this.panel1.Controls.Add(this.lblAnInfiintare);
-            this.panel1.Controls.Add(this.lblTaraOrigine);
-            this.panel1.Controls.Add(this.lblCompanie);
-            this.panel1.Location = new System.Drawing.Point(854, 107);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(425, 380);
-            this.panel1.TabIndex = 7;
+            this.pnlControlProuctAvion.BackColor = System.Drawing.Color.Azure;
+            this.pnlControlProuctAvion.Controls.Add(this.gpbSpecializari);
+            this.pnlControlProuctAvion.Controls.Add(this.button1);
+            this.pnlControlProuctAvion.Controls.Add(this.btnReset);
+            this.pnlControlProuctAvion.Controls.Add(this.btnStergeProductPlane);
+            this.pnlControlProuctAvion.Controls.Add(this.btnRefreshProductPlane);
+            this.pnlControlProuctAvion.Controls.Add(this.btnAdaugaProductPlane);
+            this.pnlControlProuctAvion.Controls.Add(this.txtNrAngajati);
+            this.pnlControlProuctAvion.Controls.Add(this.txtAnInfiintare);
+            this.pnlControlProuctAvion.Controls.Add(this.txtTaraOrigine);
+            this.pnlControlProuctAvion.Controls.Add(this.txtCompanie);
+            this.pnlControlProuctAvion.Controls.Add(this.lblSpecializare);
+            this.pnlControlProuctAvion.Controls.Add(this.lblnrAngajati);
+            this.pnlControlProuctAvion.Controls.Add(this.lblAnInfiintare);
+            this.pnlControlProuctAvion.Controls.Add(this.lblTaraOrigine);
+            this.pnlControlProuctAvion.Controls.Add(this.lblCompanie);
+            this.pnlControlProuctAvion.Location = new System.Drawing.Point(854, 107);
+            this.pnlControlProuctAvion.Name = "pnlControlProuctAvion";
+            this.pnlControlProuctAvion.Size = new System.Drawing.Size(434, 430);
+            this.pnlControlProuctAvion.TabIndex = 7;
+            // 
+            // gpbSpecializari
+            // 
+            this.gpbSpecializari.Controls.Add(this.checkBox2);
+            this.gpbSpecializari.Controls.Add(this.checkBox1);
+            this.gpbSpecializari.Controls.Add(this.ckbDePatrulareMarina);
+            this.gpbSpecializari.Controls.Add(this.ckbdeAntrenament);
+            this.gpbSpecializari.Controls.Add(this.ckbDeAfacere);
+            this.gpbSpecializari.Controls.Add(this.ckbCargo);
+            this.gpbSpecializari.Controls.Add(this.cbkExperimental);
+            this.gpbSpecializari.Controls.Add(this.ckbMilitar);
+            this.gpbSpecializari.Controls.Add(this.ckbComercial);
+            this.gpbSpecializari.Controls.Add(this.ckbCivil);
+            this.gpbSpecializari.Location = new System.Drawing.Point(133, 155);
+            this.gpbSpecializari.Name = "gpbSpecializari";
+            this.gpbSpecializari.Size = new System.Drawing.Size(294, 177);
+            this.gpbSpecializari.TabIndex = 18;
+            this.gpbSpecializari.TabStop = false;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(130, 135);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(120, 36);
+            this.checkBox2.TabIndex = 24;
+            this.checkBox2.Text = "   De cautare si \r\n      salvare";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(130, 99);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(151, 36);
+            this.checkBox1.TabIndex = 23;
+            this.checkBox1.Text = "  De recunoastere si \r\n     supraveghere";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // ckbDePatrulareMarina
+            // 
+            this.ckbDePatrulareMarina.AutoSize = true;
+            this.ckbDePatrulareMarina.Location = new System.Drawing.Point(130, 73);
+            this.ckbDePatrulareMarina.Name = "ckbDePatrulareMarina";
+            this.ckbDePatrulareMarina.Size = new System.Drawing.Size(150, 20);
+            this.ckbDePatrulareMarina.TabIndex = 22;
+            this.ckbDePatrulareMarina.Text = "De  patrulare marina";
+            this.ckbDePatrulareMarina.UseVisualStyleBackColor = true;
+            // 
+            // ckbdeAntrenament
+            // 
+            this.ckbdeAntrenament.AutoSize = true;
+            this.ckbdeAntrenament.Location = new System.Drawing.Point(130, 47);
+            this.ckbdeAntrenament.Name = "ckbdeAntrenament";
+            this.ckbdeAntrenament.Size = new System.Drawing.Size(124, 20);
+            this.ckbdeAntrenament.TabIndex = 21;
+            this.ckbdeAntrenament.Text = "De antrenament";
+            this.ckbdeAntrenament.UseVisualStyleBackColor = true;
+            // 
+            // ckbDeAfacere
+            // 
+            this.ckbDeAfacere.AutoSize = true;
+            this.ckbDeAfacere.Location = new System.Drawing.Point(130, 21);
+            this.ckbDeAfacere.Name = "ckbDeAfacere";
+            this.ckbDeAfacere.Size = new System.Drawing.Size(96, 20);
+            this.ckbDeAfacere.TabIndex = 20;
+            this.ckbDeAfacere.Text = "De afacere";
+            this.ckbDeAfacere.UseVisualStyleBackColor = true;
+            // 
+            // ckbCargo
+            // 
+            this.ckbCargo.AutoSize = true;
+            this.ckbCargo.Location = new System.Drawing.Point(7, 125);
+            this.ckbCargo.Name = "ckbCargo";
+            this.ckbCargo.Size = new System.Drawing.Size(66, 20);
+            this.ckbCargo.TabIndex = 19;
+            this.ckbCargo.Text = "Cargo";
+            this.ckbCargo.UseVisualStyleBackColor = true;
+            // 
+            // cbkExperimental
+            // 
+            this.cbkExperimental.AutoSize = true;
+            this.cbkExperimental.Location = new System.Drawing.Point(7, 99);
+            this.cbkExperimental.Name = "cbkExperimental";
+            this.cbkExperimental.Size = new System.Drawing.Size(107, 20);
+            this.cbkExperimental.TabIndex = 18;
+            this.cbkExperimental.Text = "Experimental";
+            this.cbkExperimental.UseVisualStyleBackColor = true;
+            // 
+            // ckbMilitar
+            // 
+            this.ckbMilitar.AutoSize = true;
+            this.ckbMilitar.Location = new System.Drawing.Point(6, 73);
+            this.ckbMilitar.Name = "ckbMilitar";
+            this.ckbMilitar.Size = new System.Drawing.Size(64, 20);
+            this.ckbMilitar.TabIndex = 17;
+            this.ckbMilitar.Text = "Militar";
+            this.ckbMilitar.UseVisualStyleBackColor = true;
+            // 
+            // ckbComercial
+            // 
+            this.ckbComercial.AutoSize = true;
+            this.ckbComercial.Location = new System.Drawing.Point(7, 47);
+            this.ckbComercial.Name = "ckbComercial";
+            this.ckbComercial.Size = new System.Drawing.Size(90, 20);
+            this.ckbComercial.TabIndex = 16;
+            this.ckbComercial.Text = "Comercial";
+            this.ckbComercial.UseVisualStyleBackColor = true;
+            // 
+            // ckbCivil
+            // 
+            this.ckbCivil.AutoSize = true;
+            this.ckbCivil.Location = new System.Drawing.Point(6, 21);
+            this.ckbCivil.Name = "ckbCivil";
+            this.ckbCivil.Size = new System.Drawing.Size(54, 20);
+            this.ckbCivil.TabIndex = 15;
+            this.ckbCivil.Text = "Civil";
+            this.ckbCivil.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Lime;
             this.button1.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.button1.Location = new System.Drawing.Point(119, 283);
+            this.button1.Location = new System.Drawing.Point(119, 338);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 17;
@@ -197,7 +321,7 @@
             // 
             this.btnReset.BackColor = System.Drawing.Color.Lime;
             this.btnReset.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btnReset.Location = new System.Drawing.Point(119, 312);
+            this.btnReset.Location = new System.Drawing.Point(119, 367);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 16;
@@ -211,7 +335,7 @@
             this.btnStergeProductPlane.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
             this.btnStergeProductPlane.FlatAppearance.BorderSize = 3;
             this.btnStergeProductPlane.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btnStergeProductPlane.Location = new System.Drawing.Point(18, 341);
+            this.btnStergeProductPlane.Location = new System.Drawing.Point(18, 396);
             this.btnStergeProductPlane.Name = "btnStergeProductPlane";
             this.btnStergeProductPlane.Size = new System.Drawing.Size(75, 23);
             this.btnStergeProductPlane.TabIndex = 15;
@@ -223,7 +347,7 @@
             // 
             this.btnRefreshProductPlane.BackColor = System.Drawing.Color.Lime;
             this.btnRefreshProductPlane.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btnRefreshProductPlane.Location = new System.Drawing.Point(18, 312);
+            this.btnRefreshProductPlane.Location = new System.Drawing.Point(18, 367);
             this.btnRefreshProductPlane.Name = "btnRefreshProductPlane";
             this.btnRefreshProductPlane.Size = new System.Drawing.Size(75, 23);
             this.btnRefreshProductPlane.TabIndex = 12;
@@ -235,7 +359,7 @@
             // 
             this.btnAdaugaProductPlane.BackColor = System.Drawing.Color.Lime;
             this.btnAdaugaProductPlane.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btnAdaugaProductPlane.Location = new System.Drawing.Point(18, 283);
+            this.btnAdaugaProductPlane.Location = new System.Drawing.Point(18, 338);
             this.btnAdaugaProductPlane.Name = "btnAdaugaProductPlane";
             this.btnAdaugaProductPlane.Size = new System.Drawing.Size(75, 23);
             this.btnAdaugaProductPlane.TabIndex = 11;
@@ -289,59 +413,6 @@
             this.lblSalvareProductPlane.Size = new System.Drawing.Size(0, 16);
             this.lblSalvareProductPlane.TabIndex = 13;
             // 
-            // ckbCivil
-            // 
-            this.ckbCivil.AutoSize = true;
-            this.ckbCivil.Location = new System.Drawing.Point(6, 21);
-            this.ckbCivil.Name = "ckbCivil";
-            this.ckbCivil.Size = new System.Drawing.Size(54, 20);
-            this.ckbCivil.TabIndex = 15;
-            this.ckbCivil.Text = "Civil";
-            this.ckbCivil.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cbkExperimental);
-            this.groupBox1.Controls.Add(this.ckbMilitar);
-            this.groupBox1.Controls.Add(this.ckbComercial);
-            this.groupBox1.Controls.Add(this.ckbCivil);
-            this.groupBox1.Location = new System.Drawing.Point(133, 155);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(169, 122);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // ckbComercial
-            // 
-            this.ckbComercial.AutoSize = true;
-            this.ckbComercial.Location = new System.Drawing.Point(7, 47);
-            this.ckbComercial.Name = "ckbComercial";
-            this.ckbComercial.Size = new System.Drawing.Size(90, 20);
-            this.ckbComercial.TabIndex = 16;
-            this.ckbComercial.Text = "Comercial";
-            this.ckbComercial.UseVisualStyleBackColor = true;
-            // 
-            // ckbMilitar
-            // 
-            this.ckbMilitar.AutoSize = true;
-            this.ckbMilitar.Location = new System.Drawing.Point(6, 73);
-            this.ckbMilitar.Name = "ckbMilitar";
-            this.ckbMilitar.Size = new System.Drawing.Size(64, 20);
-            this.ckbMilitar.TabIndex = 17;
-            this.ckbMilitar.Text = "Militar";
-            this.ckbMilitar.UseVisualStyleBackColor = true;
-            // 
-            // cbkExperimental
-            // 
-            this.cbkExperimental.AutoSize = true;
-            this.cbkExperimental.Location = new System.Drawing.Point(7, 99);
-            this.cbkExperimental.Name = "cbkExperimental";
-            this.cbkExperimental.Size = new System.Drawing.Size(107, 20);
-            this.cbkExperimental.TabIndex = 18;
-            this.cbkExperimental.Text = "Experimental";
-            this.cbkExperimental.UseVisualStyleBackColor = true;
-            // 
             // FormProductAvion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -349,17 +420,17 @@
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1452, 673);
             this.Controls.Add(btnBackMainMenu_1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlControlProuctAvion);
             this.Controls.Add(this.lstProductPlane);
             this.Controls.Add(this.lblRefreshProductPlane);
             this.Controls.Add(this.lblTitluProductAvion);
             this.Controls.Add(this.lblSalvareProductPlane);
             this.Name = "FormProductAvion";
             this.Text = "FormProductAvion";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.pnlControlProuctAvion.ResumeLayout(false);
+            this.pnlControlProuctAvion.PerformLayout();
+            this.gpbSpecializari.ResumeLayout(false);
+            this.gpbSpecializari.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,7 +445,7 @@
         private System.Windows.Forms.Label lblnrAngajati;
         private System.Windows.Forms.Label lblSpecializare;
         private System.Windows.Forms.ListBox lstProductPlane;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlControlProuctAvion;
         private System.Windows.Forms.TextBox txtCompanie;
         private System.Windows.Forms.TextBox txtNrAngajati;
         private System.Windows.Forms.TextBox txtAnInfiintare;
@@ -387,9 +458,15 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox ckbCivil;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gpbSpecializari;
         private System.Windows.Forms.CheckBox ckbMilitar;
         private System.Windows.Forms.CheckBox ckbComercial;
         private System.Windows.Forms.CheckBox cbkExperimental;
+        private System.Windows.Forms.CheckBox ckbCargo;
+        private System.Windows.Forms.CheckBox ckbDeAfacere;
+        private System.Windows.Forms.CheckBox ckbdeAntrenament;
+        private System.Windows.Forms.CheckBox ckbDePatrulareMarina;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

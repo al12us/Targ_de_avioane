@@ -30,12 +30,12 @@ namespace Niveldestocare_Date
 
         }
         //Cautarea producatorului va fi facuta pe trei criterii(companie,tara de origine si specializare)
-        public ProductAvion CautareProducator(string compania,string TaradeOrigine,Specializarea spec)
+        public ProductAvion CautareProducator(string compania,string TaradeOrigine, List<Specializarea> specializare)
         {
             foreach(var producator in producatori)
             {
 
-                if (producator.companie == compania && producator.TaraOrigine == TaradeOrigine && producator.specializare==spec)
+                if (producator.companie == compania && producator.TaraOrigine == TaradeOrigine && specializare.All(s => producator.Specializari.Contains(s)))
 
                     return producator;
             }

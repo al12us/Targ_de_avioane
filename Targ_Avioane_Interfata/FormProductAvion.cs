@@ -40,16 +40,14 @@ namespace Targ_Avioane_Interfata
             txtTaraOrigine.GotFocus += txtTaraOrigineGotFocus;
             txtAnInfiintare.GotFocus += txtAnInfiintareGotFocus;
             txtNrAngajati.GotFocus += txtNrAngajatiGotFocus;
-            txtSpecializare.GotFocus += txtSpecGotFocus;
-
+           
             //Lost focus
 
             txtCompanie.LostFocus += txtCompanieLostFocus;
             txtTaraOrigine.LostFocus += txtTaraOrigineLostFocus;
             txtAnInfiintare.LostFocus += txtAnInfiintareLostFocus;
             txtNrAngajati.LostFocus += txtNrAngajatiLostFocus;
-            txtSpecializare.LostFocus += txtSpecLostFocus;
-
+         
         }
 
         private void Afiseaza_Producatori_Aeronave()
@@ -96,10 +94,7 @@ namespace Targ_Avioane_Interfata
         {
             txtNrAngajati.BackColor = Color.Aquamarine;
         }
-        private void txtSpecGotFocus(object sender,EventArgs e)
-        {
-            txtSpecializare.BackColor = Color.Aquamarine;
-        }
+      
         private void txtCompanieLostFocus(object sender, EventArgs e)
         {
             txtCompanie.BackColor = SystemColors.Window;
@@ -119,22 +114,18 @@ namespace Targ_Avioane_Interfata
         {
             txtNrAngajati.BackColor = SystemColors.Window;
         }
-        private void txtSpecLostFocus(object sender,EventArgs e)
-        {
-            txtSpecializare.BackColor = SystemColors.Window;
-        }
+        
         private void btnAdaugaProductPlane_Click(object sender, EventArgs e)
         {
             int AnInfiintare;
             int nrAngajati;
-            Specializarea spec;
+           
            string companie= txtCompanie.Text.ToString();
             string taradeorigine=txtTaraOrigine.ToString();
             Int32.TryParse(txtAnInfiintare.Text.ToString(), out AnInfiintare);
             Int32.TryParse(txtNrAngajati.Text.ToString(), out nrAngajati);
-            Enum.TryParse(txtSpecializare.Text.ToString(),out spec);
-
-            ProductAvion producator = new ProductAvion(0, txtCompanie.Text.ToString(), txtTaraOrigine.Text.ToString(),AnInfiintare,nrAngajati,spec);
+            var specializari = new List<Specializarea>();
+            ProductAvion producator = new ProductAvion(0, txtCompanie.Text.ToString(), txtTaraOrigine.Text.ToString(),AnInfiintare,nrAngajati,specializari);
          
             bool validProductPlane = true;
             if (txtCompanie.Text.ToString() == "" || txtCompanie.Text.ToString() == MESAJ)
@@ -178,19 +169,8 @@ namespace Targ_Avioane_Interfata
             }
             else
                 lblnrAngajati.ForeColor = Color.SaddleBrown;
-            if (txtSpecializare.Text.ToString() == "" )
-            {
-               
-                lblSpecializare.ForeColor = Color.Red;
-                validProductPlane = false;
-            }
-            else if(txtSpecializare.Text.Length<4 || txtSpecializare.Text.Length > STRLEN_MAX_COMPANIE)
-            {
-                lblSpecializare.ForeColor = Color.Red;
-                validProductPlane = false;
-            }
-            else
-                lblSpecializare.ForeColor = Color.SaddleBrown;
+          
+           
             if (validProductPlane)
             {
                 administratorProducatorPlane.AddProducator(producator);
@@ -208,7 +188,7 @@ namespace Targ_Avioane_Interfata
         }
         private void ResetControls()
         {
-            txtCompanie.Text = txtTaraOrigine.Text = txtAnInfiintare.Text = txtNrAngajati.Text = txtSpecializare.Text = string.Empty;
+            txtCompanie.Text = txtTaraOrigine.Text = txtAnInfiintare.Text = txtNrAngajati.Text = string.Empty;
             
  
         }
@@ -244,10 +224,12 @@ namespace Targ_Avioane_Interfata
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtCompanie.Text = txtTaraOrigine.Text = txtAnInfiintare.Text = txtNrAngajati.Text = txtSpecializare.Text = string.Empty;
+            txtCompanie.Text = txtTaraOrigine.Text = txtAnInfiintare.Text = txtNrAngajati.Text = string.Empty;
             lblSalvareProductPlane.Text = "";
             lblRefreshProductPlane.Text = "";
         }
+
+      
     }
     }
 

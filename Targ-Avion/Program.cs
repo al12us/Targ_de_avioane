@@ -168,8 +168,8 @@ namespace Targ_Avion
                         Console.WriteLine("Tara de origine:");
                         string tara = Console.ReadLine();
                         Console.WriteLine("Specializarea producatorului de aeronave");
-                        string _spec= Console.ReadLine();
-                        Specializarea spec = (Specializarea)Enum.Parse(typeof(Specializarea),_spec);
+                        List<Specializarea> spec = CitesteSpecializariDeLaTastatura();
+
                         Console.WriteLine(adminProductPlane.CautareProducator(compania,tara,spec).InfoProduct);
                         break;
                     case "DT":
