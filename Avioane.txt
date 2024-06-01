@@ -1,2 +1,2 @@
-1;Qatar Airways;Airbus 891;2018;verde;12465;534677;325677777;Civil;Aeroframe Sisteme de navigare Sistem de Comunicare Sisteme de siguranță
- și supraveghere
+1;Qatar Airlines;FIM-128;2005;albastru;12457;135677;1456;Comercial;Aeroframe Sisteme de propulsie;
+2;Turkish Airlines;Boeing 789;2010;portocaliu;15653;523535;1000;Civil;Sisteme de navigare Sisteme de propulsie;

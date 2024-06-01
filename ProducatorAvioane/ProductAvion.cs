@@ -68,6 +68,7 @@ namespace ProducatorAvioane
         {
             get
             {
+                string specializari = Specializari != null ? string.Join(", ", Specializari) : "None";
                 string afis = $"ID:{ID_Producator}\n Compania:{companie}\n Tara de origine:{TaraOrigine}\n Infiintat din  {AnInfiintare} \n " +
                               $"Numar de angajati:{nrAngajati}\n Specilizarea:{Specializari}";
                 return afis;
@@ -75,6 +76,7 @@ namespace ProducatorAvioane
           }
         public string ConversieSir_PentruFisier()
         {
+            string specializari = Specializari != null ? string.Join(SEPARATOARE_PRIMAR_FISIER.ToString(), Specializari) : string.Empty;
             string obiectProductAvionfisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}",
                 SEPARATOARE_SECUNDAR_FISIER,
                 ID_Producator.ToString(),
@@ -82,7 +84,7 @@ namespace ProducatorAvioane
                 (TaraOrigine ?? "NECUNOSCUT"),
                 AnInfiintare.ToString(),
                 nrAngajati.ToString(),
-                Specializari.ToString());
+                specializari);
             
             return obiectProductAvionfisier;
         }

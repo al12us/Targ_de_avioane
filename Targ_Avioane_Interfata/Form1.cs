@@ -120,6 +120,7 @@ namespace Targ_Avioane_Interfata
             TipAvion PlaneSelected = GetTipAvionSelectat();
             avion.AirplaneType = PlaneSelected;
             //set componente Avion
+            avion.Componente = new ArrayList();
             avion.Componente.AddRange(ComponenteSelectate);
 
             if (firmaValid && modelValid && an_FabricatieValid && culoareValid && greutateValid && pretValid && nr_pasgariValid)
@@ -247,6 +248,18 @@ namespace Targ_Avioane_Interfata
             rdbComercial.Checked = false;
             rdbExperimental.Checked = false;
             rdbMilitar.Checked = false;
+
+            ckbAdaptare.Checked = false;
+            ckbAprovizionare.Checked = false;
+            ckbAeroframe.Checked = false;
+            ckbComunicare.Checked = false;
+            ckbControlAutomatizare.Checked = false;
+            ckbSistemedeArmament.Checked = false;
+            ckbSistemDeContramasuri.Checked = false;
+            ckbSigurantaSupraveghere.Checked = false;
+            ckbNavigare.Checked = false;
+            ckbPropulsie.Checked = false;
+
 
             lblSalvarePlane.Text = "";
           
