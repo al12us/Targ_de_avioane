@@ -184,7 +184,7 @@
             this.pnlControlProuctAvion.Controls.Add(this.lblCompanie);
             this.pnlControlProuctAvion.Location = new System.Drawing.Point(854, 107);
             this.pnlControlProuctAvion.Name = "pnlControlProuctAvion";
-            this.pnlControlProuctAvion.Size = new System.Drawing.Size(434, 430);
+            this.pnlControlProuctAvion.Size = new System.Drawing.Size(551, 430);
             this.pnlControlProuctAvion.TabIndex = 7;
             // 
             // gpbSpecializari
@@ -201,79 +201,86 @@
             this.gpbSpecializari.Controls.Add(this.ckbCivil);
             this.gpbSpecializari.Location = new System.Drawing.Point(133, 155);
             this.gpbSpecializari.Name = "gpbSpecializari";
-            this.gpbSpecializari.Size = new System.Drawing.Size(294, 177);
+            this.gpbSpecializari.Size = new System.Drawing.Size(399, 177);
             this.gpbSpecializari.TabIndex = 18;
             this.gpbSpecializari.TabStop = false;
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(130, 135);
+            this.checkBox2.Location = new System.Drawing.Point(130, 125);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(120, 36);
+            this.checkBox2.Size = new System.Drawing.Size(172, 20);
             this.checkBox2.TabIndex = 24;
-            this.checkBox2.Text = "   De cautare si \r\n      salvare";
+            this.checkBox2.Text = "  de_cautare_si_salvare";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(130, 99);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(151, 36);
+            this.checkBox1.Size = new System.Drawing.Size(245, 20);
             this.checkBox1.TabIndex = 23;
-            this.checkBox1.Text = "  De recunoastere si \r\n     supraveghere";
+            this.checkBox1.Text = "  de_recunoastere_si_supraveghere";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
             // 
             // ckbDePatrulareMarina
             // 
             this.ckbDePatrulareMarina.AutoSize = true;
             this.ckbDePatrulareMarina.Location = new System.Drawing.Point(130, 73);
             this.ckbDePatrulareMarina.Name = "ckbDePatrulareMarina";
-            this.ckbDePatrulareMarina.Size = new System.Drawing.Size(150, 20);
+            this.ckbDePatrulareMarina.Size = new System.Drawing.Size(156, 20);
             this.ckbDePatrulareMarina.TabIndex = 22;
-            this.ckbDePatrulareMarina.Text = "De  patrulare marina";
+            this.ckbDePatrulareMarina.Text = "de _patrulare_marina";
             this.ckbDePatrulareMarina.UseVisualStyleBackColor = true;
+            this.ckbDePatrulareMarina.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
             // 
             // ckbdeAntrenament
             // 
             this.ckbdeAntrenament.AutoSize = true;
             this.ckbdeAntrenament.Location = new System.Drawing.Point(130, 47);
             this.ckbdeAntrenament.Name = "ckbdeAntrenament";
-            this.ckbdeAntrenament.Size = new System.Drawing.Size(124, 20);
+            this.ckbdeAntrenament.Size = new System.Drawing.Size(126, 20);
             this.ckbdeAntrenament.TabIndex = 21;
-            this.ckbdeAntrenament.Text = "De antrenament";
+            this.ckbdeAntrenament.Text = "de_antrenament";
             this.ckbdeAntrenament.UseVisualStyleBackColor = true;
+            this.ckbdeAntrenament.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
             // 
             // ckbDeAfacere
             // 
             this.ckbDeAfacere.AutoSize = true;
             this.ckbDeAfacere.Location = new System.Drawing.Point(130, 21);
             this.ckbDeAfacere.Name = "ckbDeAfacere";
-            this.ckbDeAfacere.Size = new System.Drawing.Size(96, 20);
+            this.ckbDeAfacere.Size = new System.Drawing.Size(98, 20);
             this.ckbDeAfacere.TabIndex = 20;
-            this.ckbDeAfacere.Text = "De afacere";
+            this.ckbDeAfacere.Text = "de_afacere";
             this.ckbDeAfacere.UseVisualStyleBackColor = true;
+            this.ckbDeAfacere.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
             // 
             // ckbCargo
             // 
             this.ckbCargo.AutoSize = true;
             this.ckbCargo.Location = new System.Drawing.Point(7, 125);
             this.ckbCargo.Name = "ckbCargo";
-            this.ckbCargo.Size = new System.Drawing.Size(66, 20);
+            this.ckbCargo.Size = new System.Drawing.Size(64, 20);
             this.ckbCargo.TabIndex = 19;
-            this.ckbCargo.Text = "Cargo";
+            this.ckbCargo.Text = "cargo";
             this.ckbCargo.UseVisualStyleBackColor = true;
+            this.ckbCargo.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
             // 
             // cbkExperimental
             // 
             this.cbkExperimental.AutoSize = true;
             this.cbkExperimental.Location = new System.Drawing.Point(7, 99);
             this.cbkExperimental.Name = "cbkExperimental";
-            this.cbkExperimental.Size = new System.Drawing.Size(107, 20);
+            this.cbkExperimental.Size = new System.Drawing.Size(106, 20);
             this.cbkExperimental.TabIndex = 18;
-            this.cbkExperimental.Text = "Experimental";
+            this.cbkExperimental.Text = "experimental";
             this.cbkExperimental.UseVisualStyleBackColor = true;
+            this.cbkExperimental.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
             // 
             // ckbMilitar
             // 
@@ -282,28 +289,31 @@
             this.ckbMilitar.Name = "ckbMilitar";
             this.ckbMilitar.Size = new System.Drawing.Size(64, 20);
             this.ckbMilitar.TabIndex = 17;
-            this.ckbMilitar.Text = "Militar";
+            this.ckbMilitar.Text = "militar";
             this.ckbMilitar.UseVisualStyleBackColor = true;
+            this.ckbMilitar.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
             // 
             // ckbComercial
             // 
             this.ckbComercial.AutoSize = true;
             this.ckbComercial.Location = new System.Drawing.Point(7, 47);
             this.ckbComercial.Name = "ckbComercial";
-            this.ckbComercial.Size = new System.Drawing.Size(90, 20);
+            this.ckbComercial.Size = new System.Drawing.Size(88, 20);
             this.ckbComercial.TabIndex = 16;
-            this.ckbComercial.Text = "Comercial";
+            this.ckbComercial.Text = "comercial";
             this.ckbComercial.UseVisualStyleBackColor = true;
+            this.ckbComercial.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
             // 
             // ckbCivil
             // 
             this.ckbCivil.AutoSize = true;
             this.ckbCivil.Location = new System.Drawing.Point(6, 21);
             this.ckbCivil.Name = "ckbCivil";
-            this.ckbCivil.Size = new System.Drawing.Size(54, 20);
+            this.ckbCivil.Size = new System.Drawing.Size(52, 20);
             this.ckbCivil.TabIndex = 15;
-            this.ckbCivil.Text = "Civil";
+            this.ckbCivil.Text = "civil";
             this.ckbCivil.UseVisualStyleBackColor = true;
+            this.ckbCivil.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
             // 
             // button1
             // 

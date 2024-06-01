@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -57,7 +58,8 @@ namespace Targ_Avioane_Interfata
             lstProductPlane.Items.Clear();
             foreach (var producator in producatori)
             {
-                lstProductPlane.Items.Add(producator.InfoProduct);
+                
+                lstProductPlane.Items.Add(producator.ToString());
             }
         }
         private void FormProductAvionLoad(object sender, EventArgs e)
@@ -170,7 +172,7 @@ namespace Targ_Avioane_Interfata
             else
                 lblnrAngajati.ForeColor = Color.SaddleBrown;
           
-           
+
             if (validProductPlane)
             {
                 administratorProducatorPlane.AddProducator(producator);
@@ -183,7 +185,6 @@ namespace Targ_Avioane_Interfata
                 ResetControls();
             }
 
-          
 
         }
         private void ResetControls()
@@ -207,9 +208,15 @@ namespace Targ_Avioane_Interfata
             }
             else
             {
+                int index = lstProductPlane.SelectedIndex;
+                List<ProductAvion> producatori = administratorProducatorPlane.GetProducts();
                 //se sterge un element din lista
-                lstProductPlane.Items.RemoveAt(lstProductPlane.SelectedIndex);
-                lstProductPlane.Refresh();
+                if (index >= 0 && index < producatori.Count)
+                {
+                    ProductAvion producatorDeSters = producatori[index];
+                    administratorProducatorPlane.StergeProducatorul(producatorDeSters);
+                    Afiseaza_Producatori_Aeronave();
+                }
             }
         }
 
@@ -229,7 +236,17 @@ namespace Targ_Avioane_Interfata
             lblRefreshProductPlane.Text = "";
         }
 
-      
+        private void ckbSpecializare_CheckedChanged(object sender, EventArgs e)
+        {
+            List<Specializarea> specializariSelectate = new List<Specializarea>();
+
+            CheckBox checkBoxControl = sender as CheckBox;
+            var specializare = (Specializarea)Enum.Parse(typeof(Specializarea), checkBoxControl.Text);
+            if (checkBoxControl.Checked==true)
+                 specializariSelectate.Add(specializare); 
+            else
+                specializariSelectate.Remove(specializare);
+        }
     }
     }
 

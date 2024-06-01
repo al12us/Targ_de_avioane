@@ -24,7 +24,7 @@ namespace Niveldestocare_Date
         }
         public void AddProducator(ProductAvion producator)
         {
-             producator.ID_Producator =GetIDProduct();
+            producator.ID_Producator = GetIDProduct();
             // instructiunea 'using' va apela la final streamWriterFisierText.Close();
             // al doilea parametru setat la 'true' al constructorului StreamWriter indica
             // modul 'append' de deschidere al fisierului
@@ -35,18 +35,18 @@ namespace Niveldestocare_Date
         }
         public List<ProductAvion> GetProducts()
         {
-            List<ProductAvion> producatori = new List<ProductAvion>(); 
+            List<ProductAvion> producatori = new List<ProductAvion>();
             // instructiunea 'using' va apela streamReader.Close()
             using (StreamReader streamReader = new StreamReader(numeFisier_2))
             {
                 string linieFisierB;
-          
+
 
                 // citeste cate o linie si creaza un obiect de tip ProductAvion
                 // pe baza datelor din linia citita
                 while ((linieFisierB = streamReader.ReadLine()) != null)
                 {
-                    producatori.Add (new ProductAvion(linieFisierB));
+                    producatori.Add(new ProductAvion(linieFisierB));
                 }
             }
 
@@ -63,7 +63,7 @@ namespace Niveldestocare_Date
                 // pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
-                    ProductAvion producator= new ProductAvion(linieFisier);
+                    ProductAvion producator = new ProductAvion(linieFisier);
                     if (producator.Equals(Companie) && producator.Equals(TaradeOrgine))
                         return producator;
                 }
@@ -89,6 +89,25 @@ namespace Niveldestocare_Date
             }
 
             return IDProductPlane;
+        }
+        public void StergeProducatorul(ProductAvion productToDelete)
+        {
+            List<ProductAvion> producatori = GetProducts();
+
+
+            var planeToRemove = producatori.SingleOrDefault(producator => producator.ID_Producator == productToDelete.ID_Producator);
+            if (planeToRemove != null)
+            {
+                producatori.Remove(planeToRemove);
+                using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier_2, false))
+                {
+                    foreach (ProductAvion producator in producatori)
+                    {
+                        streamWriterFisierText.WriteLine(producator.ConversieSir_PentruFisier());
+                    }
+                }
+
+            }
         }
     }
 }

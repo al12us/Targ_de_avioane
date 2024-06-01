@@ -450,6 +450,7 @@ namespace Targ_Avioane_Interfata
             dgvPlane.DataSource = avioanele;
             if (dgvPlane.SelectedRows.Count > 0)
             {
+                AvionClass avionul_modificat = (AvionClass)dgvPlane.SelectedRows[0].DataBoundItem;
                 // Se va prelua indexul elementului selectat din DataGridView
                 int selectedIndex = dgvPlane.SelectedRows[0].Index;
                 // Se va prelua avionul corespunzător indexului selectat
@@ -473,6 +474,7 @@ namespace Targ_Avioane_Interfata
                        
                         dgvPlane.ClearSelection();
                     }
+               
                     else
                         MessageBox.Show("Actualizarea a esuat! ");
 

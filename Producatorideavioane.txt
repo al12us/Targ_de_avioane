@@ -1,3 +1,3 @@
-1;Antonov;Ucraina;1952;155782;System.Collections.Generic.List`1[Avion.Specializarea];
-2;Antonov;Ucraina;1952;14532;System.Collections.Generic.List`1[Avion.Specializarea];
-3;Antonov;Ucraina;1952;14563;;
+2;Airbus;Franta;1975;19674;;
+3;Antonov;Ucraina;1952;10000;;
+4;Airbus;Franta;1975;15643;;

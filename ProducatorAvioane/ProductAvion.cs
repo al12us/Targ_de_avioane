@@ -54,7 +54,7 @@ namespace ProducatorAvioane
             this.TaraOrigine = dateFisier_Beta[TARA];
             this.AnInfiintare = Convert.ToInt32(dateFisier_Beta[AN_INFIINTARE]);
             this.nrAngajati = Convert.ToInt32(dateFisier_Beta[NRANGAJATI]);
-        
+            this.Specializari = new List<Specializarea>();
             var specializariString = dateFisier_Beta[SPECIALIZARE].Split(SEPARATOARE_PRIMAR_FISIER);
             foreach (var specializare in specializariString)
             {
@@ -68,12 +68,17 @@ namespace ProducatorAvioane
         {
             get
             {
-                string specializari = Specializari != null ? string.Join(", ", Specializari) : "None";
+                string specializari = Specializari != null ? string.Join(" ", Specializari) : "nedefinit";
                 string afis = $"ID:{ID_Producator}\n Compania:{companie}\n Tara de origine:{TaraOrigine}\n Infiintat din  {AnInfiintare} \n " +
-                              $"Numar de angajati:{nrAngajati}\n Specilizarea:{Specializari}";
+                              $"Numar de angajati:{nrAngajati}\n Specilizarea:{specializari}";
                 return afis;
             }
           }
+       
+        public override string ToString()
+        {
+            return InfoProduct;
+        }
         public string ConversieSir_PentruFisier()
         {
             string specializari = Specializari != null ? string.Join(SEPARATOARE_PRIMAR_FISIER.ToString(), Specializari) : string.Empty;
