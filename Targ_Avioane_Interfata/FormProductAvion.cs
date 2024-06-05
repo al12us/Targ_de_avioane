@@ -59,7 +59,7 @@ namespace Targ_Avioane_Interfata
             foreach (var producator in producatori)
             {
                 
-                lstProductPlane.Items.Add(producator.ToString());
+                lstProductPlane.Items.Add(producator.InfoProduct);
             }
         }
         private void FormProductAvionLoad(object sender, EventArgs e)

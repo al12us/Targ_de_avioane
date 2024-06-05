@@ -68,7 +68,7 @@ namespace ProducatorAvioane
         {
             get
             {
-                string specializari = Specializari != null ? string.Join(" ", Specializari) : "nedefinit";
+                string specializari = Specializari != null ? string.Join(" ", Specializari.ToString()) : "nedefinit";
                 string afis = $"ID:{ID_Producator}\n Compania:{companie}\n Tara de origine:{TaraOrigine}\n Infiintat din  {AnInfiintare} \n " +
                               $"Numar de angajati:{nrAngajati}\n Specilizarea:{specializari}";
                 return afis;

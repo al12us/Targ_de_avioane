@@ -1,3 +1,5 @@
 2;Airbus;Franta;1975;19674;;
 3;Antonov;Ucraina;1952;10000;;
 4;Airbus;Franta;1975;15643;;
+5;Airbus;Franta;1631;156762;;
+6;Antonov;Ucraina;1952;10000;;

@@ -393,11 +393,11 @@ namespace Targ_Avioane_Interfata
 
        private void AfiseazaDateGridAvion(List<AvionClass> avioane)
         {
-        
+
             //!!!! Controlul de tip DataGridView are ca sursa de date lista de obiecte de tip AvionClass !!!
-            dgvPlane.DataSource = new BindingList<AvionClass>(avioane);
+            dgvPlane.DataSource = null;
             dgvPlane.ClearSelection(); ;
-            dgvPlane.DataSource = avioane.Select(s => new {
+            var lista = avioane.Select(s => new {
                 s.ID_avion,
                 s.firma,
                 s.model,
@@ -407,8 +407,9 @@ namespace Targ_Avioane_Interfata
                 s.pret,
                 s.nr_de_pasageri,
                 s.AirplaneType,
-                Componente = string.Join(",", s.Componente)   
+                Comps = string.Join(" ",s.Componente.ToArray())
             }).ToList();
+            dgvPlane.DataSource = lista;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
