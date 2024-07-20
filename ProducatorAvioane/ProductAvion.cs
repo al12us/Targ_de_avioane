@@ -54,21 +54,21 @@ namespace ProducatorAvioane
             this.TaraOrigine = dateFisier_Beta[TARA];
             this.AnInfiintare = Convert.ToInt32(dateFisier_Beta[AN_INFIINTARE]);
             this.nrAngajati = Convert.ToInt32(dateFisier_Beta[NRANGAJATI]);
-            this.Specializari = new List<Specializarea>();
-            var specializariString = dateFisier_Beta[SPECIALIZARE].Split(SEPARATOARE_PRIMAR_FISIER);
-            foreach (var specializare in specializariString)
-            {
-                if (Enum.TryParse(specializare.Trim(), out Specializarea specializareParsed))
+            this.Specializari = dateFisier_Beta[SPECIALIZARE]
+                .Split(SEPARATOARE_PRIMAR_FISIER)
+                .Select(specializare =>
                 {
-                    Specializari.Add(specializareParsed);
-                }
-            }
+                    return Enum.TryParse(specializare.Trim(), out Specializarea specializareParsed) ? specializareParsed : Specializarea.nedefinit;
+                })
+                .Where(specializare => specializare != Specializarea.nedefinit)
+                .ToList();
         }
+    
         public string InfoProduct
         {
             get
             {
-                string specializari = Specializari != null ? string.Join(" ", Specializari.ToString()) : "nedefinit";
+                var specializari = Specializari != null ? string.Join(" ", Specializari) : "nedefinit";
                 string afis = $"ID:{ID_Producator}\n Compania:{companie}\n Tara de origine:{TaraOrigine}\n Infiintat din  {AnInfiintare} \n " +
                               $"Numar de angajati:{nrAngajati}\n Specilizarea:{specializari}";
                 return afis;
@@ -81,7 +81,7 @@ namespace ProducatorAvioane
         }
         public string ConversieSir_PentruFisier()
         {
-            string specializari = Specializari != null ? string.Join(SEPARATOARE_PRIMAR_FISIER.ToString(), Specializari) : string.Empty;
+            var specializari = Specializari != null ? string.Join(SEPARATOARE_PRIMAR_FISIER.ToString(), Specializari) : string.Empty;
             string obiectProductAvionfisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}",
                 SEPARATOARE_SECUNDAR_FISIER,
                 ID_Producator.ToString(),
