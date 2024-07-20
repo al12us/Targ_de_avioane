@@ -54,21 +54,30 @@ namespace ProducatorAvioane
             this.TaraOrigine = dateFisier_Beta[TARA];
             this.AnInfiintare = Convert.ToInt32(dateFisier_Beta[AN_INFIINTARE]);
             this.nrAngajati = Convert.ToInt32(dateFisier_Beta[NRANGAJATI]);
-            this.Specializari = dateFisier_Beta[SPECIALIZARE]
-                .Split(SEPARATOARE_PRIMAR_FISIER)
-                .Select(specializare =>
-                {
-                    return Enum.TryParse(specializare.Trim(), out Specializarea specializareParsed) ? specializareParsed : Specializarea.nedefinit;
-                })
-                .Where(specializare => specializare != Specializarea.nedefinit)
-                .ToList();
+            this.Specializari = ConvertStringToSpecializari(dateFisier_Beta[SPECIALIZARE]);
         }
-    
+        private List<Specializarea> ConvertStringToSpecializari(string specializariString)
+        {
+            var specializari = new List<Specializarea>();
+            foreach (var specializare in specializariString.Split(SEPARATOARE_PRIMAR_FISIER))
+            {
+                if (Enum.TryParse(specializare.Trim(), out Specializarea specializareParsed))
+                {
+                    specializari.Add(specializareParsed);
+                }
+                else
+                {
+                    // Log or handle the invalid specialization name
+                    Console.WriteLine($"Specializarea '{specializare.Trim()}' nu este valida.");
+                }
+            }
+            return specializari;
+        }
         public string InfoProduct
         {
             get
             {
-                var specializari = Specializari != null ? string.Join(" ", Specializari) : "nedefinit";
+                var specializari = Specializari != null ? string.Join(", ", Specializari) : "nedefinit";
                 string afis = $"ID:{ID_Producator}\n Compania:{companie}\n Tara de origine:{TaraOrigine}\n Infiintat din  {AnInfiintare} \n " +
                               $"Numar de angajati:{nrAngajati}\n Specilizarea:{specializari}";
                 return afis;
@@ -81,7 +90,7 @@ namespace ProducatorAvioane
         }
         public string ConversieSir_PentruFisier()
         {
-            var specializari = Specializari != null ? string.Join(SEPARATOARE_PRIMAR_FISIER.ToString(), Specializari) : string.Empty;
+            var specializari = Specializari != null ? string.Join(" ", Specializari.Select(s => s.ToString())) : string.Empty;
             string obiectProductAvionfisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}",
                 SEPARATOARE_SECUNDAR_FISIER,
                 ID_Producator.ToString(),

@@ -1,5 +1,2 @@
-2;Airbus;Franta;1975;19674;;
-3;Antonov;Ucraina;1952;10000;;
-4;Airbus;Franta;1975;15643;;
-5;Airbus;Franta;1631;156762;;
-6;Antonov;Ucraina;1952;10000;;
+1;Antonov;Ucraina;1952;15678;civil militar comercial;
+2;Airbus;Franta;1742;224324;de_afacere experimental de_patrulare_marina comercial de_recunoastere_si_supraveghere de_cautare_si_salvare;

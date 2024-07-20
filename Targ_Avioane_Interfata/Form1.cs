@@ -19,7 +19,7 @@ namespace Targ_Avioane_Interfata
         //Constructurul  cu parametrii din clasa avion
       
         private const int AVION_NESELECTAT = -1;
-        private BindingList<AvionClass> avioanele;
+        private List<AvionClass> avioanele = new List<AvionClass>();
 
 
 
@@ -511,27 +511,19 @@ namespace Targ_Avioane_Interfata
 
         private void btnSterge_Click(object sender, EventArgs e)
         {
-            if (dgvPlane.SelectedRows.Count == AVION_NESELECTAT)
-            {
-                MessageBox.Show("Selectare avionul");
-            }
-            else
-            {
-                dgvPlane.DataSource = avioanele;
-                if (dgvPlane.SelectedRows.Count == 1)
-                {
-                    int selectedIndex = dgvPlane.SelectedRows[0].Index;
-                    AvionClass avionulSelectat = avioanele[selectedIndex];
-                    // Șterge elementul din BindingList
-                    dgvPlane.Rows.RemoveAt(selectedIndex);
-                    adminPlanes.DeletePlane(avionulSelectat);
+            List<AvionClass> avioane = adminPlanes.GetPlanes();
 
-                    AfiseazaDateGridAvion(avioanele.ToList());
-                }
+            if (avioane.Count>0)
+            {
+                avioane.RemoveAt(avioane.Count - 1);
+ 
+                // Actualizare DataGridView
+                AfiseazaDateGridAvion(avioane);
+            }
                 else
                     MessageBox.Show("Selecteaza avionul pentru a sterge");
 
-            }
+            
             
         }
 

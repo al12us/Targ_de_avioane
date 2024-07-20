@@ -24,6 +24,7 @@ namespace Targ_Avioane_Interfata
         private const int STRLEN_MAX_COMPANIE = 30;
         private const int STRLEN_MAX_TARA_ORIGINE = 60;
         private const int PRODUCATOR_AVION_NESELECTAT = -1;
+        private List<Specializarea> specializariSelectate = new List<Specializarea>();
         public FormProductAvion()
         {
             InitializeComponent();
@@ -48,7 +49,19 @@ namespace Targ_Avioane_Interfata
             txtTaraOrigine.LostFocus += txtTaraOrigineLostFocus;
             txtAnInfiintare.LostFocus += txtAnInfiintareLostFocus;
             txtNrAngajati.LostFocus += txtNrAngajatiLostFocus;
-         
+
+
+            foreach (var value in Enum.GetValues(typeof(Specializarea)))
+            {
+                CheckBox checkBox = new CheckBox
+                {
+                    Text = value.ToString(),
+                    AutoSize = true
+                };
+                checkBox.CheckedChanged += ckbSpecializare_CheckedChanged;
+                flowLayoutPanelSpecializari.Controls.Add(checkBox);
+            }
+
         }
 
         private void Afiseaza_Producatori_Aeronave()
@@ -126,8 +139,8 @@ namespace Targ_Avioane_Interfata
             string taradeorigine=txtTaraOrigine.ToString();
             Int32.TryParse(txtAnInfiintare.Text.ToString(), out AnInfiintare);
             Int32.TryParse(txtNrAngajati.Text.ToString(), out nrAngajati);
-            var specializari = new List<Specializarea>();
-            ProductAvion producator = new ProductAvion(0, txtCompanie.Text.ToString(), txtTaraOrigine.Text.ToString(),AnInfiintare,nrAngajati,specializari);
+           
+            ProductAvion producator = new ProductAvion(0, txtCompanie.Text.ToString(), txtTaraOrigine.Text.ToString(),AnInfiintare,nrAngajati,specializariSelectate);
          
             bool validProductPlane = true;
             if (txtCompanie.Text.ToString() == "" || txtCompanie.Text.ToString() == MESAJ)
@@ -190,8 +203,12 @@ namespace Targ_Avioane_Interfata
         private void ResetControls()
         {
             txtCompanie.Text = txtTaraOrigine.Text = txtAnInfiintare.Text = txtNrAngajati.Text = string.Empty;
-            
- 
+            specializariSelectate.Clear();
+            foreach (CheckBox checkBox in flowLayoutPanelSpecializari.Controls)
+            {
+                checkBox.Checked = false;
+            }
+
         }
         private void btnRefreshProductPlane_Click(object sender, EventArgs e)
         {
@@ -238,8 +255,7 @@ namespace Targ_Avioane_Interfata
 
         private void ckbSpecializare_CheckedChanged(object sender, EventArgs e)
         {
-            List<Specializarea> specializariSelectate = new List<Specializarea>();
-
+           
             CheckBox checkBoxControl = sender as CheckBox;
             var specializare = (Specializarea)Enum.Parse(typeof(Specializarea), checkBoxControl.Text);
             if (checkBoxControl.Checked==true)

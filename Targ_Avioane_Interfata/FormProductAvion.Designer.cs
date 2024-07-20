@@ -38,9 +38,9 @@
             this.lstProductPlane = new System.Windows.Forms.ListBox();
             this.pnlControlProuctAvion = new System.Windows.Forms.Panel();
             this.gpbSpecializari = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.ckbDePatrulareMarina = new System.Windows.Forms.CheckBox();
+            this.ckb_de_cautare_si_salvare = new System.Windows.Forms.CheckBox();
+            this.cbk_de_recunoastere_supraveghere = new System.Windows.Forms.CheckBox();
+            this.ckb_de_patrulare_marina = new System.Windows.Forms.CheckBox();
             this.ckbdeAntrenament = new System.Windows.Forms.CheckBox();
             this.ckbDeAfacere = new System.Windows.Forms.CheckBox();
             this.ckbCargo = new System.Windows.Forms.CheckBox();
@@ -59,9 +59,11 @@
             this.txtCompanie = new System.Windows.Forms.TextBox();
             this.lblRefreshProductPlane = new System.Windows.Forms.Label();
             this.lblSalvareProductPlane = new System.Windows.Forms.Label();
+            this.flowLayoutPanelSpecializari = new System.Windows.Forms.FlowLayoutPanel();
             btnBackMainMenu_1 = new System.Windows.Forms.Button();
             this.pnlControlProuctAvion.SuspendLayout();
             this.gpbSpecializari.SuspendLayout();
+            this.flowLayoutPanelSpecializari.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBackMainMenu_1
@@ -157,11 +159,12 @@
             // 
             // lstProductPlane
             // 
+            this.lstProductPlane.AllowDrop = true;
             this.lstProductPlane.FormattingEnabled = true;
             this.lstProductPlane.ItemHeight = 16;
             this.lstProductPlane.Location = new System.Drawing.Point(39, 119);
             this.lstProductPlane.Name = "lstProductPlane";
-            this.lstProductPlane.Size = new System.Drawing.Size(792, 276);
+            this.lstProductPlane.Size = new System.Drawing.Size(860, 276);
             this.lstProductPlane.TabIndex = 6;
             // 
             // pnlControlProuctAvion
@@ -182,66 +185,57 @@
             this.pnlControlProuctAvion.Controls.Add(this.lblAnInfiintare);
             this.pnlControlProuctAvion.Controls.Add(this.lblTaraOrigine);
             this.pnlControlProuctAvion.Controls.Add(this.lblCompanie);
-            this.pnlControlProuctAvion.Location = new System.Drawing.Point(854, 107);
+            this.pnlControlProuctAvion.Location = new System.Drawing.Point(905, 107);
             this.pnlControlProuctAvion.Name = "pnlControlProuctAvion";
             this.pnlControlProuctAvion.Size = new System.Drawing.Size(551, 430);
             this.pnlControlProuctAvion.TabIndex = 7;
             // 
             // gpbSpecializari
             // 
-            this.gpbSpecializari.Controls.Add(this.checkBox2);
-            this.gpbSpecializari.Controls.Add(this.checkBox1);
-            this.gpbSpecializari.Controls.Add(this.ckbDePatrulareMarina);
-            this.gpbSpecializari.Controls.Add(this.ckbdeAntrenament);
-            this.gpbSpecializari.Controls.Add(this.ckbDeAfacere);
-            this.gpbSpecializari.Controls.Add(this.ckbCargo);
-            this.gpbSpecializari.Controls.Add(this.cbkExperimental);
-            this.gpbSpecializari.Controls.Add(this.ckbMilitar);
-            this.gpbSpecializari.Controls.Add(this.ckbComercial);
-            this.gpbSpecializari.Controls.Add(this.ckbCivil);
-            this.gpbSpecializari.Location = new System.Drawing.Point(133, 155);
+            this.gpbSpecializari.Controls.Add(this.flowLayoutPanelSpecializari);
+            this.gpbSpecializari.Location = new System.Drawing.Point(149, 155);
             this.gpbSpecializari.Name = "gpbSpecializari";
             this.gpbSpecializari.Size = new System.Drawing.Size(399, 177);
             this.gpbSpecializari.TabIndex = 18;
             this.gpbSpecializari.TabStop = false;
             // 
-            // checkBox2
+            // ckb_de_cautare_si_salvare
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(130, 125);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(172, 20);
-            this.checkBox2.TabIndex = 24;
-            this.checkBox2.Text = "  de_cautare_si_salvare";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
+            this.ckb_de_cautare_si_salvare.AutoSize = true;
+            this.ckb_de_cautare_si_salvare.Location = new System.Drawing.Point(3, 107);
+            this.ckb_de_cautare_si_salvare.Name = "ckb_de_cautare_si_salvare";
+            this.ckb_de_cautare_si_salvare.Size = new System.Drawing.Size(172, 20);
+            this.ckb_de_cautare_si_salvare.TabIndex = 24;
+            this.ckb_de_cautare_si_salvare.Text = "  de_cautare_si_salvare";
+            this.ckb_de_cautare_si_salvare.UseVisualStyleBackColor = true;
+            this.ckb_de_cautare_si_salvare.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
             // 
-            // checkBox1
+            // cbk_de_recunoastere_supraveghere
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(130, 99);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(245, 20);
-            this.checkBox1.TabIndex = 23;
-            this.checkBox1.Text = "  de_recunoastere_si_supraveghere";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
+            this.cbk_de_recunoastere_supraveghere.AutoSize = true;
+            this.cbk_de_recunoastere_supraveghere.Location = new System.Drawing.Point(3, 81);
+            this.cbk_de_recunoastere_supraveghere.Name = "cbk_de_recunoastere_supraveghere";
+            this.cbk_de_recunoastere_supraveghere.Size = new System.Drawing.Size(245, 20);
+            this.cbk_de_recunoastere_supraveghere.TabIndex = 23;
+            this.cbk_de_recunoastere_supraveghere.Text = "  de_recunoastere_si_supraveghere";
+            this.cbk_de_recunoastere_supraveghere.UseVisualStyleBackColor = true;
+            this.cbk_de_recunoastere_supraveghere.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
             // 
-            // ckbDePatrulareMarina
+            // ckb_de_patrulare_marina
             // 
-            this.ckbDePatrulareMarina.AutoSize = true;
-            this.ckbDePatrulareMarina.Location = new System.Drawing.Point(130, 73);
-            this.ckbDePatrulareMarina.Name = "ckbDePatrulareMarina";
-            this.ckbDePatrulareMarina.Size = new System.Drawing.Size(156, 20);
-            this.ckbDePatrulareMarina.TabIndex = 22;
-            this.ckbDePatrulareMarina.Text = "de _patrulare_marina";
-            this.ckbDePatrulareMarina.UseVisualStyleBackColor = true;
-            this.ckbDePatrulareMarina.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
+            this.ckb_de_patrulare_marina.AutoSize = true;
+            this.ckb_de_patrulare_marina.Location = new System.Drawing.Point(3, 29);
+            this.ckb_de_patrulare_marina.Name = "ckb_de_patrulare_marina";
+            this.ckb_de_patrulare_marina.Size = new System.Drawing.Size(156, 20);
+            this.ckb_de_patrulare_marina.TabIndex = 22;
+            this.ckb_de_patrulare_marina.Text = " de_patrulare_marina\r\n";
+            this.ckb_de_patrulare_marina.UseVisualStyleBackColor = true;
+            this.ckb_de_patrulare_marina.CheckedChanged += new System.EventHandler(this.ckbSpecializare_CheckedChanged);
             // 
             // ckbdeAntrenament
             // 
             this.ckbdeAntrenament.AutoSize = true;
-            this.ckbdeAntrenament.Location = new System.Drawing.Point(130, 47);
+            this.ckbdeAntrenament.Location = new System.Drawing.Point(107, 3);
             this.ckbdeAntrenament.Name = "ckbdeAntrenament";
             this.ckbdeAntrenament.Size = new System.Drawing.Size(126, 20);
             this.ckbdeAntrenament.TabIndex = 21;
@@ -252,7 +246,7 @@
             // ckbDeAfacere
             // 
             this.ckbDeAfacere.AutoSize = true;
-            this.ckbDeAfacere.Location = new System.Drawing.Point(130, 21);
+            this.ckbDeAfacere.Location = new System.Drawing.Point(3, 3);
             this.ckbDeAfacere.Name = "ckbDeAfacere";
             this.ckbDeAfacere.Size = new System.Drawing.Size(98, 20);
             this.ckbDeAfacere.TabIndex = 20;
@@ -263,7 +257,7 @@
             // ckbCargo
             // 
             this.ckbCargo.AutoSize = true;
-            this.ckbCargo.Location = new System.Drawing.Point(7, 125);
+            this.ckbCargo.Location = new System.Drawing.Point(165, 29);
             this.ckbCargo.Name = "ckbCargo";
             this.ckbCargo.Size = new System.Drawing.Size(64, 20);
             this.ckbCargo.TabIndex = 19;
@@ -274,7 +268,7 @@
             // cbkExperimental
             // 
             this.cbkExperimental.AutoSize = true;
-            this.cbkExperimental.Location = new System.Drawing.Point(7, 99);
+            this.cbkExperimental.Location = new System.Drawing.Point(3, 55);
             this.cbkExperimental.Name = "cbkExperimental";
             this.cbkExperimental.Size = new System.Drawing.Size(106, 20);
             this.cbkExperimental.TabIndex = 18;
@@ -285,7 +279,7 @@
             // ckbMilitar
             // 
             this.ckbMilitar.AutoSize = true;
-            this.ckbMilitar.Location = new System.Drawing.Point(6, 73);
+            this.ckbMilitar.Location = new System.Drawing.Point(181, 107);
             this.ckbMilitar.Name = "ckbMilitar";
             this.ckbMilitar.Size = new System.Drawing.Size(64, 20);
             this.ckbMilitar.TabIndex = 17;
@@ -296,7 +290,7 @@
             // ckbComercial
             // 
             this.ckbComercial.AutoSize = true;
-            this.ckbComercial.Location = new System.Drawing.Point(7, 47);
+            this.ckbComercial.Location = new System.Drawing.Point(115, 55);
             this.ckbComercial.Name = "ckbComercial";
             this.ckbComercial.Size = new System.Drawing.Size(88, 20);
             this.ckbComercial.TabIndex = 16;
@@ -307,7 +301,7 @@
             // ckbCivil
             // 
             this.ckbCivil.AutoSize = true;
-            this.ckbCivil.Location = new System.Drawing.Point(6, 21);
+            this.ckbCivil.Location = new System.Drawing.Point(235, 29);
             this.ckbCivil.Name = "ckbCivil";
             this.ckbCivil.Size = new System.Drawing.Size(52, 20);
             this.ckbCivil.TabIndex = 15;
@@ -423,12 +417,29 @@
             this.lblSalvareProductPlane.Size = new System.Drawing.Size(0, 16);
             this.lblSalvareProductPlane.TabIndex = 13;
             // 
+            // flowLayoutPanelSpecializari
+            // 
+            this.flowLayoutPanelSpecializari.Controls.Add(this.ckbDeAfacere);
+            this.flowLayoutPanelSpecializari.Controls.Add(this.ckbdeAntrenament);
+            this.flowLayoutPanelSpecializari.Controls.Add(this.ckb_de_patrulare_marina);
+            this.flowLayoutPanelSpecializari.Controls.Add(this.ckbCargo);
+            this.flowLayoutPanelSpecializari.Controls.Add(this.ckbCivil);
+            this.flowLayoutPanelSpecializari.Controls.Add(this.cbkExperimental);
+            this.flowLayoutPanelSpecializari.Controls.Add(this.ckbComercial);
+            this.flowLayoutPanelSpecializari.Controls.Add(this.cbk_de_recunoastere_supraveghere);
+            this.flowLayoutPanelSpecializari.Controls.Add(this.ckb_de_cautare_si_salvare);
+            this.flowLayoutPanelSpecializari.Controls.Add(this.ckbMilitar);
+            this.flowLayoutPanelSpecializari.Location = new System.Drawing.Point(21, 15);
+            this.flowLayoutPanelSpecializari.Name = "flowLayoutPanelSpecializari";
+            this.flowLayoutPanelSpecializari.Size = new System.Drawing.Size(354, 156);
+            this.flowLayoutPanelSpecializari.TabIndex = 25;
+            // 
             // FormProductAvion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1452, 673);
+            this.ClientSize = new System.Drawing.Size(1468, 673);
             this.Controls.Add(btnBackMainMenu_1);
             this.Controls.Add(this.pnlControlProuctAvion);
             this.Controls.Add(this.lstProductPlane);
@@ -440,7 +451,8 @@
             this.pnlControlProuctAvion.ResumeLayout(false);
             this.pnlControlProuctAvion.PerformLayout();
             this.gpbSpecializari.ResumeLayout(false);
-            this.gpbSpecializari.PerformLayout();
+            this.flowLayoutPanelSpecializari.ResumeLayout(false);
+            this.flowLayoutPanelSpecializari.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,8 +487,9 @@
         private System.Windows.Forms.CheckBox ckbCargo;
         private System.Windows.Forms.CheckBox ckbDeAfacere;
         private System.Windows.Forms.CheckBox ckbdeAntrenament;
-        private System.Windows.Forms.CheckBox ckbDePatrulareMarina;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox ckb_de_patrulare_marina;
+        private System.Windows.Forms.CheckBox cbk_de_recunoastere_supraveghere;
+        private System.Windows.Forms.CheckBox ckb_de_cautare_si_salvare;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelSpecializari;
     }
 }
