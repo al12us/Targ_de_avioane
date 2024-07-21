@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Avion;
 namespace Niveldestocare_Date
 {
-    public class AdministrareAvioane_Memorie
+    public class AdministrareAvioane_Memorie:IStocareDate
     {
         
 
