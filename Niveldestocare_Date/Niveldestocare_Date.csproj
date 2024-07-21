@@ -45,6 +45,7 @@
     <Compile Include="AdministrareAvioane_FisierText.cs" />
     <Compile Include="AdministrareProducatorMemorie.cs" />
     <Compile Include="AdministratorProducator_FisierText.cs" />
+    <Compile Include="IStocareDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
