@@ -8,7 +8,7 @@ using Avion;
 
 namespace Niveldestocare_Date
 {
-    public class AdministrareAvioane_FisierText
+    public class AdministrareAvioane_FisierText:IStocareDate
     {
        
         private const int ID_PRIMUL_AVION = 1; 

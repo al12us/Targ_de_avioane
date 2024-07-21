@@ -8,7 +8,7 @@ using System.IO;
 using Avion;
 namespace Niveldestocare_Date
 {
-    public class AdministratorProducator_FisierText
+    public class AdministratorProducator_FisierText:IStocareDate
     {
 
         private const int ID_PRIMUL_PRODUCATOR_AVION = 1;

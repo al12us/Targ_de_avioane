@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Niveldestocare_Date
 {
-    public class AdministrareProducatorMemorie
+    public class AdministrareProducatorMemorie:IStocareDate
     {
        
         private List<ProductAvion> producatori;

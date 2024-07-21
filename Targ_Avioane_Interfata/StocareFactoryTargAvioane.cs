@@ -13,7 +13,7 @@ namespace Targ_Avioane_Interfata
     {
         private const string FORMAT_SALVARE = "FormatSalvare";
         private const string NUME_FISIER = "NumeFisier";
-        public static IStocareDate GetAdministratorStocare()
+        public static IStocareDate GetAdministratorStocareAvioane()
         {
             string formatSalvare = ConfigurationManager.AppSettings[FORMAT_SALVARE];
 
