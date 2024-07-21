@@ -27,7 +27,7 @@ namespace Targ_Avioane_Interfata
                 {
                     default:
                     //case "bin":
-                       // return new AdministrareStudenti_FisierBinar(caleCompletaFisier + "." + formatSalvare);
+                        return new AdministrareAvioane_FisierBinar(caleCompletaFisier + "." + formatSalvare);
                     case "txt":
                         return new AdministrareAvioane_FisierText(caleCompletaFisier + "." + formatSalvare);
                 }

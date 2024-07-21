@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdministrareaAvioaneMemorie.cs" />
+    <Compile Include="AdministrareAvioane_FisierBinar.cs" />
     <Compile Include="AdministrareAvioane_FisierText.cs" />
     <Compile Include="AdministrareProducatorMemorie.cs" />
     <Compile Include="AdministratorProducator_FisierText.cs" />

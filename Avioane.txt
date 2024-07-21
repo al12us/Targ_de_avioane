@@ -1,2 +1,1 @@
-1;Qatar Airlines;FIM-128;2005;albastru;12457;135677;1456;Comercial;Aeroframe Sisteme de propulsie;
-2;Turkish Airlines;Boeing 789;2010;portocaliu;15653;523535;1000;Civil;Sisteme de navigare Sisteme de propulsie;
+1;Qatae Airways;FIM-129;2004;albastru;12424;124422;100;Comercial;Sisteme de navigare Aeroframe Sistem de Comunicare;
