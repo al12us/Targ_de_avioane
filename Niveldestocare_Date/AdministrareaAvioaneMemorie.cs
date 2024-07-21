@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using Avion;
@@ -48,11 +49,22 @@ namespace Niveldestocare_Date
             }
             return temp;
         }
-        public List<AvionClass> GetAvioane()
+        public List<AvionClass> GetPlanes()
         {
            
             return avioane;
         }
 
+         public AvionClass GetPlane(int idAvion)
+        {
+            throw new Exception("Optiunea GetPlane by Id nu este implementata");
+        }
+
+
+        public bool UpdateAvion(AvionClass avionActualizat)
+        {
+            throw new Exception("Optiunea UpdateAvion nu este implementata");
+        }
     }
+    
 }

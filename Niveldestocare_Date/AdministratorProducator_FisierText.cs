@@ -8,7 +8,7 @@ using System.IO;
 using Avion;
 namespace Niveldestocare_Date
 {
-    public class AdministratorProducator_FisierText:IStocareDate
+    public class AdministratorProducator_FisierText:InterfaceProductPlane
     {
 
         private const int ID_PRIMUL_PRODUCATOR_AVION = 1;
@@ -33,7 +33,7 @@ namespace Niveldestocare_Date
                 streamWriterFisierText.WriteLine(producator.ConversieSir_PentruFisier());
             }
         }
-        public List<ProductAvion> GetProducts()
+        public List<ProductAvion> GetProducator()
         {
             List<ProductAvion> producatori = new List<ProductAvion>();
             // instructiunea 'using' va apela streamReader.Close()
@@ -92,7 +92,7 @@ namespace Niveldestocare_Date
         }
         public void StergeProducatorul(ProductAvion productToDelete)
         {
-            List<ProductAvion> producatori = GetProducts();
+            List<ProductAvion> producatori = GetProducator();
 
 
             var planeToRemove = producatori.SingleOrDefault(producator => producator.ID_Producator == productToDelete.ID_Producator);

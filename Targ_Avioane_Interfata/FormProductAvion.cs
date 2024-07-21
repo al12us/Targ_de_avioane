@@ -66,7 +66,7 @@ namespace Targ_Avioane_Interfata
 
         private void Afiseaza_Producatori_Aeronave()
         {
-            List<ProductAvion> producatori = administratorProducatorPlane.GetProducts();
+            List<ProductAvion> producatori = administratorProducatorPlane.GetProducator();
             int nr_producatori = producatori.Count;
             lstProductPlane.Items.Clear();
             foreach (var producator in producatori)
@@ -226,7 +226,7 @@ namespace Targ_Avioane_Interfata
             else
             {
                 int index = lstProductPlane.SelectedIndex;
-                List<ProductAvion> producatori = administratorProducatorPlane.GetProducts();
+                List<ProductAvion> producatori = administratorProducatorPlane.GetProducator();
                 //se sterge un element din lista
                 if (index >= 0 && index < producatori.Count)
                 {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Niveldestocare_Date
 {
-    public class AdministrareProducatorMemorie:IStocareDate
+    public class AdministrareProducatorMemorie:InterfaceProductPlane
     {
        
         private List<ProductAvion> producatori;
@@ -41,6 +41,11 @@ namespace Niveldestocare_Date
             }
             return null;
 
+        }
+
+        public ProductAvion GetProductPlane(string Companie, string TaradeOrgine)
+        {
+            throw new Exception("Optiunea GetProductPlane nu este implementata.");
         }
     }
 }

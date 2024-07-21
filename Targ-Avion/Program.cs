@@ -91,7 +91,7 @@ namespace Targ_Avion
                         AfisareAvion(avionNou);
                         break;
                     case "A":
-                        avioane = adminPlane.GetAvioane();
+                        avioane = adminPlane.GetPlanes();
                         AfisareAvioane(avioane);
 
                         break;
@@ -173,7 +173,7 @@ namespace Targ_Avion
                         Console.WriteLine(adminProductPlane.CautareProducator(compania,tara,spec).InfoProduct);
                         break;
                     case "DT":
-                         producatori= administratorProducatorPlane.GetProducts();
+                         producatori= administratorProducatorPlane.GetProducator();
                         AfisProductAeronave(producatori);
                         break;
                     case "BD":
