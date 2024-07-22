@@ -2,3 +2,4 @@
 2;Airbus;Franta;1742;224324;de_afacere experimental de_patrulare_marina comercial de_recunoastere_si_supraveghere de_cautare_si_salvare;
 3;TAROMEL;Romania;1991;14500;de_patrulare_marina experimental de_recunoastere_si_supraveghere de_cautare_si_salvare comercial civil;
 4;Boeing;Statele Unite ale Americi;1960;125000;de_afacere comercial cargo civil experimental militar;
+5;AirbusMOS;Panama;2009;190210;de_afacere de_antrenament cargo;
